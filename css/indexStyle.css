@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+main {
+    min-height: 100vh;
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+video {
+    max-width: 100%;
+    filter: blur(6px);
+    filter: contrast(20%);
+}
