@@ -5,9 +5,25 @@ main {
     flex-grow: 1;
     flex-direction: column;
 }
-
+.fondo-container {
+    background: url(/img/cierrese-arriba-muchas-pesas-gimnasia-metal-estante-gimnasio-deporte.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
 video {
     max-width: 100%;
     filter: blur(6px);
     filter: contrast(20%);
 }
+#imagen{
+    display: none;
+}
+ @media (min-width:280px) and (max-width:640px) {
+    #video{
+    display: none;
+    }
+    #imagen{
+    display: block;
+    }
+} 
