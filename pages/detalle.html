@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Catálogo de Servicios de Entrenamiento Personal - RollingFit"
+    />
+    <meta
+      name="keywords"
+      content="Catálogo, Servicios, Entrenamiento, Personal, Proyecto, RollingCode, Rolling, Fit, Code"
+    />
+    <meta
+      name="author"
+      content="Cesar Luciano Angeleri, Maximiliano leonel Vega, Andrada Joaquin Guillermo, Mauricio Soria, Rita Astorga, Julieta Correa"
+    />
+    <title>RollingFit - Pagina Principal</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <!--Página de detalle: al seleccionar un servicio, veremos una página con más detalles del mismo.
+Cada servicio debe tener como mínimo las siguientes propiedades:
+○ Código único.
+○ Nombre
+○ precio
+○ Categoría
+○ Imagen (cargada con url )
+○ descripción
+○ Tiempo que toma el desarrollo del servicio contratado.
+○ Reseñas: opiniones breves de otros usuarios sobre este servicio
+NOTA: Pueden agregar más propiedades si lo consideran necesario.
+Ejemplos de empresas de servicios: web de diseño gráfico, servicio de desarrollo web, servicios de marketing-->
+    <div class="container">
+      <!-- Detalle Sección -->
+      <section class="my-5 row position-relative">
+        <div class="col-lg-8 order-lg-1">
+          <div class="row">
+            <!-- Add some padding to prevent overlap -->
+            <div class="px-lg-3">
+              <p class="text-muted" id="codigoUnico">Código único. 123</p>
+              <h1 class="display-4 mb-4" id="Nombre">Propiedad Nombre</h1>
+              <img
+                src="https://via.placeholder.com/500x500.png?text=Service+Image"
+                alt="Imagen (cargada con url)"
+                class="img-fluid"
+              />
+            </div>
+          </div>
+          <div class="row d-flex align-items-center">
+            <div class="mt-3"></div>
+            <div class="col-lg-12 px-lg-3">
+              <h3 class="mb-3" id="descripcion">Descripción:</h3>
+              <p class="lead mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                pulvinar, eros id suscipit auctor, augue lectus tincidunt ex,
+                vitae consectetur nunc lorem eget dolor. Suspendisse eu felis
+                arcu.
+              </p>
+            </div>
+            <div class="col-lg-4 mb-4 px-lg-3">
+              <h3 class="mb-3" id="categoria">Categorias</h3>
+              <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action"
+                  >Categoria 1</a
+                >
+                <a href="#" class="list-group-item list-group-item-action"
+                  >Categoria 2</a
+                >
+                <a href="#" class="list-group-item list-group-item-action"
+                  >Categoria 3</a
+                >
+                <a href="#" class="list-group-item list-group-item-action"
+                  >Categoria 4</a
+                >
+              </div>
+            </div>
+            <div class="col-lg-4 mb-4 px-lg-3">
+              <h3 class="mb-3" id="tiempoServicio">Tiempo que toma:</h3>
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-text">Tiempo que toma el servicio.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 px-lg-3">
+              <h3 class="mb-3" id="precio">Precio: $123</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 order-lg-2 bg-light position-sticky">
+          <div class="p-3 sticky-top">
+            <nav>
+              <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <button
+                  class="nav-link active"
+                  id="nav-basic-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#nav-basic"
+                  type="button"
+                  role="tab"
+                  aria-controls="nav-basic"
+                  aria-selected="true"
+                >
+                  basic
+                </button>
+                <button
+                  class="nav-link"
+                  id="nav-standard-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#nav-standard"
+                  type="button"
+                  role="tab"
+                  aria-controls="nav-standard"
+                  aria-selected="false"
+                >
+                  standard
+                </button>
+                <button
+                  class="nav-link"
+                  id="nav-premium-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#nav-premium"
+                  type="button"
+                  role="tab"
+                  aria-controls="nav-premium"
+                  aria-selected="false"
+                >
+                  premium
+                </button>
+              </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+              <div
+                class="tab-pane fade show active"
+                id="nav-basic"
+                role="tabpanel"
+                aria-labelledby="nav-basic-tab"
+                tabindex="0"
+              >
+                <h3>Básico</h3>
+                <p>Paquete Principiantes</p>
+                <p><strong>Total:</strong> US$25</p>
+                <p><strong>Tiempo de entrega:</strong> 1 día</p>
+                <ul>
+                  <li>Programa de entrenamiento de 4 semanas</li>
+                  <li>Sin plan de dieta</li>
+                  <li>Sin soporte interactivo</li>
+                  <li>Sin seguimiento de progreso</li>
+                </ul>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="nav-standard"
+                role="tabpanel"
+                aria-labelledby="nav-standard-tab"
+                tabindex="0"
+              >
+                <h3>Estándar</h3>
+                <p>Paquete impulsado por resultados (personalizado)</p>
+                <p><strong>Total:</strong> US$50</p>
+                <p><strong>Tiempo de entrega:</strong> 2 días</p>
+                <ul>
+                  <li>Programa de entrenamiento de 4 semanas</li>
+                  <li>Soporte general</li>
+                  <li>Sin plan de dieta</li>
+                  <li>Programa de entrenamiento de 8 semanas</li>
+                  <li>Soporte interactivo</li>
+                  <li>Seguimiento de progreso</li>
+                </ul>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="nav-premium"
+                role="tabpanel"
+                aria-labelledby="nav-premium-tab"
+                tabindex="0"
+              >
+                <h3>Premium</h3>
+                <p>Paquete de entrenamiento definitivo (personalizado)</p>
+                <p><strong>Total:</strong> US$85</p>
+                <p><strong>Tiempo de entrega:</strong> 3 días (+US$15)</p>
+                <ul>
+                  <li>Programa de entrenamiento de 4 semanas</li>
+                  <li>Soporte general</li>
+                  <li>Tutoriales en video</li>
+                  <li>Programa de entrenamiento de 8 semanas</li>
+                  <li>Plan de dieta</li>
+                  <li>Soporte interactivo de entrenamiento</li>
+                  <li>Tutoriales en video</li>
+                  <li>Programa de entrenamiento de 12 semanas</li>
+                  <li>Plan de dieta</li>
+                  <li>Soporte interactivo</li>
+                  <li>Seguimiento semanal de responsabilidad</li>
+                  <li>Soporte continuo</li>
+                  <li>Seguimiento de progreso</li>
+                </ul>
+              </div>
+              <div class="text-center">
+                <button class="btn btn-primary btn-lg">Añadir al carro</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/app.js"></script>
+  </body>
+</html>
