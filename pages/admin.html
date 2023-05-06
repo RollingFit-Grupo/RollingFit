@@ -19,53 +19,24 @@
         <link rel="stylesheet" href="../css/admin.css">
       </head>
 <body>
-    <header>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled">Disabled</a>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-          </div>
-        </div>
-      </nav>
-    </header>
+  <header>
+
+  </header>
     <main>
         <section class="container my-4">
           <h1 class="text-center">Administracion</h1>
+          <article class="d-flex my-4">
+            <h4>Añadir nuevos servicios:</h4>
+            <button class="btn btn-success mx-md-3"><i class="bi bi-plus-square"></i></button>
+          </article>
           <article class=" table-responsive">
+            <h2 class="text-center">Lista de servicios</h2>
             <table class="table align-middle table-hover">
               <thead>
-                <tr>
+                <tr class="bg-danger-subtle">
                   <th scope="col">Servicio</th>
                   <th scope="col">Imagen</th>
+                  <th scope="col">Profesor</th>
                   <th scope="col">Descripcion</th>
                   <th scope="col">Categoria</th>
                   <th scope="col">Precio</th>
@@ -75,46 +46,50 @@
               <tbody>
                 <tr>
                   <th scope="row" class="text-center">Calistenia</th>
-                  <td><img src="../img/calistenia" alt="" class="adminImg"></td>
+                  <td class="tdImage"><img src="../img/calistenia" alt="" class="adminImg img-fluid rounded"></td>
+                  <td>Profesor</td>
                   <td class="text-truncate truncateWidth">Entrenamiento físico que utiliza el peso corporal como resistencia para desarrollar la fuerza, la resistencia y la flexibilidad. Consiste en una serie de ejercicios que se realizan sin equipo ni pesas, y que se pueden realizar en cualquier lugar utilizando solo el peso del cuerpo como resistencia.</td>
-                  <td>Mensual</td>
-                  <td>10</td>
+                  <td>Estándar</td>
+                  <td><i class="bi bi-currency-dollar"></i>10</td>
                   <td class="">
                     <button class="btn btn-warning text-dark"><i class="bi bi-pencil-square"></i></button>
-                    <button class="btn btn-danger text-dark"><i class="bi bi-x-square"></i></button>
+                    <button class="btn btn-danger"><i class="bi bi-x-square"></i></button>
                   </td>
                 </tr>
                 <tr>
-                  <th scope="row" class="text-center">Calistenia</th>
-                  <td><img src="../img/gimnasio" alt="" class="adminImg img-fluid rounded"></td>
+                  <th scope="row" class="text-center">Gimnasio</th>
+                  <td class="tdImage"><img src="../img/gimnasio" alt="" class="adminImg img-fluid rounded"></td>
+                  <td>Profesor</td>
                   <td class="text-truncate truncateWidth">Entrenamiento físico que utiliza el peso corporal como resistencia para desarrollar la fuerza, la resistencia y la flexibilidad. Consiste en una serie de ejercicios que se realizan sin equipo ni pesas, y que se pueden realizar en cualquier lugar utilizando solo el peso del cuerpo como resistencia.</td>
-                  <td>Mensual</td>
-                  <td>10</td>
+                  <td>Estándar</td>
+                  <td><i class="bi bi-currency-dollar"></i>10</td>
                   <td class="">
                     <button class="btn btn-warning text-dark"><i class="bi bi-pencil-square"></i></button>
-                    <button class="btn btn-danger text-dark"><i class="bi bi-x-square"></i></button>
+                    <button class="btn btn-danger"><i class="bi bi-x-square"></i></button>
                   </td>
                 </tr>
                 <tr>
-                  <th scope="row" class="text-center">Calistenia</th>
-                  <td><img src="../img/spinning" alt="" class="adminImg img-fluid"></td>
+                  <th scope="row" class="text-center">Spinning</th>
+                  <td class="tdImage"><img src="../img/spinning" alt="" class="adminImg img-fluid rounded"></td>
+                  <td>Profesor</td>
                   <td class="text-truncate truncateWidth">Entrenamiento físico que utiliza el peso corporal como resistencia para desarrollar la fuerza, la resistencia y la flexibilidad. Consiste en una serie de ejercicios que se realizan sin equipo ni pesas, y que se pueden realizar en cualquier lugar utilizando solo el peso del cuerpo como resistencia.</td>
-                  <td>Mensual</td>
-                  <td>10</td>
+                  <td>Estándar</td>
+                  <td><i class="bi bi-currency-dollar"></i>10</td>
                   <td class="">
                     <button class="btn btn-warning text-dark"><i class="bi bi-pencil-square"></i></button>
-                    <button class="btn btn-danger text-dark"><i class="bi bi-x-square"></i></button>
+                    <button class="btn btn-danger"><i class="bi bi-x-square"></i></button>
                   </td>
                 </tr>
                 <tr>
-                  <th scope="row" class="text-center">Calistenia</th>
-                  <td><img src="../img/fuerza" alt="" class="adminImg img-fluid"></td>
+                  <th scope="row" class="text-center">Funcional</th>
+                  <td class="tdImage"><img src="../img/fuerza" alt="" class="adminImg img-fluid rounded"></td>
+                  <td>Profesor</td>
                   <td class="text-truncate truncateWidth">Entrenamiento físico que utiliza el peso corporal como resistencia para desarrollar la fuerza, la resistencia y la flexibilidad. Consiste en una serie de ejercicios que se realizan sin equipo ni pesas, y que se pueden realizar en cualquier lugar utilizando solo el peso del cuerpo como resistencia.</td>
-                  <td>Mensual</td>
-                  <td>10</td>
+                  <td>Estándar</td>
+                  <td><i class="bi bi-currency-dollar"></i>10</td>
                   <td class="">
                     <button class="btn btn-warning text-dark"><i class="bi bi-pencil-square"></i></button>
-                    <button class="btn btn-danger text-dark"><i class="bi bi-x-square"></i></button>
+                    <button class="btn btn-danger"><i class="bi bi-x-square"></i></button>
                   </td>
                 </tr>
                 
