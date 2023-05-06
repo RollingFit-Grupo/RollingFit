@@ -4,3 +4,16 @@
     height: 100px;
     width: 100px;
 }
+
+setTheme(theme);
+
+body.light {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  body.dark {
+    background-color: #000000;
+    color: #ffffff;
+  }
+  
