@@ -1,28 +1,27 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css");
 
 .img-size {
-    height: 100px;
-    width: 100px;
+  height: 75px;
+  width: 75px;
 }
 
-setTheme(theme);
 
 body.light {
-    background-color: #ffffff;
-    color: #000000;
-  }
-  
-  body.dark {
-    background-color: #000000;
-    color: #ffffff;
-  }
-  
-  .reg-color{
-    background-color: #FFA500;
-    margin: 1%;
-    
-  }
+  background-color: #ffffff;
+  color: #000000;
+}
 
-  .loguin-color{
-    background-color: #00BFFF;
-  }
+body.dark {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.reg-color {
+  background-color: #FFA500;
+  margin: 1%;
+
+}
+
+.loguin-color {
+  background-color: #00BFFF;
+}
