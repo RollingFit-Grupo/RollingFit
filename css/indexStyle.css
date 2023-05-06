@@ -1,16 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
+@import 'animate.css'; 
 main {
     min-height: 100vh;
     flex-grow: 1;
     flex-direction: column;
 }
+/* Fondo de imagen */
 .fondo-container {
     background: url(/img/cierrese-arriba-muchas-pesas-gimnasia-metal-estante-gimnasio-deporte.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50%;
 }
+/* Fondo de video */
 video {
     max-width: 100%;
     filter: blur(6px);
@@ -19,6 +21,8 @@ video {
 #imagen{
     display: none;
 }
+
+/* Responsive seccion */
  @media (min-width:280px) and (max-width:640px) {
     #video{
     display: none;
