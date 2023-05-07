@@ -36,11 +36,12 @@
               <thead>
                 <tr class="bg-danger-subtle">
                   <th scope="col">Servicio</th>
-                  <th scope="col">Imagen</th>
+                  <th scope="col">Ilustracion</th>
                   <th scope="col">Profesor</th>
                   <th scope="col">Descripcion</th>
                   <th scope="col">Categoria</th>
                   <th scope="col">Precio</th>
+                  <th scope="col">Tiempo</th>
                   <th scope="col">Acciones</th>
                 </tr>
               </thead>
@@ -52,6 +53,7 @@
                   <td class="text-truncate truncateWidth">Entrenamiento físico que utiliza el peso corporal como resistencia para desarrollar la fuerza, la resistencia y la flexibilidad. Consiste en una serie de ejercicios que se realizan sin equipo ni pesas, y que se pueden realizar en cualquier lugar utilizando solo el peso del cuerpo como resistencia.</td>
                   <td>Estándar</td>
                   <td><i class="bi bi-currency-dollar"></i>10</td>
+                  <td><i class="bi bi-clock"></i> 60 min</td>
                   <td class="">
                     <button class="btn btn-warning text-dark"><i class="bi bi-pencil-square"></i></button>
                     <button class="btn btn-danger"><i class="bi bi-x-square"></i></button>
@@ -64,7 +66,8 @@
                   <td class="text-truncate truncateWidth">Entrenamiento físico que utiliza el peso corporal como resistencia para desarrollar la fuerza, la resistencia y la flexibilidad. Consiste en una serie de ejercicios que se realizan sin equipo ni pesas, y que se pueden realizar en cualquier lugar utilizando solo el peso del cuerpo como resistencia.</td>
                   <td>Estándar</td>
                   <td><i class="bi bi-currency-dollar"></i>10</td>
-                  <td class="">
+                  <td><i class="bi bi-clock"></i> 60 min</td>
+                  <td>
                     <button class="btn btn-warning text-dark"><i class="bi bi-pencil-square"></i></button>
                     <button class="btn btn-danger"><i class="bi bi-x-square"></i></button>
                   </td>
@@ -76,6 +79,7 @@
                   <td class="text-truncate truncateWidth">Entrenamiento físico que utiliza el peso corporal como resistencia para desarrollar la fuerza, la resistencia y la flexibilidad. Consiste en una serie de ejercicios que se realizan sin equipo ni pesas, y que se pueden realizar en cualquier lugar utilizando solo el peso del cuerpo como resistencia.</td>
                   <td>Estándar</td>
                   <td><i class="bi bi-currency-dollar"></i>10</td>
+                  <td><i class="bi bi-clock"></i> 60 min</td>
                   <td class="">
                     <button class="btn btn-warning text-dark"><i class="bi bi-pencil-square"></i></button>
                     <button class="btn btn-danger"><i class="bi bi-x-square"></i></button>
@@ -88,6 +92,7 @@
                   <td class="text-truncate truncateWidth">Entrenamiento físico que utiliza el peso corporal como resistencia para desarrollar la fuerza, la resistencia y la flexibilidad. Consiste en una serie de ejercicios que se realizan sin equipo ni pesas, y que se pueden realizar en cualquier lugar utilizando solo el peso del cuerpo como resistencia.</td>
                   <td>Estándar</td>
                   <td><i class="bi bi-currency-dollar"></i>10</td>
+                  <td><i class="bi bi-clock"></i> 60 min</td>
                   <td class="">
                     <button class="btn btn-warning text-dark"><i class="bi bi-pencil-square"></i></button>
                     <button class="btn btn-danger"><i class="bi bi-x-square"></i></button>
@@ -161,8 +166,31 @@
                 maxlength="256"
                 class="form-control border  border-1"
               />
+              <label for="precio" class="form-label fw-semibold"
+                >Precio ($):
+              </label>
+              <input
+                id="precio"
+                type="number"
+                placeholder="Ej: 100"
+                required
+                minlength="2"
+                maxlength="64"
+                class="form-control border border-1"
+              />
+              <label for="precio" class="form-label fw-semibold"
+                >Tiempo:
+              </label>
+              <input
+                id="tiempo"
+                type="number"
+                placeholder="Ej: 60min"
+                required
+                minlength="2"
+                maxlength="64"
+                class="form-control border border-1"
+              />
               <label for="categoria" class="form-label fw-semibold">Categoria: </label>
-              <p>
                 <select
                   name="categoria"
                   id="categoria"
@@ -190,7 +218,7 @@
                 <button class="btn btn-outline-primary mt-3" type="submit">
                   Enviar
                 </button>
-              </p>
+              
             </form>
           </div>
         </div>
