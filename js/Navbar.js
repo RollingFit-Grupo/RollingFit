@@ -1,3 +1,14 @@
+// Obtenemos el tema configurado del usuario
+let temaConfigurado = JSON.parse(localStorage.getItem("theme")) || "light";
+
+
+//  Obtenemos el icono que se muestra segun sea tema claro u oscuro
+let iconThemeShow = document.querySelector("#iconThemeShow");
+
+//  Cambiamos tema por el tema configurado que trajimos del localStorage
+cambiarTema(temaConfigurado);
+
+
 // OBTENER botones light y dark
 let btn_light = document.querySelector("#btn_light");
 let btn_dark = document.querySelector("#btn_dark");
@@ -10,10 +21,10 @@ btn_dark.addEventListener("click", () => cambiarTema("dark"));
 function cambiarTema(color) {
   // Debemos obtener el elemento html
   let htmlElement = document.querySelector("html");
-  // Ahora debemos agregarle el atributo data-bs-theme con su valor en color
+  // Agregarle el atributo data-bs-theme con su valor en color
   htmlElement.setAttribute("data-bs-theme", color);
 
-  // Debemos guardar esta info en el localStorage
+  // Guardar esta info en el localStorage
   localStorage.setItem("theme", JSON.stringify(color));
 
   //  Depende si color es "light" o "dark"
