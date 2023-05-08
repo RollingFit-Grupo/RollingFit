@@ -4,6 +4,21 @@
         background: radial-gradient(70% 80% at 50% 20%, var(--bs-dark) 0%, transparent 100%);
         text-shadow: 0 0.25rem 1rem var(--bs-dark);
 }
+.card-integrante {
+    overflow: hidden;
+    background: none;
+    border: none;
+  }
+.card-integrante  img{
+    transition: transform 1.8s cubic-bezier(.2, 1, .2, 1);
+}
+.card-integrante:hover img{
+    transform: scale(1.02);
+}
+.card-img {
+    object-fit: cover;
+}
+
 @media (min-width: 768px) {
     .gradiente-section-card{
     background: radial-gradient(45% 60% at 50% 50%, rgba(0, 191, 255, 1) 0%, transparent 120%);}
