@@ -19,6 +19,12 @@ video {
 #imagen{
     display: none;
 }
+
+.card-body{
+  height: 250px;
+  overflow: auto;
+}
+
  @media (min-width:280px) and (max-width:640px) {
     #video{
     display: none;
