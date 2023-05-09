@@ -1,16 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import 'animate.css'; 
+@import 'animate.css';
+
 main {
     min-height: 100vh;
     flex-grow: 1;
     flex-direction: column;
 }
+
 /* Fondo de imagen */
 .fondo-container {
-    background: url(/img/cierrese-arriba-muchas-pesas-gimnasia-metal-estante-gimnasio-deporte.jpg);
+    position: relative;
+    /* Establece la posición del contenedor en "relative" para que el pseudo-elemento se posicione correctamente */
+}
+
+.fondo-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-image: url(/img/cierrese-arriba-muchas-pesas-gimnasia-metal-estante-gimnasio-deporte.jpg);
+    filter: contrast(60%);
+    /* Aplica un desenfoque a la imagen */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50%;
+}
+#tituloFrase{
+    font-family: "Syne", sans-serif;
+    letter-spacing: 0.52em;
+
 }
 /* Fondo de video */
 video {
@@ -18,16 +39,36 @@ video {
     filter: blur(6px);
     filter: contrast(20%);
 }
-#imagen{
+
+#imagen {
     display: none;
 }
 
 /* Responsive seccion */
- @media (min-width:280px) and (max-width:640px) {
-    #video{
+@media (min-width:280px) and (max-width:640px) {
+    #video {
+        display: none;
+    }
+
+    #imagen {
+        display: block;
+    }
+}
+#tituloFraseChico{
     display: none;
+}
+@media (max-width:850px) {
+    .textoCard {
+        color: blue;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
-    #imagen{
-    display: block;
+    #textoFraseGrande{
+        display: none;
     }
-} 
+    #textoFraseChico{
+        display: block;
+    }
+}
