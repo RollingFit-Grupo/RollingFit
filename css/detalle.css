@@ -3,7 +3,7 @@ body {
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  height: 100%;
   width: 100%;
 }
 .body-blur {
