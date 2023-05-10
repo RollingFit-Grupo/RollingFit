@@ -7,7 +7,12 @@ body {
   width: 100%;
 }
 .body-blur {
-  background: rgba(22, 27, 27, 0.9) !important;
+  background: rgba(172, 172, 172, 0.7) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+[data-bs-theme="dark"] .body-blur {
+  background: rgba(22, 27, 27, 0.7) !important; /* Keep the original background color for dark theme */
   backdrop-filter: blur(10px) !important;
 }
 .position-sticky{
