@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Black+Ops+One&display=swap');
-@import 'animate.css';
 
 main {
     min-height: 100vh;
@@ -46,6 +45,9 @@ video {
 .letrero{
     font-family: 'Black Ops One', cursive;
     font-size: 30px;
+}
+.stars{
+    color: #cd9932cb;
 }
 /* Responsive seccion */
 @media (min-width:280px) and (max-width:640px) {
