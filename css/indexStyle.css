@@ -89,9 +89,22 @@ video {
     #imagen {
         display: block;
     }
-}
+
 #tituloFraseChico{
     display: none;
+}
+#tituloFraseGrande{
+    font-size: 20px;
+}
+.letrero{
+    font-size: 30px;
+}
+#testimonioTitulo{
+    font-size: 15px;
+}
+.cardstestimonios{
+    height: 630px;
+}
 }
 @media (max-width:850px) {
     .textoCard {
