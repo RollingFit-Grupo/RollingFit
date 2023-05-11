@@ -5,7 +5,26 @@ main {
     flex-grow: 1;
     flex-direction: column;
 }
+.fondo-containerFrase {
+    position: relative;
+    /* Establece la posición del contenedor en "relative" para que el pseudo-elemento se posicione correctamente */
+}
 
+.fondo-containerFrase::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-image: url(/img/pexels-binyamin-mellish-116077.jpg);
+    filter: contrast(60%);
+    /* Aplica un desenfoque a la imagen */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
 /* Fondo de imagen */
 .fondo-container {
     position: relative;
@@ -44,7 +63,19 @@ video {
 }
 .letrero{
     font-family: 'Black Ops One', cursive;
-    font-size: 30px;
+    font-size: 60px;
+}
+.texto-naranja{
+	text-shadow: 0 0 5px #FFA500,
+	0 0 10px #FFA500,
+	0 0 15px #FFA500,
+	0 0 25px #FFA500
+}
+.texto-azul{
+	text-shadow: 0 0 5px #00bfff85,
+	0 0 10px #00bfffd0,
+	0 0 15px #00bfffd0,
+	0 0 25px #00bfffd0
 }
 .stars{
     color: #cd9932cb;
