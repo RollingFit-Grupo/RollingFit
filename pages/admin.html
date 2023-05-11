@@ -106,7 +106,7 @@
           </article>
         </section>
         <!-- Ventana Modal -->
-      <div class="modal" tabindex="-1" id="modalEditar">
+      <section class="modal" tabindex="-1" id="modalEditar">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -131,30 +131,34 @@
                 maxlength="100"
                 class="form-control border border-1"
               />
-              <label for="servicio" class="form-label fw-semibold"
-                >Servicio:
-              </label>
-              <input
-                id="servicio"
-                type="text"
-                placeholder="Ej: Calistenia"
-                required
-                minlength="3"
-                maxlength="100"
-                class="form-control border  border-1"
-              />
-              <label for="profesor" class="form-label fw-semibold"
-                >Profesor:
-              </label>
-              <input
-                id="profesor"
-                type="text"
-                placeholder="Ej: Rubén Estigarribia"
-                required
-                minlength="4"
-                maxlength="100"
-                class="form-control border border-1"
-              />
+              <aside class="row">
+                <div class="col-md-6"><label for="servicio" class="form-label fw-semibold"
+                  >Servicio:
+                </label>
+                <input
+                  id="servicio"
+                  type="text"
+                  placeholder="Ej: Calistenia"
+                  required
+                  minlength="3"
+                  maxlength="100"
+                  class="form-control border  border-1"
+                /></div>
+                <div class="col-md-6"><label for="profesor" class="form-label fw-semibold"
+                  >Profesor:
+                </label>
+                <input
+                  id="profesor"
+                  type="text"
+                  placeholder="Ej: Rubén Estigarribia"
+                  required
+                  minlength="4"
+                  maxlength="100"
+                  class="form-control border border-1"
+                /></div>
+              </aside>
+              
+              
               <label for="imagen" class="form-label fw-semibold"
                 >Imagen:
               </label>
@@ -167,30 +171,49 @@
                 maxlength="256"
                 class="form-control border  border-1"
               />
-              <label for="precio" class="form-label fw-semibold"
-                >Precio ($):
+              <label for="imagen" class="form-label fw-semibold"
+                >Perfil Profesor:
               </label>
               <input
-                id="precio"
-                type="number"
-                placeholder="Ej: 100"
+                id="profesorImg"
+                type="text"
+                placeholder="Inserte el link de la imagen"
                 required
-                minlength="2"
-                maxlength="64"
-                class="form-control border border-1"
+                minlength="8"
+                maxlength="256"
+                class="form-control border  border-1"
               />
-              <label for="precio" class="form-label fw-semibold"
-                >Tiempo:
-              </label>
-              <input
-                id="tiempo"
-                type="number"
-                placeholder="Ej: 60min"
-                required
-                minlength="2"
-                maxlength="64"
-                class="form-control border border-1"
-              />
+              <aside class="row">
+                <div class="col-6">
+                  <label for="precio" class="form-label fw-semibold"
+                    >Precio ($):
+                  </label>
+                  <input
+                    id="precio"
+                    type="number"
+                    placeholder="Ej: 100"
+                    required
+                    minlength="2"
+                    maxlength="64"
+                    class="form-control border border-1"
+                  />
+                </div>
+                <div class="col-6">
+                  <label for="precio" class="form-label fw-semibold"
+                    >Tiempo (min):
+                  </label>
+                  <input
+                    id="tiempo"
+                    type="number"
+                    placeholder="Ej: 60min"
+                    required
+                    minlength="2"
+                    maxlength="64"
+                    class="form-control border border-1"
+                  />
+
+                </div>
+              </aside>
               <label for="categoria" class="form-label fw-semibold">Categoria: </label>
                 <select
                   name="categoria"
@@ -219,11 +242,10 @@
                 <button class="btn btn-outline-primary mt-3" type="submit">
                   Enviar
                 </button>
-              
             </form>
           </div>
         </div>
-      </div>
+      </section>
     </main>
     <footer>
     </footer>
