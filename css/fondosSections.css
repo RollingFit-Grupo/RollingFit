@@ -48,7 +48,10 @@
     opacity: 5%;
     z-index: -1;
 }
-
+[data-bs-theme=dark] .gradiente-section-proyector::before{
+    background: linear-gradient(180deg, var(--bs-body-bg) 15%, rgba(255, 255, 255, 0) 50%, var(--bs-body-bg) 75%),
+        url("../img/logo/dark-light/logo/BlancoLogo-mono.png");
+  }
 @media (min-width: 768px) {
     .gradiente-section-card {
         background: radial-gradient(45% 40% at 50% 50%, var(--bs-secondary) 0%, transparent 120%);
