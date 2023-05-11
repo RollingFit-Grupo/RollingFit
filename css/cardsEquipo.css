@@ -15,16 +15,15 @@
 .iconos-integrantes {
     opacity: 0%;
     transform: translate(0, 100%);
-    transition: all 1.8s cubic-bezier(.2, 1, .2, 1);
     visibility: hidden;
+    transition: all 1.8s cubic-bezier(.2, 1, .2, 1);
 }
 
 .card-integrante:hover .iconos-integrantes {
-    display: flex !important;
     transform: translate(0, 0);
-    visibility: visible;
     opacity: 100%;
-
+    visibility: visible;
+    transition: all 1.8s cubic-bezier(.2, 1, .2, 1);
 }
 
 .card-img {
@@ -34,4 +33,12 @@
 .gradiente-card {
     background: radial-gradient(70% 80% at 50% 20%, var(--bs-dark) 0%, transparent 100%);
     text-shadow: 0 0.25rem 1rem var(--bs-dark);
+    transform: translate(0, 35%);
+    opacity: 100%;
+    transition: all 1.8s cubic-bezier(.2, 1, .2, 1);
+}
+.card-integrante:hover .gradiente-card {
+    transform: translate(0, 0);
+    opacity: 100%;
+    transition: all 1.8s cubic-bezier(.2, 1, .2, 1);
 }

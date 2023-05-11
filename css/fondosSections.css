@@ -1,52 +1,56 @@
-.fondo-section-principal{
+.fondo-section-principal {
     position: relative;
-    background: 
-    linear-gradient(266.26deg, 
-    rgba(255, 165, 0, 0.3) 0%, 
-    rgba(0, 191, 255, 0.3) 100%);
-    text-shadow: 0 0 3rem rgba(0,0,0,35%);
-}
-.fondo-section-principal:before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    filter: saturate(0%) contrast(30%) brightness(130%);
-    background-image: url("../img/acercaDeNosotros/fondo-section-principal.jpg");
-    background-size: cover;
-    opacity: 25%;
-    z-index: -100;
-}
-.gradiente-section-card{
-    background: radial-gradient(70% 40% at 50% 50%, var(--bs-secondary) 0%, transparent 120%);}
-.gradiente-section-proyecto {
-    position: relative;
-    background:
-        linear-gradient(180deg, rgba(0, 191, 255, 0) 0%,
-            rgba(0, 191, 255, 0.3) 20%,
-            rgba(255, 165, 0, 0.3) 50%, rgba(255, 165, 0, 0) 80%);
+    background: linear-gradient(266.26deg, rgba(255, 165, 0, 0.3) 0%, rgba(0, 191, 255, 0.3) 100%);
+    text-shadow: 0 0 3rem rgba(0, 0, 0, 35%);
+    isolation: isolate;
 }
 
-.gradiente-section-proyecto:before {
+.fondo-section-principal::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, var(--bs-body-bg) 15%,
-            rgba(255, 255, 255, 0) 50%,
-            var(--bs-body-bg) 75%),
+    filter: saturate(0%) contrast(150%) brightness(150%);
+    background-image: url("../img/acercaDeNosotros/fondo-section-principal.jpg");
+    background-size: cover;
+    background-position: 70% center;
+    opacity: 25%;
+    z-index: -1;
+}
+
+.gradiente-section-card {
+    background: radial-gradient(70% 40% at 50% 50%, var(--bs-secondary) 0%, transparent 120%);
+}
+
+.gradiente-section-proyecto {
+    position: relative;
+    background: linear-gradient(180deg,
+            rgba(0, 191, 255, 0) 0%,
+            rgba(0, 191, 255, 0.3) 20%,
+            rgba(255, 165, 0, 0.3) 50%,
+            rgba(255, 165, 0, 0) 80%);
+    isolation: isolate;
+}
+
+.gradiente-section-proyecto::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, var(--bs-body-bg) 15%, rgba(255, 255, 255, 0) 50%, var(--bs-body-bg) 75%),
         url("../img/logo/dark-light/logo/NegroLogo-mono.png");
     background-blend-mode: luminosity, multiply;
     background-size: 36%;
     opacity: 5%;
-    z-index: -100;
+    z-index: -1;
 }
 
 @media (min-width: 768px) {
-    .gradiente-section-card{
-    background: radial-gradient(45% 40% at 50% 50%, var(--bs-secondary) 0%, transparent 120%);}
+    .gradiente-section-card {
+        background: radial-gradient(45% 40% at 50% 50%, var(--bs-secondary) 0%, transparent 120%);
+    }
 }
