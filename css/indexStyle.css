@@ -57,10 +57,6 @@ video {
     filter: blur(6px);
     filter: contrast(20%);
 }
-
-#imagen {
-    display: none;
-}
 .letrero{
     font-family: 'Black Ops One', cursive;
     font-size: 60px;
@@ -90,9 +86,6 @@ video {
         display: block;
     }
 
-#tituloFraseChico{
-    display: none;
-}
 #tituloFraseGrande{
     font-size: 20px;
 }
