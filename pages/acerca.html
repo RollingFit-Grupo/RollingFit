@@ -574,16 +574,17 @@
               <div class="mb-3">
                 <label for="consultaNombre" class="form-label">Nombre</label>
                 <input type="text" class="form-control" name="Nombre" id="consultaNombre"
-                  placeholder="Ej. Juan Pérez" />
+                  placeholder="Ej. Juan Pérez" maxlength="60" minlength="2" pattern="[a-zA-Z\u00C0-\u00FF\s]+">
               </div>
               <div class="mb-3">
-                <label for="consultaEmail" class="form-label">Correo electrónico</label>
-                <input type="email" class="form-control" id="consultaEmail" placeholder="Ej. JuanPerez@mail.com" />
+                <label for="consultaEmail" class="form-label">Correo electrónico *</label>
+                <input type="email" class="form-control" id="consultaEmail" placeholder="Ej. JuanPerez@mail.com" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                maxlength="60" autocomplete="on" spellcheck="false"/>
               </div>
               <div class="mb-3">
-                <label for="consultaComentario" class="form-label">Consulta</label>
+                <label for="consultaComentario" class="form-label">Consulta *</label>
                 <textarea class="form-control" name="Consulta" id="consultaComentario" rows="5"
-                  placeholder="Escribe lo que quieras consultarnos..."></textarea>
+                  placeholder="Escribe lo que quieras consultarnos..." required minlength="5" maxlength="600"></textarea>
               </div>
               <div class="d-grid gap-2">
                 <button type="submit" id="btnEnviarConsulta" class="btn btn-primary">Enviar Consulta</button>
