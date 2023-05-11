@@ -1,111 +1,193 @@
 <!DOCTYPE html>
 <html lang="es" data-bs-theme="dark">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description"
-          content="Catálogo de Servicios de Entrenamiento Personal - RollingFit"/>
-        <meta name="keywords"
-          content="Catálogo, Servicios, Entrenamiento, Personal, Proyecto, RollingCode, Rolling, Fit, Code" />
-        <meta name="author"
-          content="Cesar Luciano Angeleri, Maximiliano leonel Vega, Andrada Joaquin Guillermo, Mauricio Soria, Rita Astorga, Julieta Correa" />
-        <title>RollingFit - Pagina Principal</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="stylesheet" href="../css/style.css" />
-        <link rel="stylesheet" href="../css/custom.css" />
-        <link rel="stylesheet" href="../css/admin.css">
-      </head>
-<body>
-  <header>
-
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Catálogo de Servicios de Entrenamiento Personal - RollingFit"
+    />
+    <meta
+      name="keywords"
+      content="Catálogo, Servicios, Entrenamiento, Personal, Proyecto, RollingCode, Rolling, Fit, Code"
+    />
+    <meta
+      name="author"
+      content="Cesar Luciano Angeleri, Maximiliano leonel Vega, Andrada Joaquin Guillermo, Mauricio Soria, Rita Astorga, Julieta Correa"
+    />
+    <title>RollingFit - Pagina Principal</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/custom.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
+  </head>
+  <body>
+    <header></header>
     <main>
-        <section class="container my-4">
-          <h1 class="text-center">Administracion</h1>
-          <article class="d-flex my-4">
-            <h4>Añadir nuevos servicios:</h4>
-            
-            <button class="btn btn-success mx-md-3"  data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="bi bi-plus-square"></i></button>
-          </article>
-          <article class=" table-responsive">
-            <h2 class="text-center">Lista de servicios</h2>
-            <table class="table align-middle table-hover">
-              <thead>
-                <tr class="bg-danger-subtle">
-                  <th scope="col">Servicio</th>
-                  <th scope="col">Ilustracion</th>
-                  <th scope="col">Profesor</th>
-                  <th scope="col">Descripcion</th>
-                  <th scope="col">Categoria</th>
-                  <th scope="col">Precio</th>
-                  <th scope="col">Tiempo</th>
-                  <th scope="col">Acciones</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row" class="text-center">Calistenia</th>
-                  <td class="tdImage"><img src="../img/calistenia" alt="" class="adminImg img-fluid rounded"></td>
-                  <td>Profesor</td>
-                  <td class="text-truncate truncateWidth">Entrenamiento físico que utiliza el peso corporal como resistencia para desarrollar la fuerza, la resistencia y la flexibilidad. Consiste en una serie de ejercicios que se realizan sin equipo ni pesas, y que se pueden realizar en cualquier lugar utilizando solo el peso del cuerpo como resistencia.</td>
-                  <td>Estándar</td>
-                  <td><i class="bi bi-currency-dollar"></i>10</td>
-                  <td><i class="bi bi-clock"></i> 60 min</td>
-                  <td class="">
-                    <button class="btn btn-warning text-dark"><i class="bi bi-pencil-square"></i></button>
-                    <button class="btn btn-danger"><i class="bi bi-x-square"></i></button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row" class="text-center">Gimnasio</th>
-                  <td class="tdImage"><img src="../img/gimnasio" alt="" class="adminImg img-fluid rounded"></td>
-                  <td>Profesor</td>
-                  <td class="text-truncate truncateWidth">Entrenamiento físico que utiliza el peso corporal como resistencia para desarrollar la fuerza, la resistencia y la flexibilidad. Consiste en una serie de ejercicios que se realizan sin equipo ni pesas, y que se pueden realizar en cualquier lugar utilizando solo el peso del cuerpo como resistencia.</td>
-                  <td>Estándar</td>
-                  <td><i class="bi bi-currency-dollar"></i>10</td>
-                  <td><i class="bi bi-clock"></i> 60 min</td>
-                  <td>
-                    <button class="btn btn-warning text-dark"><i class="bi bi-pencil-square"></i></button>
-                    <button class="btn btn-danger"><i class="bi bi-x-square"></i></button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row" class="text-center">Spinning</th>
-                  <td class="tdImage"><img src="../img/spinning" alt="" class="adminImg img-fluid rounded"></td>
-                  <td>Profesor</td>
-                  <td class="text-truncate truncateWidth">Entrenamiento físico que utiliza el peso corporal como resistencia para desarrollar la fuerza, la resistencia y la flexibilidad. Consiste en una serie de ejercicios que se realizan sin equipo ni pesas, y que se pueden realizar en cualquier lugar utilizando solo el peso del cuerpo como resistencia.</td>
-                  <td>Estándar</td>
-                  <td><i class="bi bi-currency-dollar"></i>10</td>
-                  <td><i class="bi bi-clock"></i> 60 min</td>
-                  <td class="">
-                    <button class="btn btn-warning text-dark"><i class="bi bi-pencil-square"></i></button>
-                    <button class="btn btn-danger"><i class="bi bi-x-square"></i></button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row" class="text-center">Funcional</th>
-                  <td class="tdImage"><img src="../img/fuerza" alt="" class="adminImg img-fluid rounded"></td>
-                  <td>Profesor</td>
-                  <td class="text-truncate truncateWidth">Entrenamiento físico que utiliza el peso corporal como resistencia para desarrollar la fuerza, la resistencia y la flexibilidad. Consiste en una serie de ejercicios que se realizan sin equipo ni pesas, y que se pueden realizar en cualquier lugar utilizando solo el peso del cuerpo como resistencia.</td>
-                  <td>Estándar</td>
-                  <td><i class="bi bi-currency-dollar"></i>10</td>
-                  <td><i class="bi bi-clock"></i> 60 min</td>
-                  <td class="">
-                    <button class="btn btn-warning text-dark"><i class="bi bi-pencil-square"></i></button>
-                    <button class="btn btn-danger"><i class="bi bi-x-square"></i></button>
-                  </td>
-                </tr>
-                
-                
-              </tbody>
-            </table>
-          </article>
-        </section>
-        <!-- Ventana Modal -->
+      <section class="container my-4">
+        <h1 class="text-center">Administración</h1>
+        <article class="d-flex my-4">
+          <h4>Añadir nuevos servicios:</h4>
+          <button
+            class="btn btn-success mx-md-3"
+            data-bs-toggle="modal"
+            data-bs-target="#modalEditar"
+          >
+            <i class="bi bi-plus-square"></i>
+          </button>
+        </article>
+        <article class="table-responsive">
+          <h2 class="text-center">Lista de servicios</h2>
+          <table class="table align-middle table-hover">
+            <thead>
+              <tr class="bg-danger-subtle">
+                <th scope="col">Servicio</th>
+                <th scope="col">Ilustracion</th>
+                <th scope="col">Profesor</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Tiempo</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" class="text-center">Calistenia</th>
+                <td class="tdImage">
+                  <img
+                    src="../img/calistenia"
+                    alt=""
+                    class="adminImg img-fluid rounded"
+                  />
+                </td>
+                <td>Profesor</td>
+                <td class="text-truncate truncateWidth">
+                  Entrenamiento físico que utiliza el peso corporal como
+                  resistencia para desarrollar la fuerza, la resistencia y la
+                  flexibilidad. Consiste en una serie de ejercicios que se
+                  realizan sin equipo ni pesas, y que se pueden realizar en
+                  cualquier lugar utilizando solo el peso del cuerpo como
+                  resistencia.
+                </td>
+                <td>Estándar</td>
+                <td><i class="bi bi-currency-dollar"></i>10</td>
+                <td><i class="bi bi-clock"></i> 60 min</td>
+                <td class="">
+                  <button class="btn btn-warning text-dark">
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                  <button class="btn btn-danger">
+                    <i class="bi bi-x-square"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-center">Gimnasio</th>
+                <td class="tdImage">
+                  <img
+                    src="../img/gimnasio"
+                    alt=""
+                    class="adminImg img-fluid rounded"
+                  />
+                </td>
+                <td>Profesor</td>
+                <td class="text-truncate truncateWidth">
+                  Entrenamiento físico que utiliza el peso corporal como
+                  resistencia para desarrollar la fuerza, la resistencia y la
+                  flexibilidad. Consiste en una serie de ejercicios que se
+                  realizan sin equipo ni pesas, y que se pueden realizar en
+                  cualquier lugar utilizando solo el peso del cuerpo como
+                  resistencia.
+                </td>
+                <td>Estándar</td>
+                <td><i class="bi bi-currency-dollar"></i>10</td>
+                <td><i class="bi bi-clock"></i> 60 min</td>
+                <td>
+                  <button class="btn btn-warning text-dark">
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                  <button class="btn btn-danger">
+                    <i class="bi bi-x-square"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-center">Spinning</th>
+                <td class="tdImage">
+                  <img
+                    src="../img/spinning"
+                    alt=""
+                    class="adminImg img-fluid rounded"
+                  />
+                </td>
+                <td>Profesor</td>
+                <td class="text-truncate truncateWidth">
+                  Entrenamiento físico que utiliza el peso corporal como
+                  resistencia para desarrollar la fuerza, la resistencia y la
+                  flexibilidad. Consiste en una serie de ejercicios que se
+                  realizan sin equipo ni pesas, y que se pueden realizar en
+                  cualquier lugar utilizando solo el peso del cuerpo como
+                  resistencia.
+                </td>
+                <td>Estándar</td>
+                <td><i class="bi bi-currency-dollar"></i>10</td>
+                <td><i class="bi bi-clock"></i> 60 min</td>
+                <td class="">
+                  <button class="btn btn-warning text-dark">
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                  <button class="btn btn-danger">
+                    <i class="bi bi-x-square"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-center">Funcional</th>
+                <td class="tdImage">
+                  <img
+                    src="../img/fuerza"
+                    alt=""
+                    class="adminImg img-fluid rounded"
+                  />
+                </td>
+                <td>Profesor</td>
+                <td class="text-truncate truncateWidth">
+                  Entrenamiento físico que utiliza el peso corporal como
+                  resistencia para desarrollar la fuerza, la resistencia y la
+                  flexibilidad. Consiste en una serie de ejercicios que se
+                  realizan sin equipo ni pesas, y que se pueden realizar en
+                  cualquier lugar utilizando solo el peso del cuerpo como
+                  resistencia.
+                </td>
+                <td>Estándar</td>
+                <td><i class="bi bi-currency-dollar"></i>10</td>
+                <td><i class="bi bi-clock"></i> 60 min</td>
+                <td class="">
+                  <button class="btn btn-warning text-dark">
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                  <button class="btn btn-danger">
+                    <i class="bi bi-x-square"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
+      <!-- Ventana Modal -->
       <section class="modal" tabindex="-1" id="modalEditar">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -119,9 +201,7 @@
               ></button>
             </div>
             <form class="modal-body" id="formServicio">
-              <label for="id" class="form-label fw-semibold"
-                >ID:
-              </label>
+              <label for="id" class="form-label fw-semibold">ID: </label>
               <input
                 id="id"
                 type="text"
@@ -132,33 +212,35 @@
                 class="form-control border border-1"
               />
               <aside class="row">
-                <div class="col-md-6"><label for="servicio" class="form-label fw-semibold"
-                  >Servicio:
-                </label>
-                <input
-                  id="servicio"
-                  type="text"
-                  placeholder="Ej: Calistenia"
-                  required
-                  minlength="3"
-                  maxlength="100"
-                  class="form-control border  border-1"
-                /></div>
-                <div class="col-md-6"><label for="profesor" class="form-label fw-semibold"
-                  >Profesor:
-                </label>
-                <input
-                  id="profesor"
-                  type="text"
-                  placeholder="Ej: Rubén Estigarribia"
-                  required
-                  minlength="4"
-                  maxlength="100"
-                  class="form-control border border-1"
-                /></div>
+                <div class="col-md-6">
+                  <label for="servicio" class="form-label fw-semibold"
+                    >Servicio:
+                  </label>
+                  <input
+                    id="servicio"
+                    type="text"
+                    placeholder="Ej: Calistenia"
+                    required
+                    minlength="3"
+                    maxlength="100"
+                    class="form-control border border-1"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="profesor" class="form-label fw-semibold"
+                    >Profesor:
+                  </label>
+                  <input
+                    id="profesor"
+                    type="text"
+                    placeholder="Ej: Rubén Estigarribia"
+                    required
+                    minlength="4"
+                    maxlength="100"
+                    class="form-control border border-1"
+                  />
+                </div>
               </aside>
-              
-              
               <label for="imagen" class="form-label fw-semibold"
                 >Imagen:
               </label>
@@ -169,7 +251,7 @@
                 required
                 minlength="8"
                 maxlength="256"
-                class="form-control border  border-1"
+                class="form-control border border-1"
               />
               <label for="imagen" class="form-label fw-semibold"
                 >Perfil Profesor:
@@ -181,7 +263,7 @@
                 required
                 minlength="8"
                 maxlength="256"
-                class="form-control border  border-1"
+                class="form-control border border-1"
               />
               <aside class="row">
                 <div class="col-6">
@@ -211,23 +293,24 @@
                     maxlength="64"
                     class="form-control border border-1"
                   />
-
                 </div>
               </aside>
-              <label for="categoria" class="form-label fw-semibold">Categoria: </label>
-                <select
-                  name="categoria"
-                  id="categoria"
-                  class="form-select border  border-1"
-                  required
-                >
+              <label for="categoria" class="form-label fw-semibold"
+                >Categoria:
+              </label>
+              <select
+                name="categoria"
+                id="categoria"
+                class="form-select border border-1"
+                required
+              >
                 <option value="">Seleccione la categoria:</option>
                 <option value="Calistenia">Calistenia</option>
                 <option value="Gimnasio">Gimnasio</option>
                 <option value="Funcional">Funcional</option>
                 <option value="Spinning">Spinning</option>
-                </select>
-                <label for="consulta" class="form-label fw-semibold"
+              </select>
+              <label for="consulta" class="form-label fw-semibold"
                 >Descripcion:
               </label>
               <textarea
@@ -237,18 +320,21 @@
                 minlength="8"
                 maxlength="512"
                 required
-                class="form-control border  border-1 mb-3"
+                class="form-control border border-1 mb-3"
               ></textarea>
-                <button class="btn btn-outline-primary mt-3" type="submit">
-                  Enviar
-                </button>
+              <button class="btn btn-outline-primary mt-3" type="submit">
+                Enviar
+              </button>
             </form>
           </div>
         </div>
       </section>
     </main>
-    <footer>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-</body>
+    <footer></footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
