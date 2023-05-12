@@ -1,37 +1,540 @@
 <!DOCTYPE html>
 <html lang="es" data-bs-theme="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Catálogo de Servicios de Entrenamiento Personal - RollingFit"
-    />
-    <meta
-      name="keywords"
-      content="Catálogo, Servicios, Entrenamiento, Personal, Proyecto, RollingCode, Rolling, Fit, Code"
-    />
-    <meta
-      name="author"
-      content="Cesar Luciano Angeleri, Maximiliano leonel Vega, Andrada Joaquin Guillermo, Mauricio Soria, Rita Astorga, Julieta Correa"
-    />
-    <title>RollingFit - Pagina Principal</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
-      crossorigin="anonymous"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="stylesheet" href="./css/style.css" />
-  </head>
-  <body>
-    <header></header>
-    <main>
-      <article></article>
-    </main>
-    <footer></footer>
-  </body>
-  <script src="/js/Navbar.js"></script>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catálogo de Servicios de Entrenamiento Personal - RollingFit" />
+  <meta name="keywords"
+    content="Catálogo, Servicios, Entrenamiento, Personal, Proyecto, RollingCode, Rolling, Fit, Code" />
+  <meta name="author"
+    content="Cesar Luciano Angeleri, Maximiliano leonel Vega, Andrada Joaquin Guillermo, Mauricio Soria, Rita Astorga, Julieta Correa" />
+  <title>RollingFit - Pagina Principal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/navbar-footer.css" />
+  <link rel="stylesheet" href="./css/custom.css">
+  <link rel="stylesheet" href="./css/indexStyle.css" />
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg container">
+      <div class="container-fluid">
+        <img src="./img/logo/color/logo-letras/CombinadoLogo+Letras-Color.png" class="justify-content-center img-size"
+          alt="logo de RollingFit" />
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./pages/acerca.html">Acerca de nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./pages/admin.html">Administrador
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <div class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i id="iconThemeShow" class="bi bi-brightness-high-fill"></i>
+              </div>
+              <ul class="dropdown-menu">
+                <li>
+                  <button id="btn_light" class="dropdown-item">
+                    <i class="bi bi-brightness-high-fill"></i> Light
+                  </button>
+                </li>
+                <li>
+                  <button id="btn_dark" class="dropdown-item">
+                    <i class="bi bi-moon-fill"></i> Dark
+                  </button>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Buscar Servicios" aria-label="Buscar"
+              id="input_filtro_Servicios" loguin-color />
+          </form>
+          <button type="button" class="btn btn-primary loguin-color mr-2">Iniciar Sesión</button>
+          <button type="button" class="btn btn-primary reg-color mr-2">Registrarse</button>
+
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section id="video" class="my-0 position-relative">
+      <video class="py-0 border-0" src="./video/videofinal.mp4" autoplay muted loop></video>
+      <div id="texto" class="position-absolute top-50 start-50 translate-middle text-center">
+        <h1 class="fs-1">¡<strong class="rollingfitLogo-primary">Rolling </strong><strong
+            class="rollingfitLogo-secondary"> Fit</strong> te espera para transformar tu cuerpo <strong
+            class="rollingfitLogo-primary">HOY!</strong></h1>
+        <h2 class="fs-3"><strong class="rollingfitLogo-primary">SUSCRIBITE </strong>al servicio que mejor se adapte a
+          tus necesidaes</h2>
+        <h3 class="fs-4"><strong class="rollingfitLogo-primary">Mirá</strong> lo que la <strong
+            class="rollingfitLogo-primary">Comunidad </strong> <strong class="rollingfitLogo-secondary">Fit</strong>
+          dice de nosotros.</h3>
+        <a href="#nuestrosTestimonios" class="btn bg-primary">Nuestros Clientes</a>
+      </div>
+    </section>
+    <div id="tituloVideo"
+      class=" d-sm-block d-md-none d-lg-none container-fluid fondo-container vh-100 d-flex flex-column align-items-center align-items-lg-start justify-content-center p-lg-5">
+      <h1 class="fs-1 text-center">¡<strong class="rollingfitLogo-primary">Rolling </strong><strong
+          class="rollingfitLogo-secondary"> Fit</strong> te espera para transformar tu cuerpo <strong
+          class="rollingfitLogo-primary">HOY!</strong></h1>
+      <h2 class="fs-2 text-center"><strong class="rollingfitLogo-primary">SUSCRIBITE </strong>al servicio que mejor se
+        adapte a tus necesidades</h2>
+      <h3 class="fs-3 text-center"><strong class="rollingfitLogo-primary">Mirá</strong> lo que la <strong
+          class="rollingfitLogo-primary">Comunidad </strong><strong class="rollingfitLogo-secondary">Fit</strong> dice
+        de nosotros.</h3>
+      <a href="#nuestrosTestimonios" class="btn bg-primary">Nuestros Clientes</a>
+    </div>
+    <section class="fondo-containerFrase">
+      <h1 id="tituloFraseGrande" class=" text-black  text-center"><strong class="rollingfitLogo-primary">
+          "Transformá</strong class="rollingfitLogo-secondary"><strong class="rollingfitLogo-secondary"> tu
+          cuerpo</strong><strong class="rollingfitLogo-primary">,cambiá </strong><strong
+          class="rollingfitLogo-secondary">tu mente </strong><strong class="rollingfitLogo-primary">y elevá</strong>
+        <strong class="rollingfitLogo-secondary">tu vida en</strong><strong
+          class="rollingfitLogo-primary">Rolling</strong><strong class="rollingfitLogo-secondary"> Fit."</strong><br>
+        <hr class="">
+        <h1 class="text-center"><strong class="letrero texto-naranja">¡El éxito </strong><strong
+            class="letrero texto-azul">comienza aquí!</strong></h1>
+        <hr>
+      </h1>
+    </section>
+    <section class="py-5 ">
+      <h1 class="text-start text-primary ms-4">Conocé todos nuestros packs de entrenamiento</h1>
+      <hr class="border border-1 opacity-75 mx-4">
+    </section>
+    <!-- Sujeto a cambios -->
+    <section id="seccionServicios" class="container">
+      <div id="card1" class="card mb-3 my-2 d-flex justify-content-center border-5">
+        <div class="row d-flex g-0">
+          <div id="boxImagen" class="col-sm-12 col-md-4 col-lg-4 p-0 position-relative imgCard">
+            <img src="https://images.pexels.com/photos/7187958/pexels-photo-7187958.jpeg"
+              class="z-2 img-fluid rounded-start h-100" alt="imagen calistenia" />
+          </div>
+          <div id="boxCardContenido"
+            class="col-sm-12 col-md-4 col-lg-4 text-center text-lg-start mx-auto align-self-center container">
+            <div class="d-flex flex-column">
+              <div id="descripcion" class="mt-2 ">
+                <h4>Descripcion</h4>
+                <p class="text-truncate" style="max-width:550px;">Tipo de entrenamiento físico que se enfoca en el uso
+                  del peso corporal para
+                  desarrollar la fuerza, la flexibilidad y la resistencia muscular. La calistenia
+                  incluye una amplia variedad de ejercicios, como flexiones de brazos, dominadas, sentadillas, planchas
+                  y otros movimientos similares. Los beneficios de la calistenia incluyen el aumento de la masa
+                  muscular, la mejora de la postura y la flexibilidad, así como una mejor salud cardiovascular.</p>
+              </div>
+              <div id="caracteristicas" class="">
+                <h5>Caracteristicas</h5>
+                <div id="cardiovascular" class="progress mb-1" role="progressbar" aria-label="Animated striped example"
+                  aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                  <div id="cardioVascularBarra"
+                    class="progress-bar progress-bar-striped progress-bar-animated text-start ps-2 bg-success"
+                    style="width: 100%">Cardiovascular</div>
+                </div>
+                <div id="fuerza" class="progress mb-1" role="progressbar" aria-label="Animated striped example "
+                  aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                  <div id="fuerzaBarra"
+                    class="progress-bar progress-bar-striped progress-bar-animated text-start ps-2 bg-danger"
+                    style="width: 40%">Fuerza</div>
+                </div>
+                <div id="aerobico" class="progress mb-1" role="progressbar" aria-label="Animated striped example"
+                  aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                  <div id="aerobicoBarra"
+                    class="progress-bar progress-bar-striped progress-bar-animated text-start ps-2 bg-primary"
+                    style="width: 80%">Aerobico</div>
+                </div>
+                <div id="" class="progress mb-1" role="progressbar" aria-label="Animated striped example"
+                  aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                  <div id=""
+                    class="progress-bar progress-bar-striped progress-bar-animated text-start ps-2 bg-secondary"
+                    style="width: 60%">Flexibilidad
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="boxCalificacion" class="col-sm-12 col-md-4 col-lg-4 text-center align-self-center">
+            <h5>Calificación</h5>
+            <div class="stars">
+              <i class="bi bi-star"></i>
+              <i class="bi bi-star"></i>
+              <i class="bi bi-star"></i>
+              <i class="bi bi-star"></i>
+              <i class="bi bi-star"></i>
+              <p>Aún sin calificaciones</p>
+            </div>
+            <a href="#" class="btn btn-primary border rounded-pill">Ver Detalle</a>
+          </div>
+        </div>
+      </div>
+      <div id="card2" class="card mb-3 my-2 d-flex justify-content-center border-5">
+        <div class="row d-flex g-0">
+          <div id="boxImagen" class="col-sm-12 col-md-4 col-lg-4 p-0 position-relative imgCard">
+            <img src="./img/pexels-photo-4720768.webp" class="z-2 img-fluid rounded-start h-100" alt="imagen pesas" />
+          </div>
+          <div id="boxCardContenido"
+            class="col-sm-12 col-md-4 col-lg-4 text-center text-lg-start mx-auto align-self-center container">
+            <div class="d-flex flex-column">
+              <div id="descripcion" class="mt-2">
+                <h4>Descripcion</h4>
+                <p class="text-truncate" style="max-width:550px;">Consiste en levantar pesos pesados ​​en una serie de
+                  ejercicios competitivos.El levantamiento de pesas es un deporte que requiere una gran fuerza física,
+                  resistencia y técnica. Los beneficios de este deporte incluyen el desarrollo de la masa muscular, el
+                  aumento de la
+                  fuerza y la resistencia, así como una mejor salud ósea y cardiovascular. El levantamiento de pesas se
+                  ha convertido en un deporte olímpico popular, y también es una forma común de entrenamiento en el
+                  culturismo y el acondicionamiento físico.</p>
+              </div>
+              <div id="caracteristicas" class="">
+                <h5>Caracteristicas</h5>
+                <div id="cardiovascular" class="progress mb-1" role="progressbar" aria-label="Animated striped example"
+                  aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                  <div id="cardioVascularBarra"
+                    class="progress-bar progress-bar-striped progress-bar-animated text-start ps-2 bg-success"
+                    style="width: 100%">Cardiovascular</div>
+                </div>
+                <div id="fuerza" class="progress mb-1" role="progressbar" aria-label="Animated striped example "
+                  aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                  <div id="fuerzaBarra"
+                    class="progress-bar progress-bar-striped progress-bar-animated text-start ps-2 bg-danger"
+                    style="width: 75%">Fuerza</div>
+                </div>
+                <div id="aerobico" class="progress mb-1" role="progressbar" aria-label="Animated striped example"
+                  aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                  <div id="aerobicoBarra"
+                    class="progress-bar progress-bar-striped progress-bar-animated text-start ps-2 bg-primary"
+                    style="width: 80%">Aerobico</div>
+                </div>
+                <div id="" class="progress mb-1" role="progressbar" aria-label="Animated striped example"
+                  aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                  <div id=""
+                    class="progress-bar progress-bar-striped progress-bar-animated text-start ps-2 bg-secondary"
+                    style="width: 60%">Flexibilidad</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="boxCalificacion" class="col text-center align-self-center">
+            <h5>Calificación</h5>
+            <div class="stars">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-half"></i>
+              <p>4 Estrellas</p>
+            </div>
+            <a href="#" class="btn btn-primary border rounded-pill">Ver Detalle</a>
+          </div>
+        </div>
+      </div>
+      <div id="card3" class="card mb-3 my-2 d-flex justify-content-center border-5">
+        <div class="row d-flex g-0">
+          <div id="boxImagen" class="col-sm-12 col-md-4 col-lg-4 p-0 position-relative imgCard">
+            <img src="./img/pexels-photo-2261485.png" class="z-2 img-fluid rounded-start h-100" alt="imagen crossfit" />
+          </div>
+          <div id="boxCardContenido"
+            class="col-sm-12 col-md-4 col-lg-4 text-center text-lg-start mx-auto align-self-center container">
+            <div class="d-flex flex-column">
+              <div id="descripcion" class="mt-2">
+                <h4>Descripcion</h4>
+                <p class="text-truncate" style="max-width:550px;">Consiste en levantar pesos pesados ​​en una serie de
+                  ejercicios competitivos.El levantamiento de pesas es un deporte que requiere una gran fuerza física,
+                  resistencia y técnica. Los beneficios de este deporte incluyen el desarrollo de la masa muscular, el
+                  aumento de la
+                  fuerza y la resistencia, así como una mejor salud ósea y cardiovascular. El levantamiento de pesas se
+                  ha convertido en un deporte olímpico popular, y también es una forma común de entrenamiento en el
+                  culturismo y el acondicionamiento físico.</p>
+              </div>
+              <div id="caracteristicas" class="">
+                <h5>Caracteristicas</h5>
+                <div id="cardiovascular" class="progress mb-1" role="progressbar" aria-label="Animated striped example"
+                  aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                  <div id="cardioVascularBarra"
+                    class="progress-bar progress-bar-striped progress-bar-animated text-start ps-2 bg-success"
+                    style="width: 100%">Cardiovascular</div>
+                </div>
+                <div id="fuerza" class="progress mb-1" role="progressbar" aria-label="Animated striped example "
+                  aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                  <div id="fuerzaBarra"
+                    class="progress-bar progress-bar-striped progress-bar-animated text-start ps-2 bg-danger"
+                    style="width: 75%">Fuerza</div>
+                </div>
+                <div id="aerobico" class="progress mb-1" role="progressbar" aria-label="Animated striped example"
+                  aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                  <div id="aerobicoBarra"
+                    class="progress-bar progress-bar-striped progress-bar-animated text-start ps-2 bg-primary"
+                    style="width: 80%">Aerobico</div>
+                </div>
+                <div id="" class="progress mb-1" role="progressbar" aria-label="Animated striped example"
+                  aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                  <div id=""
+                    class="progress-bar progress-bar-striped progress-bar-animated text-start ps-2 bg-secondary"
+                    style="width: 60%">Flexibilidad</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="boxCalificacion" class="col-sm-12 col-md-4 col-lg-4 text-center align-self-center">
+            <h5>Calificación</h5>
+            <div class="stars">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star"></i>
+              <i class="bi bi-star"></i>
+              <p>3 Estrellas</p>
+            </div>            
+            <a href="#" class="btn btn-primary border rounded-pill">Ver Detalle</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr class="border border-1 opacity-75 mx-4">
+    <section id="nuestrosTestimonios" class="bg bg-dark ps-2 py-3 d-lg-flex justify-content-lg-">
+      <article class="container-fluid row">
+        <div class="col-12">
+          <h5 id="testimonioTitulo" class="rollingfitLogo-secondary">Testimonios</h5>
+        </div>
+        <div class="col-12">
+          <h3 class="text-start rollingfitLogo-primary">Cómo nuestros clientes cambiaron sus habitos y mejoraron su vida
+          </h3>
+          <p class="text-start">Nos obsesionamos por el exito, por lo tanto nuestro objetivo mas grande es que te
+            sientas sano y fuerte!</p>
+        </div>
+      </article>
+      <article id="cardsPersonas" class="container d-flex justify-content-center">
+        <div id="carruselIndexTestimonios" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carruselIndexTestimonios" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carruselIndexTestimonios" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carruselIndexTestimonios" data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carruselIndexTestimonios" data-bs-slide-to="3"
+              aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carruselIndexTestimonios" data-bs-slide-to="4"
+              aria-label="Slide 5"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active card-group">
+              <div class="card cardstestimonios mb-3 bg-white " style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4 d-flex align-items-center d-flex align-items-center justify-content-center">
+                    <img src="./img/cara-hombre-sonriendo.webp" height="180px" width="180px"
+                      class="object-fit-cover border-1 rounded-circle" alt="imagen de hombre sonriente">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body bg bg-white text-bg-light" style="height: 360px;">
+                      <p class="card-text ">
+                        "Desde que empecé a asistir a Rolling Fit, mi vida ha cambiado por completo. El ambiente es
+                        increíble, los entrenadores siempre están dispuestos a ayudar y motivar. No puedo imaginar mi
+                        rutina de ejercicio sin este gimnasio, ¡es simplemente lo mejor!. Definitivamente se volvio mi
+                        lugar favorito del dia"</p>
+                      <div class="textoCard d-lg-flex flex-lg-column justify-lg-content-end align-items-lg-start">
+                        <h5 class="card-title fs-4">Marcos Damian Ponce</h5>
+                        <p class="card-text"><small class="text-dark">33 años</small></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card cardstestimonios mb-3 bg-white" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4 d-flex align-items-center d-flex align-items-center justify-content-center">
+                    <img src="./img/mujerfit.jpg" height="180px" width="180px"
+                      class=" object-fit-cover border-1 rounded-circle" alt="imagen de chica fitness">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body bg bg-white text-bg-light" style="height: 360px;">
+                      <p class="card-text">
+                        "Desde que empecé a entrenar en Rolling Fit, he notado una gran diferencia en mi vida. Lo que
+                        más me ha gustado del gimnasio es la inclusividad que hay para las mujeres, me siento totalmente
+                        cómoda y apoyada. Sin duda, recomendaría Rolling Fit a todas las mujeres que quieren empezar a
+                        entrenar en un ambiente acogedor y motivador."</p>
+                      <div class="textoCard d-lg-flex flex-lg-column justify-lg-content-end align-items-lg-start">
+                        <h5 class="card-title fs-4">Micaela Alboran</h5>
+                        <p class="card-text"><small class="text-black">28 años.</small></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card cardstestimonios mb-3 bg-white" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4 d-flex align-items-center d-flex align-items-center justify-content-center">
+                    <img src="./img/depositphotos_329598166-stock-photo-close-up-of-strong-muscular.jpg" height="180px"
+                      width="180px" class=" object-fit-cover border-1 rounded-circle" alt="imagen de hombre fitness">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body bg bg-white text-bg-light" style="height: 360px;">
+                      <p class="card-text">
+                        "En Rolling Fit, cada día es una oportunidad para superar nuestros límites y alcanzar nuestros
+                        objetivos. No hay nada más gratificante que ver a nuestros miembros lograr su mejor versión, con
+                        el mejor ambiente laboral
+                        de todos, no existe nada mas gratificante que un alumno cumpla con sus meta, y aqui amamos que
+                        eso suceda."</p>
+                      <div class="textoCard d-lg-flex flex-lg-column justify-lg-content-end align-items-lg-start">
+                        <h5 class="card-title fs-4">Mariano del Prado</h5>
+                        <p class="card-text"><small class="text-black">40 años</small></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card cardstestimonios mb-3 bg-white" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4 d-flex align-items-center d-flex align-items-center justify-content-center">
+                    <img src="./img/depositphotos_35836761-stock-photo-beautiful-smiling-girl.jpg" height="180px"
+                      width="180px" class=" object-fit-cover border-1 rounded-circle" alt="mujer sonriente">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body bg bg-white text-bg-light" style="height: 360px;">
+                      <p class="card-text">
+                        "Rolling Fit ha cambiado mi vida, finalmente tengo el cuerpo que siempre quise. Me encanta ir al
+                        gimnasio, es mi lugar favorito. No podría estar más agradecida con el equipo de entrenadores y
+                        el ambiente acogedor que me ha ayudado a alcanzar mis metas
+                        y superarme cada dia, amo la gente y las vibras que transmiten los empleados de Rolling Fit."
+                      </p>
+                      <div class="textoCard d-lg-flex flex-lg-column justify-lg-content-end align-items-lg-start">
+                        <h5 class="card-title fs-4">Florencia Antonella Miranda</h5>
+                        <p class="card-text"><small class="text-black">24 años.</small></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card cardstestimonios mb-3 bg-white" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4 d-flex align-items-center d-flex align-items-center justify-content-center">
+                    <img src="./img/hombre-silla-de-ruedas.jpg" height="180px" width="180px"
+                      class=" object-fit-cover border-1 rounded-circle" alt="chico fitness con discapacidad">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body bg bg-white text-bg-light" style="height: 360px;">
+                      <p class="card-text">
+                        "Rolling Fit ha sido una experiencia increíble para mí. A pesar de estar en silla de ruedas, me
+                        han brindado todas las herramientas necesarias para tener un entrenamiento efectivo y seguro. Me
+                        siento incluido y apoyado por todo el equipo del gimnasio, aqui no existen las diferencias y en
+                        Rolling Fit puedo ser quien soy de verdad."</p>
+                      <div class="textoCard d-lg-flex flex-lg-column justify-lg-content-end align-items-lg-start">
+                        <h5 class="card-title fs-4">Fernando Casanova</h5>
+                        <p class="card-text"><small class="text-black">50 años</small></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carruselIndexTestimonios"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carruselIndexTestimonios"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </article>
+    </section>
+  </main>
+  <footer class="container-fluid">
+    <div class="row p-4 bg-dark text-white">
+      <div class="col-xs-12 col-md-6 col-lg-3 text-center">
+        <figure>
+          <a href="#">
+            <img class="w-50" src="./asset/CombinadoLogo+Letras-Color.png" alt="logo de rolling fit" />
+          </a>
+        </figure>
+        <div class="redesSociales">
+          <a href="./pages/error404.html" class="link-light text-decoration-none m-3">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="./pages/error404.html" class="link-light text-decoration-none m-3">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a href="./pages/error404.html" class="link-light text-decoration-none m-3">
+            <i class="bi bi-twitter"></i>
+          </a>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-3">
+        <p class="h5 m-3">Socios</p>
+        <div class="m-2">
+          <a class="text-secondary text-decoration-none" href="./pages/error404.html">Atención al Socio</a>
+        </div>
+        <div class="m-2">
+          <a class="text-secondary text-decoration-none" href="./pages/error404.html">Solicitud de Baja</a>
+        </div>
+        <div class="m-2">
+          <a class="text-secondary text-decoration-none" href="./pages/error404.html">Trámite de Arrepentimiento</a>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-3">
+        <p class="h5 m-3">Legal</p>
+        <div class="m-2">
+          <a class="text-secondary text-decoration-none" href="./pages/error404.html">Términos y Condiciones</a>
+        </div>
+        <div class="m-2">
+          <a class="text-secondary text-decoration-none" href="./pages/error404.html">Política de Privacidad</a>
+        </div>
+        <div class="m-2">
+          <a class="text-secondary text-decoration-none" href="./pages/error404.html">Defensa del Consumidor</a>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-3 mt-4">
+        <figure>
+          <a href="./pages/error404.html">
+            <img src="./asset/google-play-badge-bb.svg" alt="logo de descarga de google play" />
+          </a>
+        </figure>
+        <figure>
+          <a href="./pages/error404.html">
+            <img src="./asset/badge-apple-store.svg" alt="logo de descarga de apple store" /></a>
+        </figure>
+      </div>
+      <div class="col-xs-12">
+        <p class="text-white"></p>
+        <p class="text-white text-center">
+          &copy; Todos los derechos reservados - 2023
+        </p>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./js/Navbar.js"></script></body>
+
 </html>
