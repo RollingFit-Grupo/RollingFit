@@ -1,0 +1,25 @@
+.fondo-section-error {
+    position: relative;
+    background: linear-gradient(266.26deg, rgba(255, 165, 0, 0.3) 0%, rgba(0, 191, 255, 0.3) 100%);
+    text-shadow: 0 0 3rem rgba(0, 0, 0, 35%);
+    isolation: isolate;
+  }
+  
+  .fondo-section-error::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: saturate(0%) brightness(100%);
+    background-image: url("../img/error404/animacionError404ps.gif");
+    background-size: cover;
+    background-position: top center;
+    opacity: 15%;
+    z-index: -1;
+  }
+  [data-bs-theme=dark] .fondo-section-error::before{
+    filter: saturate(0%) brightness(0%);
+    opacity: 5%;
+  }
