@@ -1,24 +1,30 @@
 .fade-in{
     opacity: 0;
-    transition: opacity 600ms ease-in-out, transform 800ms cubic-bezier(.5,-0.2,.50,1.2);
+    filter: blur(20px);
+    transition: opacity 600ms ease-in-out, transform 800ms cubic-bezier(.5,-0.2,.50,1.2),filter 850ms cubic-bezier(.5,-0.2,.50,1.2);;
     transform: translateY(20%);
-  }
+}
 .fade-in.mostrar{
     opacity: 1;
+    filter: blur(0px);
     transform: translateY(0);
   }
 .fade-izquierda{
     opacity: 0;
+    filter: blur(20px);
     transform: translateX(-30%);
 }
 .fade-derecha{
     opacity: 0;
+    filter: blur(20px);
     transform: translateX(30%);
 }
 .fade-izquierda, .fade-derecha{
-    transition: opacity 420ms ease-in-out , transform 800ms cubic-bezier(.5,-0.2,.50,1.2);
+    transition: opacity 420ms ease-in-out , transform 800ms cubic-bezier(.5,-0.2,.50,1.2), filter 400ms cubic-bezier(.5,-0.2,.50,1.2);
+    ;
 }
 .fade-izquierda.mostrar, .fade-derecha.mostrar{
     opacity: 1;
+    filter: blur(0px);
     transform: translateX(0);
 }
