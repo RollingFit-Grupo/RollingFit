@@ -12,11 +12,7 @@ let id = document.getElementById(`id`),
     precio = document.getElementById(`precio`),
     tiempo = document.getElementById(`tiempo`),
     categoria = document.getElementById(`categoria`),
-    descripcion = document.getElementById(`descripcion`),
-    caractCardio = document.getElementById(`cardiovascular`),
-    caractFuerza = document.getElementById(`fuerza`),
-    caractAerobico = document.getElementById(`aerobico`),
-    caractFlexibilidad = document.getElementById(`flexibilidad`); 
+    descripcion = document.getElementById(`descripcion`);
 
 let altaServicio = true;
 let listaServicios = JSON.parse(localStorage.getItem("listaServicios")) || [];
@@ -25,71 +21,24 @@ if (listaServicios.length > 0) {
     listaServicios = listaServicios.map((servicio) => new Servicio(
         servicio.id,
         servicio.servicioNombre,
+        servicio.profesor,
         servicio.imagen,
-        servicio.socialPro,
+        servicio.socialProf,
         servicio.precio,
         servicio.tiempo,
         servicio.categoria,
         servicio.descripcion,
-        servicio.caractCardio,
-        servicio.caractFuerza,
-        servicio.caractAerobico,
-        servicio.caractFlexibilidad,
-    ));
+    )
+    );
 }
+console.log(listaServicios);
 
 cargainicial();
 
 function cargainicial() {
     if (listaServicios.length > 0) {
-        listaServicios.map((servicio, posicion) => crearFila(servicio, posicion++));
+        listaServicios.map((servicio, posicion) => crearFila(servicio, posicion + 1));
     }
-}
-// Manejadores de eventos
-formServicio.addEventListener("submit", prepararFormServicio);
-btnCrearServicio.addEventListener("click", desplegarmodalServicio);
-
-// Funciones
-function desplegarmodalServicio() {
-    limpiarFormulario();
-    altaServicio = true;
-    modalServicio.show();
-}
-
-function prepararFormServicio() {
-    // Crear servicio
-    const servicioNuevo = new Servicio(
-        undefined,
-        servicioNombre.value,
-        imagen.value,
-        socialProf.value,
-        precio.value,
-        tiempo.value,
-        categoria.value,
-        descripcion.value,
-        caractCardio.value,
-        caractFuerza.value,
-        caractAerobico.value,
-        caractFlexibilidad.value,
-        calificacion.value
-    );
-
-    // Agregar el servicio en el arreglo de servicios
-    listaServicios.push(servicioNuevo);
-
-    // Guardar el array en el local storage
-    guardarEnLocalstorage();
-
-    // Dibujar la fila en la tabla
-    crearFila(servicioNuevo, listaServicios.length);
-    // Mostrar un mensaje
-    Swal.fire(
-        "Servicio creado",
-        "El Servicio nuevo fue creado exitosamente",
-        "success"
-    );
-
-    limpiarFormulario();
 }
 
 function crearFila(servicio, fila) {
@@ -112,6 +61,59 @@ function crearFila(servicio, fila) {
     </td>
 </tr>`;
 }
+// Manejadores de eventos
+formServicio.addEventListener("submit", prepararFormularioPelicula);
+btnCrearServicio.addEventListener("click", desplegarmodalServicio);
+
+// Funciones
+function desplegarmodalServicio() {
+    limpiarFormulario();
+    altaServicio = true;
+    modalServicio.show();
+}
+
+function prepararFormularioPelicula(e) {
+    e.preventDefault();
+    altaServicio=true
+    console.log("en el evento submit");
+    if (altaServicio) {
+        crearServicio();
+    } else {
+        
+    }
+}
+function crearServicio() {
+    // Crear servicio
+    console.log(`hola`);
+    const servicioNuevo = new Servicio(
+        undefined,
+        servicioNombre.value,
+        profesor.value,
+        imagen.value,
+        socialProf.value,
+        precio.value,
+        tiempo.value,
+        categoria.value,
+        descripcion.value
+    );
+    console.log(servicioNuevo);
+    // Agregar el servicio en el arreglo de servicios
+    listaServicios.push(servicioNuevo);
+    // Guardar el array en el local storage
+    guardarEnLocalstorage();
+    console.log(servicioNuevo);
+    // Dibujar la fila en la tabla
+    crearFila(servicioNuevo, listaServicios.length);
+    // Mostrar un mensaje
+    Swal.fire(
+        "Servicio creado",
+        "El Servicio nuevo fue creado exitosamente",
+        "success"
+    );
+
+    limpiarFormulario();
+}
+
 function guardarEnLocalstorage() {
     localStorage.setItem("listaServicios", JSON.stringify(listaServicios));
 }

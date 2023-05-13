@@ -99,7 +99,7 @@
               <th scope="col">Acciones</th>
             </tr>
           </thead>
-          <tbody class="tablaServicio">
+          <tbody id="tablaServicio">
             <tr>
               <th scope="row" class="text-center">Calistenia</th>
               <td class="tdImage">
@@ -164,9 +164,10 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title">Añadir Servicio</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button id="btnCrear" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <form class="modal-body" id="formServicio">
+          <div class="modal-body">
+          <form id="formServicio">
             <label for="id" class="form-label fw-semibold">ID: </label>
             <input id="id" type="text" placeholder="1234-ab56-78cd-efgh" disabled minlength="4" maxlength="100"
               class="form-control border border-1" />
@@ -196,13 +197,13 @@
               <div class="col-6">
                 <label for="precio" class="form-label fw-semibold">Precio ($):
                 </label>
-                <input id="precio" type="number" placeholder="Ej: 100" required minlength="2" maxlength="64"
+                <input id="precio" type="number"min="0" placeholder="Ej: 100" required minlength="2" maxlength="64"
                   class="form-control border border-1" />
               </div>
               <div class="col-6">
                 <label for="precio" class="form-label fw-semibold">Tiempo de Entrega(dias):
                 </label>
-                <select name="categoria" id="categoria" class="form-select border border-1" required>
+                <select name="categoria" id="tiempo" class="form-select border border-1" required>
                   <option value="">Seleccione:</option>
                   <option value="Plan de Entrenamiento">1 dia</option>
                   <option value="Plan de Nutricion para Volumen">2 dias</option>
@@ -210,24 +211,23 @@
                 </select>
               </div>
             </aside>
-            <label for="categoria" class="form-label fw-semibold">Categoria:
-            </label>
-            <select name="categoria" id="categoria" class="form-select border border-1" required>
+            <label for="categoria" class="form-label fw-semibold">Categoria:</label>
+            <select id="categoria" class="form-select border border-1" required>
               <option value="">Seleccione la categoria:</option>
               <option value="Plan de Entrenamiento">Plan de Entrenamiento</option>
               <option value="Plan de Nutricion para Volumen">Plan de Nutricion para Volumen</option>
               <option value="Plan de Nutricion para Definicion">Plan de Nutricion para Definicion</option>
             </select>
-            <label for="nroRevisiones" class="form-label fw-semibold mt-2">Revisiones del entrenador:</label>
-            <textarea id="descripcion" rows="4" placeholder="Ej. 2 revisiones por mes" minlength="5"
-              maxlength="512" required class="form-control border border-1 mb-3"></textarea>
+            <label for="revisiones" class="form-label fw-semibold mt-2">Revisiones del entrenador:</label>
+            <input id="revisiones" rows="4" placeholder="Ej. 2 revisiones por mes" min="0" max="5" type="number" required class="form-control border border-1 mb-3"></input>
             <label for="consulta" class="form-label fw-semibold mt-2">Descripcion:</label>
               <textarea id="descripcion" rows="4" placeholder="Escriba aqui la descripcion del servicio." minlength="8"
-                maxlength="512" required class="form-control border border-1 mb-3"></textarea>
+                maxlength="512" required class="form-control border border-1 mb-3"></textarea>                
               <button id="btnCrear" class="btn btn-outline-primary mt-3 " type="submit">
                 Enviar
               </button>
           </form>
+        </div>
         </div>
       </div>
     </section>
@@ -298,8 +298,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
     crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uuid@latest/dist/umd/uuidv4.min.js"></script>
   <script src="/js/Navbar.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+  <script src="../js/administracion.js" type="module"></script>
 </body>
 </body>
 
