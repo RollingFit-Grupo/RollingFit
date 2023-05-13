@@ -1,0 +1,30 @@
+body {
+  background-image: url("https://content.active.com/Assets/Active.com+Content+Site+Digital+Assets/Fitness/Articles/Twice+a+Day/man+working+out-carousel.jpg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+[data-bs-theme="dark"] .body-blur {
+  background: rgba(22, 27, 27, 0.7) !important; /* Keep the original background color for dark theme */
+  backdrop-filter: blur(10px) !important;
+}
+.position-sticky{
+    height: 100%;
+}
+.divProfesor div{
+    border: black 1px solid;
+}
+[data-bs-theme="light"] .navbar {
+  background-color: #f8f9fa; /* Set your light theme color here */
+}
+
+[data-bs-theme="dark"] .navbar {
+  background-color: #343a40; /* Set your dark theme color here */
+}
+
+.body-blur {
+  background: rgba(172, 172, 172, 0.7) !important;
+  backdrop-filter: blur(10px) !important;
+}
