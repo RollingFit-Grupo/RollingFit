@@ -8,8 +8,9 @@ export default class Servicio {
     #tiempo;
     #categoria;
     #descripcion;
+    #revision
 //    #calificacion;
-    constructor(id = uuidv4(), servicioNombre, profesor, imagen, socialProf, precio, tiempo, categoria, descripcion) {
+    constructor(id = uuidv4(), servicioNombre, profesor, imagen, socialProf, precio, tiempo, categoria, descripcion,revision) {
         this.#id = id;
         this.#servicioNombre = servicioNombre;
         this.#profesor = profesor;
@@ -19,7 +20,8 @@ export default class Servicio {
         this.#tiempo = tiempo;
         this.#categoria = categoria;
         this.#descripcion = descripcion;
-       // this.#calificacion = calificacion;
+        this.#revision = revision;
+
     }
     get id() {
         return this.#id;
@@ -55,6 +57,9 @@ export default class Servicio {
 
     get descripcion() {
         return this.#descripcion;
+    }
+    get revision() {
+        return this.#revision;
     }
 
 /*     getCalifcacion(){
@@ -96,6 +101,9 @@ export default class Servicio {
     set descripcion(descripcion) {
         this.#descripcion = descripcion;
     }
+    set revision(revision) {
+        this.#revision = revision;
+    }
 /*     setCalificacion(calificacion){
         this.#calificacion=calificacion;
     } */
@@ -109,7 +117,8 @@ export default class Servicio {
             precio: this.precio,
             tiempo: this.tiempo,
             categoria: this.categoria,
-            descripcion: this.descripcion
+            descripcion: this.descripcion,
+            revision: this.revision
         }
     }
 }

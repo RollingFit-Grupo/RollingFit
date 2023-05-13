@@ -12,7 +12,8 @@ let id = document.getElementById(`id`),
     precio = document.getElementById(`precio`),
     tiempo = document.getElementById(`tiempo`),
     categoria = document.getElementById(`categoria`),
-    descripcion = document.getElementById(`descripcion`);
+    descripcion = document.getElementById(`descripcion`),
+    revision= document.getElementById(`revisiones`);
     
 let altaServicio = true;
 let listaServicios = JSON.parse(localStorage.getItem("listaServicios")) || [];
@@ -28,6 +29,7 @@ if (listaServicios.length > 0) {
         servicio.tiempo,
         servicio.categoria,
         servicio.descripcion,
+        servicio.revision
     )
     );
 }
@@ -46,9 +48,9 @@ function crearFila(servicio, fila) {
     let tablaServicio = document.getElementById("tablaServicio");
     tablaServicio.innerHTML +=
     `<tr>
-    <th scope="row" class="text-center">${fila}</th>
-    <td class="tdImage">
-        ${servicio.imagen}
+    <th scope="row" class="text-center">${servicio.servicioNombre}</th>
+    <td class="tdImage"> 
+    <img src=" ${servicio.imagen} " class="adminImg" alt=" ${servicio.titulo}">
     </td>
     <td>${servicio.profesor}</td>
     <td>${servicio.categoria}</td>
@@ -94,7 +96,8 @@ function crearServicio() {
         precio.value,
         tiempo.value,
         categoria.value,
-        descripcion.value
+        descripcion.value,
+        revision.value
     );
     console.log(servicioNuevo);
     // Agregar el servicio en el arreglo de servicios
@@ -169,6 +172,7 @@ window.prepararFormularioServicio = (idServicio) => {
     tiempo.value = servicioEncontrado.tiempo;
     categoria.value = servicioEncontrado.categoria;
     descripcion.value = servicioEncontrado.descripcion;
+    revision.value = servicioEncontrado.revision;
     modalServicio.show();
     //cambiamos el valor de la variable altaServicio
     altaServicio = false;
@@ -189,14 +193,14 @@ function editarServicio(){
     listaServicios[posicionServicio].socialProf = socialProf.value;
     listaServicios[posicionServicio].tiempo = tiempo.value;
     listaServicios[posicionServicio].precio = precio.value;
-
+    listaServicios[posicionServicio].revision = revision.value;
     //3- actualizar el localstorage
     guardarEnLocalstorage()
     //4-actualizar la fila
     let tablaServicio = document.getElementById("tablaServicio");
     console.log(tablaServicio.children[posicionServicio].children[1])
     //  let celdaTitulo =tablaServicio.children[posicionServicio].children[1]
-    tablaServicio.children[posicionServicio].children[1].innerHTML = titulo.value
+    tablaServicio.children[posicionServicio].children[1].innerHTML = servicioNombre.value
     tablaServicio.children[posicionServicio].children[2].children[0].innerHTML = descripcion.value
     tablaServicio.children[posicionServicio].children[3].children[0].innerHTML = imagen.value
     tablaServicio.children[posicionServicio].children[4].innerHTML = precio.value
