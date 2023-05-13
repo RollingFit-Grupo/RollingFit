@@ -1,3 +1,4 @@
+/*Animaciones de Scroll*/
 const seccionesFade = document.querySelectorAll(".fade-in");
 const seccionesTranslateIzq = document.querySelectorAll(".fade-izquierda");
 const seccionesTranslateDer = document.querySelectorAll(".fade-derecha");
