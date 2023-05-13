@@ -21,39 +21,39 @@ export default class Servicio {
         this.#descripcion = descripcion;
        // this.#calificacion = calificacion;
     }
-    getId() {
+    get id() {
         return this.#id;
     }
 
-    getServicioNombre() {
+    get servicioNombre() {
         return this.#servicioNombre;
     }
 
-    getProfesor() {
+    get profesor() {
         return this.#profesor;
     }
 
-    getImagen() {
+    get imagen() {
         return this.#imagen;
     }
 
-    getSocialProf() {
+    get socialProf() {
         return this.#socialProf;
     }
 
-    getPrecio() {
+    get precio() {
         return this.#precio;
     }
 
-    getTiempo() {
+    get tiempo() {
         return this.#tiempo;
     }
 
-    getCategoria() {
+    get categoria() {
         return this.#categoria;
     }
 
-    getDescripcion() {
+    get descripcion() {
         return this.#descripcion;
     }
 
@@ -61,39 +61,39 @@ export default class Servicio {
         return this.#calificacion;
     } */
     // Setters
-    setId(id) {
+    set id(id) {
         this.#id = id;
     }
 
-    setServicioNombre(servicioNombre) {
+    set servicioNombre(servicioNombre) {
         this.#servicioNombre = servicioNombre;
     }
 
-    setProfesor(profesor) {
+    set profesor(profesor) {
         this.#profesor = profesor;
     }
 
-    setImagen(imagen) {
+    set imagen(imagen) {
         this.#imagen = imagen;
     }
 
-    setSocialProf(socialProf) {
+    set socialProf(socialProf) {
         this.#socialProf = socialProf;
     }
 
-    setPrecio(precio) {
+    set precio(precio) {
         this.#precio = precio;
     }
 
-    setTiempo(tiempo) {
+    set tiempo(tiempo) {
         this.#tiempo = tiempo;
     }
 
-    setCategoria(categoria) {
+    set categoria(categoria) {
         this.#categoria = categoria;
     }
 
-    setDescripcion(descripcion) {
+    set descripcion(descripcion) {
         this.#descripcion = descripcion;
     }
 /*     setCalificacion(calificacion){

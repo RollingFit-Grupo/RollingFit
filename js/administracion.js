@@ -1,7 +1,7 @@
 import Servicio from "./classDetalle.js";
 
 let formServicio = document.getElementById(`formServicio`);
-let modalServicio = document.getElementById(`modalEditar`);
+let modalServicio = new bootstrap.Modal(document.getElementById("modalEditar"));
 const btnCrearServicio = document.getElementById(`btnCrear`);
 
 let id = document.getElementById(`id`),
@@ -48,15 +48,15 @@ function crearFila(servicio, fila) {
     `<tr>
     <th scope="row" class="text-center">${fila}</th>
     <td class="tdImage">
-    ${servicio.imagen}
+        ${servicio.imagen}
     </td>
     <td>${servicio.profesor}</td>
     <td>${servicio.categoria}</td>
     <td><i class="bi bi-currency-dollar"></i>${servicio.precio}</td>
     <td><i class="bi bi-clock"></i>${servicio.tiempo}</td>
     <td class="">
-    <button class="btn btn-warning text-dark"onclick="prepararFormularioServicio()"><i class="bi bi-pencil-square"></i></button>
-    <button class="btn btn-danger" onclick="borrarServicio()"><i class="bi bi-x-square"></i></button>
+        <button class="btn btn-warning text-dark" onclick="prepararFormularioServicio('${servicio.id}')"><i class="bi bi-pencil-square"></i></button>
+        <button class="btn btn-danger" onclick="borrarServicio('${servicio.id}')"><i class="bi bi-x-square"></i></button>
     </td>
 </tr>`;
 }
@@ -122,7 +122,7 @@ function limpiarFormulario() {
     formServicio.reset();
 }
 
-window.borrarServicio = (id) => {
+window.borrarServicio = (idServicio) => {
     Swal.fire({
         title: "¿Esta seguro de borrar este servicio?",
         text: "No podrás recuperar la informacion luego de eliminar",
@@ -136,9 +136,9 @@ window.borrarServicio = (id) => {
         console.log(result);
         if (result.isConfirmed) {
             //id cuando borro
-            console.log(id);
+            console.log(idServicio);
             //1 - buscar del array a donde esta el elemento que tiene este id
-            let listaServicios = listaServicios.findIndex((servicio) => servicio.id === id);
+            let posicionServicio = listaServicios.findIndex((servicio) => servicio.id === idServicio);
             //2 - borrar el servicio del array (splice)
             listaServicios.splice(posicionServicio, 1);
             //3 - actualizar el localstorage
@@ -156,22 +156,19 @@ window.borrarServicio = (id) => {
         }
     });
 };
-
-window.prepararFormularioServicio = (id) => {
+window.prepararFormularioServicio = (idServicio) => {
     //tener los datos de la servicio y cargar en el formulario
-    const servicioEncontrado = listaServicios.find(
-        (servicio) => servicio.id === id
-    );
+    const servicioEncontrado = listaServicios.find((servicio) => servicio.id === idServicio);
     //mostrar la ventana modal
     id.value = servicioEncontrado.id;
     servicioNombre.value = servicioEncontrado.servicioNombre;
     profesor.value = servicioEncontrado.profesor;
-    socialProf.value = servicioEncontrado.socialProf;
     imagen.value = servicioEncontrado.imagen;
-    tiempo.value = servicioEncontrado.tiempo;
+    socialProf.value = servicioEncontrado.socialProf;
     precio.value = servicioEncontrado.precio;
-    descripcion.value = servicioEncontrado.descripcion;
+    tiempo.value = servicioEncontrado.tiempo;
     categoria.value = servicioEncontrado.categoria;
+    descripcion.value = servicioEncontrado.descripcion;
     modalServicio.show();
     //cambiamos el valor de la variable altaServicio
     altaServicio = false;
