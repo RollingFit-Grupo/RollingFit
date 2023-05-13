@@ -55,8 +55,8 @@ function crearFila(servicio, fila) {
     </td>
     <td>${servicio.profesor}</td>
     <td>${servicio.categoria}</td>
-    <td><i class="bi bi-currency-dollar"></i>${servicio.precio}</td>
-    <td><i class="bi bi-clock"></i> ${servicio.tiempo}</td>
+    <td><i class="bi bi-currency-dollar"> ${servicio.precio}</i></td>
+    <td><i class="bi bi-clock"> ${servicio.tiempo}</i></td>
     <td class="">
         <button class="btn btn-warning text-dark" onclick="prepararFormularioServicio('${servicio.id}')"><i class="bi bi-pencil-square"></i></button>
         <button class="btn btn-danger" onclick="borrarServicio('${servicio.id}')"><i class="bi bi-x-square"></i></button>
@@ -201,10 +201,12 @@ function editarServicio(){
     let tablaServicio = document.getElementById("tablaServicio");
     console.log(tablaServicio.children[posicionServicio].children[1])
     //  let celdaTitulo =tablaServicio.children[posicionServicio].children[1]
-    tablaServicio.children[posicionServicio].children[1].innerHTML = servicioNombre.value
-    tablaServicio.children[posicionServicio].children[2].children[0].innerHTML = descripcion.value
-    tablaServicio.children[posicionServicio].children[3].children[0].innerHTML = imagen.value
-    tablaServicio.children[posicionServicio].children[4].innerHTML = precio.value
+    tablaServicio.children[posicionServicio].children[0].innerHTML = servicioNombre.value
+    tablaServicio.children[posicionServicio].children[1].children[0].innerHTML = imagen.value
+    tablaServicio.children[posicionServicio].children[2].innerHTML = profesor.value
+    tablaServicio.children[posicionServicio].children[3].innerHTML = categoria.value
+    tablaServicio.children[posicionServicio].children[4].children[0].innerHTML = precio.value
+    tablaServicio.children[posicionServicio].children[5].children[0].innerHTML = tiempo.value
     //5-mostrar un cartel al usuario
     Swal.fire(
         "Servicio modificada",
