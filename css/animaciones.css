@@ -37,6 +37,9 @@
 .contenedorTextoAnimacion {
     overflow: hidden;
 }
+.contenedorTextoAnimacion >span {
+    white-space: ;
+}
 .slide-texto-fromBottom{
     display: block;
     animation: slideFromBottom 1000ms ease-in-out;
