@@ -51,7 +51,7 @@ function crearFila(servicio, fila) {
     `<tr>
     <th scope="row" class="text-center">${servicio.servicioNombre}</th>
     <td class="tdImage"> 
-    <img src=" ${servicio.imagen} " class="adminImg" alt=" ${servicio.titulo}">
+    <img src=" ${servicio.imagen} " class="adminImg" alt=" ${servicio.servicioNombre}">
     </td>
     <td>${servicio.profesor}</td>
     <td>${servicio.categoria}</td>
@@ -202,7 +202,7 @@ function editarServicio(){
     console.log(tablaServicio.children[posicionServicio].children[1])
     //  let celdaTitulo =tablaServicio.children[posicionServicio].children[1]
     tablaServicio.children[posicionServicio].children[0].innerHTML = servicioNombre.value
-    tablaServicio.children[posicionServicio].children[1].children[0].innerHTML = imagen.value
+    tablaServicio.children[posicionServicio].children[1].children[0].setAttribute("src", imagen.value);
     tablaServicio.children[posicionServicio].children[2].innerHTML = profesor.value
     tablaServicio.children[posicionServicio].children[3].innerHTML = categoria.value
     tablaServicio.children[posicionServicio].children[4].children[0].innerHTML = precio.value
