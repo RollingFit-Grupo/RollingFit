@@ -43,17 +43,18 @@ function cargainicial() {
 
 function crearFila(servicio, fila) {
     console.log(servicio);
+    console.log(servicio.titulo);
     let tablaServicio = document.getElementById("tablaServicio");
     tablaServicio.innerHTML +=
     `<tr>
-    <th scope="row" class="text-center">${fila}</th>
+    <th scope="row" class="text-center">${servicio.servicioNombre}</th>
     <td class="tdImage">
-        ${servicio.imagen}
+    <img src=" ${servicio.imagen}" class="adminImg" alt=" ${servicio.servicioNombre}">
     </td>
     <td>${servicio.profesor}</td>
     <td>${servicio.categoria}</td>
     <td><i class="bi bi-currency-dollar"></i>${servicio.precio}</td>
-    <td><i class="bi bi-clock"></i>${servicio.tiempo}</td>
+    <td><i class="bi bi-clock"></i> ${servicio.tiempo}</td>
     <td class="">
         <button class="btn btn-warning text-dark" onclick="prepararFormularioServicio('${servicio.id}')"><i class="bi bi-pencil-square"></i></button>
         <button class="btn btn-danger" onclick="borrarServicio('${servicio.id}')"><i class="bi bi-x-square"></i></button>
