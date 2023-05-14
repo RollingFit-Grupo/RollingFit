@@ -91,4 +91,32 @@ export function resumenValidacion(
   return resumen;
 }
 
-// helpers para validar los campos de los formularios de Registro y Acerca de Nosotros
+// helpers para validar los campos del formulario Acerca de Nosotros
+function validarEmail(email) {
+  const regexEmail =
+    / ^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$ /;
+  if (regexEmail.test(email)) {
+    console.log("el correo electrónico es válido");
+    return true;
+  } else {
+    console.log("el correo electrónico es inválido");
+    return false;
+  }
+}
+
+export function resumenValidacionFormAcarcaDeNosotros(nombre, email, consulta) {
+  let resumen = "";
+  if (!validarCantidadCaracteres(nombre, 2, 60)) {
+    resumen +=
+      "El <strong>nombre</strong> ingresado es INCORRECTO. Debe contener entre 2 y 60 caracteres.<br>";
+  }
+  if (!validarEmail(email, 2, 60)) {
+    resumen +=
+      "El <strong>correo electrónico</strong> ingresado es INCORRECTO. Debe contener entre 2 y 60 caracteres, @ y/o .com <br>";
+  }
+  if (!validarCantidadCaracteres(consulta, 5, 600)) {
+    resumen +=
+      "La <strong>consulta</strong> debe contener entre 5 y 600 caracteres.<br>";
+  }
+  return resumen;
+}
