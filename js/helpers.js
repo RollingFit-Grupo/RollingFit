@@ -49,4 +49,46 @@ function validarPrecio(precio) {
   return parseInt(precio) >= 2 && parseInt(precio) <= 64;
 }
 
+// Lógica export
+export function resumenValidacion(
+  servicio,
+  profesor,
+  descripcion,
+  avatarProfesor,
+  imagenProfesor,
+  categoria,
+  tiempo,
+  precio
+) {
+  let resumen = "";
+  if (!validarCantidadCaracteres(servicio, 3, 100)) {
+    resumen +=
+      "El <strong>servicio</strong> es INCORRECTO. Debe contener entre 3 y 100 caracteres.<br>";
+  }
+  if (!validarCantidadCaracteres(profesor, 4, 100)) {
+    resumen +=
+      "El <strong>profesor</strong> es INCORRECTO. Debe contener entre 4 y 100 caracteres.<br>";
+  }
+  if (!validarCantidadCaracteres(descripcion, 8, 512)) {
+    resumen +=
+      "La <strong>descripción</strong> es INCORRECTA. Debe contener entre 8 y 512 caracteres.<br>";
+  }
+  if (!validarCantidadCaracteres(avatarProfesor, imagenProfesor, 8, 256)) {
+    resumen +=
+      "La <strong>URL de imagen</strong> es INCORRECTA. Debe contener entre 8 y 256 caracteres además de una extensión .png, .jpg, o .gif <br>";
+  }
+  if (!validarTiempo(tiempo)) {
+    resumen +=
+      "El <strong>tiempo</strong> es INCORRECTO. Debe contener entre 2 y 64 minutos.<br>";
+  }
+  if (!validarPrecio(precio)) {
+    resumen +=
+      "El <strong>precio</strong> es INCORRECTO. Debe contener entre 2 y 64 caracteres.<br>";
+  }
+  if (!validarCategoria(categoria)) {
+    resumen += "Seleccione una categoria";
+  }
+  return resumen;
+}
+
 // helpers para validar los campos de los formularios de Registro y Acerca de Nosotros
