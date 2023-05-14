@@ -88,24 +88,7 @@ function loginUser() {
           showElement(userType);
           userType.innerHTML = "Administrador";
 
-          let myModalEl = document.getElementById("login-modal");
-          let myModal = bootstrap.Modal.getInstance(myModalEl); // Retorna una instancia del modal
-
-          myModal.hide();
-
-          myModalEl.classList.remove("show");
-          document.body.classList.remove("modal-open");
-
-          // Elimina el elemento del backdrop del DOM
-          var backdrop = document.querySelector(".modal-backdrop");
-          if (backdrop) {
-            backdrop.parentNode.removeChild(backdrop);
-            document.body.classList.remove("modal-open");
-            // Elimina el estilo de overflow
-            document.body.style.overflow = "";
-          }
-
-          console.log("llega hasta aqui");
+          closeModal("login-modal");
         }
       } else {
         alert("Usuario o password incorrecto");
@@ -115,5 +98,26 @@ function loginUser() {
     }
   } else {
     alert("Por favor ingresa un usuario valido!");
+  }
+}
+
+// Retorna una instancia del modal
+
+function closeModal(modalId) {
+  let myModalEl = document.getElementById(modalId);
+  let myModal = bootstrap.Modal.getInstance(myModalEl);
+
+  myModal.hide();
+
+  myModalEl.classList.remove("show");
+  document.body.classList.remove("modal-open");
+
+  // Elimina el elemento del backdrop del DOM
+  let backdrop = document.querySelector(".modal-backdrop");
+  if (backdrop) {
+    backdrop.parentNode.removeChild(backdrop);
+
+    // Elimina el estilo de overflow
+    document.body.style.overflow = "";
   }
 }
