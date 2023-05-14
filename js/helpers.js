@@ -22,4 +22,19 @@ function validarURLimagenes(avatarProfesor, imagenProfesor) {
   }
 }
 
+// Lógica para validar campo de opciones
+function validarCategoria(categoria) {
+  if (
+    categoria.legth > 0 &&
+    (categoria === "Calistenia" ||
+      categoria === "Gimnasio" ||
+      categoria === "Funcional" ||
+      categoria === "Spinning")
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 // helpers para validar los campos de los formularios de Registro y Acerca de Nosotros
