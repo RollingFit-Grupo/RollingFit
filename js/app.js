@@ -59,15 +59,41 @@ function showLoginForm() {
 }
 
 function registerAdminUser() {
-    // Creamos un objeto que es un usuario administrador
-    const adminUser = {
-      name: "Julieta Correa",
-      email: "mjulieta210@gmail.com",
-      password: "12345",
-      isAdmin: true,
-    };
-  
-    // guardamos el usuario en localStorage
-    localStorage.setItem("users", JSON.stringify([adminUser]));
+  // Creamos un objeto que es un usuario administrador
+  const adminUser = {
+    name: "Julieta Correa",
+    email: "mjulieta210@gmail.com",
+    password: "12345",
+    isAdmin: true,
+  };
+
+  // guardamos el usuario en localStorage
+  localStorage.setItem("users", JSON.stringify([adminUser]));
+}
+
+//Ingreso como usario//
+function loginUser() {
+  if (loginInputEmail.value && loginInputPassword.value) {
+    const raw = localStorage.getItem("users");
+    const localData = JSON.parse(raw);
+
+    const userFound = localData.find(
+      (user) => user.email === loginInputEmail.value
+    );
+
+    if (userFound) {
+      if (userFound.password === loginInputPassword.value) {
+        if (userFound.isAdmin === true) {
+          showElement(userType);
+          userType.innerHTML = "Administrador";
+        }
+      } else {
+        alert("Usuario o password incorrecto");
+      }
+    } else {
+      alert("Usuario o password incorrecto");
+    }
+  } else {
+    alert("Por favor ingresa un usuario valido!");
   }
-  
+}
