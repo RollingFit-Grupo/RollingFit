@@ -72,6 +72,7 @@ function registerAdminUser() {
 }
 
 //Ingreso como usario//
+
 function loginUser() {
   if (loginInputEmail.value && loginInputPassword.value) {
     const raw = localStorage.getItem("users");
@@ -97,3 +98,5 @@ function loginUser() {
     alert("Por favor ingresa un usuario valido!");
   }
 }
+
+//cerrar ventana modal//
