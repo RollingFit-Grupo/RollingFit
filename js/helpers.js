@@ -120,3 +120,30 @@ export function resumenValidacionFormAcarcaDeNosotros(nombre, email, consulta) {
   }
   return resumen;
 }
+
+// Lógica para validar el formulario de Registro
+
+function validarContrasenia(contrasenia) {
+  const regexContrasenia =
+    / ^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$/;
+  if (regexContrasenia.test(contrasenia)) {
+    console.log("la contraseña es válido");
+    return true;
+  } else {
+    console.log("la contraseña es inválida");
+    return false;
+  }
+}
+
+export function resumenValidacionRegistro(email, contrasenia) {
+  let resumen = "";
+  if (!validarEmail(email, 2, 60)) {
+    resumen +=
+      "El <strong>correo electrónico</strong> ingresado es INCORRECTO. Debe contener entre 2 y 60 caracteres, @ y/o .com <br>";
+  }
+  if (!validarContrasenia(contrasenia, 2, 60)) {
+    resumen +=
+      "La <strong>contraseña</strong> ingresada es INCORRECTA. Debe contener minúsculas,mayúsculas, dígitos y/o símbolos.<br>";
+  }
+  return resumen;
+}
