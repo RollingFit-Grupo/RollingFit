@@ -39,4 +39,9 @@ function validarCategoria(categoria) {
   }
 }
 
+// Lógica para validar campo Tiempo
+function validarTiempo(tiempo) {
+  return parseInt(tiempo) >= 2 && parseInt(tiempo) <= 64;
+}
+
 // helpers para validar los campos de los formularios de Registro y Acerca de Nosotros
