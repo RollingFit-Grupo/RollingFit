@@ -90,6 +90,38 @@
                       <input type="password" class="form-control" id="login-password" placeholder="********" required>
                     </div>
                   </form>
+                  
+                   <!-- Formulario register -->
+                <form class="form-register d-none" id="form-register">
+                  <div class="mb-3">
+                    <label for="name-label" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="register-name" placeholder="Pedro Rodriguez" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="email-label" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="register-email" placeholder="name@example.com" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="password-label" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="register-password" placeholder="********" required>
+                  </div>
+                </form>
+  
+              </div>
+              <div class="modal-footer d-flex justify-content-center">
+                <button id="login-button" type="submit" class="btn btn-primary w-100" onclick="loginUser()">Ingresar</button>
+                <button id="register-button" type="submit" class="btn btn-primary w-100 d-none">Registrarme</button>
+
+                <button id="show-register-button" type="button" class="btn btn-outline-secondary w-100" onclick="showRegisterForm()">No tengo cuenta</button>
+                <button id="show-login-button" type="button" class="btn btn-outline-secondary w-100 d-none" onclick="showLoginForm()">Ya tengo cuenta</button>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
+                  
   
                    
                 
