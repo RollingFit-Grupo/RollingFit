@@ -87,6 +87,12 @@ function loginUser() {
         if (userFound.isAdmin === true) {
           showElement(userType);
           userType.innerHTML = "Administrador";
+
+          let myModalEl = document.getElementById("login-modal");
+          let myModal = bootstrap.Modal.getInstance(myModalEl); // Retorna una instancia del modal
+
+          myModal.hide();
+          console.log("llega hasta aqui");
         }
       } else {
         alert("Usuario o password incorrecto");
@@ -98,5 +104,3 @@ function loginUser() {
     alert("Por favor ingresa un usuario valido!");
   }
 }
-
-//cerrar ventana modal//
