@@ -92,6 +92,19 @@ function loginUser() {
           let myModal = bootstrap.Modal.getInstance(myModalEl); // Retorna una instancia del modal
 
           myModal.hide();
+
+          myModalEl.classList.remove("show");
+          document.body.classList.remove("modal-open");
+
+          // Elimina el elemento del backdrop del DOM
+          var backdrop = document.querySelector(".modal-backdrop");
+          if (backdrop) {
+            backdrop.parentNode.removeChild(backdrop);
+            document.body.classList.remove("modal-open");
+            // Elimina el estilo de overflow
+            document.body.style.overflow = "";
+          }
+
           console.log("llega hasta aqui");
         }
       } else {
