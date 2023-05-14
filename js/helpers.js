@@ -10,4 +10,16 @@ function validarCantidadCaracteres(texto, min, max) {
   }
 }
 
+// Expresion Regular para validar url de imágenes
+function validarURLimagenes(avatarProfesor, imagenProfesor) {
+  const regexImagenURL = /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)/;
+  if (regexImagenURL.test(avatarProfesor, imagenProfesor)) {
+    console.log("la URL de la imagen es válida");
+    return true;
+  } else {
+    console.log("la URL de la imagen No es válida");
+    return false;
+  }
+}
+
 // helpers para validar los campos de los formularios de Registro y Acerca de Nosotros
