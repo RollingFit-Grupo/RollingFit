@@ -72,3 +72,19 @@ function cambiarClaseTexto() {
         TextoGrupo2.classList.replace("slide-texto-toBottom","slide-texto-fromTop")
     }
 }
+function animarTexto() {
+    //Espero 4 seg para que el usuario pueda leer el texto
+    setTimeout(() =>{
+        //Cambio la clase para que tenga el efecto de slide hacia arriba
+        cambiarClaseTexto()
+        //Cambio el texto una vez finalizado el efecto
+        setTimeout(() => {
+            cambiarTexto();
+            cambiarClaseTexto()
+        }, 1000);
+    },3000)  
+};
+//Espera a que se carge la página para ejecutar la animación
+window.addEventListener('load', ()=>{
+    setInterval(animarTexto,5000);
+});
