@@ -57,3 +57,17 @@ function showLoginForm() {
 
   changeModalTitle("Iniciar sesion");
 }
+
+function registerAdminUser() {
+    // Creamos un objeto que es un usuario administrador
+    const adminUser = {
+      name: "Julieta Correa",
+      email: "mjulieta210@gmail.com",
+      password: "12345",
+      isAdmin: true,
+    };
+  
+    // guardamos el usuario en localStorage
+    localStorage.setItem("users", JSON.stringify([adminUser]));
+  }
+  
