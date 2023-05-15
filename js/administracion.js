@@ -62,7 +62,7 @@ function crearFila(servicio, fila) {
     <td><i class="bi bi-clock"> ${servicio.tiempo}</i></td>
     <td class="">
         <button class="btn btn-warning text-dark" onclick="prepararFormularioServicio('${servicio.id}')"><i class="bi bi-pencil-square"></i></button>
-        <button class="btn btn-danger" onclick="borrarServicio('${servicio.id}')"><i class="bi bi-x-square"></i></button>
+        <button class="btn btn-danger" onclick="borrarServicio('${servicio.id}','${servicio.servicioNombre}')"><i class="bi bi-x-square"></i></button>
     </td>
 </tr>`;
 }
@@ -130,18 +130,21 @@ function limpiarFormulario() {
   formServicio.reset();
 }
 //Borrar Servicio
-window.borrarServicio = (idServicio) => { 
+window.borrarServicio = (idServicio,nombreServicio) => { 
     console.log(idServicio);
+    console.log(nombreServicio);
     const modalBorrar = Swal.mixin({
         customClass: {
           confirmButton: 'btn btn-success mx-2',
-          cancelButton: 'btn btn-danger mx-2'
+          cancelButton: 'btn btn-danger mx-2',
         },
+        background: "var(--bs-body-bg)",
+        iconColor: "#FFC97B",
         buttonsStyling: false
       })
       modalBorrar.fire({
-      title: "¿Esta seguro de borrar este servicio?",
-      text: "No podrás recuperar la informacion luego de eliminar",
+      title: `¿Esta seguro de borrar el servicio "${nombreServicio}"?`,
+      text: "No podrás recuperar los datos luego de eliminar el servicio",
       icon: "warning",
       showCancelButton: true,
       confirmButtonText: "Borrar Servicio",
