@@ -116,6 +116,7 @@ function crearServicio() {
     );
 
     limpiarFormulario();
+    modalServicio.hide();
 }
 
 function guardarEnLocalstorage() {
