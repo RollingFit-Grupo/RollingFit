@@ -28,6 +28,7 @@ let palabraGrupo2Actual = TextoGrupo2.textContent = palabrasGrupo2[posicionGrupo
 
 /*Funciones de Animaciones de Scroll*/
 function fadeIn(entradas, mostrarEnScroll) {
+    console.log(entradas)
     entradas.forEach(entrada => {
         if (!entrada.isIntersecting) {
             return
