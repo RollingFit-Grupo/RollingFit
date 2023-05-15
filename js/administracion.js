@@ -62,7 +62,7 @@ function crearFila(servicio, fila) {
     <td><i class="bi bi-clock"> ${servicio.tiempo}</i></td>
     <td class="">
         <button class="btn btn-warning text-dark" onclick="prepararFormularioServicio('${servicio.id}')"><i class="bi bi-pencil-square"></i></button>
-        <button class="btn btn-danger" onclick="borrarServicio('${servicio.id}')"><i class="bi bi-x-square"></i></button>
+        <button class="btn btn-danger" onclick="borrarServicio('${servicio.id}','${servicio.servicioNombre}')"><i class="bi bi-x-square"></i></button>
     </td>
 </tr>`;
 }
@@ -119,6 +119,7 @@ function crearServicio() {
   );
 
   limpiarFormulario();
+  //Faltaria cerrar la ventana modal de la creación del servicio
 }
 
 function guardarEnLocalstorage() {
@@ -128,43 +129,66 @@ function guardarEnLocalstorage() {
 function limpiarFormulario() {
   formServicio.reset();
 }
-
-window.borrarServicio = (idServicio) => {
-  Swal.fire({
-    title: "¿Esta seguro de borrar este servicio?",
-    text: "No podrás recuperar la informacion luego de eliminar",
-    icon: "warning",
-    showCancelButton: true,
-    confirmButtonColor: "#3085d6",
-    cancelButtonColor: "#d33",
-    confirmButtonText: "Borrar",
-    cancelButtonText: "Cancelar",
-  }).then((result) => {
-    console.log(result);
-    if (result.isConfirmed) {
-      //id cuando borro
-      console.log(idServicio);
-      //1 - buscar del array a donde esta el elemento que tiene este id
-      let posicionServicio = listaServicios.findIndex(
-        (servicio) => servicio.id === idServicio
-      );
-      //2 - borrar el servicio del array (splice)
-      listaServicios.splice(posicionServicio, 1);
-      //3 - actualizar el localstorage
-      guardarEnLocalstorage();
-      //4- borrar la fila de la tabla
-      let tablaServicio = document.getElementById("tablaServicio");
-      tablaServicio.removeChild(tablaServicio.children[posicionServicio]);
-      //5 - mostrar un cartel al usuario
-      Swal.fire(
-        "Servicio eliminada",
-        "El servicio seleccionado fue eliminado correctamente",
-        "success"
-      );
-      //todo: paso 6 actualizar los numeros de las filas de la tabla.
-    }
-  });
-};
+//Borrar Servicio
+window.borrarServicio = (idServicio,nombreServicio) => { 
+    console.log(idServicio);
+    console.log(nombreServicio);
+    const modalBorrar = Swal.mixin({
+        customClass: {
+            title:"text-warning-emphasis",
+            confirmButton: 'btn btn-success mx-2',
+            cancelButton: 'btn btn-danger mx-2',
+            closeButton: 'text-danger',
+        },
+        buttonsStyling: false,
+        color:"var(--bs-warning-text-emphasis)",
+        background: "var(--bs-warning-bg-subtle)",
+        icon: "warning",
+        iconColor:"var(--bs-warning-text-emphasis)",
+        showCloseButton: true,
+        showCancelButton: true,
+        reverseButtons: true
+      })
+    const modalSuccess= Swal.mixin({
+        customClass: {
+            title:"text-success-emphasis",
+            closeButton: 'text-danger',
+            confirmButton: 'btn btn-success mx-2'
+        },
+        buttonsStyling: false,
+        showCloseButton: true,
+        color:"var(--bs-success-text-emphasis)",
+        background: "var(--bs-success-bg-subtle)",
+        iconColor:"var(--bs-success-text-emphasis)",
+      })
+      modalBorrar.fire({
+      title: `¿Esta seguro de borrar el servicio "${nombreServicio}"?`,
+      text: "No podrás recuperar los datos luego de eliminar el servicio",
+      confirmButtonText: "Borrar Servicio",
+      cancelButtonText: "Cancelar",
+      reverseButtons: true
+    }).then((result) => { 
+      if (result.isConfirmed) {
+        //1 - buscar del array a donde esta el elemento que tiene este id
+        let posicionServicio = listaServicios.findIndex(
+          (servicio) => servicio.id === idServicio
+        );
+        //2 - Borrar el servicio del array (splice)
+        listaServicios.splice(posicionServicio, 1);
+        //3 - Actualizar el localstorage
+        guardarEnLocalstorage();
+        //4- Borrar la fila de la tabla
+        let tablaServicio = document.getElementById("tablaServicio");
+        tablaServicio.removeChild(tablaServicio.children[posicionServicio]);
+        //5 - Mostrar un mensaje de borrado de que se realizó la acción
+        modalSuccess.fire(
+          "Servicio eliminado.",
+          "El servicio fué eliminado correctamente.",
+          "success"
+        );
+      }
+    }) ;
+  };
 window.prepararFormularioServicio = (idServicio) => {
   //tener los datos de la servicio y cargar en el formulario
   const servicioEncontrado = listaServicios.find(
