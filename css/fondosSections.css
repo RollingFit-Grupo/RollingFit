@@ -1,3 +1,6 @@
+main{
+    overflow-x: hidden;
+}
 .fondo-section-principal {
     position: relative;
     background: linear-gradient(266.26deg, rgba(255, 165, 0, 0.3) 0%, rgba(0, 191, 255, 0.3) 100%);
