@@ -73,7 +73,7 @@ export function resumenValidacion(
     resumen +=
       "La <strong>descripción</strong> es INCORRECTA. Debe contener entre 8 y 512 caracteres.<br>";
   }
-  if (!validarCantidadCaracteres(avatarProfesor, imagenProfesor, 8, 256)) {
+  if (!validarURLimagenes(avatarProfesor, imagenProfesor, 8, 256)) {
     resumen +=
       "La <strong>URL de imagen</strong> es INCORRECTA. Debe contener entre 8 y 256 caracteres además de una extensión .png, .jpg, o .gif <br>";
   }
