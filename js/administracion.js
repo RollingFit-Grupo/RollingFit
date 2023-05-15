@@ -137,15 +137,17 @@ window.borrarServicio = (idServicio,nombreServicio) => {
         customClass: {
           confirmButton: 'btn btn-success mx-2',
           cancelButton: 'btn btn-danger mx-2',
+          cancelButton: 'btn btn-danger mx-2'
         },
-        background: "var(--bs-body-bg)",
-        iconColor: "#FFC97B",
+        background: "var(--bs-warning-bg-subtle)",
+        iconColor: "var(--bs-warning-text-emphasis)",
         buttonsStyling: false
       })
       modalBorrar.fire({
       title: `¿Esta seguro de borrar el servicio "${nombreServicio}"?`,
       text: "No podrás recuperar los datos luego de eliminar el servicio",
       icon: "warning",
+      showCloseButton: true,
       showCancelButton: true,
       confirmButtonText: "Borrar Servicio",
       cancelButtonText: "Cancelar",

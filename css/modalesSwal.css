@@ -1,0 +1,12 @@
+.swal2-container.swal2-backdrop-show{
+    backdrop-filter: blur(5px);
+}
+.swal2-title, [data-bs-theme=dark] .swal2-title{
+    color: var(--bs-warning-text-emphasis);
+}
+.swal2-html-container, [data-bs-theme=dark] .swal2-html-container {
+    color: var(--bs-warning-text-emphasis);
+}
+.swal2-close, [data-bs-theme=dark] .swal2-close {
+    color: var(--bs-danger-text-emphasis);
+}
