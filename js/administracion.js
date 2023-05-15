@@ -135,26 +135,40 @@ window.borrarServicio = (idServicio,nombreServicio) => {
     console.log(nombreServicio);
     const modalBorrar = Swal.mixin({
         customClass: {
-          confirmButton: 'btn btn-success mx-2',
-          cancelButton: 'btn btn-danger mx-2',
-          cancelButton: 'btn btn-danger mx-2'
+            title:"text-warning-emphasis",
+            confirmButton: 'btn btn-success mx-2',
+            cancelButton: 'btn btn-danger mx-2',
+            closeButton: 'text-danger',
         },
+        buttonsStyling: false,
+        color:"var(--bs-warning-text-emphasis)",
         background: "var(--bs-warning-bg-subtle)",
-        iconColor: "var(--bs-warning-text-emphasis)",
-        buttonsStyling: false
+        icon: "warning",
+        iconColor:"var(--bs-warning-text-emphasis)",
+        showCloseButton: true,
+        showCancelButton: true,
+        reverseButtons: true
+      })
+    const modalSuccess= Swal.mixin({
+        customClass: {
+            title:"text-success-emphasis",
+            closeButton: 'text-danger',
+            confirmButton: 'btn btn-success mx-2'
+        },
+        buttonsStyling: false,
+        showCloseButton: true,
+        color:"var(--bs-success-text-emphasis)",
+        background: "var(--bs-success-bg-subtle)",
+        iconColor:"var(--bs-success-text-emphasis)",
       })
       modalBorrar.fire({
       title: `¿Esta seguro de borrar el servicio "${nombreServicio}"?`,
       text: "No podrás recuperar los datos luego de eliminar el servicio",
-      icon: "warning",
-      showCloseButton: true,
-      showCancelButton: true,
       confirmButtonText: "Borrar Servicio",
       cancelButtonText: "Cancelar",
       reverseButtons: true
     }).then((result) => { 
       if (result.isConfirmed) {
-        //id cuando borro
         //1 - buscar del array a donde esta el elemento que tiene este id
         let posicionServicio = listaServicios.findIndex(
           (servicio) => servicio.id === idServicio
@@ -167,7 +181,7 @@ window.borrarServicio = (idServicio,nombreServicio) => {
         let tablaServicio = document.getElementById("tablaServicio");
         tablaServicio.removeChild(tablaServicio.children[posicionServicio]);
         //5 - Mostrar un mensaje de borrado de que se realizó la acción
-        modalBorrar.fire(
+        modalSuccess.fire(
           "Servicio eliminado.",
           "El servicio fué eliminado correctamente.",
           "success"
