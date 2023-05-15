@@ -1,3 +1,18 @@
+.card-valores{
+    transition: color 250ms ease-in-out;
+}
+.card-valores:hover{
+    transform: translateY(-0.25rem)!important;
+    transition: color 800ms cubic-bezier(.2, 1, .2, 1),transform 800ms cubic-bezier(.2, 1, .2, 1);
+}
+.card-valores > .card-header> i{
+    transition: color 250ms ease-in-out;
+}
+.card-valores:hover > .card-header> i{
+    color: var(--bs-primary)!important;
+    transition: color 800ms cubic-bezier(.2, 1, .2, 1)
+}
+
 .card-integrante {
     overflow: hidden;
     background: none;

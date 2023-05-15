@@ -1,14 +1,18 @@
+main{
+    overflow-x: hidden;
+}
 .fondo-section-principal {
     position: relative;
     background: linear-gradient(266.26deg, rgba(255, 165, 0, 0.3) 0%, rgba(0, 191, 255, 0.3) 100%);
     text-shadow: 0 0 3rem rgba(0, 0, 0, 35%);
     isolation: isolate;
+    overflow: hidden;
 }
 
 .fondo-section-principal::before {
     content: "";
     position: absolute;
-    top: 0;
+    top:0%;
     left: 0;
     width: 100%;
     height: 100%;
