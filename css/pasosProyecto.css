@@ -5,7 +5,7 @@
     height: calc(100% + 3rem);
     left: calc(1.25rem/2 - var(--bs-border-width)*3);
     position: absolute;
-    width: calc(var(--bs-border-width)*3);
+    width: calc(var(--bs-border-width)*5);
     z-index: -50;
 }
 
@@ -61,7 +61,7 @@
     }
 
     .contenedor-proceso>div:nth-child(even)>.contenedor-paso::before {
-        left: calc(var(--bs-border-width));
+        left: calc(var(--bs-border-width)+1rem);
     }
 
     .contenedor-proceso>div:nth-child(odd)>.contenedor-paso::before {

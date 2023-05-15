@@ -17,12 +17,10 @@ const mostrarEnScroll = new IntersectionObserver(fadeIn, opcionesFade);
 
 /*Funciones de Animaciones de Scroll*/
 function fadeIn(entradas, mostrarEnScroll) {
-    console.log(entradas)
     entradas.forEach(entrada => {
         if (!entrada.isIntersecting) {
             return
         }else{
-            console.log(entrada.target)
             entrada.target.classList.add("mostrar")
             mostrarEnScroll.unobserve(entrada.target);
         }
