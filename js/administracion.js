@@ -117,9 +117,9 @@ function crearServicio() {
     "El Servicio nuevo fue creado exitosamente",
     "success"
   );
-
-  limpiarFormulario();
-  //Faltaria cerrar la ventana modal de la creación del servicio
+  
+    limpiarFormulario();
+    modalServicio.hide();
 }
 
 function guardarEnLocalstorage() {
