@@ -22,6 +22,7 @@ let id = document.getElementById(`id`),
 let altaServicio = true;
 let listaServicios = JSON.parse(localStorage.getItem("listaServicios")) || [];
 
+
 if (listaServicios.length > 0) {
   listaServicios = listaServicios.map(
     (servicio) =>
@@ -52,9 +53,12 @@ function cargainicial() {
     listaServicios.map((servicio, posicion) =>
       crearFila(servicio, posicion + 1)
     );
+  }else{
+    localStorage.setItem("bandera",false);
   }
 }
 function cargarEstatico(){
+  if (JSON.parse(localStorage.getItem("bandera"))==false){
   const servicioNuevo = new Servicio(
     undefined,
     `Rutina de Spinning`,
@@ -159,6 +163,8 @@ function cargarEstatico(){
   listaServicios.push(servicioNuevo4);
   guardarEnLocalstorage();
   crearFila(servicioNuevo4, listaServicios.length);
+  localStorage.setItem("bandera", true);
+}
 }
 function crearFila(servicio, fila) {
   console.log(servicio);
