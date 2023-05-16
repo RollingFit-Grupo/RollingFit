@@ -57,14 +57,14 @@ function crearFila(servicio, fila) {
   let tablaServicio = document.getElementById("tablaServicio");
   tablaServicio.innerHTML += `<tr>
     <th scope="row" class="text-center">${servicio.servicioNombre}</th>
-    <td class="tdImage"> 
-    <img src=" ${servicio.imagen} " class="adminImg" alt=" ${servicio.servicioNombre}">
+    <td class="tdImage text-center"> 
+    <img src=" ${servicio.imagen} " class="adminImg text-center" alt=" ${servicio.servicioNombre}">
     </td>
-    <td>${servicio.profesor}</td>
-    <td>${servicio.categoria}</td>
-    <td><i class="bi bi-currency-dollar"> ${servicio.precio}</i></td>
-    <td><i class="bi bi-clock"> ${servicio.tiempo}dia(s)</i></td>
-    <td class="">
+    <td class="text-center">${servicio.profesor}</td>
+    <td class="text-center">${servicio.categoria}</td>
+    <td class="text-center"><i class="bi bi-currency-dollar"> ${servicio.precio}</i></td>
+    <td class="text-center"><i class="bi bi-clock"> ${servicio.tiempo}dia(s)</i></td>
+    <td class="text-center">
         <button class="btn btn-warning text-dark" onclick="prepararFormularioServicio('${servicio.id}')"><i class="bi bi-pencil-square"></i></button>
         <button class="btn btn-danger" onclick="borrarServicio('${servicio.id}','${servicio.servicioNombre}')"><i class="bi bi-x-square"></i></button>
     </td>
