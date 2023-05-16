@@ -51,11 +51,26 @@ main {
     letter-spacing: 0.52em;
 
 }
+#video{
+    min-height: 100vh;
+    background: 
+        linear-gradient(180deg,
+            transparent 0%,
+            rgba(0, 191, 255, 0.3) 30%,
+            rgba(255, 165, 0, 0.3) 60%,
+            transparent 100%);
+}
 /* Fondo de video */
-video {
-    max-width: 100%;
-    filter: blur(6px);
-    filter: contrast(20%);
+#video > video {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    min-width: 100%;
+    min-height: 100%;
+    filter: blur(2px) grayscale(60%) contrast(70%) brightness(60%);
+}
+#video > img {
+    filter: blur(2px) grayscale(60%) contrast(70%) brightness(60%);
 }
 .letrero{
     font-family: 'Black Ops One', cursive;
@@ -77,29 +92,25 @@ video {
     color: #cd9932cb;
 }
 /* Responsive seccion */
-@media (min-width:280px) and (max-width:640px) {
-    #video {
-        display: none;
+@media (min-width: 576px){
+    #video{
+         min-height: 50vh;
     }
-
-    #imagen {
-        display: block;
+/* 
+    #tituloFraseGrande{
+        font-size: 20px;
     }
-
-#tituloFraseGrande{
-    font-size: 20px;
+    .letrero{
+        font-size: 30px;
+    }
+    /* #testimonioTitulo{
+        font-size: 15px;
+    } */
+    .cardstestimonios{
+        height: 630px;
+    }
 }
-.letrero{
-    font-size: 30px;
-}
-/* #testimonioTitulo{
-    font-size: 15px;
-} */
-.cardstestimonios{
-    height: 630px;
-}
-}
-@media (max-width:850px) {
+/* @media (max-width:850px) {
     .textoCard {
         color: blue;
         flex-direction: column;
@@ -113,4 +124,4 @@ video {
     #textoFraseChico{
         display: block;
     }
-}
+} */
