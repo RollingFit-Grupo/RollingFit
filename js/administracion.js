@@ -79,7 +79,11 @@ function cargarEstatico(){
     3,
     [],
     0,
-    null
+    `Como profesora de spinning, siento una verdadera pasión por lo que hago. Cada vez que entro al estudio de spinning, estoy llena de energía y emoción, lista para brindar una clase inspiradora y motivadora a mis alumnos.
+    Mantenerme en forma y saludable es una prioridad para mí. Además de enseñar spinning, también practico otros tipos de ejercicio regularmente y cuido mi alimentación para mantener un estilo de vida equilibrado. Me encanta sentir la fuerza y la vitalidad que proviene de llevar un estilo de vida saludable, y eso se refleja en mi enseñanza en el estudio.
+    Los fines de semana, aprovecho para salir y divertirme con mis amigas. Una de mis actividades favoritas es ir a bailar a discotecas. Me encanta la música, el ritmo y la energía de la pista de baile. Bailar es una forma divertida de ejercitarse y, al mismo tiempo, liberar el estrés acumulado durante la semana. Disfruto de esos momentos de alegría y camaradería con mis amigas, creando recuerdos inolvidables mientras nos divertimos en la pista.
+    Aunque algunas personas pueden pensar que la vida nocturna no es compatible con un estilo de vida saludable, para mí, es una forma de equilibrar mi pasión por el fitness con momentos de diversión y desconexión. Bailar es una expresión de libertad y me permite disfrutar de la música y el movimiento de una manera única.
+    En resumen, como profesora de spinning, tengo una pasión ardiente por mi trabajo y una dedicación incansable a mantenerme en forma y saludable. Los fines de semana, aprovecho para bailar en discotecas y disfrutar de momentos de diversión con mis amigas. Es una combinación perfecta que me permite mantener el equilibrio y la felicidad en mi vida.`
   );
   listaServicios.push(servicioNuevo);
   guardarEnLocalstorage();
