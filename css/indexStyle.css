@@ -91,6 +91,10 @@ main {
 .stars{
     color: #cd9932cb;
 }
+
+#carruselIndexTestimonios > button.carousel-control-prev, #carruselIndexTestimonios > button.carousel-control-next{
+    width: 5%;
+}
 /* Responsive seccion */
 @media (min-width: 576px){
     #video{
