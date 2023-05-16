@@ -1,116 +1,133 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Black+Ops+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Black+Ops+One&display=swap");
 
 main {
-    min-height: 100vh;
-    flex-grow: 1;
-    flex-direction: column;
+  min-height: 100vh;
+  flex-grow: 1;
+  flex-direction: column;
 }
 .fondo-containerFrase {
-    position: relative;
-    /* Establece la posición del contenedor en "relative" para que el pseudo-elemento se posicione correctamente */
+  position: relative;
+  /* Establece la posición del contenedor en "relative" para que el pseudo-elemento se posicione correctamente */
 }
 
 .fondo-containerFrase::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    background-image: url(/img/pexels-binyamin-mellish-116077.jpg);
-    filter: contrast(60%);
-    /* Aplica un desenfoque a la imagen */
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50%;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-image: url(/img/pexels-binyamin-mellish-116077.jpg);
+  filter: contrast(60%);
+  /* Aplica un desenfoque a la imagen */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
 }
 /* Fondo de imagen */
 .fondo-container {
-    position: relative;
-    /* Establece la posición del contenedor en "relative" para que el pseudo-elemento se posicione correctamente */
+  position: relative;
+  /* Establece la posición del contenedor en "relative" para que el pseudo-elemento se posicione correctamente */
 }
 
 .fondo-container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    background-image: url(/img/cierrese-arriba-muchas-pesas-gimnasia-metal-estante-gimnasio-deporte.jpg);
-    filter: contrast(60%);
-    /* Aplica un desenfoque a la imagen */
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50%;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-image: url(/img/cierrese-arriba-muchas-pesas-gimnasia-metal-estante-gimnasio-deporte.jpg);
+  filter: contrast(60%);
+  /* Aplica un desenfoque a la imagen */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
 }
-#tituloFrase{
-    font-family: "Syne", sans-serif;
-    letter-spacing: 0.52em;
-
+#tituloFrase {
+  font-family: "Syne", sans-serif;
+  letter-spacing: 0.52em;
 }
 /* Fondo de video */
 video {
-    max-width: 100%;
-    filter: blur(6px);
-    filter: contrast(20%);
+  max-width: 100%;
+  filter: blur(6px);
+  filter: contrast(20%);
 }
-.letrero{
-    font-family: 'Black Ops One', cursive;
-    font-size: 60px;
+.letrero {
+  font-family: "Black Ops One", cursive;
+  font-size: 60px;
 }
-.texto-naranja{
-	text-shadow: 0 0 5px #FFA500,
-	0 0 10px #FFA500,
-	0 0 15px #FFA500,
-	0 0 25px #FFA500
+.texto-naranja {
+  text-shadow: 0 0 5px #ffa500, 0 0 10px #ffa500, 0 0 15px #ffa500,
+    0 0 25px #ffa500;
 }
-.texto-azul{
-	text-shadow: 0 0 5px #00bfff85,
-	0 0 10px #00bfffd0,
-	0 0 15px #00bfffd0,
-	0 0 25px #00bfffd0
+.texto-azul {
+  text-shadow: 0 0 5px #00bfff85, 0 0 10px #00bfffd0, 0 0 15px #00bfffd0,
+    0 0 25px #00bfffd0;
 }
-.stars{
-    color: #cd9932cb;
+.stars {
+  color: #cd9932cb;
 }
 /* Responsive seccion */
-@media (min-width:280px) and (max-width:640px) {
-    #video {
-        display: none;
-    }
+@media (min-width: 280px) and (max-width: 640px) {
+  #video {
+    display: none;
+  }
 
-    #imagen {
-        display: block;
-    }
+  #imagen {
+    display: block;
+  }
 
-#tituloFraseGrande{
+  #tituloFraseGrande {
     font-size: 20px;
-}
-.letrero{
+  }
+  .letrero {
     font-size: 30px;
-}
-/* #testimonioTitulo{
+  }
+  #testimonioTitulo {
     font-size: 15px;
-} */
-.cardstestimonios{
+  }
+  .cardstestimonios {
     height: 630px;
+  }
 }
+
+.custom-paragraph {
+  --max-lines: 10;
+  --line-height: 1.4;
+  display: flex;
+
+  max-height: calc(var(--max-lines) * 1em * var(--line-height));
+  line-height: var(--line-height);
+
+  overflow: hidden;
+  position: relative;
 }
-@media (max-width:850px) {
-    .textoCard {
-        color: blue;
-        flex-direction: column;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    #textoFraseGrande{
-        display: none;
-    }
-    #textoFraseChico{
-        display: block;
-    }
+.custom-paragraph::before{
+    content: "";
+    position:absolute;
+    height: calc(1em * var(--line-height));
+    width: 100%;
+    bottom: 0;
+    pointer-events: none;
+    background: linear-gradient(to bottom, transparent, white);
+}
+
+@media (max-width: 850px) {
+  .textoCard {
+    color: blue;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #textoFraseGrande {
+    display: none;
+  }
+  #textoFraseChico {
+    display: block;
+  }
 }
