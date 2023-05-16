@@ -137,7 +137,6 @@ function mostrarMensaje(resumen){
 function guardarEnLocalstorage() {
   localStorage.setItem("listaServicios", JSON.stringify(listaServicios));
 }
-
 function limpiarFormulario() {
   formServicio.reset();
 }
@@ -230,6 +229,9 @@ function editarServicio() {
   );
   console.log(posicionServicio);
   //todo: validar los datos
+  const resumen = resumenValidacion(servicioNombre.value,profesor.value,descripcion.value,socialProf.value,categoria.value,tiempo.value,precio.value,imagen.value,revision.value);
+  mostrarMensaje(resumen);
+  if(resumen.length===0){
   //2- editar los valores de la servicio dentroe del array
   listaServicios[posicionServicio].servicioNombre = servicioNombre.value;
   listaServicios[posicionServicio].imagen = imagen.value;
@@ -269,4 +271,5 @@ function editarServicio() {
   //6- limpiar el formulario y cerrar el modal
   limpiarFormulario();
   modalServicio.hide();
+  }
 }
