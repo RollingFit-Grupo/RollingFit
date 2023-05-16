@@ -105,7 +105,10 @@ function cargarEstatico(){
     3,
     [],
     0,
-    null
+    `Como profesor de pesas en el gimnasio, me enfoco completamente en mi trabajo y en brindar la mejor experiencia de entrenamiento a mis alumnos. Durante la semana, mi enfoque principal es ayudar a las personas a alcanzar sus objetivos físicos y promover un estilo de vida saludable.
+    Fuera del gimnasio, disfruto de mi tiempo libre sumergiéndome en el mundo de los videojuegos y el anime. Me encanta explorar nuevos mundos virtuales, participar en desafíos emocionantes y sumergirme en historias épicas a través de mis juegos favoritos. Además, disfruto de la animación japonesa y me emociono con las tramas y los personajes cautivadores que ofrece el anime.
+    A diferencia de muchos, no suelo salir los fines de semana. Prefiero quedarme en casa y dedicar mi tiempo a mis aficiones digitales. Para mí, los videojuegos y el anime son una forma de desconectar del mundo real y sumergirme en un universo lleno de emociones y diversión.
+    Aunque algunos pueden considerar que mi elección de pasar los fines de semana en casa es solitaria, encuentro una gran satisfacción en la compañía virtual que encuentro en mis pasatiempos. Los videojuegos y el anime me brindan una forma de entretenimiento inmersiva y estimulante, y me ayudan a recargar energías para enfrentar la próxima semana de entrenamiento en el gimnasio.`
   );
   listaServicios.push(servicioNuevo2);
   guardarEnLocalstorage();
@@ -132,7 +135,10 @@ function cargarEstatico(){
     5,
     [],
     0,
-    null
+    `Como profesor de pesas en el gimnasio, me siento realmente afortunado de poder dedicarme a lo que me apasiona. Cada día, entro al gimnasio con una sonrisa en mi rostro, listo para inspirar y motivar a mis alumnos a alcanzar sus metas físicas.Disfruto enormemente ayudando a las personas a descubrir su fuerza y superar sus límites. 
+    Mi objetivo principal es asegurarme de que todos los que entrenan conmigo se sientan seguros y confiados mientras se esfuerzan por mejorar su condición física.
+    Además de mi trabajo en el gimnasio, también tengo una pasión por la naturaleza y la aventura. Los fines de semana, cuando tengo tiempo libre, me alejo de las pesas y salgo a escalar montañas. La sensación de desafiar mis habilidades físicas y mentales mientras disfruto de impresionantes paisajes naturales es indescriptible.
+    Esta combinación de vida saludable, pasión por el fitness y amor por la naturaleza me permite equilibrar mi carrera como profesor de pesas y mis actividades al aire libre. Me llena de energía y me ayuda a mantenerme motivado y comprometido tanto en mi vida profesional como personal.`
   );
   listaServicios.push(servicioNuevo3);
   guardarEnLocalstorage();
@@ -158,12 +164,12 @@ function cargarEstatico(){
     5,
     [],
     0,
-    null
+    
   );
   listaServicios.push(servicioNuevo4);
   guardarEnLocalstorage();
   crearFila(servicioNuevo4, listaServicios.length);
-  localStorage.setItem("bandera", true);
+  localStorage.setItem("bandera", true );
 }
 }
 function crearFila(servicio, fila) {
