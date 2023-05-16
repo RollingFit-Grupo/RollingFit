@@ -168,7 +168,10 @@ function cargarEstatico(){
     5,
     [],
     0,
-    
+    `Como profesora de gimnasia aeróbica, mi trabajo me llena de alegría y satisfacción. Disfruto cada clase, animando a mis alumnos a moverse, sudar y divertirse mientras trabajan en su condición física. Mi pasión por la actividad física y el bienestar se refleja en mi dedicación y en la energía que transmito a mis alumnos.
+    Aunque amo mi trabajo, los fines de semana los reservo para pasar tiempo de calidad con mi familia. Valorando los lazos familiares y las relaciones cercanas, encuentro gran felicidad en compartir momentos especiales con mis seres queridos. Ya sea disfrutando de una comida en casa, organizando actividades al aire libre o simplemente relajándonos juntos, esos momentos son preciosos para mí.
+    En mis tiempos libres, tengo una pasión por la lectura. Los libros de novelas son mi refugio y una forma de desconectar del mundo exterior. Me encanta sumergirme en historias cautivadoras, explorar nuevos mundos y conocer personajes fascinantes. La lectura me brinda una oportunidad de expansión mental, de relajación y de enriquecimiento personal.
+    En definitiva, como profesora de gimnasia aeróbica, encuentro equilibrio en mi vida al dedicar los fines de semana a mi familia, valorando los momentos compartidos y cultivando conexiones cercanas. Y en mis tiempos libres, disfruto perdiéndome en las páginas de una novela, permitiéndome explorar diferentes mundos y sumergirme en historias fascinantes.`
   );
   listaServicios.push(servicioNuevo4);
   guardarEnLocalstorage();
