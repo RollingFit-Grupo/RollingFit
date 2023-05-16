@@ -118,58 +118,64 @@
               <label for="id" class="form-label fw-semibold">ID: </label>
               <input id="id" type="text" placeholder="1234-ab56-78cd-efgh" disabled minlength="4" maxlength="100"
                 class="form-control border border-1" />
-              <aside class="row">
-                <div class="col-md-6 my-2">
+              <aside class="row mt-2">
+                <div class="col-md-6 ">
                   <label for="servicio" class="form-label fw-semibold">Servicio:
                   </label>
                   <input id="servicio" type="text" placeholder="Ej: Plan de nutricion para Volumen" required minlength="3" maxlength="100"
                     class="form-control border border-1" />
                 </div>
-                <div class="col-md-6 my-2">
-                  <label for="profesor" class="form-label fw-semibold">Profesor:
-                  </label>
-                  <input id="profesor" type="text" placeholder="Ej: Rubén Estigarribia" required minlength="4"
-                    maxlength="100" class="form-control border border-1" />
+                <div class="col-md-6 ">
+                  <label for="categoria" class="form-label fw-semibold mt-2">Categoria:</label>
+                  <select id="categoria" class="form-select border border-1" required>
+                    <option value="">Seleccione:</option>
+                    <option >Calistenia</option>
+                    <option >Levantamiento de pesas</option>
+                    <option >Crossfit</option>
+                    <option >Gimnasia Aerobica</option>
+                    <option >Spinning</option>
+                  </select>
                 </div>
               </aside>
               <label for="imagen" class="form-label fw-semibold">Imagen ilustrativa:
               </label>
               <input id="imagen" type="text" placeholder="Inserte el link de la imagen" required minlength="8"
                 maxlength="256" class="form-control border border-1" />
-              <label for="imagen" class="form-label fw-semibold my-2">Avatar de Profesor:
+                <aside class="row mt-2">
+                  <div class="col-6">
+                    <label for="precio" class="form-label fw-semibold">Precio ($):
+                    </label>
+                    <input id="precio" type="number" min="0" placeholder="Ej: 100" required minlength="2" maxlength="64"
+                      class="form-control border border-1" />
+                  </div>
+                  <div class="col-6">
+                    <label for="tiempo" class="form-label fw-semibold">Tiempo de Entrega(dias):
+                    </label>
+                    <select name="tiempo" id="tiempo" class="form-select border border-1" required>
+                      <option value="">Seleccione:</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                    </select>
+                  </div>
+                </aside>              
+              <label for="profesor" class="form-label fw-semibold mt-2">Profesional:
+              </label>
+              <input id="profesor" type="text" placeholder="Ej: Rubén Estigarribia" required minlength="4"
+                maxlength="100" class="form-control border border-1" />
+              <label for="imagen" class="form-label fw-semibold my-2">Avatar de Profesional:
               </label>
               <input id="profesorImg" type="text" placeholder="Inserte el link de la imagen" required minlength="8"
                 maxlength="256" class="form-control border border-1" />
-              <aside class="row mt-2">
-                <div class="col-6">
-                  <label for="precio" class="form-label fw-semibold">Precio ($):
-                  </label>
-                  <input id="precio" type="number" min="0" placeholder="Ej: 100" required minlength="2" maxlength="64"
-                    class="form-control border border-1" />
-                </div>
-                <div class="col-6">
-                  <label for="tiempo" class="form-label fw-semibold">Tiempo de Entrega(dias):
-                  </label>
-                  <select name="tiempo" id="tiempo" class="form-select border border-1" required>
-                    <option value="">Seleccione:</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                  </select>
-                </div>
-              </aside>
-              <label for="categoria" class="form-label fw-semibold mt-2">Categoria:</label>
-              <select id="categoria" class="form-select border border-1" required>
-                <option value="">Seleccione la categoria:</option>
-                <option >Calistenia</option>
-                <option >Levantamiento de pesas</option>
-                <option >Crossfit</option>
-                <option >Gimnasia Aerobica</option>
-                <option >Spinning</option>
-              </select>
               <label for="revisiones" class="form-label fw-semibold mt-2">Revisiones del entrenador:</label>
-              <input id="revisiones" rows="4" placeholder="Ej: 2 revisiones por mes" min="0" max="5" type="number"
-                required class="form-control border border-1 mb-3"></input>
+              <select name="tiempo" id="revisiones" class="form-select border border-1" required>
+                <option value="">Seleccione la cantidad de veces por mes:</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
               <label for="consulta" class="form-label fw-semibold mt-2">Descripcion del Servicio:</label>
               <textarea id="descripcion" rows="4" placeholder="Escriba aqui la descripcion del servicio." minlength="8"
                 maxlength="512" required class="form-control border border-1 mb-3"></textarea>
