@@ -1,0 +1,13 @@
+body.swal2-shown > [aria-hidden="true"] {
+    transition: 0.1s filter;
+    filter: blur(10px);
+}
+[data-bs-theme="dark"] body > div > div > div.swal2-icon.swal2-success.swal2-icon-show > div.swal2-success-circular-line-left{
+    background-color: var(--bs-success-bg-subtle);
+}
+[data-bs-theme="dark"] body > div > div > div.swal2-icon.swal2-success.swal2-icon-show > div.swal2-success-fix{
+    background-color: var(--bs-success-bg-subtle);
+}
+[data-bs-theme="dark"] body > div > div > div.swal2-icon.swal2-success.swal2-icon-show > div.swal2-success-circular-line-right{
+    background-color: var(--bs-success-bg-subtle);
+}
