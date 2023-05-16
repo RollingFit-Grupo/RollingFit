@@ -13,9 +13,11 @@ let id = document.getElementById(`id`),
   socialProf = document.getElementById(`profesorImg`),
   precio = document.getElementById(`precio`),
   tiempo = document.getElementById(`tiempo`),
+  revision = document.getElementById(`revisiones`),
   categoria = document.getElementById(`categoria`),
   descripcion = document.getElementById(`descripcion`),
-  revision = document.getElementById(`revisiones`);
+  descripcionProfesional= document.getElementById(`descripcionProfesional`);
+
 
 let altaServicio = true;
 let listaServicios = JSON.parse(localStorage.getItem("listaServicios")) || [];
@@ -35,7 +37,8 @@ if (listaServicios.length > 0) {
         servicio.descripcion,
         servicio.revision,
         servicio.resenia,
-        servicio.calificacion
+        servicio.calificacion,
+        servicio.descripcionProfesional
       )
   );
 }
@@ -71,7 +74,8 @@ function cargarEstatico(){
     Es importante tener en cuenta que la estructura y los elementos específicos de una rutina de spinning pueden variar según el instructor y el nivel de los participantes. Sin embargo, en general, una rutina de spinning está diseñada para ofrecer un entrenamiento cardiovascular intenso, mejorar la resistencia, quemar calorías y fortalecer los músculos de las piernas.`,
     3,
     [],
-    0
+    0,
+    null
   );
   listaServicios.push(servicioNuevo);
   guardarEnLocalstorage();
@@ -197,7 +201,7 @@ function prepararFormularioServicio(e) {
 }
 function crearServicio() {
   //AQUI VAN LAS VALIDACIONES
-  const resumen = resumenValidacion(servicioNombre.value,profesor.value,descripcion.value,socialProf.value,categoria.value,tiempo.value,precio.value,imagen.value,revision.value);
+  const resumen = resumenValidacion(servicioNombre.value,profesor.value,socialProf.value,categoria.value,tiempo.value,precio.value,imagen.value,revision.value,descripcionProfesional.value);
   mostrarMensaje(resumen);
   console.log(resumen);
   if(resumen.length === 0){
@@ -215,7 +219,8 @@ function crearServicio() {
     descripcion.value,
     revision.value,
     [],
-    0
+    0,
+    null
   );
   console.log(servicioNuevo);
   // Agregar el servicio en el arreglo de servicios
@@ -325,6 +330,7 @@ window.prepararFormularioServicio = (idServicio) => {
   categoria.value = servicioEncontrado.categoria;
   descripcion.value = servicioEncontrado.descripcion;
   revision.value = servicioEncontrado.revision;
+  descripcionProfesional.value=servicioEncontrado.descripcionProfesional;
   modalServicio.show();
   //cambiamos el valor de la variable altaServicio
   altaServicio = false;
@@ -351,6 +357,7 @@ function editarServicio() {
   listaServicios[posicionServicio].tiempo = tiempo.value;
   listaServicios[posicionServicio].precio = precio.value;
   listaServicios[posicionServicio].revision = revision.value;
+  listaServicios[posicionServicio].descripcionProfesional=descripcionProfesional.value;
   //3- actualizar el localstorage
   guardarEnLocalstorage();
   //4-actualizar la fila

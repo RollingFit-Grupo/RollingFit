@@ -24,20 +24,6 @@ function validarURLimagenes(avatarProfesor) {
   }
 }
 
-// Lógica para validar campo de opciones
-function validarCategoria(categoria) {
-  if (
-    categoria.length > 0 &&
-    (categoria === "Calistenia" ||
-      categoria === "Gimnasio" ||
-      categoria === "Funcional" ||
-      categoria === "Spinning")
-  ) {
-    return true;
-  } else {
-    return false;
-  }
-}
 
 // Lógica para validar campo Tiempo
 function validarTiempo(tiempo) {
@@ -56,35 +42,35 @@ function validarPrecio(precio) {
 }
 
 // Lógica export
-export function resumenValidacion(servicio,profesor,descripcion,avatarProfesor,categoria,tiempo,precio,imagen,revision) {
+export function resumenValidacion(servicio,profesor,descripcion,avatarProfesor,tiempo,precio,imagen,revision,descripcionProf) {
   let resumen = "";
 
   if (!validarCantidadCaracteres(servicio, 3, 40)) {
-    resumen += `El <strong>servicio</strong> es INCORRECTO. Debe contener entre 3 y 40 caracteres.<br>`;
+    resumen += `El <strong>servicio</strong> Debe contener entre 3 y 40 caracteres.<br>`;
   }
   if (!validarCantidadCaracteres(profesor, 4, 16)) {
-    resumen += `El nombre de<strong>profesor</strong> es INCORRECTO. Debe contener entre 4 y 16 caracteres.<br>`;
+    resumen += `El nombre de<strong>profesor</strong> Debe contener entre 4 y 16 caracteres.<br>`;
   }
   if (!validarCantidadCaracteres(descripcion, 8, 512)) {
-    resumen += `La <strong>descripción</strong> es INCORRECTA. Debe contener entre 8 y 512 caracteres.<br>`;
+    resumen += `La <strong>descripción</strong> Debe contener entre 8 y 512 caracteres.<br>`;
   }
   if (!validarURLimagenes(avatarProfesor)) {
     resumen += `La <strong>URL de imagen de Avatar</strong> es INCORRECTA. Los formatos admitidos son .png, .jpg, o .gif <br>`;
   }
   if (!validarTiempo(tiempo)) {
-    resumen += `El <strong>tiempo</strong> es INCORRECTO. Debe contener entre 2 y 64 minutos.<br>`;
+    resumen += `El <strong>tiempo</strong> Debe contener entre 2 y 64 minutos.<br>`;
   }
   if (!validarPrecio(precio)) {
     resumen += "El <strong>precio</strong> es INCORRECTO.";
-  }
-  if (!validarCategoria(categoria)) {
-    resumen += `Debe seleccionar una categoria`;
   }
   if (!validarURLimagenes(imagen)) {
     resumen += `La <strong> URL</strong> de la imagen de Servicio es incorrecta`;
   }
   if (!validarTiempo(revision)) {
     resumen += `El numero de  <strong> Revisiones </strong> es incorrecto`;
+  }
+  if(!validarCantidadCaracteres(descripcionProf,20,300)){
+    resumen +=`La <strong>Descripción del Profesional</strong> Debe contener entre 20 y 300 caracteres.<br>`
   }
   return resumen;
 }

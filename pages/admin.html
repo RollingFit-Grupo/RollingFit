@@ -170,9 +170,12 @@
               <label for="revisiones" class="form-label fw-semibold mt-2">Revisiones del entrenador:</label>
               <input id="revisiones" rows="4" placeholder="Ej: 2 revisiones por mes" min="0" max="5" type="number"
                 required class="form-control border border-1 mb-3"></input>
-              <label for="consulta" class="form-label fw-semibold mt-2">Descripcion:</label>
+              <label for="consulta" class="form-label fw-semibold mt-2">Descripcion del Servicio:</label>
               <textarea id="descripcion" rows="4" placeholder="Escriba aqui la descripcion del servicio." minlength="8"
                 maxlength="512" required class="form-control border border-1 mb-3"></textarea>
+                <label for="descripcionProfesional" class="form-label fw-semibold mt-2">Descripcion del Profesional:</label>
+                <textarea id="descripcionProfesional" rows="4" placeholder="Escriba aqui la descripcion del profesional." minlength="8"
+                  maxlength="300" required class="form-control border border-1 mb-3"></textarea>
               <div class="alert alert-danger mt-3 d-none" role="alert" id="alertaModal">
               </div>
               <button class="btn btn-outline-primary mt-3 " type="submit" id="btnCrear">
