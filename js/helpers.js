@@ -55,7 +55,7 @@ export function resumenValidacion(servicio,profesor,descripcion,avatarProfesor,t
     resumen += `La <strong>descripción</strong> Debe contener entre 8 y 512 caracteres.<br>`;
   }
   if (!validarURLimagenes(avatarProfesor)) {
-    resumen += `La <strong>URL de imagen de Avatar</strong> es INCORRECTA. Los formatos admitidos son .png, .jpg, o .gif <br>`;
+    resumen +=`La <strong>URL de imagen de Avatar</strong> es INCORRECTA. Los formatos admitidos son .png, .jpg, o .gif <br>`;
   }
   if (!validarTiempo(tiempo)) {
     resumen += `El <strong>tiempo</strong> Debe contener entre 2 y 64 minutos.<br>`;

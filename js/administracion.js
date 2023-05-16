@@ -220,7 +220,7 @@ function prepararFormularioServicio(e) {
 }
 function crearServicio() {
   //AQUI VAN LAS VALIDACIONES
-  const resumen = resumenValidacion(servicioNombre.value,profesor.value,socialProf.value,categoria.value,tiempo.value,precio.value,imagen.value,revision.value,descripcionProfesional.value);
+  const resumen = resumenValidacion(servicioNombre.value,profesor.value,descripcion.value,socialProf.value,tiempo.value,precio.value,imagen.value,revision.value,descripcionProfesional.value);
   mostrarMensaje(resumen);
   console.log(resumen);
   if(resumen.length === 0){
@@ -239,7 +239,7 @@ function crearServicio() {
     revision.value,
     [],
     0,
-    null
+    descripcionProfesional.value
   );
   console.log(servicioNuevo);
   // Agregar el servicio en el arreglo de servicios
@@ -363,7 +363,7 @@ function editarServicio() {
   );
   console.log(posicionServicio);
   //todo: validar los datos
-  const resumen = resumenValidacion(servicioNombre.value,profesor.value,descripcion.value,socialProf.value,categoria.value,tiempo.value,precio.value,imagen.value,revision.value);
+  const resumen = resumenValidacion(servicioNombre.value,profesor.value,descripcion.value,socialProf.value,tiempo.value,precio.value,imagen.value,revision.value,descripcionProfesional.value);
   mostrarMensaje(resumen);
   if(resumen.length===0){
   //2- editar los valores de la servicio dentroe del array
