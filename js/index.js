@@ -31,11 +31,20 @@ function crearColumna(servicio) {
         <!--TODO: Puntaje de reseñas-->
 
         <!---#######################-->
-        <a href="#" class="btn btn-primary border rounded-pill">Ver Detalle</a>
+        <a href="#" class="btn btn-primary border rounded-pill" onclick="navegarPaginaDetalle('${servicio.id}')">Ver Detalle</a>
       </div>
     </div>
   </div>`;
   }
+
+
+function navegarPaginaDetalle(id){
+  console.log('##########');
+  console.log(id);
+  console.log(window.location.origin+'/pages/detalle.html?id='+id)
+  window.location.href = window.location.origin+'/pages/detalle.html?id='+id;
+}
+
 
 /* POR IMPLEMENTAR*/
 
