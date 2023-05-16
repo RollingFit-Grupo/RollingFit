@@ -115,9 +115,38 @@
       </header>
       <div class="container" id="seccionDetalle">
         <!-- Detalle Sección -->
-        <p class="text-wrap"></p>
         
       </div>
+      <section>
+        <article class="container">
+          <h3 class="fw-bold">Dejanos tu reseña</h3>
+          <form action="" class="row m-3">
+            <div class="col-md-6 col-lg-4 mb-3">
+              <div class="input-group h-100 w-100">
+                <span class="input-group-text p-3 align-items-center">
+                  <i class="bi bi-chat-right-text text-secondary h3"></i>
+                </span>
+                <textarea
+                  class="form-control"
+                  aria-label="With textarea"
+                  id="TextAreaComentario"
+                  placeholder="Reseña Aqui (maximo 150 caracteres)"
+                  minlength="5"
+                  maxlength="150"
+                ></textarea>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="alert d-none alert-danger mt-3" role="alert" id="alerta"></div>
+              <button type="submit" class="btn btn-primary mb-3">Comentar</button>
+            </div>
+          </form>
+        </article>
+        <section class="container">
+          <h3 class="text-light">Comentarios</h3>
+          <ul id="comentarios"></ul>
+        </section>
+      </section>
       <footer class="container-fluid">
         <div class="row p-4 bg-dark text-white">
           <div class="col-xs-12 col-md-6 col-lg-3 text-center">
