@@ -42,6 +42,7 @@ if (listaServicios.length > 0) {
 console.log(listaServicios);
 
 cargainicial();
+cargarEstatico();
 
 function cargainicial() {
   if (listaServicios.length > 0) {
@@ -50,7 +51,83 @@ function cargainicial() {
     );
   }
 }
-
+function cargarEstatico(){
+  const servicioNuevo = new Servicio(
+    undefined,
+    `Rutina de Spinning`,
+    `Belinda Martinez`,
+    `https://media.istockphoto.com/id/485255296/es/foto/ciclismo-bajo-techo.jpg?s=612x612&w=0&k=20&c=fJxB7iK5FaaFI25wMguhiTEgxmuoMUqrjJMoDSU9G8g=`,
+    `https://media.istockphoto.com/id/947268424/es/foto/fuerte-atractiva-atl%C3%A9tica-joven-hacer-ejercicio-en-gimnasio.jpg?s=612x612&w=0&k=20&c=L0Qqr21ECLq6IjNN3DgfXCbA1Rl2JESKA_qTFH4aO34=`,
+    2200,
+    0,
+    `Spinning`,
+    `Una rutina de spinning es una actividad de entrenamiento en bicicleta estática que se realiza en grupo, guiada por un instructor. Esta disciplina combina música enérgica, cambios de ritmo y resistencia ajustable para ofrecer un entrenamiento cardiovascular completo y desafiante.Una rutina de spinning típica incluiría los siguientes elementos:<br>
+    Calentamiento: Comienza con una fase de calentamiento para preparar el cuerpo para el ejercicio. Incluye movimientos suaves en la bicicleta para elevar la temperatura corporal y activar los músculos principales.<br>
+    Resistencia y cambios de ritmo: Durante la rutina, el instructor guiará a los participantes a través de diferentes niveles de resistencia en la bicicleta. Estos cambios de resistencia se combinan con variaciones en la velocidad y el ritmo de pedaleo, como subidas simuladas, sprints y intervalos.<br>
+    Posiciones y técnicas: Durante la clase, se utilizan diferentes posiciones en la bicicleta para trabajar diferentes grupos musculares y lograr un entrenamiento más completo. Algunas posiciones comunes incluyen sentado, de pie con las manos en el manillar, de pie con las manos en la posición de carrera, entre otras.    
+    Sprints y intervalos de alta intensidad: Se incorporan períodos cortos de sprints de alta velocidad o intervalos de alta intensidad para aumentar la frecuencia cardíaca y mejorar la resistencia cardiovascular.<br>    
+    Trabajo de resistencia y fuerza: Además de los sprints y los cambios de ritmo, la rutina de spinning puede incluir segmentos dedicados al trabajo de resistencia y fuerza. Esto puede implicar aumentar la resistencia en la bicicleta y mantener una velocidad constante durante un período de tiempo determinado para fortalecer las piernas y los músculos principales.<br>
+    Enfriamiento y estiramientos: Al finalizar la rutina de spinning, se dedica tiempo a un enfriamiento gradual, que incluye pedalear suavemente con resistencia baja para permitir que el cuerpo se recupere. También se realizan ejercicios de estiramiento para ayudar a reducir la tensión muscular y mejorar la flexibilidad.
+    Es importante tener en cuenta que la estructura y los elementos específicos de una rutina de spinning pueden variar según el instructor y el nivel de los participantes. Sin embargo, en general, una rutina de spinning está diseñada para ofrecer un entrenamiento cardiovascular intenso, mejorar la resistencia, quemar calorías y fortalecer los músculos de las piernas.`,
+    3,
+    [],
+    0
+  );
+  listaServicios.push(servicioNuevo);
+  guardarEnLocalstorage();
+  crearFila(servicioNuevo, listaServicios.length);
+  const servicioNuevo2 = new Servicio(
+    undefined,
+    `Rutina de pesas para Volumen`,
+    `Mariano Espeche`,
+    `https://media.istockphoto.com/id/1419030438/es/foto/culturista-masculino-musculoso-haciendo-ejercicio-en-el-gimnasio.jpg?s=612x612&w=0&k=20&c=h6UJO0BgcaZWjr1wt8LWjo7tVnTLBCUUJ098iDa3YXE=`,
+    `https://media.istockphoto.com/id/489643985/es/foto/de-gimnasio.jpg?s=612x612&w=0&k=20&c=y4db-qXjoYlS6fd5NSTHkVw3fzEjVkBrezmFKPdcEt0=`,
+    3000,
+    2,
+    "Levantamiento de pesas",
+    `Una rutina de pesas para volumen es un programa de entrenamiento diseñado para promover el crecimiento y aumento de masa muscular. El objetivo principal de esta rutina es estimular el cuerpo para que desarrolle mayor tamaño y fuerza en los músculos.
+    Una rutina de pesas para volumen generalmente incluye los siguientes aspectos:<br>
+    Ejercicios compuestos: Se enfoca en ejercicios que trabajan varios grupos musculares a la vez, como sentadillas, peso muerto, press de banca, press militar, remo con barra, entre otros. Estos ejercicios son fundamentales para estimular el crecimiento muscular en todo el cuerpo.<br>
+    Series y repeticiones: Se realizan series de 8 a 12 repeticiones por ejercicio. Este rango de repeticiones se considera óptimo para promover el crecimiento muscular. Se busca trabajar con cargas pesadas que permitan alcanzar el fallo muscular en las últimas repeticiones de cada serie.<br>
+    Descanso entre series: Se establece un tiempo de descanso de aproximadamente 1 a 2 minutos entre cada serie. Esto permite la recuperación parcial de los músculos y la preparación para la siguiente serie.<br>
+    Volumen de entrenamiento: Se realiza un volumen de entrenamiento moderado a alto, lo cual implica realizar varias series y ejercicios en cada sesión. Se busca estimular los músculos de manera intensa y suficiente para desencadenar adaptaciones y crecimiento muscular.<br>
+    Progresión de carga: Se busca incrementar gradualmente la carga utilizada en los ejercicios a medida que el cuerpo se adapta y se vuelve más fuerte. Esta progresión de carga es esencial para continuar estimulando el crecimiento muscular a lo largo del tiempo.<br>
+    Nutrición adecuada: Junto con el entrenamiento, es importante mantener una alimentación adecuada que proporcione los nutrientes necesarios para la reparación y crecimiento muscular. Una dieta rica en proteínas, carbohidratos y grasas saludables es fundamental para apoyar los procesos de construcción muscular.<br>
+    Es importante tener en cuenta que una rutina de pesas para volumen debe adaptarse a las capacidades individuales y preferencias de cada persona. Además, se recomienda contar con la supervisión de un profesional del fitness para asegurar una correcta ejecución de los ejercicios y evitar lesiones.`,
+    3,
+    [],
+    0
+  );
+  listaServicios.push(servicioNuevo2);
+  guardarEnLocalstorage();
+  crearFila(servicioNuevo2, listaServicios.length);
+  const servicioNuevo3 = new Servicio(
+    undefined,
+    `Rutina de pesas para Definicion`,
+    `Lautaro Diaz`,
+    `https://media.istockphoto.com/id/1010065324/es/foto/deportista-con-pista-para-correr-de-brezo.jpg?s=612x612&w=0&k=20&c=n2tflS7G6zxhZutW4im0sMxGXKSt3Dg-N479cuXlfp0=`,
+    `https://media.istockphoto.com/id/486809310/es/foto/hombre-haciendo-extensi%C3%B3n-de-piernas-en-el-gimnasio.jpg?s=612x612&w=0&k=20&c=U8hquZ3jwlFxMdjVB43KguR-4z82MQCy7ZqZITL1UWc=`,
+    4500,
+    3,
+    "Levantamiento de pesas",
+    `Una rutina de pesas para definición es un programa de entrenamiento diseñado para reducir el porcentaje de grasa corporal y resaltar la musculatura, buscando obtener un aspecto más tonificado y definido. El objetivo principal de esta rutina es mantener la masa muscular mientras se quema grasa.
+    Una rutina de pesas para definición generalmente incluye los siguientes aspectos:<br>    
+    Ejercicios compuestos y aislados: Se combinan ejercicios compuestos, que involucran varios grupos musculares, con ejercicios aislados que se centran en grupos musculares específicos. Esto permite trabajar todo el cuerpo de manera equilibrada y asegurarse de trabajar cada músculo de manera adecuada.<br>    
+    Series y repeticiones: Se realizan series de 10 a 15 repeticiones por ejercicio. Este rango de repeticiones se considera óptimo para promover la definición muscular y aumentar la resistencia muscular. Se busca trabajar con cargas moderadas que permitan completar las repeticiones con buena técnica y control.<br>    
+    Descanso entre series: Se establece un tiempo de descanso breve, de aproximadamente 30 a 60 segundos, entre cada serie. Esto ayuda a mantener la frecuencia cardíaca elevada y a mantener un ritmo de entrenamiento constante, lo que favorece la quema de grasa.<br>    
+    Superseries y circuitos: Se pueden incluir superseries, que consisten en realizar dos ejercicios consecutivos sin descanso entre ellos, o circuitos, que implican realizar una serie de ejercicios en secuencia sin descanso. Estas técnicas ayudan a aumentar la intensidad del entrenamiento y a maximizar la quema de calorías.<br>    
+    Enfoque en la técnica y el control: Se presta especial atención a la ejecución correcta de cada ejercicio, asegurándose de mantener una buena postura y controlar el movimiento en todo momento. Esto ayuda a trabajar de manera más efectiva los músculos objetivo y a prevenir lesiones.<br>    
+    Cardiovascular complementario: Además del entrenamiento con pesas, se recomienda complementar la rutina con ejercicios cardiovasculares, como correr, hacer bicicleta o utilizar la máquina elíptica. El cardio ayuda a aumentar el gasto calórico total y a favorecer la quema de grasa.<br>    
+    Nutrición adecuada: Junto con el entrenamiento, es fundamental mantener una alimentación equilibrada y ajustada a los objetivos de definición. Se recomienda seguir una dieta baja en calorías, rica en proteínas magras, verduras, frutas y alimentos integrales. Esto ayuda a crear un déficit calórico y a favorecer la pérdida de grasa.<br>    
+    Es importante recordar que una rutina de pesas para definición debe adaptarse a las capacidades individuales y preferencias de cada persona. Además, se recomienda contar con la orientación de un profesional del fitness para diseñar un programa personalizado y obtener mejores resultados.`,
+    5,
+    [],
+    0
+  );
+  listaServicios.push(servicioNuevo3);
+  guardarEnLocalstorage();
+  crearFila(servicioNuevo3, listaServicios.length);
+}
 function crearFila(servicio, fila) {
   console.log(servicio);
   console.log(servicio.titulo);
