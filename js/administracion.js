@@ -33,7 +33,9 @@ if (listaServicios.length > 0) {
         servicio.tiempo,
         servicio.categoria,
         servicio.descripcion,
-        servicio.revision
+        servicio.revision,
+        servicio.resenia,
+        servicio.calificacion
       )
   );
 }
@@ -106,7 +108,9 @@ function crearServicio() {
     tiempo.value,
     categoria.value,
     descripcion.value,
-    revision.value
+    revision.value,
+    [],
+    0
   );
   console.log(servicioNuevo);
   // Agregar el servicio en el arreglo de servicios
