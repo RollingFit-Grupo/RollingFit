@@ -1,8 +1,10 @@
 import Servicio from "./classDetalle.js";
+import { resumenValidacion } from "./helpers.js";
 
 let formServicio = document.getElementById(`formServicio`);
 let modalServicio = new bootstrap.Modal(document.getElementById("modalEditar"));
 const btnCrearServicio = document.getElementById(`btnCrear`);
+const alertaModal = document.getElementById(`alertaModal`);
 
 let id = document.getElementById(`id`),
   servicioNombre = document.getElementById(`servicio`),
@@ -88,7 +90,10 @@ function prepararFormularioServicio(e) {
 }
 function crearServicio() {
   //AQUI VAN LAS VALIDACIONES
-
+  const resumen = resumenValidacion(servicioNombre.value,profesor.value,descripcion.value,socialProf.value,categoria.value,tiempo.value,precio.value,imagen.value,revision.value);
+  mostrarMensaje(resumen);
+  console.log(resumen);
+  if(resumen.length === 0){
   // Crear servicio
   console.log(`hola`);
   const servicioNuevo = new Servicio(
@@ -117,11 +122,18 @@ function crearServicio() {
     "El Servicio nuevo fue creado exitosamente",
     "success"
   );
-  
     limpiarFormulario();
     modalServicio.hide();
+  }
 }
-
+function mostrarMensaje(resumen){
+  if(resumen.length>1){
+    alertaModal.className="alert alert-danger mt-3";
+    alertaModal.innerHTML= (resumen);
+  } else{
+    alertaModal.className='alert alert-danger mt-3 d-none';
+  } 
+}
 function guardarEnLocalstorage() {
   localStorage.setItem("listaServicios", JSON.stringify(listaServicios));
 }
