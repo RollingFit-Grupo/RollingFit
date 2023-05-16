@@ -96,7 +96,8 @@ function cargarEstatico(){
     Es importante tener en cuenta que una rutina de pesas para volumen debe adaptarse a las capacidades individuales y preferencias de cada persona. Además, se recomienda contar con la supervisión de un profesional del fitness para asegurar una correcta ejecución de los ejercicios y evitar lesiones.`,
     3,
     [],
-    0
+    0,
+    null
   );
   listaServicios.push(servicioNuevo2);
   guardarEnLocalstorage();
@@ -122,7 +123,8 @@ function cargarEstatico(){
     Es importante recordar que una rutina de pesas para definición debe adaptarse a las capacidades individuales y preferencias de cada persona. Además, se recomienda contar con la orientación de un profesional del fitness para diseñar un programa personalizado y obtener mejores resultados.`,
     5,
     [],
-    0
+    0,
+    null
   );
   listaServicios.push(servicioNuevo3);
   guardarEnLocalstorage();
@@ -147,7 +149,8 @@ function cargarEstatico(){
     Es importante recordar que cada persona tiene diferentes niveles de condición física, por lo que es recomendable adaptar la intensidad y la duración de la rutina según las capacidades individuales. Además, se recomienda combinar la gimnasia aeróbica con una alimentación saludable y equilibrada para obtener mejores resultados en la pérdida de peso. Siempre es aconsejable consultar con un profesional del fitness antes de comenzar cualquier programa de ejercicio.`,
     5,
     [],
-    0
+    0,
+    null
   );
   listaServicios.push(servicioNuevo4);
   guardarEnLocalstorage();

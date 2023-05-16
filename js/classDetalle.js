@@ -9,7 +9,8 @@ export default class Servicio {
   #categoria;
   #descripcion;
   #revision;
-  #resenia
+  #resenia;
+  #descripcionProfesional;
   #calificacion;
   constructor(
     id = uuidv4(),
@@ -23,7 +24,8 @@ export default class Servicio {
     descripcion,
     revision,
     resenia,
-    calificacion
+    calificacion,
+    descripcionProfesional
   ) {
     this.#id = id;
     this.#servicioNombre = servicioNombre;
@@ -37,6 +39,7 @@ export default class Servicio {
     this.#revision = revision;
     this.#calificacion = calificacion;
     this.#resenia = resenia;
+    this.#descripcionProfesional = descripcionProfesional;
   }
   get id() {
     return this.#id;
@@ -83,6 +86,9 @@ export default class Servicio {
   get resenia(){
       return this.#resenia;
   }
+  get descripcionProfesional(){
+    return this.#descripcionProfesional;
+}
   // Setters
   set id(id) {
     this.#id = id;
@@ -128,7 +134,9 @@ export default class Servicio {
     set resenia(resenia){
       this.#resenia=resenia;
   }
-
+  set descripcionProfesional(descripcionProfesional){
+    this.#descripcionProfesional=descripcionProfesional;
+}
   toJSON() {
     return {
       id: this.id,
@@ -142,7 +150,8 @@ export default class Servicio {
       descripcion: this.descripcion,
       revision: this.revision,
       calificacion: this.calificacion,
-      resenia: this.resenia
+      resenia: this.resenia,
+      descripcionProfesional: this.descripcionProfesional
     };
   }
 }
