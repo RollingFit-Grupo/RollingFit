@@ -1,0 +1,89 @@
+/*Estilos y animaciones de Scroll*/
+.fade-in{
+    opacity: 0;
+    filter: blur(10px);
+    transition: opacity 800ms ease-in-out, transform 800ms cubic-bezier(.5,-0.2,.50,1.2),filter 850ms cubic-bezier(.5,-0.2,.50,1.2);;
+    transform: translateY(20%);
+}
+.fade-in.mostrar{
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0);
+  }
+.fade-izquierda{
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateX(-30%);
+}
+.fade-derecha{
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateX(30%);
+}
+.fade-izquierda, .fade-derecha{
+    transition: opacity 800ms ease-in-out , transform 800ms cubic-bezier(.5,-0.2,.50,1.2), filter 850ms cubic-bezier(.5,-0.2,.50,1.2);
+    ;
+}
+.fade-izquierda.mostrar, .fade-derecha.mostrar{
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateX(0);
+}
+/*Estilos y Animaciones de titulo principal*/
+#TextoGrupo1, #TextoGrupo2{
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+}
+.contenedorTextoAnimacion {
+    overflow: hidden;
+}
+.slide-texto-fromBottom{
+    display: block;
+    animation: slideFromBottom 1000ms ease-in-out;
+}
+.slide-texto-toTop{
+    display: block;
+    animation: slideToTop 1000ms ease-in-out;
+}
+
+@keyframes slideFromBottom{
+ 0%{
+    transform: translate(0,100%);
+ }
+ 100%{
+    transform: translate(0,0%);
+ }
+}
+@keyframes slideToTop{
+ 0%{
+    transform: translate(0,0%);
+ }
+ 100%{
+    transform: translate(0,-100%);
+ }
+}
+.slide-texto-fromTop{
+    display: block;
+    animation: slideFromTop 1000ms ease-in-out;
+}
+.slide-texto-toBottom{
+    display: block;
+    animation: slideToBottom 1000ms ease-in-out;
+}
+
+@keyframes slideFromTop{
+ 0%{
+    transform: translate(0,-100%);
+ }
+ 100%{
+    transform: translate(0,0%);
+ }
+}
+@keyframes slideToBottom{
+    0%{
+        transform: translate(0,0%);
+     }
+     100%{
+        transform: translate(0,100%);
+     }
+}
