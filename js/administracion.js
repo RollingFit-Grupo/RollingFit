@@ -127,6 +127,31 @@ function cargarEstatico(){
   listaServicios.push(servicioNuevo3);
   guardarEnLocalstorage();
   crearFila(servicioNuevo3, listaServicios.length);
+  const servicioNuevo4 = new Servicio(
+    undefined,
+    `Rutina de Nutricion para bajar de peso`,
+    `Carla Costanera`,
+    `https://media.istockphoto.com/id/1395337483/es/foto/deportes-y-actividades-de-gimnasio.jpg?s=612x612&w=0&k=20&c=4-e0YI1GCfSaQG-QUIcE-HokoW6PdQAcUxKdw9uqbTE=`,
+    `https://media.istockphoto.com/id/1391410223/es/foto/deportes-y-actividades-de-gimnasio.jpg?s=612x612&w=0&k=20&c=EJ9mvIcZvYUJRlbhjvTMMhgDPTTasqG3HwL0xkVPqEw=`,
+    1500,
+    1,
+    "Gimnasia Aerobica",
+    `Una rutina de gimnasia aeróbica para adelgazar es un programa de entrenamiento diseñado para quemar calorías, mejorar la resistencia cardiovascular y ayudar en la pérdida de peso. La gimnasia aeróbica combina movimientos dinámicos, coreografías y ejercicios cardiovasculares para trabajar todo el cuerpo de manera intensa y efectiva.
+    La rutina de gimnasia aeróbica para adelgazar puede incluir los siguientes aspectos:<br>    
+    Calentamiento: Comienza con una fase de calentamiento para preparar el cuerpo para el ejercicio. Esto puede incluir movimientos de estiramiento, ejercicios de movilidad articular y una serie de ejercicios cardiovasculares de baja intensidad, como caminar o trotar en el lugar.<br>    
+    Coreografías y pasos aeróbicos: La gimnasia aeróbica se caracteriza por el uso de coreografías y pasos aeróbicos que combinan movimientos de bajo impacto, como saltos, pasos laterales, giros y desplazamientos. Estos movimientos se realizan al ritmo de la música y se repiten en secuencias para elevar la frecuencia cardíaca y quemar calorías.<br>    
+    Ejercicios cardiovasculares: Además de las coreografías, se pueden incluir ejercicios cardiovasculares adicionales, como saltos, saltos de tijera, saltos en cuclillas, patadas y movimientos de boxeo. Estos ejercicios ayudan a aumentar la intensidad del entrenamiento y a acelerar el ritmo cardíaco para maximizar la quema de calorías.<br>    
+    Trabajo de resistencia: Se pueden incorporar ejercicios de resistencia utilizando el propio peso corporal, como flexiones de brazos, abdominales, sentadillas y estocadas. Estos ejercicios ayudan a fortalecer y tonificar los músculos, además de contribuir a la quema de grasa.<br>    
+    Intervalos de alta intensidad: Para aumentar aún más la quema de calorías, se pueden incluir intervalos de alta intensidad en la rutina. Esto implica alternar períodos cortos de ejercicio de alta intensidad con períodos de recuperación activa o ejercicio de menor intensidad. Los intervalos de alta intensidad ayudan a acelerar el metabolismo y a quemar más grasa durante y después del entrenamiento.<br>    
+    Enfriamiento y estiramientos: Al finalizar la rutina, se dedica tiempo a un enfriamiento gradual que incluye movimientos de menor intensidad y ejercicios de estiramiento para ayudar a reducir la tensión muscular, mejorar la flexibilidad y promover la recuperación.<br>    
+    Es importante recordar que cada persona tiene diferentes niveles de condición física, por lo que es recomendable adaptar la intensidad y la duración de la rutina según las capacidades individuales. Además, se recomienda combinar la gimnasia aeróbica con una alimentación saludable y equilibrada para obtener mejores resultados en la pérdida de peso. Siempre es aconsejable consultar con un profesional del fitness antes de comenzar cualquier programa de ejercicio.`,
+    5,
+    [],
+    0
+  );
+  listaServicios.push(servicioNuevo4);
+  guardarEnLocalstorage();
+  crearFila(servicioNuevo4, listaServicios.length);
 }
 function crearFila(servicio, fila) {
   console.log(servicio);
