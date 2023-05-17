@@ -99,17 +99,19 @@ seccion.innerHTML = `<section class="my-5 row position-relative">
           <h3>Deje su reseña!</h3>
           <form action="" class="row m-3" id="formComentario">
             <div class="col-3 input-group mb-3">
-              <span class="input-group-text">
-                <i class="bi bi-chat-right-text"></i>
-              </span>
-              <textarea
-                class="form-control"
-                aria-label="With textarea"
-                id="TextAreaComentario"
-                placeholder="(Maximo 200 caracteres)"
-                minlength="5"
-                maxlength="200"
-              ></textarea>
+              <div class="d-flex flex-column flex-sm-row">
+                <span class="input-group-text">
+                  <i class="bi bi-chat-right-text"></i>
+                </span>
+                <textarea
+                  class="form-control flex-grow-1"
+                  aria-label="With textarea"
+                  id="TextAreaComentario"
+                  placeholder="(Maximo 200 caracteres)"
+                  minlength="5"
+                  maxlength="200"
+                ></textarea>
+              </div>
             </div>
             <div class="col-3">
               <button type="submit" class="btn btn-primary mb-3">Publicar</button>
