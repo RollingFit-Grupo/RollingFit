@@ -25,13 +25,13 @@
 </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg container">
-        <div class="container-fluid">
-          <img
+      <nav class="navbar bg-body navbar-expand-lg container-fluid" data-bs-theme="dark">
+        <div class="container">
+          <a href="./index.html" class="navbar-brand"><img
             src="./img/logo/color/logo-letras/CombinadoLogo+Letras-Color.png"
             class="justify-content-center img-size"
             alt="logo de RollingFit"
-          />
+          /></a>
           <button
             class="navbar-toggler"
             type="button"
@@ -44,199 +44,199 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#"
+                <a class="nav-link text-secondary active" aria-current="page" href="./index.html"
                   >Inicio</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./pages/acerca.html"
+                <a class="nav-link text-secondary" href="./pages/acerca.html"
                   >Acerca de nosotros</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./pages/admin.html" id="user-type">
+                <a class="nav-link text-secondary" href="./pages/admin.html" id="user-type">
                 </a>
               </li>
-              <li class="nav-item dropdown">
-                <div
-                  class="nav-link dropdown-toggle"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <i id="iconThemeShow" class="bi bi-brightness-high-fill"></i>
-                </div>
-                <ul class="dropdown-menu">
-                  <li>
-                    <button id="btn_light" class="dropdown-item">
-                      <i class="bi bi-brightness-high-fill"></i> Light
-                    </button>
-                  </li>
-                  <li>
-                    <button id="btn_dark" class="dropdown-item">
-                      <i class="bi bi-moon-fill"></i> Dark
-                    </button>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Buscar Servicios"
-                aria-label="Buscar"
-                id="input_filtro_Servicios"
-                loguin-color
-              />
-            </form>
-            <button
-              id="init-session-button"
-              type="button"
-              class="btn btn-primary login-color mr-2"
-              data-bs-toggle="modal"
-              data-bs-target="#login-modal"
-            >
-              Ingresar
-            </button>
-
-            <button
-              id="close-session-button"
-              type="button"
-              class="btn btn-primary login-color mr-2 d-none"
-              data-bs-toggle="modal"
-            >
-              Cerrar sesión
-            </button>
-
-            <!-- Modal Autenticacion -->
-
-            <div
-              class="modal fade"
-              tabindex="-1"
-              id="login-modal"
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 id="auth-modal-title" class="modal-title">Ingresar</h5>
-                    <button
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
+              </ul>
+              <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-2 gap-lg-3 mb-3">
+                <div class="nav-item dropdown">
+                  <div
+                    class="nav-link text-secondary dropdown-toggle"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i id="iconThemeShow" class="bi bi-brightness-high-fill"></i>
                   </div>
-                  <div class="modal-body">
-                    <!-- Formulario login -->
-                    <form class="form-login" id="form-login">
-                      <div class="mb-3">
-                        <label for="email-label" class="form-label"
-                          >Email</label
-                        >
-                        <input
-                          type="email"
-                          class="form-control"
-                          id="login-email"
-                          placeholder="name@example.com"
-                          required
-                        />
-                      </div>
-                      <div class="mb-3">
-                        <label for="password-label" class="form-label"
-                          >Contraseña</label
-                        >
-                        <input
-                          type="password"
-                          class="form-control"
-                          id="login-password"
-                          placeholder="********"
-                          required
-                        />
-                      </div>
-                    </form>
-
-                    <!-- Formulario register -->
-                    <form class="form-register d-none" id="form-register">
-                      <div class="mb-3">
-                        <label for="name-label" class="form-label"
-                          >Nombre</label
-                        >
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="register-name"
-                          placeholder="Pedro Rodriguez"
-                          required
-                        />
-                      </div>
-                      <div class="mb-3">
-                        <label for="email-label" class="form-label"
-                          >Email</label
-                        >
-                        <input
-                          type="email"
-                          class="form-control"
-                          id="register-email"
-                          placeholder="name@example.com"
-                          required
-                        />
-                      </div>
-                      <div class="mb-3">
-                        <label for="password-label" class="form-label"
-                          >Contraseña</label
-                        >
-                        <input
-                          type="password"
-                          class="form-control"
-                          id="register-password"
-                          placeholder="********"
-                          required
-                        />
-                      </div>
-                    </form>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <button id="btn_light" class="dropdown-item">
+                        <i class="bi bi-brightness-high-fill"></i> Light
+                      </button>
+                    </li>
+                    <li>
+                      <button id="btn_dark" class="dropdown-item">
+                        <i class="bi bi-moon-fill"></i> Dark
+                      </button>
+                    </li>
+                  </ul>
                   </div>
-                  <div class="modal-footer d-flex justify-content-center">
-                    <button
-                      id="login-button"
-                      type="submit"
-                      class="btn btn-primary w-100"
-                    >
-                      Inicia Sesión
-                    </button>
-                    <button
-                      id="register-button"
-                      type="submit"
-                      class="btn btn-primary w-100 d-none"
-                    >
-                      Registrarme
-                    </button>
-
-                    <button
-                      id="show-register-button"
+                  <form class="d-flex py-2" role="search">
+                        <input
+                          class="form-control me-2"
+                          type="search"
+                          placeholder="Buscar Servicios"
+                          aria-label="Buscar"
+                          id="input_filtro_Servicios"
+                          loguin-color
+                        />
+                  </form>
+                  <div>
+                      <button
+                      id="init-session-button"
                       type="button"
-                      class="btn btn-outline-secondary w-100"
+                      class="btn btn-primary login-color mr-2"
+                      data-bs-toggle="modal"
+                      data-bs-target="#login-modal"
                     >
-                      No tengo cuenta
+                      Ingresar
                     </button>
                     <button
-                      id="show-login-button"
+                      id="close-session-button"
                       type="button"
-                      class="btn btn-outline-secondary w-100 d-none"
+                      class="btn btn-primary login-color mr-2 d-none"
+                      data-bs-toggle="modal"
                     >
-                      Ya tengo cuenta
+                      Cerrar sesión
                     </button>
                   </div>
-                </div>
               </div>
-            </div>
           </div>
         </div>
       </nav>
+      <!-- Modal Autenticacion -->
+      <div
+      class="modal fade"
+      tabindex="-1"
+      id="login-modal"
+      aria-labelledby="login-modal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 id="auth-modal-title" class="modal-title">Ingresar</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- Formulario login -->
+            <form class="form-login" id="form-login">
+              <div class="mb-3">
+                <label for="email-label" class="form-label"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="login-email"
+                  placeholder="name@example.com"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="password-label" class="form-label"
+                  >Contraseña</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="login-password"
+                  placeholder="********"
+                  required
+                />
+              </div>
+            </form>
+            <!-- Formulario register -->
+            <form class="form-register d-none" id="form-register">
+              <div class="mb-3">
+                <label for="name-label" class="form-label"
+                  >Nombre</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="register-name"
+                  placeholder="Pedro Rodriguez"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email-label" class="form-label"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="register-email"
+                  placeholder="name@example.com"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="password-label" class="form-label"
+                  >Contraseña</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="register-password"
+                  placeholder="********"
+                  required
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
+            <button
+              id="login-button"
+              type="submit"
+              class="btn btn-primary w-100"
+            >
+              Inicia Sesión
+            </button>
+            <button
+              id="register-button"
+              type="submit"
+              class="btn btn-primary w-100 d-none"
+            >
+              Registrarme
+            </button>
+
+            <button
+              id="show-register-button"
+              type="button"
+              class="btn btn-outline-secondary w-100"
+            >
+              No tengo cuenta
+            </button>
+            <button
+              id="show-login-button"
+              type="button"
+              class="btn btn-outline-secondary w-100 d-none"
+            >
+              Ya tengo cuenta
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     </header>
     <main>  
       <section id="video" class="position-relative overflow-hidden"> 
