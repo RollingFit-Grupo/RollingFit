@@ -1,0 +1,22 @@
+.ratings-wrapepr{
+    border: thin solid #555;
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+.ratings{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.ratings span{
+    cursor: pointer;
+    transition: color .2s, transform .2s;
+    font-size: 50px;
+}
+.ratings span:hover{
+    color: orange;
+    transform: scale(1.3);
+}
+.ratings span:hover ~ span{
+    color: orange;
+}

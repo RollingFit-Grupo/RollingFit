@@ -4,6 +4,7 @@ const idServicio = parametroURL.get("id");
 const servicioBuscado = listaServicio.find(
   (servicio) => servicio.id === idServicio
 );
+console.log(servicioBuscado);
 
 let TextAreaComentario = document.getElementById("TextAreaComentario");
 let formularioComentario = document.getElementById("formComentario");
@@ -25,9 +26,10 @@ function dibujarResenias() {
       resenias.appendChild(listItem);
     });
   }
+  if (servicioBuscado && servicioBuscado.resenia !== undefined) {
+    dibujarResenias();
+  }
   
-  dibujarResenias();
-
 function agregarResenia(e) {
   e.preventDefault();
   const resenia = TextAreaComentario.value.trim();

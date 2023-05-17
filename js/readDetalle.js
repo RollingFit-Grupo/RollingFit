@@ -98,10 +98,26 @@ seccion.innerHTML = `<section class="my-5 row position-relative">
         <section class="container">
           <h3>Deje su reseña!</h3>
           <form action="" class="row m-3" id="formComentario">
-            <div class="col-3 input-group mb-3">
+            <div class="mb-3">
               <div class="d-flex flex-column flex-sm-row">
-                <span class="input-group-text">
-                  <i class="bi bi-chat-right-text"></i>
+                <span class="input-group-text  flex-column">
+                  <i class="bi bi-person h2 m-0 mb-0"></i>
+                </span>
+                <textarea
+                  class="form-control flex-grow-1"
+                  aria-label="With textarea"
+                  id="TextAreaComentario"
+                  placeholder="nombre de usuario"
+                  disabled
+                  minlength="5"
+                  maxlength="200"
+                ></textarea>
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="d-flex flex-column flex-sm-row">
+                <span class="input-group-text flex-column">
+                  <i class="bi bi-chat-right-text h2 m-0 mb-0"></i>
                 </span>
                 <textarea
                   class="form-control flex-grow-1"
@@ -111,6 +127,22 @@ seccion.innerHTML = `<section class="my-5 row position-relative">
                   minlength="5"
                   maxlength="200"
                 ></textarea>
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="d-flex flex-column flex-sm-row">
+                <span class="input-group-text flex-column">
+                  <i class="bi bi-stars h2 m-0 mb-0"></i>
+                </span>
+                <div class="ratings-wrapper"> 
+                  <div class="ratings d-flex justify-content-center py-2 input-group-text">
+                    <span data-rating="5" class="display-3">&#9733;</span>
+                    <span data-rating="4" class="display-3">&#9733;</span>
+                    <span data-rating="3" class="display-3">&#9733;</span>
+                    <span data-rating="2" class="display-3">&#9733;</span>
+                    <span data-rating="1" class="display-3">&#9733;</span>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="col-3">
