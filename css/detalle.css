@@ -1,11 +1,14 @@
-body {
+/* body {
   background-image: url("https://content.active.com/Assets/Active.com+Content+Site+Digital+Assets/Fitness/Articles/Twice+a+Day/man+working+out-carousel.jpg");
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
   width: 100%;
-}
+} */
+/* main{
+  filter: blur(5px);
+} */
 [data-bs-theme="dark"] .body-blur {
   background: rgba(22, 27, 27, 0.7) !important; /* Keep the original background color for dark theme */
   backdrop-filter: blur(10px) !important;
@@ -22,7 +25,36 @@ body {
 }
 
 .body-blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
   background: rgba(172, 172, 172, 0.7) !important;
   backdrop-filter: blur(10px) !important;
   height: 100vh;
 }
+
+.fondo-detalle-principal {
+  position: relative;
+  background: linear-gradient(266.26deg, rgba(255, 165, 0, 0.3) 0%, rgba(0, 191, 255, 0.3) 100%);
+  text-shadow: 0 0 3rem rgba(0, 0, 0, 35%);
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.fondo-detalle-principal::before {
+  content: "";
+  position: absolute;
+  top:0%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: saturate(0%) contrast(150%) brightness(150%) blur(5px);
+  background-image: url("https://content.active.com/Assets/Active.com+Content+Site+Digital+Assets/Fitness/Articles/Twice+a+Day/man+working+out-carousel.jpg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 25%;
+  z-index: -1;
+}
+
