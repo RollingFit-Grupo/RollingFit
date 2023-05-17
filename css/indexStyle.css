@@ -52,7 +52,7 @@ main {
 
 }
 #video{
-    min-height: 100vh;
+    min-height: 50vh;
     background: 
         linear-gradient(180deg,
             transparent 0%,
@@ -98,15 +98,21 @@ main {
     width: 5%;
 }
 .carousel-indicators,.carousel-control-prev,.carousel-control-next{
-     display: none; 
+     display: flex; 
+}
+#carruselIndexTestimonios > .carousel-inner > .carousel-item > .card {
+    min-height: 468px;
 }
 /* Responsive seccion */
-@media (min-width: 576px){
+@media only screen and (max-width: 767px){
     #video{
-         min-height: 50vh;
+         min-height: 100vh;
     }
     .carousel-indicators,.carousel-control-prev,.carousel-control-next{
-        display: flex;
+        display: none;
+    }
+    #carruselIndexTestimonios > .carousel-inner > .carousel-item > .card {
+        min-height: 748px;
     }
 
     /* #tituloFraseGrande{
@@ -122,7 +128,10 @@ main {
         height: 630px;
     } */
 }
-@media (max-width:850px) {
+@media only screen and (min-width: 768px) and (max-width: 922px){
+    #carruselIndexTestimonios > .carousel-inner > .carousel-item > .card {
+        min-height: 348px;
+    }
     .textoCard {
         color: blue;
         flex-direction: column;
@@ -136,4 +145,4 @@ main {
     #textoFraseChico{
         display: block;
     }
-} 
+}
