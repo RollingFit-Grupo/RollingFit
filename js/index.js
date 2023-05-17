@@ -4,9 +4,92 @@ listaServicios.map((servicio) => {
     crearColumna(servicio);
 })
 
+
+function RatingComponent(calificacion) {
+  // console.log(calificacion);
+  switch (calificacion) {
+    case 0:
+      return (
+        `
+        <p class="fs-2 text-warning">
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+        </p>
+        `
+      );
+    case 1:
+      return (
+        `
+        <p class="fs-2 text-warning">
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+        </p>
+        `
+      );
+    case 2:
+      return (
+        `
+        <p class="fs-2 text-warning">
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+        </p>
+        `
+      );
+    case 3:
+      return (
+        `
+        <p class="fs-2 text-warning">
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+        </p>
+        `
+      );
+    case 4:
+      return (
+        `
+        <p class="fs-2 text-warning">
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star"></i>
+        </p>
+        `
+      );
+    case 5:
+      return (
+        `
+        <p class="fs-2 text-warning">
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+        </p>
+        `
+      );
+    default:
+      return null;
+  }
+}
+
 function crearColumna(servicio) {
     console.log(servicio);
-    console.log(servicio.titulo);
+    console.log(servicio.servicioNombre);
+    console.log(servicio.calificacion);
+    console.log(RatingComponent(servicio.calificacion));
     let tablaServicio = document.getElementById("seccionServicios");
     console.log(tablaServicio)
     tablaServicio.innerHTML += `<div class="card mb-3 my-2 d-flex justify-content-center border-5">
@@ -31,6 +114,7 @@ function crearColumna(servicio) {
         <!--TODO: Puntaje de reseñas-->
 
         <!---#######################-->
+        <div> ${RatingComponent(servicio.calificacion)} </div>
         <div><h4 class="badge text-bg-secondary fs-6">Precio: $${servicio.precio} </h4></div>
         <div class="my-3">
         <a href="#" class="btn btn-primary border rounded-pill" onclick="navegarPaginaDetalle('${servicio.id}')">Ver Detalle</a>
