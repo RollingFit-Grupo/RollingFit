@@ -3,7 +3,8 @@ main{
 }
 .fondo-section-principal {
     position: relative;
-    background: linear-gradient(266.26deg, rgba(255, 165, 0, 0.3) 0%, rgba(0, 191, 255, 0.3) 100%);
+    background: 
+        linear-gradient(266.26deg, rgba(255, 165, 0, 0.3) 0%, rgba(0, 191, 255, 0.3) 100%);
     text-shadow: 0 0 3rem rgba(0, 0, 0, 35%);
     isolation: isolate;
     overflow: hidden;
@@ -52,7 +53,7 @@ main{
     opacity: 5%;
     z-index: -1;
 }
-[data-bs-theme=dark] .gradiente-section-proyector::before{
+[data-bs-theme=dark] .gradiente-section-proyecto::before{
     background: linear-gradient(180deg, var(--bs-body-bg) 15%, rgba(255, 255, 255, 0) 50%, var(--bs-body-bg) 75%),
         url("../img/logo/dark-light/logo/BlancoLogo-mono.png");
   }
