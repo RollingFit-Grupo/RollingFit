@@ -20,7 +20,7 @@ seccion.innerHTML = `<section class="my-5 row position-relative">
   <div class="row">
     <div class="px-lg-3">
       <p class="text-muted" id="codigoUnico">${servicioBuscado.id}</p>
-      <h1 class="display-4 mb-4" id="nombre">${servicioBuscado.categoria} - ${servicioBuscado.servicioNombre}</h1>
+      <h1 class="display-4 mb-4 text-break" id="nombre">${servicioBuscado.categoria} - ${servicioBuscado.servicioNombre}</h1>
       <img
         src="${servicioBuscado.imagen}"
         alt="Imagen (cargada con url)"
@@ -68,19 +68,19 @@ seccion.innerHTML = `<section class="my-5 row position-relative">
     <div
       class=" d-flex align-items-center justify-content-center"
     >
-      <h3 id="nombreProfesor">${servicioBuscado.profesor}</h3>
+      <h3 id="nombreProfesor" class="text-break">${servicioBuscado.profesor}</h3>
     </div>
     <div
       class="d-flex align-items-center justify-content-center text-center p-4"
     >
-      <p id="descripcionProfesor">
+      <p id="descripcionProfesor" class="text-break">
         ${servicioBuscado.descripcionProfesional}
       </p>
     </div>
   </div>
 
   <div class=" mb-4 px-lg-3">
-  <h3 class="mb-3" id="categoria">Tipo de Categoria ${servicioBuscado.servicioNombre}</h3>
+  <h3 class="mb-3 text-break" id="categoria">Tipo de Categoria ${servicioBuscado.servicioNombre}</h3>
   <!--Caracteristicas-->
   <!--Caracteristicas-->
 </div>
@@ -107,8 +107,7 @@ seccion.innerHTML = `<section class="my-5 row position-relative">
                   class="form-control flex-grow-1"
                   aria-label="With textarea"
                   id="TextAreaComentario"
-                  placeholder="nombre de usuario"
-                  disabled
+                  placeholder="(Maximo 200 caracteres)"
                   minlength="5"
                   maxlength="200"
                 ></textarea>
@@ -134,14 +133,13 @@ seccion.innerHTML = `<section class="my-5 row position-relative">
                 <span class="input-group-text flex-column">
                   <i class="bi bi-stars h2 m-0 mb-0"></i>
                 </span>
-                <div class="ratings-wrapper"> 
-                  <div class="ratings d-flex justify-content-center py-2 input-group-text">
-                    <span data-rating="5" class="display-3">&#9733;</span>
-                    <span data-rating="4" class="display-3">&#9733;</span>
-                    <span data-rating="3" class="display-3">&#9733;</span>
-                    <span data-rating="2" class="display-3">&#9733;</span>
-                    <span data-rating="1" class="display-3">&#9733;</span>
-                  </div>
+                <div class="ratings-wrapper"> </div>
+                <div class="ratings d-flex justify-content-center py-2 input-group-text">
+                  <span data-rating="5" class="display-3">&#9733;</span>
+                  <span data-rating="4" class="display-3">&#9733;</span>
+                  <span data-rating="3" class="display-3">&#9733;</span>
+                  <span data-rating="2" class="display-3">&#9733;</span>
+                  <span data-rating="1" class="display-3">&#9733;</span>
                 </div>
               </div>
             </div>
