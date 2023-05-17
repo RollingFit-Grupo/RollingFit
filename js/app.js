@@ -30,7 +30,18 @@ const showRegisterButton = document.getElementById("show-register-button");
 
 const modalTitle = document.getElementById("auth-modal-title");
 const userType = document.getElementById("user-type");
-
+const modalSuccess= Swal.mixin({
+  customClass: {
+      title:"text-success-emphasis",
+      closeButton: 'text-danger',
+      confirmButton: 'btn btn-success mx-2'
+  },
+  buttonsStyling: false,
+  showCloseButton: true,
+  color:"var(--bs-success-text-emphasis)",
+  background: "var(--bs-success-bg-subtle)",
+  iconColor:"var(--bs-success-text-emphasis)",
+})
 // Class AdminUser
 
 class AdminUser {
@@ -103,6 +114,7 @@ function loginUser() {
 
 
   if (!email || !password) {
+    
     Swal.fire(
       "Completa todos los campos",
       "Debes completar todos los campos para iniciar sesion",
@@ -153,8 +165,7 @@ function loginUser() {
     closeModal("login-modal");
     hideElement(initSessionButton);
     showElement(closeSessionButton);
-
-    Swal.fire(
+    modalSuccess.fire(
       "Inicio de sesion exitoso",
       "Te logueaste exitosamente como administrador",
       "success"
@@ -183,8 +194,7 @@ function checkUserLogged() {
 function closeSession() {
   sessionStorage.removeItem("user-session");
   checkUserLogged();
-
-  Swal.fire(
+  modalSuccess.fire(
     "Cierre de sesion exitoso",
     "La sesión se cerró exitosamente",
     "success"
