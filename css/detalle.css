@@ -13,9 +13,6 @@ body {
 .position-sticky{
     height: 100%;
 }
-.divProfesor div{
-    border: black 1px solid;
-}
 [data-bs-theme="light"] .navbar {
   background-color: #f8f9fa; /* Set your light theme color here */
 }
