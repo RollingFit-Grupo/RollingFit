@@ -4,6 +4,7 @@ import {
   hideElement,
   showElement,
   closeModal,
+  isValidEmail
 } from "./utils.js";
 
 // Forms
@@ -100,6 +101,7 @@ function loginUser() {
   const email = loginInputEmail.value;
   const password = loginInputPassword.value;
 
+
   if (!email || !password) {
     Swal.fire(
       "Completa todos los campos",
@@ -108,6 +110,17 @@ function loginUser() {
     );
     return;
   }
+
+  if (isValidEmail(email) === false ){
+    Swal.fire(
+    "Formato de mail incorrecto",
+    "El formato correcto es: mail@mail.com",
+    "error"
+  );
+  return
+
+  }
+
 
   const raw = getLocalStorage("users");
   const users = JSON.parse(raw);
@@ -170,4 +183,10 @@ function checkUserLogged() {
 function closeSession() {
   sessionStorage.removeItem("user-session");
   checkUserLogged();
+
+  Swal.fire(
+    "Cierre de sesion exitoso",
+    "La sesión se cerró exitosamente",
+    "success"
+  );
 }

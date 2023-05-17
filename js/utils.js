@@ -27,3 +27,11 @@ export function closeModal(modalId) {
 
   myModal.hide();
 }
+
+// Recibe una string por parametro y evalua si tiene un formato de mail correcto, si lo tiene retorna true sino false//
+
+
+ export function isValidEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
