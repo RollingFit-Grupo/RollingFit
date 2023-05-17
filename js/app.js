@@ -42,6 +42,18 @@ const modalSuccess= Swal.mixin({
   background: "var(--bs-success-bg-subtle)",
   iconColor:"var(--bs-success-text-emphasis)",
 })
+const modalWarning= Swal.mixin({
+  customClass: {
+      title:"text-info-emphasis",
+      closeButton: 'text-danger',
+      confirmButton: 'btn btn-success mx-2'
+  },
+  buttonsStyling: false,
+  showCloseButton: true,
+  color:"var(--bs-danger-text-emphasis)",
+  background: "var(--bs-danger-bg-subtle)",
+  iconColor:"var(--bs-info-text-emphasis)",
+})
 // Class AdminUser
 
 class AdminUser {
@@ -114,8 +126,7 @@ function loginUser() {
 
 
   if (!email || !password) {
-    
-    Swal.fire(
+    modalWarning.fire(
       "Completa todos los campos",
       "Debes completar todos los campos para iniciar sesion",
       "info"
@@ -124,7 +135,7 @@ function loginUser() {
   }
 
   if (isValidEmail(email) === false ){
-    Swal.fire(
+    modalWarning.fire(
     "Formato de mail incorrecto",
     "El formato correcto es: mail@mail.com",
     "error"
@@ -139,17 +150,22 @@ function loginUser() {
   const userFound = users.find((user) => user.email === email);
 
   if (!userFound) {
-    Swal.fire(
+    modalWarning.fire(
       "Credenciales incorrectas",
       "Usuario o contraseña incorrectas",
       "error"
     );
+    // Swal.fire(
+    //   "Credenciales incorrectas",
+    //   "Usuario o contraseña incorrectas",
+    //   "error"
+    // );
 
     return;
   }
 
   if (userFound.password !== password) {
-    Swal.fire(
+    modalWarning.fire(
       "Credenciales incorrectas",
       "Usuario o contraseña incorrectas",
       "error"
