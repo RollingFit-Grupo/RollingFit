@@ -357,6 +357,18 @@ window.prepararFormularioServicio = (idServicio) => {
 
 function editarServicio() {
   console.log("aqui tengo que editar");
+  const modalSuccess= Swal.mixin({
+    customClass: {
+        title:"text-success-emphasis",
+        closeButton: 'text-danger',
+        confirmButton: 'btn btn-success mx-2'
+    },
+    buttonsStyling: false,
+    showCloseButton: true,
+    color:"var(--bs-success-text-emphasis)",
+    background: "var(--bs-success-bg-subtle)",
+    iconColor:"var(--bs-success-text-emphasis)",
+  })
   //1- buscaria la posicion de la servicio en el array
   let posicionServicio = listaServicios.findIndex(
     (servicio) => servicio.id === id.value
@@ -398,8 +410,8 @@ function editarServicio() {
   tablaServicio.children[posicionServicio].children[5].children[0].innerHTML =
     tiempo.value+' dia(s)';
   //5-mostrar un cartel al usuario
-  Swal.fire(
-    "Servicio modificada",
+  modalSuccess.fire(
+    "Servicio modificado",
     "El Servicio fue modificado exitosamente",
     "success"
   );
