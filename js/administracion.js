@@ -78,7 +78,7 @@ function cargarEstatico(){
     Es importante tener en cuenta que la estructura y los elementos específicos de una rutina de spinning pueden variar según el instructor y el nivel de los participantes. Sin embargo, en general, una rutina de spinning está diseñada para ofrecer un entrenamiento cardiovascular intenso, mejorar la resistencia, quemar calorías y fortalecer los músculos de las piernas.`,
     3,
     [],
-    0,
+    4,
     `Como profesora de spinning, siento una verdadera pasión por lo que hago. Cada vez que entro al estudio de spinning, estoy llena de energía y emoción, lista para brindar una clase inspiradora y motivadora a mis alumnos.
     Mantenerme en forma y saludable es una prioridad para mí. Además de enseñar spinning, también practico otros tipos de ejercicio regularmente y cuido mi alimentación para mantener un estilo de vida equilibrado. Me encanta sentir la fuerza y la vitalidad que proviene de llevar un estilo de vida saludable, y eso se refleja en mi enseñanza en el estudio.
     Los fines de semana, aprovecho para salir y divertirme con mis amigas. Una de mis actividades favoritas es ir a bailar a discotecas. Me encanta la música, el ritmo y la energía de la pista de baile. Bailar es una forma divertida de ejercitarse y, al mismo tiempo, liberar el estrés acumulado durante la semana. Disfruto de esos momentos de alegría y camaradería con mis amigas, creando recuerdos inolvidables mientras nos divertimos en la pista.
