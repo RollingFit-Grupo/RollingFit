@@ -109,9 +109,9 @@ video {
 .custom-paragraph::before{
     content: "";
     position:absolute;
-    height: calc(1em * var(--line-height));
+    height: calc(2em * var(--line-height));
     width: 100%;
-    bottom: 0;
+    bottom: 0%;
     pointer-events: none;
     background: linear-gradient(to bottom, transparent, rgb(45, 134, 170));
 }

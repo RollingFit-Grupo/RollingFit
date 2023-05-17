@@ -100,9 +100,11 @@ function crearColumna(servicio) {
       <div class="col-sm-12 col-md-4 col-lg-4 text-center text-lg-start mx-auto align-self-center container">
         <div class="d-flex flex-column">
           <div class="mt-2 ">
-            <h4>${servicio.servicioNombre}</h4>
-            <p class="custom-paragraph">Tipo de entrenamiento físico que se enfoca en el uso
+            <h4 class="text-center">${servicio.servicioNombre}</h4>
+            <div class="custom-paragraph mb-1">
+            <p class="overflow-y-scroll">Tipo de entrenamiento físico que se enfoca en el uso
               ${servicio.descripcion}</p>
+            </div>
           </div>
           
         <!--TODO: Barras de Caracteristicas-->
