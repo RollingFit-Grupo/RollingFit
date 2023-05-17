@@ -3,16 +3,17 @@ let formularioComentario = document.getElementById('formComentario');
 const resenias = document.getElementById("resenias");
 let fechaActual = new Date();
 
-formularioComentario.addEventListener('submit', agregarComentario);
+formularioComentario.addEventListener('submit', agregarResenia);
 
 function agregarResenia(e){
     e.preventDefault();
     const resenia = TextAreaComentario.value.trim();
     if(resenia !== ""){
-        const listItem = document.createElement("li"); // Crear un nuevo elemento li
-        listItem.className = "list-group-item mt-2 animate__animated animate__lightSpeedInLeft"; // Agregar clases de Bootstrap
-        listItem.innerHTML = `<h5> ${resenia}</h5> <span class="text-secondary">${obtenerFechaHora()}</span><hr>`;
-        comentarios.appendChild(listItem);
+        
+        const listItem = document.createElement("li");
+        listItem.className = "list-group-item mt-2 animate__animated animate__lightSpeedInLeft"; 
+        listItem.innerHTML = `<h5 class="text-break"> ${resenia}</h5> <span class="text-secondary">${obtenerFechaHora()}</span><hr>`;
+        resenias.appendChild(listItem);
         TextAreaComentario.value = "";
     }
 }
