@@ -219,6 +219,18 @@ function prepararFormularioServicio(e) {
   }
 }
 function crearServicio() {
+  const modalSuccess= Swal.mixin({
+    customClass: {
+        title:"text-success-emphasis",
+        closeButton: 'text-danger',
+        confirmButton: 'btn btn-success mx-2'
+    },
+    buttonsStyling: false,
+    showCloseButton: true,
+    color:"var(--bs-success-text-emphasis)",
+    background: "var(--bs-success-bg-subtle)",
+    iconColor:"var(--bs-success-text-emphasis)",
+  })
   //AQUI VAN LAS VALIDACIONES
   const resumen = resumenValidacion(servicioNombre.value,profesor.value,descripcion.value,socialProf.value,tiempo.value,precio.value,imagen.value,revision.value,descripcionProfesional.value);
   mostrarMensaje(resumen);
@@ -250,7 +262,7 @@ function crearServicio() {
   // Dibujar la fila en la tabla
   crearFila(servicioNuevo, listaServicios.length);
   // Mostrar un mensaje
-  Swal.fire(
+  modalSuccess.fire(
     "Servicio creado",
     "El Servicio nuevo fue creado exitosamente",
     "success"
