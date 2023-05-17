@@ -1,15 +1,12 @@
 const parametroURL = new URLSearchParams(window.location.search);
 console.log(parametroURL);
-console.log(parametroURL.get('id'));
+console.log(parametroURL.get("id"));
 
-//hace el read de la peli buscada
-
+//Obtiene json con key listaServicios y se lo parsea en objeto javascript
 let listaServicio = JSON.parse(localStorage.getItem("listaServicios")) || [];
-
 const servicioBuscado = listaServicio.find(
   (servicio) => servicio.id === parametroURL.get("id")
 );
-console.log(servicioBuscado);
 
 // Dibujar la card con los datos
 let seccion = document.querySelector("#seccionDetalle");
@@ -106,11 +103,12 @@ seccion.innerHTML = `<section class="my-5 row position-relative">
                 <textarea
                   class="form-control flex-grow-1"
                   aria-label="With textarea"
-                  id="TextAreaComentario"
-                  placeholder="(Maximo 200 caracteres)"
+                  id="TextAreaUsuario"
+                  placeholder="nombre de usuario"
+                  disabled
                   minlength="5"
                   maxlength="200"
-                ></textarea>
+                >mail@delusuario.com</textarea>
               </div>
             </div>
             <div class="mb-3">
@@ -133,13 +131,14 @@ seccion.innerHTML = `<section class="my-5 row position-relative">
                 <span class="input-group-text flex-column">
                   <i class="bi bi-stars h2 m-0 mb-0"></i>
                 </span>
-                <div class="ratings-wrapper"> </div>
-                <div class="ratings d-flex justify-content-center py-2 input-group-text">
-                  <span data-rating="5" class="display-3">&#9733;</span>
-                  <span data-rating="4" class="display-3">&#9733;</span>
-                  <span data-rating="3" class="display-3">&#9733;</span>
-                  <span data-rating="2" class="display-3">&#9733;</span>
-                  <span data-rating="1" class="display-3">&#9733;</span>
+                <div class="puntaje-wrapper"> 
+                  <div class="puntaje d-flex justify-content-center py-2 input-group-text mantenerHover">
+                    <span data-puntaje="5" class="display-3">&#9733;</span>
+                    <span data-puntaje="4" class="display-3">&#9733;</span>
+                    <span data-puntaje="3" class  ="display-3">&#9733;</span>
+                    <span data-puntaje="2" class="display-3">&#9733;</span>
+                    <span data-puntaje="1" class="display-3">&#9733;</span>
+                  </div>
                 </div>
               </div>
             </div>
