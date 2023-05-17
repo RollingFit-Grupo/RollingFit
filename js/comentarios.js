@@ -13,6 +13,21 @@ let fechaActual = new Date();
 formularioComentario.addEventListener("submit", agregarResenia);
 
 
+function dibujarResenias() {
+    const resenias = document.getElementById("resenias");
+    resenias.innerHTML = ""; // Clear previous content
+  
+    servicioBuscado.resenia.forEach((resenia) => {
+      const listItem = document.createElement("li");
+      listItem.className =
+        "list-group-item mt-2 animate__animated animate__lightSpeedInLeft";
+      listItem.innerHTML = `<h5 class="text-break">${resenia.resenia}</h5><span class="text-secondary">${resenia.fecha}</span><hr>`;
+      resenias.appendChild(listItem);
+    });
+  }
+  
+  dibujarResenias();
+
 function agregarResenia(e) {
   e.preventDefault();
   const resenia = TextAreaComentario.value.trim();
