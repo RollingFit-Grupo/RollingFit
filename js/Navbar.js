@@ -1,13 +1,11 @@
 // Obtenemos el tema configurado del usuario
 let temaConfigurado = JSON.parse(localStorage.getItem("theme")) || "light";
 
-
 //  Obtenemos el icono que se muestra segun sea tema claro u oscuro
 let iconThemeShow = document.querySelector("#iconThemeShow");
 
 //  Cambiamos tema por el tema configurado que trajimos del localStorage
 cambiarTema(temaConfigurado);
-
 
 // OBTENER botones light y dark
 let btn_light = document.querySelector("#btn_light");

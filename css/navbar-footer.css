@@ -25,3 +25,7 @@ body.dark {
 .loguin-color {
   background-color: #00BFFF;
 }
+
+.form-login div {
+  width: 100%;
+}
