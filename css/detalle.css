@@ -24,4 +24,5 @@ body {
 .body-blur {
   background: rgba(172, 172, 172, 0.7) !important;
   backdrop-filter: blur(10px) !important;
+  height: 100vh;
 }
