@@ -14,7 +14,7 @@ function validarCantidadCaracteres(texto, min, max) {
 
 // Expresion Regular para validar url de imágenes
 function validarURLimagenes(avatarProfesor) {
-  const regexImagenURL = /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)/;
+  const regexImagenURL = /(https?:)([/|.|\w|\s|-])*\.(?:jpg|gif|png|jpeg)/;
   if (regexImagenURL.test(avatarProfesor)) {
     console.log("El formato de imagen es valido");
     return true;
@@ -51,8 +51,8 @@ export function resumenValidacion(servicio,profesor,descripcion,avatarProfesor,t
   if (!validarCantidadCaracteres(profesor, 4, 16)) {
     resumen += `El nombre de<strong>profesor</strong> Debe contener entre 4 y 16 caracteres.<br>`;
   }
-  if (!validarCantidadCaracteres(descripcion, 8, 512)) {
-    resumen += `La <strong>descripción</strong> Debe contener entre 8 y 512 caracteres.<br>`;
+  if (!validarCantidadCaracteres(descripcion, 8, 4096)) {
+    resumen += `La <strong>descripción</strong> Debe contener entre 8 y 4096 caracteres.<br>`;
   }
   if (!validarURLimagenes(avatarProfesor)) {
     resumen +=`La <strong>URL de imagen de Avatar</strong> es INCORRECTA. Los formatos admitidos son .png, .jpg, o .gif <br>`;
@@ -69,8 +69,8 @@ export function resumenValidacion(servicio,profesor,descripcion,avatarProfesor,t
   if (!validarTiempo(revision)) {
     resumen += `El numero de  <strong> Revisiones </strong> es incorrecto`;
   }
-  if(!validarCantidadCaracteres(descripcionProf,20,300)){
-    resumen +=`La <strong>Descripción del Profesional</strong> Debe contener entre 20 y 300 caracteres.<br>`
+  if(!validarCantidadCaracteres(descripcionProf,20,2048)){
+    resumen +=`La <strong>Descripción del Profesional</strong> Debe contener entre 20 y 2048 caracteres.<br>`
   }
   return resumen;
 }
