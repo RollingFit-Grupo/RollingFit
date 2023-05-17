@@ -396,7 +396,7 @@ function editarServicio() {
   tablaServicio.children[posicionServicio].children[4].children[0].innerHTML =
     precio.value;
   tablaServicio.children[posicionServicio].children[5].children[0].innerHTML =
-    tiempo.value;
+    tiempo.value+' dia(s)';
   //5-mostrar un cartel al usuario
   Swal.fire(
     "Servicio modificada",
