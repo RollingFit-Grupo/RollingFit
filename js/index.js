@@ -27,11 +27,14 @@ function crearColumna(servicio) {
         <!---#######################-->
         </div>
       </div>
-      <div class="col-sm-12 col-md-4 col-lg-4 text-center align-self-center">
+      <div class="col-sm-12 col-md-4 col-lg-4 text-center align-self-center d-flex flex-column justify-content-around">
         <!--TODO: Puntaje de reseñas-->
 
         <!---#######################-->
+        <div><h4 class="badge text-bg-secondary fs-6">Precio: $${servicio.precio} </h4></div>
+        <div class="my-3">
         <a href="#" class="btn btn-primary border rounded-pill" onclick="navegarPaginaDetalle('${servicio.id}')">Ver Detalle</a>
+        </div
       </div>
     </div>
   </div>`;
