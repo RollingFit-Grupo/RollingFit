@@ -4,32 +4,32 @@ const idServicio = parametroURL.get("id");
 const servicioBuscado = listaServicio.find(
   (servicio) => servicio.id === idServicio
 );
-console.log(servicioBuscado);
-
+//busca el formulario de reseñas
 let TextAreaComentario = document.getElementById("TextAreaComentario");
 let formularioComentario = document.getElementById("formComentario");
 const resenias = document.getElementById("resenias");
+
 let fechaActual = new Date();
 
-formularioComentario.addEventListener("submit", agregarResenia);
-
-
+if (servicioBuscado && servicioBuscado.resenia !== undefined) {
+  dibujarResenias();
+}
+//trae y muestra las reseñas ya guardadas en el localStorage
 function dibujarResenias() {
-    const resenias = document.getElementById("resenias");
-    resenias.innerHTML = ""; // Clear previous content
-  
-    servicioBuscado.resenia.forEach((resenia) => {
-      const listItem = document.createElement("li");
-      listItem.className =
-        "list-group-item mt-2 animate__animated animate__lightSpeedInLeft";
-      listItem.innerHTML = `<h5 class="text-break">${resenia.resenia}</h5><span class="text-secondary">${resenia.fecha}</span><hr>`;
-      resenias.appendChild(listItem);
-    });
-  }
-  if (servicioBuscado && servicioBuscado.resenia !== undefined) {
-    dibujarResenias();
-  }
-  
+  const resenias = document.getElementById("resenias");
+  resenias.innerHTML = ""; // Clear previous content
+
+  servicioBuscado.resenia.forEach((resenia) => {
+    const listItem = document.createElement("li");
+    listItem.className =
+      "list-group-item mt-2 animate__animated animate__lightSpeedInLeft";
+    listItem.innerHTML = `<h5 class="text-break">${resenia.resenia}</h5><span class="text-secondary">${resenia.fecha}</span><hr>`;
+    resenias.appendChild(listItem);
+  });
+}
+
+//agrega una nueva reseña al localStorage ern su respectivo servicio
+formularioComentario.addEventListener("submit", agregarResenia);
 function agregarResenia(e) {
   e.preventDefault();
   const resenia = TextAreaComentario.value.trim();
@@ -41,12 +41,11 @@ function agregarResenia(e) {
     resenias.appendChild(listItem);
     TextAreaComentario.value = "";
 
-    //constante que contiene resenia y fecha
     const nuevaResenia = {
       resenia: resenia,
       fecha: obtenerFechaHora(),
     };
-    //Agrega resenia al array Servicio.resenia
+    //Agrega resenia al array Servicio.resenia usando push(al final del array)
     servicioBuscado.resenia.push(nuevaResenia);
 
     //Actualiza el localStorage
@@ -54,35 +53,12 @@ function agregarResenia(e) {
   }
 }
 
+//Obtiene y muestra la hora y fecha de la reseña
 function obtenerFechaHora() {
   let fechaActual = new Date();
   const dia = fechaActual.getDay(),
     mes = fechaActual.getMonth(),
     anio = fechaActual.getFullYear();
-
-  const daysOfWeek = [
-    "Domingo",
-    "Lunes",
-    "Martes",
-    "Miércoles",
-    "Jueves",
-    "Viernes",
-    "Sábado",
-  ];
-  const monthsOfYear = [
-    "Enero",
-    "Febrero",
-    "Marzo",
-    "Abril",
-    "Mayo",
-    "Junio",
-    "Julio",
-    "Agosto",
-    "Septiembre",
-    "Octubre",
-    "Noviembre",
-    "Diciembre",
-  ];
   let horaActual = fechaActual.getHours(),
     minutosActuales = fechaActual.getMinutes(),
     segundosActuales = fechaActual.getSeconds();
