@@ -57,11 +57,11 @@ const modalWarning= Swal.mixin({
 // Class AdminUser
 
 class AdminUser {
-  constructor(name, email, password) {
+  constructor(name, email, password, admin) {
     this.name = name;
     this.email = email;
     this.password = password;
-    this.isAdmin = true;
+    this.isAdmin = true || admin;
   }
 }
 
@@ -114,8 +114,14 @@ function registerAdminUser() {
     "mjulieta210@gmail.com",
     "12345"
   );
+  const usuario = new AdminUser(
+    "Maximiliano",
+    "maxivega1@gmail.com",
+    "123456",
+    false
+  );
   // guardamos el usuario en localStorage
-  setLocalStorage("users", [adminUser]);
+  setLocalStorage("users", [adminUser, usuario]);
 }
 
 //Ingreso como usario//
