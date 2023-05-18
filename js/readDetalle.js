@@ -47,7 +47,7 @@ seccion.innerHTML = `<section class="my-5 row position-relative">
   tabindex="0"
 >
   <h3 class="py-1"><strong>COMPRAR</strong> ${servicioBuscado.servicioNombre}</h3>
-  <h4><strong>Total:</strong>US <span class="text-secondary fw-bold">$${servicioBuscado.precio}</span></h4>
+  <h4><strong>Total:</strong> <span class="text-secondary fw-bold">$${servicioBuscado.precio}</span></h4>
   <h4><strong>Tiempo de entrega:</strong> <span class="text-secondary fw-bold">${servicioBuscado.tiempo} Dias</span></h4>
 
   <div class="container mt-2 text-center divProfesor">
