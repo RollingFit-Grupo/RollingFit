@@ -28,7 +28,6 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/custom.css" />
     <link rel="stylesheet" href="../css/admin.css" />
@@ -108,16 +107,16 @@
                       <button
                       id="init-session-button"
                       type="button"
-                      class="btn btn-primary login-color mr-2"
+                      class="btn btn-primary acceder-color mr-2"
                       data-bs-toggle="modal"
-                      data-bs-target="#login-modal"
+                      data-bs-target="#acceder-modal"
                     >
                       Ingresar
                     </button>
                     <button
                       id="close-session-button"
                       type="button"
-                      class="btn btn-primary login-color mr-2 d-none"
+                      class="btn btn-primary acceder-color mr-2 d-none"
                       data-bs-toggle="modal"
                     >
                       Cerrar sesión
@@ -126,13 +125,12 @@
               </div>
           </div>
         </div>
-      </nav>
-      <!-- Modal Autenticacion -->
+      </nav>      <!-- Modal Autenticacion -->
       <div
       class="modal fade"
       tabindex="-1"
-      id="login-modal"
-      aria-labelledby="login-modal"
+      id="acceder-modal"
+      aria-labelledby="acceder-modal"
       aria-hidden="true"
     >
       <div class="modal-dialog">
@@ -147,8 +145,8 @@
             ></button>
           </div>
           <div class="modal-body">
-            <!-- Formulario login -->
-            <form class="form-login" id="form-login">
+            <!-- Formulario acceder -->
+            <form class="form-acceder" id="form-acceder">
               <div class="mb-3">
                 <label for="email-label" class="form-label"
                   >Email</label
@@ -156,7 +154,7 @@
                 <input
                   type="email"
                   class="form-control"
-                  id="login-email"
+                  id="acceder-email"
                   placeholder="name@example.com"
                   required
                 />
@@ -168,14 +166,24 @@
                 <input
                   type="password"
                   class="form-control"
-                  id="login-password"
+                  id="acceder-password"
                   placeholder="********"
                   required
                 />
               </div>
+              <div class="alert alert-danger mt-3 d-none" role="alert" id="alertaModal"></div>
+          <div class="d-flex justify-content-center">
+            <button
+              id="acceder-button"
+              type="submit"
+              class="btn btn-primary w-100"
+            >
+              Inicia Sesión
+            </button>
+          </div>
             </form>
-            <!-- Formulario register -->
-            <form class="form-register d-none" id="form-register">
+            <!-- Formulario registro -->
+            <form class="form-registro d-none" id="form-registro">
               <div class="mb-3">
                 <label for="name-label" class="form-label"
                   >Nombre</label
@@ -183,7 +191,7 @@
                 <input
                   type="text"
                   class="form-control"
-                  id="register-name"
+                  id="registro-name"
                   placeholder="Pedro Rodriguez"
                   required
                 />
@@ -195,7 +203,7 @@
                 <input
                   type="email"
                   class="form-control"
-                  id="register-email"
+                  id="registro-email"
                   placeholder="name@example.com"
                   required
                 />
@@ -207,38 +215,33 @@
                 <input
                   type="password"
                   class="form-control"
-                  id="register-password"
+                  id="registro-password"
                   placeholder="********"
                   required
                 />
               </div>
-            </form>
-          </div>
-          <div class="modal-footer d-flex justify-content-center">
+              <div class="alert alert-danger mt-3 d-none" role="alert" id="alertaModal"></div>
+          <div class="d-flex justify-content-center">
             <button
-              id="login-button"
-              type="submit"
-              class="btn btn-primary w-100"
-            >
-              Inicia Sesión
-            </button>
-            <button
-              id="register-button"
+              id="registro-button"
               type="submit"
               class="btn btn-primary w-100 d-none"
             >
               Registrarme
             </button>
-
+          </div>
+            </form>
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
             <button
-              id="show-register-button"
+              id="show-registro-button"
               type="button"
               class="btn btn-outline-secondary w-100"
             >
               No tengo cuenta
             </button>
             <button
-              id="show-login-button"
+              id="show-acceder-button"
               type="button"
               class="btn btn-outline-secondary w-100 d-none"
             >
@@ -254,11 +257,7 @@
         <h1 class="text-center">Administración</h1>
         <article class="d-flex my-4">
           <h4>Añadir nuevos servicios:</h4>
-          <button
-            class="btn btn-success mx-md-3"
-            data-bs-toggle="modal"
-            data-bs-target="#modalEditar"
-          >
+          <button class="btn btn-success mx-md-3" data-bs-toggle="modal" data-bs-target="#modalEditar">
             <i class="bi bi-plus-square"></i>
           </button>
         </article>
@@ -266,376 +265,184 @@
           <h2 class="text-center">Lista de servicios</h2>
           <table class="table align-middle table-hover">
             <thead>
-              <tr class="bg-danger-subtle">
+              <tr class="bg-danger-subtle text-center">
                 <th scope="col">Servicio</th>
                 <th scope="col">Ilustracion</th>
                 <th scope="col">Profesor</th>
-                <th scope="col">Descripcion</th>
                 <th scope="col">Categoria</th>
                 <th scope="col">Precio</th>
                 <th scope="col">Tiempo</th>
                 <th scope="col">Acciones</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <th scope="row" class="text-center">Calistenia</th>
-                <td class="tdImage">
-                  <img
-                    src="../img/calistenia"
-                    alt=""
-                    class="adminImg img-fluid rounded"
-                  />
-                </td>
-                <td>Profesor</td>
-                <td class="text-truncate truncateWidth">
-                  Entrenamiento físico que utiliza el peso corporal como
-                  resistencia para desarrollar la fuerza, la resistencia y la
-                  flexibilidad. Consiste en una serie de ejercicios que se
-                  realizan sin equipo ni pesas, y que se pueden realizar en
-                  cualquier lugar utilizando solo el peso del cuerpo como
-                  resistencia.
-                </td>
-                <td>Estándar</td>
-                <td><i class="bi bi-currency-dollar"></i>10</td>
-                <td><i class="bi bi-clock"></i> 60 min</td>
-                <td class="">
-                  <button class="btn btn-warning text-dark">
-                    <i class="bi bi-pencil-square"></i>
-                  </button>
-                  <button class="btn btn-danger">
-                    <i class="bi bi-x-square"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row" class="text-center">Gimnasio</th>
-                <td class="tdImage">
-                  <img
-                    src="../img/gimnasio"
-                    alt=""
-                    class="adminImg img-fluid rounded"
-                  />
-                </td>
-                <td>Profesor</td>
-                <td class="text-truncate truncateWidth">
-                  Entrenamiento físico que utiliza el peso corporal como
-                  resistencia para desarrollar la fuerza, la resistencia y la
-                  flexibilidad. Consiste en una serie de ejercicios que se
-                  realizan sin equipo ni pesas, y que se pueden realizar en
-                  cualquier lugar utilizando solo el peso del cuerpo como
-                  resistencia.
-                </td>
-                <td>Estándar</td>
-                <td><i class="bi bi-currency-dollar"></i>10</td>
-                <td><i class="bi bi-clock"></i> 60 min</td>
-                <td>
-                  <button class="btn btn-warning text-dark">
-                    <i class="bi bi-pencil-square"></i>
-                  </button>
-                  <button class="btn btn-danger">
-                    <i class="bi bi-x-square"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row" class="text-center">Spinning</th>
-                <td class="tdImage">
-                  <img
-                    src="../img/spinning"
-                    alt=""
-                    class="adminImg img-fluid rounded"
-                  />
-                </td>
-                <td>Profesor</td>
-                <td class="text-truncate truncateWidth">
-                  Entrenamiento físico que utiliza el peso corporal como
-                  resistencia para desarrollar la fuerza, la resistencia y la
-                  flexibilidad. Consiste en una serie de ejercicios que se
-                  realizan sin equipo ni pesas, y que se pueden realizar en
-                  cualquier lugar utilizando solo el peso del cuerpo como
-                  resistencia.
-                </td>
-                <td>Estándar</td>
-                <td><i class="bi bi-currency-dollar"></i>10</td>
-                <td><i class="bi bi-clock"></i> 60 min</td>
-                <td class="">
-                  <button class="btn btn-warning text-dark">
-                    <i class="bi bi-pencil-square"></i>
-                  </button>
-                  <button class="btn btn-danger">
-                    <i class="bi bi-x-square"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row" class="text-center">Funcional</th>
-                <td class="tdImage">
-                  <img
-                    src="../img/fuerza"
-                    alt=""
-                    class="adminImg img-fluid rounded"
-                  />
-                </td>
-                <td>Profesor</td>
-                <td class="text-truncate truncateWidth">
-                  Entrenamiento físico que utiliza el peso corporal como
-                  resistencia para desarrollar la fuerza, la resistencia y la
-                  flexibilidad. Consiste en una serie de ejercicios que se
-                  realizan sin equipo ni pesas, y que se pueden realizar en
-                  cualquier lugar utilizando solo el peso del cuerpo como
-                  resistencia.
-                </td>
-                <td>Estándar</td>
-                <td><i class="bi bi-currency-dollar"></i>10</td>
-                <td><i class="bi bi-clock"></i> 60 min</td>
-                <td class="">
-                  <button class="btn btn-warning text-dark">
-                    <i class="bi bi-pencil-square"></i>
-                  </button>
-                  <button class="btn btn-danger">
-                    <i class="bi bi-x-square"></i>
-                  </button>
-                </td>
-              </tr>
+            <tbody id="tablaServicio">
             </tbody>
           </table>
         </article>
       </section>
       <!-- Ventana Modal -->
-      <section class="modal" tabindex="-1" id="modalEditar">
+      <section class="modal fade" tabindex="-1" id="modalEditar" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title">Añadir Servicio</h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
+              <button id="btnCrear" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form class="modal-body" id="formServicio">
-              <label for="id" class="form-label fw-semibold">ID: </label>
-              <input
-                id="id"
-                type="text"
-                placeholder="1234-ab56-78cd-efgh"
-                disabled
-                minlength="4"
-                maxlength="100"
-                class="form-control border border-1"
-              />
-              <aside class="row">
-                <div class="col-md-6">
-                  <label for="servicio" class="form-label fw-semibold"
-                    >Servicio:
-                  </label>
-                  <input
-                    id="servicio"
-                    type="text"
-                    placeholder="Ej: Calistenia"
-                    required
-                    minlength="3"
-                    maxlength="100"
-                    class="form-control border border-1"
-                  />
+            <div class="modal-body">
+              <form id="formServicio">
+                <label for="id" class="form-label fw-semibold">ID: </label>
+                <input id="id" type="text" placeholder="1234-ab56-78cd-efgh" disabled minlength="4" maxlength="100"
+                  class="form-control border border-1" />
+                <aside class="row mt-2">
+                  <div class="col-md-6 ">
+                    <label for="servicio" class="form-label fw-semibold">Servicio:
+                    </label>
+                    <input id="servicio" type="text" placeholder="Ej: Plan de nutricion para Volumen" required minlength="3" maxlength="100"
+                      class="form-control border border-1" />
+                  </div>
+                  <div class="col-md-6 ">
+                    <label for="categoria" class="form-label fw-semibold mt-2">Categoria:</label>
+                    <select id="categoria" class="form-select border border-1" required>
+                      <option value="">Seleccione:</option>
+                      <option >Calistenia</option>
+                      <option >Levantamiento de pesas</option>
+                      <option >Crossfit</option>
+                      <option >Gimnasia Aerobica</option>
+                      <option >Spinning</option>
+                    </select>
+                  </div>
+                </aside>
+                <label for="imagen" class="form-label fw-semibold">Imagen ilustrativa:
+                </label>
+                <input id="imagen" type="text" placeholder="Inserte el link de la imagen" required minlength="8"
+                  maxlength="256" class="form-control border border-1" />
+                  <aside class="row mt-2">
+                    <div class="col-6">
+                      <label for="precio" class="form-label fw-semibold">Precio ($):
+                      </label>
+                      <input id="precio" type="number" min="0" placeholder="Ej: 100" required minlength="2" maxlength="64"
+                        class="form-control border border-1" />
+                    </div>
+                    <div class="col-6">
+                      <label for="tiempo" class="form-label fw-semibold">Tiempo de Entrega(dias):
+                      </label>
+                      <select name="tiempo" id="tiempo" class="form-select border border-1" required>
+                        <option value="">Seleccione:</option>
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                      </select>
+                    </div>
+                  </aside>              
+                <label for="profesor" class="form-label fw-semibold mt-2">Profesional:
+                </label>
+                <input id="profesor" type="text" placeholder="Ej: Rubén Estigarribia" required minlength="4"
+                  maxlength="100" class="form-control border border-1" />
+                <label for="imagen" class="form-label fw-semibold my-2">Avatar de Profesional:
+                </label>
+                <input id="profesorImg" type="text" placeholder="Inserte el link de la imagen" required minlength="8"
+                  maxlength="256" class="form-control border border-1" />
+                <label for="revisiones" class="form-label fw-semibold mt-2">Revisiones del entrenador:</label>
+                <select name="tiempo" id="revisiones" class="form-select border border-1" required>
+                  <option value="">Seleccione la cantidad de veces por mes:</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+                <label for="consulta" class="form-label fw-semibold mt-2">Descripcion del Servicio:</label>
+                <textarea id="descripcion" rows="4" placeholder="Escriba aqui la descripcion del servicio." minlength="8"
+                  maxlength="512" required class="form-control border border-1 mb-3"></textarea>
+                  <label for="descripcionProfesional" class="form-label fw-semibold mt-2">Descripcion del Profesional:</label>
+                  <textarea id="descripcionProfesional" rows="4" placeholder="Escriba aqui la descripcion del profesional." minlength="8"
+                    maxlength="300" required class="form-control border border-1 mb-3"></textarea>
+                <div class="alert alert-danger mt-3 d-none" role="alert" id="alertaModal">
                 </div>
-                <div class="col-md-6">
-                  <label for="profesor" class="form-label fw-semibold"
-                    >Profesor:
-                  </label>
-                  <input
-                    id="profesor"
-                    type="text"
-                    placeholder="Ej: Rubén Estigarribia"
-                    required
-                    minlength="4"
-                    maxlength="100"
-                    class="form-control border border-1"
-                  />
+                <div class="d-flex justify-content-end">
+                  <button class="btn btn-outline-primary mt-3 text-end" type="submit" id="btnCrear">Enviar</button>
                 </div>
-              </aside>
-              <label for="imagen" class="form-label fw-semibold"
-                >Imagen:
-              </label>
-              <input
-                id="imagen"
-                type="text"
-                placeholder="Inserte el link de la imagen"
-                required
-                minlength="8"
-                maxlength="256"
-                class="form-control border border-1"
-              />
-              <label for="imagen" class="form-label fw-semibold"
-                >Perfil Profesor:
-              </label>
-              <input
-                id="profesorImg"
-                type="text"
-                placeholder="Inserte el link de la imagen"
-                required
-                minlength="8"
-                maxlength="256"
-                class="form-control border border-1"
-              />
-              <aside class="row">
-                <div class="col-6">
-                  <label for="precio" class="form-label fw-semibold"
-                    >Precio ($):
-                  </label>
-                  <input
-                    id="precio"
-                    type="number"
-                    placeholder="Ej: 100"
-                    required
-                    minlength="2"
-                    maxlength="64"
-                    class="form-control border border-1"
-                  />
-                </div>
-                <div class="col-6">
-                  <label for="precio" class="form-label fw-semibold"
-                    >Tiempo (min):
-                  </label>
-                  <input
-                    id="tiempo"
-                    type="number"
-                    placeholder="Ej: 60min"
-                    required
-                    minlength="2"
-                    maxlength="64"
-                    class="form-control border border-1"
-                  />
-                </div>
-              </aside>
-              <label for="categoria" class="form-label fw-semibold"
-                >Categoria:
-              </label>
-              <select
-                name="categoria"
-                id="categoria"
-                class="form-select border border-1"
-                required
-              >
-                <option value="">Seleccione la categoria:</option>
-                <option value="Calistenia">Calistenia</option>
-                <option value="Gimnasio">Gimnasio</option>
-                <option value="Funcional">Funcional</option>
-                <option value="Spinning">Spinning</option>
-              </select>
-              <label for="consulta" class="form-label fw-semibold"
-                >Descripcion:
-              </label>
-              <textarea
-                id="descripcion"
-                rows="4"
-                placeholder="Escriba aqui la descripcion del servicio."
-                minlength="8"
-                maxlength="512"
-                required
-                class="form-control border border-1 mb-3"
-              ></textarea>
-              <button class="btn btn-outline-primary mt-3" type="submit">
-                Enviar
-              </button>
-            </form>
+              </form>
+            </div>
           </div>
         </div>
       </section>
     </main>
-    <footer class="container-fluid">
-      <div class="row p-4 bg-dark text-white">
-        <div class="col-xs-12 col-md-6 col-lg-3 text-center">
-          <figure>
-            <a href="../index.html">
-              <img
-                class="w-50"
-                src="../asset/CombinadoLogo+Letras-Color.png"
-                alt="logo de rolling fit"
-              />
-            </a>
-          </figure>
-          <div class="redesSociales">
-            <a href="error404.html" class="link-light text-decoration-none m-3">
-              <i class="bi bi-facebook"></i>
-            </a>
-            <a href="error404.html" class="link-light text-decoration-none m-3">
-              <i class="bi bi-instagram"></i>
-            </a>
-            <a href="error404.html" class="link-light text-decoration-none m-3">
-              <i class="bi bi-twitter"></i>
-            </a>
-          </div>
-        </div>
-        <div class="col-xs-12 col-md-6 col-lg-3">
-          <p class="h5 m-3">Socios</p>
-          <div class="m-2">
-            <a class="text-secondary text-decoration-none" href="error404.html"
-              >Atención al Socio</a
-            >
-          </div>
-          <div class="m-2">
-            <a class="text-secondary text-decoration-none" href="error404.html"
-              >Solicitud de Baja</a
-            >
-          </div>
-          <div class="m-2">
-            <a class="text-secondary text-decoration-none" href="error404.html"
-              >Trámite de Arrepentimiento</a
-            >
-          </div>
-        </div>
-        <div class="col-xs-12 col-md-6 col-lg-3">
-          <p class="h5 m-3">Legal</p>
-          <div class="m-2">
-            <a class="text-secondary text-decoration-none" href="error404.html"
-              >Términos y Condiciones</a
-            >
-          </div>
-          <div class="m-2">
-            <a class="text-secondary text-decoration-none" href="error404.html"
-              >Política de Privacidad</a
-            >
-          </div>
-          <div class="m-2">
-            <a class="text-secondary text-decoration-none" href="error404.html"
-              >Defensa del Consumidor</a
-            >
-          </div>
-        </div>
-        <div class="col-xs-12 col-md-6 col-lg-3 mt-4">
-          <figure>
-            <a href="error404.html">
-              <img
-                src="../asset/google-play-badge-bb.svg"
-                alt="logo de descarga de google play"
-              />
-            </a>
-          </figure>
-          <figure>
-            <a href="error404.html">
-              <img
-                src="../asset/badge-apple-store.svg"
-                alt="logo de descarga de apple store"
-            /></a>
-          </figure>
-        </div>
-        <div class="col-xs-12">
-          <p class="text-white"></p>
-          <p class="text-white text-center">
-            &copy; Todos los derechos reservados - 2023
-          </p>
+  <footer class="container-fluid">
+    <div class="row p-4 bg-dark text-white">
+      <div class="col-xs-12 col-md-6 col-lg-3 text-center">
+        <figure>
+          <a href="../index.html">
+            <img class="w-50" src="../asset/CombinadoLogo+Letras-Color.png" alt="logo de rolling fit" />
+          </a>
+        </figure>
+        <div class="redesSociales">
+          <a href="error404.html" class="link-light text-decoration-none m-3">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="error404.html" class="link-light text-decoration-none m-3">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a href="error404.html" class="link-light text-decoration-none m-3">
+            <i class="bi bi-twitter"></i>
+          </a>
         </div>
       </div>
-    </footer>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-      crossorigin="anonymous"
-    ></script>
-    <script src="/js/Navbar.js"></script>
-  </body>
+      <div class="col-xs-12 col-md-6 col-lg-3">
+        <p class="h5 m-3">Socios</p>
+        <div class="m-2">
+          <a class="text-secondary text-decoration-none" href="error404.html">Atención al Socio</a>
+        </div>
+        <div class="m-2">
+          <a class="text-secondary text-decoration-none" href="error404.html">Solicitud de Baja</a>
+        </div>
+        <div class="m-2">
+          <a class="text-secondary text-decoration-none" href="error404.html">Trámite de Arrepentimiento</a>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-3">
+        <p class="h5 m-3">Legal</p>
+        <div class="m-2">
+          <a class="text-secondary text-decoration-none" href="error404.html">Términos y Condiciones</a>
+        </div>
+        <div class="m-2">
+          <a class="text-secondary text-decoration-none" href="error404.html">Política de Privacidad</a>
+        </div>
+        <div class="m-2">
+          <a class="text-secondary text-decoration-none" href="error404.html">Defensa del Consumidor</a>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-3 mt-4">
+        <figure>
+          <a href="error404.html">
+            <img src="../asset/google-play-badge-bb.svg" alt="logo de descarga de google play" />
+          </a>
+        </figure>
+        <figure>
+          <a href="error404.html">
+            <img src="../asset/badge-apple-store.svg" alt="logo de descarga de apple store" /></a>
+        </figure>
+      </div>
+      <div class="col-xs-12">
+        <p class="text-white"></p>
+        <p class="text-white text-center">
+          &copy; Todos los derechos reservados - 2023
+        </p>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uuid@latest/dist/umd/uuidv4.min.js"></script>
+  <script src="/js/Navbar.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+  <script src="../js/administracion.js" type="module"></script>
+  <script src="../js/app.js" type="module"></script>
+  <script src="../js/utils.js" type="module"></script>
+  <script src="../js/tooltip.js"></script>
 </body>
+</body>
+
 </html>

@@ -1,54 +1,67 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Black+Ops+One&display=swap');
+body{
+  padding-top: 6rem;
+}
 main {
-    min-height: 100vh;
-    flex-grow: 1;
-    flex-direction: column;
+  min-height: 100vh;
+  flex-grow: 1;
+  flex-direction: column;
 }
 .fondo-containerFrase {
-    position: relative;
-    /* Establece la posición del contenedor en "relative" para que el pseudo-elemento se posicione correctamente */
+  position: relative;
+  /* Establece la posición del contenedor en "relative" para que el pseudo-elemento se posicione correctamente */
 }
 
 .fondo-containerFrase::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    background-image: url(/img/pexels-binyamin-mellish-116077.jpg);
-    filter: contrast(60%);
-    /* Aplica un desenfoque a la imagen */
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50%;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-image: url("/img/pexels-binyamin-mellish-116077.jpg");
+  filter: contrast(60%);
+  /* Aplica un desenfoque a la imagen */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
 }
 /* Fondo de imagen */
 .fondo-container {
-    position: relative;
-    /* Establece la posición del contenedor en "relative" para que el pseudo-elemento se posicione correctamente */
+  position: relative;
+  /* Establece la posición del contenedor en "relative" para que el pseudo-elemento se posicione correctamente */
 }
 
 .fondo-container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    background-image: url(/img/cierrese-arriba-muchas-pesas-gimnasia-metal-estante-gimnasio-deporte.jpg);
-    filter: contrast(60%);
-    /* Aplica un desenfoque a la imagen */
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50%;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-image: url("/img/cierrese-arriba-muchas-pesas-gimnasia-metal-estante-gimnasio-deporte.jpg");
+  filter: contrast(60%);
+  /* Aplica un desenfoque a la imagen */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
 }
-#tituloFrase{
-    font-family: "Syne", sans-serif;
-    letter-spacing: 0.52em;
-
+#tituloFrase {
+  font-family: "Syne", sans-serif;
+  letter-spacing: 0.52em;
+}
+#video{
+    min-height: 50vh;
+    background: 
+        linear-gradient(180deg,
+            transparent 0%,
+            rgba(0, 191, 255, 0.3) 30%,
+            rgba(255, 165, 0, 0.3) 60%,
+            transparent 100%)
+            , 
+        linear-gradient(to bottom, transparent , var(--bs-body-bg));
 }
 #video{
     min-height: 50vh;
@@ -75,22 +88,17 @@ main {
 }
 .letrero{
     font-family: 'Black Ops One', cursive;
-    /* font-size: 60px; */
 }
-.texto-naranja{
-	text-shadow: 0 0 5px #FFA500,
-	0 0 10px #FFA500,
-	0 0 15px #FFA500,
-	0 0 25px #FFA500
+.texto-naranja {
+  text-shadow: 0 0 5px #ffa500, 0 0 10px #ffa500, 0 0 15px #ffa500,
+    0 0 25px #ffa500;
 }
-.texto-azul{
-	text-shadow: 0 0 5px #00bfff85,
-	0 0 10px #00bfffd0,
-	0 0 15px #00bfffd0,
-	0 0 25px #00bfffd0
+.texto-azul {
+  text-shadow: 0 0 5px #00bfff85, 0 0 10px #00bfffd0, 0 0 15px #00bfffd0,
+    0 0 25px #00bfffd0;
 }
-.stars{
-    color: #cd9932cb;
+.stars {
+  color: #cd9932cb;
 }
 
 #carruselIndexTestimonios > button.carousel-control-prev, #carruselIndexTestimonios > button.carousel-control-next{
@@ -116,23 +124,17 @@ main {
         min-height: 748px;
     }
 
-    /* #tituloFraseGrande{
-        font-size: 20px;
-    } */
-    /* .letrero{
-        font-size: 2rem;
-    } */
-    /* #testimonioTitulo{
-        font-size: 15px;
-    } */
-    /* .cardstestimonios{
-        height: 630px;
-    } */
+#tituloFraseGrande{
+    font-size: 20px;
 }
-@media only screen and (min-width: 768px) and (max-width: 922px){
-    #carruselIndexTestimonios > .carousel-inner > .carousel-item > .card {
-        min-height: 348px;
-    }
+.letrero{
+    font-size: 30px;
+}
+.cardstestimonios{
+    height: 630px;
+}
+}
+@media (max-width:850px) {
     .textoCard {
         color: blue;
         flex-direction: column;

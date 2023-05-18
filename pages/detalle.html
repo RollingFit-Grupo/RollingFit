@@ -27,8 +27,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/detalle.css" />
-    <link rel="stylesheet" href="../css/navbar-footer.css">
+    <link rel="stylesheet" href="../css/navbar-footer.css" />
     <link rel="stylesheet" href="../css/custom.css" />
+    <!-- <link rel="stylesheet" href="../css/fondosSections.css"> -->
   </head>
 
   <div class="body-blur">
@@ -125,127 +126,6 @@
             </div>
           </div>
         </nav>
-        <!-- Modal Autenticacion -->
-        <div
-        class="modal fade"
-        tabindex="-1"
-        id="login-modal"
-        aria-labelledby="login-modal"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 id="auth-modal-title" class="modal-title">Ingresar</h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <!-- Formulario login -->
-              <form class="form-login" id="form-login">
-                <div class="mb-3">
-                  <label for="email-label" class="form-label"
-                    >Email</label
-                  >
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="login-email"
-                    placeholder="name@example.com"
-                    required
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="password-label" class="form-label"
-                    >Contraseña</label
-                  >
-                  <input
-                    type="password"
-                    class="form-control"
-                    id="login-password"
-                    placeholder="********"
-                    required
-                  />
-                </div>
-              </form>
-              <!-- Formulario register -->
-              <form class="form-register d-none" id="form-register">
-                <div class="mb-3">
-                  <label for="name-label" class="form-label"
-                    >Nombre</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="register-name"
-                    placeholder="Pedro Rodriguez"
-                    required
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="email-label" class="form-label"
-                    >Email</label
-                  >
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="register-email"
-                    placeholder="name@example.com"
-                    required
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="password-label" class="form-label"
-                    >Contraseña</label
-                  >
-                  <input
-                    type="password"
-                    class="form-control"
-                    id="register-password"
-                    placeholder="********"
-                    required
-                  />
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer d-flex justify-content-center">
-              <button
-                id="login-button"
-                type="submit"
-                class="btn btn-primary w-100"
-              >
-                Inicia Sesión
-              </button>
-              <button
-                id="register-button"
-                type="submit"
-                class="btn btn-primary w-100 d-none"
-              >
-                Registrarme
-              </button>
-  
-              <button
-                id="show-register-button"
-                type="button"
-                class="btn btn-outline-secondary w-100"
-              >
-                No tengo cuenta
-              </button>
-              <button
-                id="show-login-button"
-                type="button"
-                class="btn btn-outline-secondary w-100 d-none"
-              >
-                Ya tengo cuenta
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
       </header>
       <div class="container">
         <!-- Detalle Sección -->
@@ -263,306 +143,135 @@
                   class="img-fluid"
                 />
               </div>
-            </div>
-            <div class="row d-flex flex-column align-items-center">
-              <div class="my-3">
-                <div
-                  id="carouselExampleControls"
-                  class="carousel slide"
-                  data-bs-ride="carousel"
+              <div class="mb-3">
+                <label for="password-label" class="form-label"
+                  >Contraseña</label
                 >
-                  <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <div class="d-flex flex-column align-items-center">
-                        <h5>OsitoCariñosito553</h5>
-                        <p>
-                          ¡Excelente producto! Me cambio la vida! 5 estrellas.
-                          Lorem, ipsum dolor sit amet consectetur adipisicing
-                          elit. Explicabo expedita dolorem dolore in. Harum
-                          consectetur voluptas, temporibus soluta dolores
-                          molestias maxime perspiciatis eum magni laboriosam
-                          totam necessitatibus, eveniet animi odit quibusdam
-                          dicta fugit corrupti sapiente sint. At aspernatur
-                          mollitia consequuntur maiores dicta dolor cum
-                          molestiae culpa eaque ratione. Nemo, accusamus
-                          quibusdam praesentium impedit fugiat fuga perspiciatis
-                          exercitationem consequatur vel corrupti dignissimos
-                          consequuntur obcaecati provident repellendus rerum
-                          ipsam laboriosam eius dolor! Iure inventore provident
-                          animi placeat ad assumenda itaque voluptas porro
-                          exercitationem et eum iusto quas eligendi enim odio
-                          facere, nostrum non optio eius nesciunt corrupti nemo
-                          praesentium minima quam! Excepturi.
-                        </p>
-                        <span class="badge bg-primary">Puntaje: 5</span>
-                      </div>
-                    </div>
-                    <div class="carousel-item">
-                      <div class="d-flex flex-column align-items-center">
-                        <h5>l4Ch1c4L0f1</h5>
-                        <p>
-                          Me gusto la rutina pero el profesor deberia de ser mas
-                          paciente, 3 estrellas. Lorem ipsum dolor sit amet,
-                          consectetur adipisicing elit. Aliquam, alias amet
-                          voluptatem necessitatibus nam tempora ea officia
-                          inventore, consectetur sint voluptatum accusantium,
-                          dolorem dolorum magnam. Voluptatibus ab omnis
-                          repudiandae eum magnam quidem cupiditate laborum.
-                          Nobis, culpa amet officia error cupiditate saepe
-                          commodi ex odit enim voluptatibus eveniet neque
-                          obcaecati maxime.
-                        </p>
-                        <span class="badge bg-primary">Puntaje: 3</span>
-                      </div>
-                    </div>
-
-                    <div class="carousel-item">
-                      <div class="d-flex flex-column align-items-center">
-                        <h5>yoda</h5>
-                        <p>
-                          Maleducado el coach privado fue, una decepción fue su
-                          enseñanza. un 1 su puntaje es.
-                        </p>
-                        <span class="badge bg-primary">Puntaje: 1</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <button
-                    class="carousel-control-prev"
-                    type="button"
-                    data-bs-target="#carouselExampleControls"
-                    data-bs-slide="prev"
-                  >
-                    <span
-                      class="carousel-control-prev-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span class="visually-hidden">Anterior</span>
-                  </button>
-                  <button
-                    class="carousel-control-next"
-                    type="button"
-                    data-bs-target="#carouselExampleControls"
-                    data-bs-slide="next"
-                  >
-                    <span
-                      class="carousel-control-next-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span class="visually-hidden">Siguiente</span>
-                  </button>
-                </div>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="acceder-password"
+                  placeholder="********"
+                  required
+                />
               </div>
-              <div
-                class="col-lg-12 px-lg-3 d-flex flex-column align-items-center mt-2"
-              >
-                <h3 class="mb-3" id="descripcion">Descripción:</h3>
-                <p class="lead mb-4">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  pulvinar, eros id suscipit auctor, augue lectus tincidunt ex,
-                  vitae consectetur nunc lorem eget dolor. Suspendisse eu felis
-                  arcu.
-                </p>
-              </div>
-              <div class="col-lg-4 mb-4 px-lg-3">
-                <h3 class="mb-3" id="categoria">Nombre Categoria</h3>
-                <div id="caracteristicas" class="">
-                  <h5>Caracteristicas</h5>
-                  <div id="cardiovascular" class="progress mb-1" role="progressbar" aria-label="Animated striped example"
-                    aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                    <div id="cardioVascularBarra"
-                      class="progress-bar progress-bar-striped progress-bar-animated text-start ps-2 bg-success"
-                      style="width: 100%">Cardiovascular</div>
-                  </div>
-                  <div id="fuerza" class="progress mb-1" role="progressbar" aria-label="Animated striped example "
-                    aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                    <div id="fuerzaBarra"
-                      class="progress-bar progress-bar-striped progress-bar-animated text-start ps-2 bg-danger"
-                      style="width: 40%">Fuerza</div>
-                  </div>
-                  <div id="aerobico" class="progress mb-1" role="progressbar" aria-label="Animated striped example"
-                    aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                    <div id="aerobicoBarra"
-                      class="progress-bar progress-bar-striped progress-bar-animated text-start ps-2 bg-primary"
-                      style="width: 80%">Aerobico</div>
-                  </div>
-                  <div id="" class="progress mb-1" role="progressbar" aria-label="Animated striped example"
-                    aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                    <div id=""
-                      class="progress-bar progress-bar-striped progress-bar-animated text-start ps-2 bg-secondary"
-                      style="width: 60%">Flexibilidad
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!--Div Profesor-->
-              <div class="container mt-2 text-center divProfesor">
-                <div class="row">
-                  <div
-                    class="col-md-4 d-flex align-items-center justify-content-center"
-                  >
-                    <img
-                      id="imgProfesor"
-                      src="https://this-person-does-not-exist.com/img/avatar-genff9f9b3a7107b2f19abfe71078391226.jpg"
-                      alt="Imagen del profesor"
-                      class="img-fluid"
-                    />
-                  </div>
-                  <div
-                    class="col-md-4 d-flex align-items-center justify-content-center"
-                  >
-                    <h3 id="nombreProfesor">John Smith</h3>
-                  </div>
-                  <div
-                    class="col-md-4 d-flex align-items-center justify-content-center"
-                  >
-                    <p id="descripcionProfesor">
-                      Descripción del profesor Lorem, ipsum dolor sit amet
-                      consectetur adipisicing elit. Error, dicta officiis! At
-                      libero voluptatum laudantium consectetur aliquid totam
-                      repellendus iusto eveniet? Sed unde officia corporis
-                      pariatur alias illo temporibus sint?
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+              <div class="alert alert-danger mt-3 d-none" role="alert" id="alertaModal"></div>
+          <div class="d-flex justify-content-center">
+            <button
+              id="acceder-button"
+              type="submit"
+              class="btn btn-primary w-100"
+            >
+              Inicia Sesión
+            </button>
           </div>
-          <div class="col-lg-4 order-lg-2 position-sticky rounded-3 pb-5">
-            <div class="p-3 sticky-top">
-              <nav>
-                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                  <button
-                    class="text-primary nav-link active fw-4 bg-white-50"
-                    id="nav-basic-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#nav-basic"
-                    type="button"
-                    role="tab"
-                    aria-controls="nav-basic"
-                    aria-selected="true"
-                  >
-                    basic
-                  </button>
-                  <button
-                    class="nav-link"
-                    id="nav-standard-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#nav-standard"
-                    type="button"
-                    role="tab"
-                    aria-controls="nav-standard"
-                    aria-selected="false"
-                  >
-                    standard
-                  </button>
-                  <button
-                    class="nav-link"
-                    id="nav-premium-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#nav-premium"
-                    type="button"
-                    role="tab"
-                    aria-controls="nav-premium"
-                    aria-selected="false"
-                  >
-                    premium
-                  </button>
-                </div>
-              </nav>
-              <div class="tab-content" id="nav-tabContent">
-                <div
-                  class="tab-pane fade show active"
-                  id="nav-basic"
-                  role="tabpanel"
-                  aria-labelledby="nav-basic-tab"
-                  tabindex="0"
+            </form>
+            <!-- Formulario registro -->
+            <form class="form-registro d-none" id="form-registro">
+              <div class="mb-3">
+                <label for="name-label" class="form-label"
+                  >Nombre</label
                 >
-                  <h3>Básico</h3>
-                  <p>Paquete Principiantes</p>
-                  <p><strong>Total:</strong> US$25</p>
-                  <p><strong>Tiempo de entrega:</strong> 1 día</p>
-                  <ul>
-                    <li>Programa de entrenamiento de 4 semanas</li>
-                    <li>Sin plan de dieta</li>
-                    <li>Sin soporte interactivo</li>
-                    <li>Sin seguimiento de progreso</li>
-                  </ul>
-                </div>
-                <div
-                  class="tab-pane fade"
-                  id="nav-standard"
-                  role="tabpanel"
-                  aria-labelledby="nav-standard-tab"
-                  tabindex="0"
-                >
-                  <h3>Estándar</h3>
-                  <p>Paquete impulsado por resultados (personalizado)</p>
-                  <p><strong>Total:</strong> US$50</p>
-                  <p><strong>Tiempo de entrega:</strong> 2 días</p>
-                  <ul>
-                    <li>Programa de entrenamiento de 4 semanas</li>
-                    <li>Soporte general</li>
-                    <li>Sin plan de dieta</li>
-                    <li>Programa de entrenamiento de 8 semanas</li>
-                    <li>Soporte interactivo</li>
-                    <li>Seguimiento de progreso</li>
-                  </ul>
-                </div>
-                <div
-                  class="tab-pane fade"
-                  id="nav-premium"
-                  role="tabpanel"
-                  aria-labelledby="nav-premium-tab"
-                  tabindex="0"
-                >
-                  <h3>Premium</h3>
-                  <p>Paquete de entrenamiento definitivo (personalizado)</p>
-                  <p><strong>Total:</strong> US$85</p>
-                  <p><strong>Tiempo de entrega:</strong> 3 días (+US$15)</p>
-                  <ul>
-                    <li>Programa de entrenamiento de 4 semanas</li>
-                    <li>Soporte general</li>
-                    <li>Tutoriales en video</li>
-                    <li>Programa de entrenamiento de 8 semanas</li>
-                    <li>Plan de dieta</li>
-                    <li>Soporte interactivo de entrenamiento</li>
-                    <li>Tutoriales en video</li>
-                    <li>Programa de entrenamiento de 12 semanas</li>
-                    <li>Plan de dieta</li>
-                    <li>Soporte interactivo</li>
-                    <li>Seguimiento semanal de responsabilidad</li>
-                    <li>Soporte continuo</li>
-                    <li>Seguimiento de progreso</li>
-                  </ul>
-                </div>
-                <div class="text-center">
-                  <button class="btn btn-primary btn-lg">
-                    Añadir al carro
-                  </button>
-                </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="registro-name"
+                  placeholder="Pedro Rodriguez"
+                  required
+                />
               </div>
-            </div>
+              <div class="mb-3">
+                <label for="email-label" class="form-label"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="registro-email"
+                  placeholder="name@example.com"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="password-label" class="form-label"
+                  >Contraseña</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="registro-password"
+                  placeholder="********"
+                  required
+                />
+              </div>
+              <div class="alert alert-danger mt-3 d-none" role="alert" id="alertaModal"></div>
+          <div class="d-flex justify-content-center">
+            <button
+              id="registro-button"
+              type="submit"
+              class="btn btn-primary w-100 d-none"
+            >
+              Registrarme
+            </button>
           </div>
-        </section>
+            </form>
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
+            <button
+              id="show-registro-button"
+              type="button"
+              class="btn btn-outline-secondary w-100"
+            >
+              No tengo cuenta
+            </button>
+            <button
+              id="show-acceder-button"
+              type="button"
+              class="btn btn-outline-secondary w-100 d-none"
+            >
+              Ya tengo cuenta
+            </button>
+          </div>
+        </div>
       </div>
+    </div>
+    </header>
+      <main class="fondo-detalle-principal">
+        <div class="body-blur"></div>
+        <div class="container" id="seccionDetalle">
+          <!-- Detalle Sección -->
+          <p class="text-wrap"></p>
+        </div>
+      </main>
       <footer class="container-fluid">
         <div class="row p-4 bg-dark text-white">
           <div class="col-xs-12 col-md-6 col-lg-3 text-center">
             <figure>
-              <a href="#">
-                <img class="w-50" src="../asset/CombinadoLogo+Letras-Color.png" alt="logo de rolling fit" />
+              <a href="../index.html">
+                <img
+                  class="w-50"
+                  src="../asset/CombinadoLogo+Letras-Color.png"
+                  alt="logo de rolling fit"
+                />
               </a>
             </figure>
             <div class="redesSociales">
-              <a href="./pages/error404.html" class="link-light text-decoration-none m-3">
+              <a
+                href="./pages/error404.html"
+                class="link-light text-decoration-none m-3"
+              >
                 <i class="bi bi-facebook"></i>
               </a>
-              <a href="./pages/error404.html" class="link-light text-decoration-none m-3">
+              <a
+                href="./pages/error404.html"
+                class="link-light text-decoration-none m-3"
+              >
                 <i class="bi bi-instagram"></i>
               </a>
-              <a href="./pages/error404.html" class="link-light text-decoration-none m-3">
+              <a
+                href="./pages/error404.html"
+                class="link-light text-decoration-none m-3"
+              >
                 <i class="bi bi-twitter"></i>
               </a>
             </div>
@@ -570,36 +279,66 @@
           <div class="col-xs-12 col-md-6 col-lg-3">
             <p class="h5 m-3">Socios</p>
             <div class="m-2">
-              <a class="text-secondary text-decoration-none" href="./pages/error404.html">Atención al Socio</a>
+              <a
+                class="text-secondary text-decoration-none"
+                href="./pages/error404.html"
+                >Atención al Socio</a
+              >
             </div>
             <div class="m-2">
-              <a class="text-secondary text-decoration-none" href="./pages/error404.html">Solicitud de Baja</a>
+              <a
+                class="text-secondary text-decoration-none"
+                href="./pages/error404.html"
+                >Solicitud de Baja</a
+              >
             </div>
             <div class="m-2">
-              <a class="text-secondary text-decoration-none" href="./pages/error404.html">Trámite de Arrepentimiento</a>
+              <a
+                class="text-secondary text-decoration-none"
+                href="./pages/error404.html"
+                >Trámite de Arrepentimiento</a
+              >
             </div>
           </div>
           <div class="col-xs-12 col-md-6 col-lg-3">
             <p class="h5 m-3">Legal</p>
             <div class="m-2">
-              <a class="text-secondary text-decoration-none" href="./pages/error404.html">Términos y Condiciones</a>
+              <a
+                class="text-secondary text-decoration-none"
+                href="./pages/error404.html"
+                >Términos y Condiciones</a
+              >
             </div>
             <div class="m-2">
-              <a class="text-secondary text-decoration-none" href="./pages/error404.html">Política de Privacidad</a>
+              <a
+                class="text-secondary text-decoration-none"
+                href="./pages/error404.html"
+                >Política de Privacidad</a
+              >
             </div>
             <div class="m-2">
-              <a class="text-secondary text-decoration-none" href="./pages/error404.html">Defensa del Consumidor</a>
+              <a
+                class="text-secondary text-decoration-none"
+                href="./pages/error404.html"
+                >Defensa del Consumidor</a
+              >
             </div>
           </div>
           <div class="col-xs-12 col-md-6 col-lg-3 mt-4">
             <figure>
               <a href="./pages/error404.html">
-                <img src="../asset/google-play-badge-bb.svg" alt="logo de descarga de google play" />
+                <img
+                  src="../asset/google-play-badge-bb.svg"
+                  alt="logo de descarga de google play"
+                />
               </a>
             </figure>
             <figure>
               <a href="./pages/error404.html">
-                <img src="../asset/badge-apple-store.svg" alt="logo de descarga de apple store" /></a>
+                <img
+                  src="../asset/badge-apple-store.svg"
+                  alt="logo de descarga de apple store"
+              /></a>
             </figure>
           </div>
           <div class="col-xs-12">
@@ -610,14 +349,20 @@
           </div>
         </div>
       </footer>
-      
-    <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-    crossorigin="anonymous"></script>
-  <script src="https://kit.fontawesome.com/e3cf9bd751.js" crossorigin="anonymous"></script>
-  <script src="../js/tooltip.js"></script>
-  <script src="/js/Navbar.js"></script>
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://kit.fontawesome.com/e3cf9bd751.js"
+        crossorigin="anonymous"
+      ></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+      <script src="../js/tooltip.js"></script>
+      <script src="../js/Navbar.js"></script>
+      <script src="../js/readDetalle.js"></script>
+      <script src="../js/app.js" type="module"></script>
+      <script src="../js/utils.js" type="module"></script>
     </body>
-  </div>
 </html>
