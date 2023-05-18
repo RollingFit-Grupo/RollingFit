@@ -89,7 +89,6 @@ export default class Servicio {
   get descripcionProfesional(){
     return this.#descripcionProfesional;
 }
-  // Setters
   set id(id) {
     this.#id = id;
   }

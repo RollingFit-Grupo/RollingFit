@@ -1,4 +1,3 @@
-/*Variables de Animaciones de Texto*/
 let TextoGrupo1 = document.getElementById("TextoGrupo1")
 let TextoGrupo2 = document.getElementById("TextoGrupo2")
 const palabrasGrupo1 = ['Transformá', 'Cambiá', 'Elevá'];
@@ -10,7 +9,6 @@ let posicionGrupo2 = 0;
 let palabraGrupo1Actual = TextoGrupo1.textContent = palabrasGrupo1[posicionGrupo1]
 let palabraGrupo2Actual = TextoGrupo2.textContent = palabrasGrupo2[posicionGrupo2]
 
-/*Funciones de Animaciones de Texto*/
 function generarPosicionRandom(posicionAnterior, numPosiciones) {
     let nuevaPosicion = Math.floor(Math.random() * numPosiciones);
     while (nuevaPosicion === posicionAnterior) {
@@ -40,18 +38,14 @@ function cambiarClaseTexto() {
     }
 }
 function animarTexto() {
-    //Espero 4 seg para que el usuario pueda leer el texto
     setTimeout(() =>{
-        //Cambio la clase para que tenga el efecto de slide hacia arriba
         cambiarClaseTexto()
-        //Cambio el texto una vez finalizado el efecto
         setTimeout(() => {
             cambiarTexto();
             cambiarClaseTexto()
         }, 1000);
     },3000)  
 };
-//Espera a que se carge la página para ejecutar la animación
 window.addEventListener('load', ()=>{
     setInterval(animarTexto,5000);
 });

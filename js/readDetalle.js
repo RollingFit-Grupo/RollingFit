@@ -1,6 +1,4 @@
 const parametroURL = new URLSearchParams(window.location.search);
-console.log(parametroURL);
-console.log(parametroURL.get('id'));
 
 //hace el read de la peli buscada
 
@@ -9,9 +7,7 @@ let listaServicio = JSON.parse(localStorage.getItem("listaServicios")) || [];
 const servicioBuscado = listaServicio.find(
   (servicio) => servicio.id === parametroURL.get("id")
 );
-console.log(servicioBuscado);
 
-// Dibujar la card con los datos
 let seccion = document.querySelector("#seccionDetalle");
 seccion.innerHTML = `<section class="my-5 row position-relative">
 <div
@@ -95,31 +91,3 @@ seccion.innerHTML = `<section class="my-5 row position-relative">
 </div>
 </section>`;
 
-/*<div id="caracteristicas" class="">
-    <h5>Caracteristicas</h5>
-    <div id="cardiovascular" class="progress mb-1" role="progressbar" aria-label="Animated striped example"
-      aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-      <div id="cardioVascularBarra"
-        class="progress-bar progress-bar-striped progress-bar-animated text-start ps-2 bg-success"
-        style="width: 100%">Cardiovascular</div>
-    </div>
-    <div id="fuerza" class="progress mb-1" role="progressbar" aria-label="Animated striped example "
-      aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-      <div id="fuerzaBarra"
-        class="progress-bar progress-bar-striped progress-bar-animated text-start ps-2 bg-danger"
-        style="width: 40%">Fuerza</div>
-    </div>
-    <div id="aerobico" class="progress mb-1" role="progressbar" aria-label="Animated striped example"
-      aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-      <div id="aerobicoBarra"
-        class="progress-bar progress-bar-striped progress-bar-animated text-start ps-2 bg-primary"
-        style="width: 80%">Aerobico</div>
-    </div>
-    <div id="" class="progress mb-1" role="progressbar" aria-label="Animated striped example"
-      aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-      <div id=""
-        class="progress-bar progress-bar-striped progress-bar-animated text-start ps-2 bg-secondary"
-        style="width: 60%">Flexibilidad
-      </div>
-    </div>
-  </div>*/
