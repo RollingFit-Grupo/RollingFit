@@ -7,10 +7,12 @@ let listaServicio = JSON.parse(localStorage.getItem("listaServicios")) || [];
 const servicioBuscado = listaServicio.find(
   (servicio) => servicio.id === parametroURL.get("id")
 );
-//Obtiene el usuario logeado mediante session-storage 
-const sessionData = JSON.parse(sessionStorage.getItem("user-session"));
-const email = sessionData.email;
-
+//Obtiene el usuario logeado mediante session-storage
+let email;
+if (sessionStorage.getItem("user-session")) {
+  const sessionData = JSON.parse(sessionStorage.getItem("user-session"));
+  email = sessionData.email;
+}
 // Dibujar la card con los datos
 let seccion = document.querySelector("#seccionDetalle");
 seccion.innerHTML = `<section class="my-5 row position-relative fade-izquierda fade-derecha">
@@ -20,7 +22,9 @@ seccion.innerHTML = `<section class="my-5 row position-relative fade-izquierda f
   <div class="row">
     <div class="px-lg-3">
       <p class="text-muted" id="codigoUnico">${servicioBuscado.id}</p>
-      <h1 class="display-4 mb-4 text-break" id="nombre">${servicioBuscado.categoria} - ${servicioBuscado.servicioNombre}</h1>
+      <h1 class="display-4 mb-4 text-break" id="nombre">${
+        servicioBuscado.categoria
+      } - ${servicioBuscado.servicioNombre}</h1>
       <img
         src="${servicioBuscado.imagen}"
         alt="Imagen (cargada con url)"
@@ -68,7 +72,9 @@ seccion.innerHTML = `<section class="my-5 row position-relative fade-izquierda f
     <div
       class=" d-flex align-items-center justify-content-center"
     >
-      <h3 id="nombreProfesor" class="text-break">${servicioBuscado.profesor}</h3>
+      <h3 id="nombreProfesor" class="text-break">${
+        servicioBuscado.profesor
+      }</h3>
     </div>
     <div
       class="d-flex align-items-center justify-content-center text-center p-4"
@@ -80,7 +86,9 @@ seccion.innerHTML = `<section class="my-5 row position-relative fade-izquierda f
   </div>
 
   <div class=" mb-4 px-lg-3">
-  <h3 class="mb-3 text-break" id="categoria">Tipo de Categoria ${servicioBuscado.servicioNombre}</h3>
+  <h3 class="mb-3 text-break" id="categoria">Tipo de Categoria ${
+    servicioBuscado.servicioNombre
+  }</h3>
   <!--Caracteristicas-->
   <!--Caracteristicas-->
 </div>
@@ -111,7 +119,7 @@ seccion.innerHTML = `<section class="my-5 row position-relative fade-izquierda f
                   disabled
                   minlength="5"
                   maxlength="200"
-                >${email}</textarea>
+                >${email !== undefined ? email : "usuario@mail.com"}</textarea>
               </div>
             </div>
             <div class="mb-3">

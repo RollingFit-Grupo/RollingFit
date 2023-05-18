@@ -6,6 +6,7 @@ const servicioBuscado = listaServicio.find(
 );
 //busca el formulario de reseñas
 let TextAreaComentario = document.getElementById("TextAreaComentario");
+let TextAreaUsuario = document.getElementById("TextAreaUsuario");
 let formularioComentario = document.getElementById("formComentario");
 const resenias = document.getElementById("resenias");
 
@@ -38,24 +39,23 @@ for (let estrella of estrellas) {
 ////////////////////////////////
 
 //Obtiene el usuario logeado mediante session-storage 
+if (sessionStorage.getItem("user-session")) {
 const sessionData = JSON.parse(sessionStorage.getItem("user-session"));
 const email = sessionData.email;
-
+}
 //trae y muestra las reseñas ya guardadas en el localStorage
-
 if (servicioBuscado && servicioBuscado.resenia !== undefined) {
   dibujarResenias();
 }
-
 function dibujarResenias() {
   const resenias = document.getElementById("resenias");
-  resenias.innerHTML = ""; // Clear previous content
+  resenias.innerHTML = "";
 
   servicioBuscado.resenia.forEach((resenia) => {
     const listItem = document.createElement("li");
     listItem.className =
       "list-group-item mt-2 animate__animated animate__lightSpeedInLeft";
-    listItem.innerHTML = `<h6 class="fw-bold">${email}</h6><h5 class="text-break">${resenia.resenia}</h5> <span class="text-primary">${generarEstrellas(resenia.puntaje)} - <strong>${resenia.puntaje} ${resenia.puntaje == 1 ? 'Estrella' : 'Estrellas'}</strong></span> <br> <span class="text-secondary">${resenia.fecha}</span><hr>`;
+    listItem.innerHTML = `<h6 class="fw-bold">${resenia.email}</h6><h5 class="text-break">${resenia.resenia}</h5> <span class="text-primary">${generarEstrellas(resenia.puntaje)} - <strong>${resenia.puntaje} ${resenia.puntaje == 1 ? 'Estrella' : 'Estrellas'}</strong></span> <br> <span class="text-secondary">${resenia.fecha}</span><hr>`;
     resenias.appendChild(listItem);
   });
 }
@@ -65,7 +65,7 @@ formularioComentario.addEventListener("submit", agregarResenia);
 function agregarResenia(e) {
   e.preventDefault();
   const resenia = TextAreaComentario.value.trim();
-  if (resenia !== "" && puntajeResenia !== undefined && puntajeResenia > 0) {
+  if (resenia !== "" &&TextAreaUsuario.value !== 'mail@usuario.com' && TextAreaUsuario.value !== undefined && puntajeResenia !== undefined && puntajeResenia > 0) {
     const listItem = document.createElement("li");
     listItem.className =
       "list-group-item mt-2 animate__animated animate__lightSpeedInLeft";
@@ -78,6 +78,7 @@ function agregarResenia(e) {
       resenia: resenia,
       fecha: obtenerFechaHora(),
       puntaje: puntajeResenia,
+      email: TextAreaUsuario.value
     };
     //Agrega resenia al array Servicio.resenia usando push(al final del array)
     servicioBuscado.resenia.push(nuevaResenia);
