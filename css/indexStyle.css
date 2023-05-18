@@ -46,19 +46,37 @@ main {
   background-size: cover;
   background-position: 50%;
 }
-#tituloFrase {
-  font-family: "Syne", sans-serif;
-  letter-spacing: 0.52em;
+#tituloFrase{
+    font-family: "Syne", sans-serif;
+    letter-spacing: 0.52em;
+
+}
+#video{
+    min-height: 50vh;
+    background: 
+        linear-gradient(180deg,
+            transparent 0%,
+            rgba(0, 191, 255, 0.3) 30%,
+            rgba(255, 165, 0, 0.3) 60%,
+            transparent 100%)
+            , 
+        linear-gradient(to bottom, transparent , var(--bs-body-bg));
 }
 /* Fondo de video */
-video {
-  max-width: 100%;
-  filter: blur(6px);
-  filter: contrast(20%);
+#video > video {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    min-width: 100%;
+    min-height: 100%;
+    filter: blur(2px) grayscale(60%) contrast(70%) brightness(60%);
 }
-.letrero {
-  font-family: "Black Ops One", cursive;
-  font-size: 60px;
+#video > img {
+    filter: blur(2px) grayscale(60%) contrast(70%) brightness(60%);
+}
+.letrero{
+    font-family: 'Black Ops One', cursive;
+    /* font-size: 60px; */
 }
 .texto-naranja {
   text-shadow: 0 0 5px #ffa500, 0 0 10px #ffa500, 0 0 15px #ffa500,
@@ -71,63 +89,75 @@ video {
 .stars {
   color: #cd9932cb;
 }
-/* Responsive seccion */
-@media (min-width: 280px) and (max-width: 640px) {
-  #video {
-    display: none;
-  }
-
-  #imagen {
-    display: block;
-  }
-
-  #tituloFraseGrande {
-    font-size: 20px;
-  }
-  .letrero {
-    font-size: 30px;
-  }
-  #testimonioTitulo {
-    font-size: 15px;
-  }
-  .cardstestimonios {
-    height: 630px;
-  }
-}
-
 .custom-paragraph {
-  --max-lines: 10;
-  --line-height: 1.4;
-  display: flex;
-
-  max-height: calc(var(--max-lines) * 1em * var(--line-height));
-  line-height: var(--line-height);
-
-  overflow: hidden;
-  position: relative;
-}
-.custom-paragraph::before{
-    content: "";
-    position:absolute;
-    height: calc(2em * var(--line-height));
-    width: 100%;
-    bottom: 0%;
-    pointer-events: none;
-    background: linear-gradient(to bottom, transparent, rgb(45, 134, 170));
-}
-
-@media (max-width: 850px) {
-  .textoCard {
-    color: blue;
-    flex-direction: column;
+    --max-lines: 10;
+    --line-height: 1.4;
     display: flex;
-    justify-content: center;
-    align-items: center;
+  
+    max-height: calc(var(--max-lines) * 1em * var(--line-height));
+    line-height: var(--line-height);
+  
+    overflow: hidden;
+    position: relative;
   }
-  #textoFraseGrande {
-    display: none;
+  .custom-paragraph::before{
+      content: "";
+      position:absolute;
+      height: calc(2em * var(--line-height));
+      width: 100%;
+      bottom: 0%;
+      pointer-events: none;
+      background: linear-gradient(to bottom, transparent, rgb(45, 134, 170));
   }
-  #textoFraseChico {
-    display: block;
-  }
+#carruselIndexTestimonios > button.carousel-control-prev, #carruselIndexTestimonios > button.carousel-control-next{
+    width: 5%;
+}
+.carousel-indicators,.carousel-control-prev,.carousel-control-next{
+     display: flex; 
+}
+#carruselIndexTestimonios > .carousel-inner > .carousel-item > .card {
+    min-height: 468px;
+}
+/* Responsive seccion */
+@media only screen and (max-width: 767px){
+    #video{
+         min-height: 100vh;
+    }
+    .carousel-indicators,.carousel-control-prev,.carousel-control-next{
+        display: none;
+    }
+    #carruselIndexTestimonios > .carousel-inner > .carousel-item > .card {
+        min-height: 748px;
+    }
+
+    /* #tituloFraseGrande{
+        font-size: 20px;
+    } */
+    /* .letrero{
+        font-size: 2rem;
+    } */
+    /* #testimonioTitulo{
+        font-size: 15px;
+    } */
+    /* .cardstestimonios{
+        height: 630px;
+    } */
+}
+@media only screen and (min-width: 768px) and (max-width: 922px){
+    #carruselIndexTestimonios > .carousel-inner > .carousel-item > .card {
+        min-height: 348px;
+    }
+    .textoCard {
+        color: blue;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #textoFraseGrande{
+        display: none;
+    }
+    #textoFraseChico{
+        display: block;
+    }
 }
