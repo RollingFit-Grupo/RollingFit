@@ -15,17 +15,14 @@ if (sessionStorage.getItem("user-session")) {
 }
 // Dibujar la card con los datos
 let seccion = document.querySelector("#seccionDetalle");
-seccion.innerHTML = `<section class="my-5 row position-relative fade-izquierda fade-derecha">
+seccion.innerHTML = `<section class="my-5 row position-relative">
 <div
   class="col-lg-8 order-lg-1 d-flex flex-column align-items-center"
 >
   <div class="row">
     <div class="px-lg-3 text-center">
       <p class="text-muted" id="codigoUnico">${servicioBuscado.id}</p>
-      <h1 class="display-4 mb-4 text-break" id="nombre">${
-        servicioBuscado.categoria
-      } - ${servicioBuscado.servicioNombre}</h1>
-      <div>
+      <h1 class="display-4 mb-4 text-break" id="nombre">${servicioBuscado.categoria} - ${servicioBuscado.servicioNombre}</h1>
       <img
         src="${servicioBuscado.imagen}"
         alt="Imagen (cargada con url)"
@@ -38,7 +35,7 @@ seccion.innerHTML = `<section class="my-5 row position-relative fade-izquierda f
       class="col-lg-12 px-lg-3 d-flex flex-column align-items-center mt-2"
     >
       <h3 class="mb-3" id="descripcion">Descripción:</h3>
-      <p class="lead mb-4 text-wrap text-break text-center">
+      <p class="lead mb-4 text-wrap text-break">
         ${servicioBuscado.descripcion}
       </p>
     </div>
