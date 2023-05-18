@@ -1,4 +1,3 @@
-/*Variables de Animaciones de Scroll*/
 const seccionesFade = document.querySelectorAll(".fade-in");
 const seccionesTranslateIzq = document.querySelectorAll(".fade-izquierda");
 const seccionesTranslateDer = document.querySelectorAll(".fade-derecha");
@@ -15,7 +14,6 @@ const opcionesTranslate = {
 
 const mostrarEnScroll = new IntersectionObserver(fadeIn, opcionesFade);
 
-/*Funciones de Animaciones de Scroll*/
 function fadeIn(entradas, mostrarEnScroll) {
     entradas.forEach(entrada => {
         if (!entrada.isIntersecting) {

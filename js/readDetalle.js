@@ -1,6 +1,5 @@
 const parametroURL = new URLSearchParams(window.location.search);
 
-//hace el read de la peli buscada
 
 let listaServicio = JSON.parse(localStorage.getItem("listaServicios")) || [];
 
