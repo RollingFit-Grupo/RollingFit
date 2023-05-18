@@ -76,7 +76,7 @@ export function resumenValidacion(servicio,profesor,descripcion,avatarProfesor,t
 }
 
 // helpers para validar los campos del formulario Acerca de Nosotros
-function validarEmail(email) {
+export function validarEmail(email) {
   // console.log(email);
   const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     console.log(regexEmail.test(email));
@@ -108,7 +108,7 @@ export function resumenValidacionFormAcarcaDeNosotros(nombre, email, consulta) {
 
 // Lógica para validar el formulario de Registro
 
-function validarContrasenia(contrasenia) {
+export function validarContrasenia(contrasenia) {
   const regexContrasenia = /^[a-zA-Z0-9!@#$%^&*]{8,16}$/;
     // console.log(contrasenia);
     console.log(regexContrasenia.test(contrasenia));

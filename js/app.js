@@ -6,7 +6,10 @@ import {
   closeModal,
   isValidEmail
 } from "./utils.js";
-import { resumenValidacionInicioSesion } from "./helpers.js";
+import { resumenValidacionInicioSesion,
+  validarEmail,
+  validarContrasenia
+} from "./helpers.js";
 
 // Forms
 
@@ -31,6 +34,7 @@ const showRegisterButton = document.getElementById("show-register-button");
 
 // const resumen = resumenValidacion(servicioNombre.value,profesor.value,descripcion.value,socialProf.value,tiempo.value,precio.value,imagen.value,revision.value,descripcionProfesional.value);
 //   mostrarMensaje(resumen);
+const alertaModal = document.getElementById(`alertaModal`);
 const modalTitle = document.getElementById("auth-modal-title");
 const userType = document.getElementById("user-type");
 const modalSuccess= Swal.mixin({
@@ -121,7 +125,7 @@ function registerAdminUser() {
   const usuario = new Usuario(
     `Maximiliano`,
     `maxivega1@gmail.com`,
-    `Hola12345#.`,
+    `Password2!`,
     false
   );
   // guardamos el usuario en localStorage
@@ -130,20 +134,20 @@ function registerAdminUser() {
 
 //Ingreso como usario//
 
-function mostrarMensaje(resumen){
-  if(resumen.length>1){
-    alertaModal.className="alert alert-danger mt-3";
-    alertaModal.innerHTML= (resumen);
-  } else{
-    alertaModal.className='alert alert-danger mt-3 d-none';
-  } 
-}
+// function mostrarMensaje(resumen){
+//   if(resumen.length>1){
+//     alertaModal.className="alert alert-danger mt-3";
+//     alertaModal.innerHTML= (resumen);
+//   } else{
+//     alertaModal.className='alert alert-danger mt-3 d-none';
+//   } 
+// }
 
 function loginUser() {
   const email = loginInputEmail.value;
   const password = loginInputPassword.value;
-  const resumen = resumenValidacionInicioSesion(loginInputEmail.value, loginInputPassword.value);
-  mostrarMensaje(resumen);
+
+  // mostrarMensaje(resumen);
   console.log(loginInputEmail.value);
   console.log(loginInputPassword.value);
 
@@ -156,7 +160,7 @@ function loginUser() {
     return;
   }
 
-  if (isValidEmail(email) === false ){
+  if (validarEmail(email) === false ){
     modalWarning.fire(
     "Formato de mail incorrecto",
     "El formato correcto es: mail@mail.com",
@@ -165,7 +169,6 @@ function loginUser() {
   return
 
   }
-
 
   const raw = getLocalStorage("users");
   const users = JSON.parse(raw);
@@ -192,6 +195,7 @@ function loginUser() {
 
   if (userFound.isAdmin === true) {
     showElement(userType);
+    console.log(userType);
     userType.innerHTML = "Administrador";
     sessionStorage.setItem("user-session", JSON.stringify(userFound));
     closeModal("login-modal");
@@ -202,6 +206,18 @@ function loginUser() {
       "Te logueaste exitosamente como administrador",
       "success"
     );
+  }else{
+    showElement(userType);
+    userType.innerHTML = "Administrador";
+    sessionStorage.setItem("user-session", JSON.stringify(userFound));
+    closeModal("login-modal");
+    hideElement(initSessionButton);
+    showElement(closeSessionButton);
+    modalSuccess.fire(
+      "Inicio de sesion exitoso",
+      "Te logueaste exitosamente como usuario",
+      "success"
+    );
   }
 }
 
@@ -209,8 +225,10 @@ function loginUser() {
 
 function checkUserLogged() {
   const raw = sessionStorage.getItem("user-session");
+  console.log(raw);
   const userLogged = JSON.parse(raw);
-
+  console.log(userLogged);
+//  console.log(userLogged.isAdmin);
   if (userLogged) {
     showElement(userType);
     userType.innerHTML = "Administrador";
