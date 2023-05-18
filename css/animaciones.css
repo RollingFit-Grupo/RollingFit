@@ -1,9 +1,9 @@
 /*Estilos y animaciones de Scroll*/
 .fade-in{
     opacity: 0;
-    filter: blur(10px);
+    filter: blur(3px);
     transition: opacity 800ms ease-in-out, transform 800ms cubic-bezier(.5,-0.2,.50,1.2),filter 850ms cubic-bezier(.5,-0.2,.50,1.2);;
-    transform: translateY(20%);
+    transform: translateY(10%);
 }
 .fade-in.mostrar{
     opacity: 1;
@@ -12,13 +12,13 @@
   }
 .fade-izquierda{
     opacity: 0;
-    filter: blur(10px);
-    transform: translateX(-30%);
+    filter: blur(3px);
+    transform: translateX(-20%);
 }
 .fade-derecha{
     opacity: 0;
-    filter: blur(10px);
-    transform: translateX(30%);
+    filter: blur(3px);
+    transform: translateX(20%);
 }
 .fade-izquierda, .fade-derecha{
     transition: opacity 800ms ease-in-out , transform 800ms cubic-bezier(.5,-0.2,.50,1.2), filter 850ms cubic-bezier(.5,-0.2,.50,1.2);
