@@ -1,0 +1,22 @@
+.puntaje-wrapepr{
+    border: thin solid #555;
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+.puntaje{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.puntaje span{
+    cursor: pointer;
+    transition: color .2s, transform .2s;
+    font-size: 40px;
+}
+.puntaje span:hover{
+    color: orange;
+    transform: scale(1.3);
+}
+.puntaje span:hover ~ span{
+    color: orange;
+}
