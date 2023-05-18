@@ -1,31 +1,21 @@
-// helpers para validar los campos del formulario de Admin
-
-/* Para validar el campo ID recordar colocar en el constructor un parámetro por defecto, en este caso será la direccion de la librería uuidv4 que dejaré en la card de helpers del panel de trello. Así mismo se deberá linkear dicha libreria en el archivo Admin.html */
-
 function validarCantidadCaracteres(texto, min, max) {
   if (texto.length >= min && texto.length <= max) {
-    console.log("la palabra es válida");
     return true;
   } else {
-    console.log("la palabra No es válida");
     return false;
   }
 }
 
-// Expresion Regular para validar url de imágenes
 function validarURLimagenes(avatarProfesor) {
   const regexImagenURL = /(https?:)([/|.|\w|\s|-])*\.(?:jpg|gif|png|jpeg)/;
   if (regexImagenURL.test(avatarProfesor)) {
-    console.log("El formato de imagen es valido");
     return true;
   } else {
-    console.log("El formato de imagen no es valido");
     return false;
   }
 }
 
 
-// Lógica para validar campo Tiempo
 function validarTiempo(tiempo) {
   if(parseInt(tiempo) > 0){
     return true;
@@ -34,14 +24,12 @@ function validarTiempo(tiempo) {
 }
 }
 
-// Lógica para validar campo Precio
 function validarPrecio(precio) {
   if(parseInt(precio)>=0){
     return true;
   }
 }
 
-// Lógica export
 export function resumenValidacion(servicio,profesor,descripcion,avatarProfesor,tiempo,precio,imagen,revision,descripcionProf) {
   let resumen = "";
 
@@ -75,16 +63,11 @@ export function resumenValidacion(servicio,profesor,descripcion,avatarProfesor,t
   return resumen;
 }
 
-// helpers para validar los campos del formulario Acerca de Nosotros
 export function validarEmail(email) {
-  // console.log(email);
   const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    console.log(regexEmail.test(email));
   if (regexEmail.test(email)) {
-    console.log("el correo electrónico es válido");
     return true;
   } else {
-    console.log("el correo electrónico es inválido");
     return false;
   }
 }
@@ -106,17 +89,12 @@ export function resumenValidacionFormAcarcaDeNosotros(nombre, email, consulta) {
   return resumen;
 }
 
-// Lógica para validar el formulario de Registro
 
 export function validarContrasenia(contrasenia) {
   const regexContrasenia = /^[a-zA-Z0-9!@#$%^&*]{8,16}$/;
-    // console.log(contrasenia);
-    console.log(regexContrasenia.test(contrasenia));
   if (regexContrasenia.test(contrasenia)) {
-    console.log("la contraseña es válido");
     return true;
   } else {
-    console.log("la contraseña es inválida");
     return false;
   }
 }

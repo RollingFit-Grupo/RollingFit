@@ -43,7 +43,6 @@ if (listaServicios.length > 0) {
       )
   );
 }
-console.log(listaServicios);
 
 cargainicial();
 cargarEstatico();
@@ -180,8 +179,6 @@ function cargarEstatico(){
 }
 }
 function crearFila(servicio, fila) {
-  console.log(servicio);
-  console.log(servicio.titulo);
   let tablaServicio = document.getElementById("tablaServicio");
   tablaServicio.innerHTML += `<tr>
     <th scope="row" class="text-center">${servicio.servicioNombre}</th>
@@ -198,11 +195,9 @@ function crearFila(servicio, fila) {
     </td>
 </tr>`;
 }
-// Manejadores de eventos
 formServicio.addEventListener("submit", prepararFormularioServicio);
 btnCrearServicio.addEventListener("click", desplegarmodalServicio);
 
-// Funciones
 function desplegarmodalServicio() {
   limpiarFormulario();
   altaServicio = true;
@@ -211,7 +206,6 @@ function desplegarmodalServicio() {
 
 function prepararFormularioServicio(e) {
   e.preventDefault();
-  console.log("en el evento submit");
   if (altaServicio) {
     crearServicio();
   } else {
@@ -231,13 +225,9 @@ function crearServicio() {
     background: "var(--bs-success-bg-subtle)",
     iconColor:"var(--bs-success-text-emphasis)",
   })
-  //AQUI VAN LAS VALIDACIONES
   const resumen = resumenValidacion(servicioNombre.value,profesor.value,descripcion.value,socialProf.value,tiempo.value,precio.value,imagen.value,revision.value,descripcionProfesional.value);
   mostrarMensaje(resumen);
-  console.log(resumen);
   if(resumen.length === 0){
-  // Crear servicio
-  console.log(`hola`);
   const servicioNuevo = new Servicio(
     undefined,
     servicioNombre.value,
@@ -253,15 +243,9 @@ function crearServicio() {
     0,
     descripcionProfesional.value
   );
-  console.log(servicioNuevo);
-  // Agregar el servicio en el arreglo de servicios
   listaServicios.push(servicioNuevo);
-  // Guardar el array en el local storage
   guardarEnLocalstorage();
-  console.log(servicioNuevo);
-  // Dibujar la fila en la tabla
   crearFila(servicioNuevo, listaServicios.length);
-  // Mostrar un mensaje
   modalSuccess.fire(
     "Servicio creado",
     "El Servicio nuevo fue creado exitosamente",
@@ -285,10 +269,7 @@ function guardarEnLocalstorage() {
 function limpiarFormulario() {
   formServicio.reset();
 }
-//Borrar Servicio
 window.borrarServicio = (idServicio,nombreServicio) => { 
-    console.log(idServicio);
-    console.log(nombreServicio);
     const modalBorrar = Swal.mixin({
         customClass: {
             title:"text-warning-emphasis",
@@ -325,18 +306,13 @@ window.borrarServicio = (idServicio,nombreServicio) => {
       reverseButtons: true
     }).then((result) => { 
       if (result.isConfirmed) {
-        //1 - buscar del array a donde esta el elemento que tiene este id
         let posicionServicio = listaServicios.findIndex(
           (servicio) => servicio.id === idServicio
         );
-        //2 - Borrar el servicio del array (splice)
         listaServicios.splice(posicionServicio, 1);
-        //3 - Actualizar el localstorage
         guardarEnLocalstorage();
-        //4- Borrar la fila de la tabla
         let tablaServicio = document.getElementById("tablaServicio");
         tablaServicio.removeChild(tablaServicio.children[posicionServicio]);
-        //5 - Mostrar un mensaje de borrado de que se realizó la acción
         modalSuccess.fire(
           "Servicio eliminado.",
           "El servicio fué eliminado correctamente.",
@@ -346,11 +322,9 @@ window.borrarServicio = (idServicio,nombreServicio) => {
     }) ;
   };
 window.prepararFormularioServicio = (idServicio) => {
-  //tener los datos de la servicio y cargar en el formulario
   const servicioEncontrado = listaServicios.find(
     (servicio) => servicio.id === idServicio
   );
-  //mostrar la ventana modal
   id.value = servicioEncontrado.id;
   servicioNombre.value = servicioEncontrado.servicioNombre;
   profesor.value = servicioEncontrado.profesor;
@@ -363,12 +337,10 @@ window.prepararFormularioServicio = (idServicio) => {
   revision.value = servicioEncontrado.revision;
   descripcionProfesional.value=servicioEncontrado.descripcionProfesional;
   modalServicio.show();
-  //cambiamos el valor de la variable altaServicio
   altaServicio = false;
 };
 
 function editarServicio() {
-  console.log("aqui tengo que editar");
   const modalSuccess= Swal.mixin({
     customClass: {
         title:"text-success-emphasis",
@@ -381,16 +353,12 @@ function editarServicio() {
     background: "var(--bs-success-bg-subtle)",
     iconColor:"var(--bs-success-text-emphasis)",
   })
-  //1- buscaria la posicion de la servicio en el array
   let posicionServicio = listaServicios.findIndex(
     (servicio) => servicio.id === id.value
   );
-  console.log(posicionServicio);
-  //todo: validar los datos
   const resumen = resumenValidacion(servicioNombre.value,profesor.value,descripcion.value,socialProf.value,tiempo.value,precio.value,imagen.value,revision.value,descripcionProfesional.value);
   mostrarMensaje(resumen);
   if(resumen.length===0){
-  //2- editar los valores de la servicio dentroe del array
   listaServicios[posicionServicio].servicioNombre = servicioNombre.value;
   listaServicios[posicionServicio].imagen = imagen.value;
   listaServicios[posicionServicio].descripcion = descripcion.value;
@@ -401,12 +369,8 @@ function editarServicio() {
   listaServicios[posicionServicio].precio = precio.value;
   listaServicios[posicionServicio].revision = revision.value;
   listaServicios[posicionServicio].descripcionProfesional=descripcionProfesional.value;
-  //3- actualizar el localstorage
   guardarEnLocalstorage();
-  //4-actualizar la fila
   let tablaServicio = document.getElementById("tablaServicio");
-  console.log(tablaServicio.children[posicionServicio].children[1]);
-  //  let celdaTitulo =tablaServicio.children[posicionServicio].children[1]
   tablaServicio.children[posicionServicio].children[0].innerHTML =
     servicioNombre.value;
   tablaServicio.children[posicionServicio].children[1].children[0].setAttribute(
@@ -421,13 +385,11 @@ function editarServicio() {
     precio.value;
   tablaServicio.children[posicionServicio].children[5].children[0].innerHTML =
     tiempo.value+' dia(s)';
-  //5-mostrar un cartel al usuario
   modalSuccess.fire(
     "Servicio modificado",
     "El Servicio fue modificado exitosamente",
     "success"
   );
-  //6- limpiar el formulario y cerrar el modal
   limpiarFormulario();
   modalServicio.hide();
   }

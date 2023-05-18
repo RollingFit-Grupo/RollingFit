@@ -13,7 +13,6 @@ crearLista(servicio);
 });
 }
 function RatingComponent(calificacion) {
-  // console.log(calificacion);
   switch (calificacion) {
     case 0:
       return (
@@ -93,7 +92,6 @@ function RatingComponent(calificacion) {
 }
 function crearColumna(servicio) {
   let tablaServicio = document.getElementById("seccionServicios");
-  console.log(tablaServicio)
   tablaServicio.innerHTML += `
     <div class="card mb-3 my-2 d-flex justify-content-center border-5">
       <div class="row d-flex g-0">
@@ -136,7 +134,6 @@ function listaDeFavoritos(id, imagen, titulo) {
   const indice = listaFavoritos.findIndex((item) => item.id === id);
 
   if (indice === -1) {
-    // El servicio no está en la lista de favoritos, lo agregamos
     const servicio = {
       id: id,
       imagen: imagen,
@@ -147,7 +144,6 @@ function listaDeFavoritos(id, imagen, titulo) {
     guardarEnLocalStorage(listaFavoritos);
     cambioColor(true, id);
   } else {
-    // El servicio ya está en la lista de favoritos, lo eliminamos
     listaFavoritos.splice(indice, 1);
     guardarEnLocalStorage(listaFavoritos);
     cambioColor(false, id);
@@ -179,9 +175,6 @@ const corazonElement = document.getElementById(`corazon_${servicio.id}`);
 corazonElement.className = "bi bi-heart-fill";
 }
 function navegarPaginaDetalle(id) {
-  console.log('##########');
-  console.log(id);
-  console.log(window.location.origin + '/pages/detalle.html?id=' + id)
   window.location.href = window.location.origin + '/pages/detalle.html?id=' + id;
 }
 
