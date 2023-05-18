@@ -174,7 +174,9 @@ function crearLista(servicio){
       <a href="#" class="btn btn-primary" onclick="navegarPaginaDetalle('${servicio.id}')">${servicio.titulo}</a>
         </div>
   </div>
-`
+`;
+const corazonElement = document.getElementById(`corazon_${servicio.id}`);
+corazonElement.className = "bi bi-heart-fill";
 }
 function navegarPaginaDetalle(id) {
   console.log('##########');
