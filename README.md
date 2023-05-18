@@ -9,24 +9,31 @@
 ## CONTENIDO DE LA PAGINA 🚀
 
   ### Pagina Principal 🏠
-Contiene un video ademas de un slogan junto con una seccion enfocada en mostrar todos los servicios disponibles
+   #### Contiene un video ademas de un slogan junto con una seccion enfocada en mostrar todos los servicios disponibles
 
   ### Detalles 🎬
-Información detallada del servicio, mostrando el Código único, Nombre, Precio, Categoría, Imagen (cargada con URL), Descripción, Tiempo que toma el desarrollo del servicio contratado y las Reseñas
+   #### Información detallada del servicio, mostrando el Código único, Nombre, Precio, Categoría, Imagen (cargada con URL), Descripción, Tiempo que toma el desarrollo del servicio contratado y las Reseñas
 
   ### Acerca de Nosotros 👥
-Contiene nuestra misión, valores, participantes, flujo de trabajo y rol de cada integrante ademas de tecnologias usadas, un formulario para contactarse con nosotros y un mapa
+   #### Contiene nuestra misión, valores, participantes, flujo de trabajo y rol de cada integrante ademas de tecnologias usadas, un formulario para contactarse con nosotros y un mapa
 
   ### Administración 📝
-contiene una tabla para implementar nuevos servicios, editarlos, eliminarlos y dibujarlos en la pagina de manera dinamica
+   #### contiene una tabla para implementar nuevos servicios, editarlos, eliminarlos y dibujarlos en la pagina de manera dinamica
 
   ### Iniciar sesión 🔑
-Modal perteneciente al navbar con el proposito de inciar sesión.
-adminUsuario = Email: "mjulieta210@gmail.com" - "Contraseña: Password1!"
-usuario = Email: "admin@gmail.com" - "Contraseña: Password2!"
+   #### Modal perteneciente al navbar con el proposito de inciar sesión. Uno puede ingresar ya sea como administrador o usuario común
+
+_usuarios DEMO:_
+### adminUsuario
+  #### Email: "mjulieta210@gmail.com" - 
+  #### Contraseña: "Password1!"
+
+### usuario
+  #### Email: admin@gmail.com 
+  #### Contraseña: Password2!
 
   ### Error404 4️⃣0️⃣4️⃣
-Página con animaciones para mostrar el error 404 en vinculos que no funcionan.
+  #### Página con animaciones para mostrar el error 404 en vinculos que no funcionan.
 
 
 ## Como descargar 🟢
@@ -36,7 +43,7 @@ Página con animaciones para mostrar el error 404 en vinculos que no funcionan.
 1. Descomprime el archivo descargado en tu computadora.
 ## COMO CLONAR EL REPOSITORIO 🔼
 ### En una terminal ejecuta el siguiente comando:
-`https://github.com/RollingFit-Grupo/RollingFit.git`
+`git clone https://github.com/RollingFit-Grupo/RollingFit.git`
 
 ## Tecnologias usadas 👩🏻‍💻
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
