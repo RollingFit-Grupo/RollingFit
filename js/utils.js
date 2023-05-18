@@ -11,12 +11,12 @@ export function setLocalStorage(key, value) {
 }
 
 // Permite ocultar un elemento del DOM con la clase d-none (Se debe pasar el elemento por parametro)
-export function hideElement(element) {
+export function ocultarElemento(element) {
   element.classList.add("d-none");
 }
 
 // Permite mostrar un elemento del DOM quitando la clase d-none (Se debe pasar el elemento por parametro)
-export function showElement(element) {
+export function mostrarElemento(element) {
   element.classList.remove("d-none");
 }
 
@@ -31,7 +31,3 @@ export function closeModal(modalId) {
 // Recibe una string por parametro y evalua si tiene un formato de mail correcto, si lo tiene retorna true sino false//
 
 
- export function isValidEmail(email) {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(email);
-}

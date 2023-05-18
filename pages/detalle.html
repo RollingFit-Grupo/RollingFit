@@ -105,16 +105,16 @@
                         <button
                         id="init-session-button"
                         type="button"
-                        class="btn btn-primary login-color mr-2"
+                        class="btn btn-primary acceder-color mr-2"
                         data-bs-toggle="modal"
-                        data-bs-target="#login-modal"
+                        data-bs-target="#acceder-modal"
                       >
                         Ingresar
                       </button>
                       <button
                         id="close-session-button"
                         type="button"
-                        class="btn btn-primary login-color mr-2 d-none"
+                        class="btn btn-primary acceder-color mr-2 d-none"
                         data-bs-toggle="modal"
                       >
                         Cerrar sesión
@@ -128,8 +128,8 @@
         <div
         class="modal fade"
         tabindex="-1"
-        id="login-modal"
-        aria-labelledby="login-modal"
+        id="acceder-modal"
+        aria-labelledby="acceder-modal"
         aria-hidden="true"
       >
         <div class="modal-dialog">
@@ -144,8 +144,8 @@
               ></button>
             </div>
             <div class="modal-body">
-              <!-- Formulario login -->
-              <form class="form-login" id="form-login">
+              <!-- Formulario acceder -->
+              <form class="form-acceder" id="form-acceder">
                 <div class="mb-3">
                   <label for="email-label" class="form-label"
                     >Email</label
@@ -153,7 +153,7 @@
                   <input
                     type="email"
                     class="form-control"
-                    id="login-email"
+                    id="acceder-email"
                     placeholder="name@example.com"
                     required
                   />
@@ -165,14 +165,14 @@
                   <input
                     type="password"
                     class="form-control"
-                    id="login-password"
+                    id="acceder-password"
                     placeholder="********"
                     required
                   />
                 </div>
               </form>
-              <!-- Formulario register -->
-              <form class="form-register d-none" id="form-register">
+              <!-- Formulario registro -->
+              <form class="form-registro d-none" id="form-registro">
                 <div class="mb-3">
                   <label for="name-label" class="form-label"
                     >Nombre</label
@@ -180,7 +180,7 @@
                   <input
                     type="text"
                     class="form-control"
-                    id="register-name"
+                    id="registro-name"
                     placeholder="Pedro Rodriguez"
                     required
                   />
@@ -192,7 +192,7 @@
                   <input
                     type="email"
                     class="form-control"
-                    id="register-email"
+                    id="registro-email"
                     placeholder="name@example.com"
                     required
                   />
@@ -204,7 +204,7 @@
                   <input
                     type="password"
                     class="form-control"
-                    id="register-password"
+                    id="registro-password"
                     placeholder="********"
                     required
                   />
@@ -213,14 +213,14 @@
             </div>
             <div class="modal-footer d-flex justify-content-center">
               <button
-                id="login-button"
+                id="acceder-button"
                 type="submit"
                 class="btn btn-primary w-100"
               >
                 Inicia Sesión
               </button>
               <button
-                id="register-button"
+                id="registro-button"
                 type="submit"
                 class="btn btn-primary w-100 d-none"
               >
@@ -228,14 +228,14 @@
               </button>
     
               <button
-                id="show-register-button"
+                id="show-registro-button"
                 type="button"
                 class="btn btn-outline-secondary w-100"
               >
                 No tengo cuenta
               </button>
               <button
-                id="show-login-button"
+                id="show-acceder-button"
                 type="button"
                 class="btn btn-outline-secondary w-100 d-none"
               >
