@@ -86,12 +86,12 @@ function RatingComponent(calificacion) {
 }
 
 function crearColumna(servicio) {
-    console.log(servicio);
-    console.log(servicio.servicioNombre);
-    console.log(servicio.calificacion);
-    console.log(RatingComponent(servicio.calificacion));
+    // console.log(servicio);
+    // console.log(servicio.servicioNombre);
+    // console.log(servicio.calificacion);
+    // console.log(RatingComponent(servicio.calificacion));
     let tablaServicio = document.getElementById("seccionServicios");
-    console.log(tablaServicio)
+    // console.log(tablaServicio)
     tablaServicio.innerHTML += `<div class="card mb-3 my-2 d-flex justify-content-center border-5">
     <div class="row d-flex g-0">
       <div class="col-sm-12 col-md-4 col-lg-4 p-0 position-relative imgCard">

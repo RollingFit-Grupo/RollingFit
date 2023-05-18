@@ -6,6 +6,7 @@ import {
   closeModal,
   isValidEmail
 } from "./utils.js";
+import { resumenValidacionInicioSesion } from "./helpers.js";
 
 // Forms
 
@@ -28,6 +29,8 @@ const showRegisterButton = document.getElementById("show-register-button");
 
 // Others
 
+// const resumen = resumenValidacion(servicioNombre.value,profesor.value,descripcion.value,socialProf.value,tiempo.value,precio.value,imagen.value,revision.value,descripcionProfesional.value);
+//   mostrarMensaje(resumen);
 const modalTitle = document.getElementById("auth-modal-title");
 const userType = document.getElementById("user-type");
 const modalSuccess= Swal.mixin({
@@ -56,12 +59,12 @@ const modalWarning= Swal.mixin({
 })
 // Class AdminUser
 
-class AdminUser {
+class Usuario {
   constructor(name, email, password, admin) {
     this.name = name;
     this.email = email;
     this.password = password;
-    this.isAdmin = true || admin;
+    this.isAdmin = admin;
   }
 }
 
@@ -109,27 +112,40 @@ function showLoginForm() {
 
 function registerAdminUser() {
   // Creamos un objeto que es un usuario administrador instanciando la clase AdminUser
-  const adminUser = new AdminUser(
-    "Julieta Correa",
-    "mjulieta210@gmail.com",
-    "12345"
+  const adminUsuario = new Usuario(
+    `Julieta Correa`,
+    `mjulieta210@gmail.com`,
+    `Password1!`,
+    true
   );
-  const usuario = new AdminUser(
-    "Maximiliano",
-    "maxivega1@gmail.com",
-    "123456",
+  const usuario = new Usuario(
+    `Maximiliano`,
+    `maxivega1@gmail.com`,
+    `Hola12345#.`,
     false
   );
   // guardamos el usuario en localStorage
-  setLocalStorage("users", [adminUser, usuario]);
+  setLocalStorage("users", [adminUsuario, usuario]);
 }
 
 //Ingreso como usario//
 
+function mostrarMensaje(resumen){
+  if(resumen.length>1){
+    alertaModal.className="alert alert-danger mt-3";
+    alertaModal.innerHTML= (resumen);
+  } else{
+    alertaModal.className='alert alert-danger mt-3 d-none';
+  } 
+}
+
 function loginUser() {
   const email = loginInputEmail.value;
   const password = loginInputPassword.value;
-
+  const resumen = resumenValidacionInicioSesion(loginInputEmail.value, loginInputPassword.value);
+  mostrarMensaje(resumen);
+  console.log(loginInputEmail.value);
+  console.log(loginInputPassword.value);
 
   if (!email || !password) {
     modalWarning.fire(
@@ -161,12 +177,6 @@ function loginUser() {
       "Usuario o contraseña incorrectas",
       "error"
     );
-    // Swal.fire(
-    //   "Credenciales incorrectas",
-    //   "Usuario o contraseña incorrectas",
-    //   "error"
-    // );
-
     return;
   }
 
