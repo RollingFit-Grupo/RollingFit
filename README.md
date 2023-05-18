@@ -22,6 +22,8 @@ contiene una tabla para implementar nuevos servicios, editarlos, eliminarlos y d
 
   ### Iniciar sesión 🔑
 Modal perteneciente al navbar con el proposito de inciar sesión.
+adminUsuario = Email: "mjulieta210@gmail.com" - "Contraseña: Password1!"
+usuario = Email: "admin@gmail.com" - "Contraseña: Password2!"
 
   ### Error404 4️⃣0️⃣4️⃣
 Página con animaciones para mostrar el error 404 en vinculos que no funcionan.
@@ -34,7 +36,7 @@ Página con animaciones para mostrar el error 404 en vinculos que no funcionan.
 1. Descomprime el archivo descargado en tu computadora.
 ## COMO CLONAR EL REPOSITORIO 🔼
 ### En una terminal ejecuta el siguiente comando:
-`git clone https://github.com/maxivega0/tp3-arraysJavaScript.git`
+`https://github.com/RollingFit-Grupo/RollingFit.git`
 
 ## Tecnologias usadas 👩🏻‍💻
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
