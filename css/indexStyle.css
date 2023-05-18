@@ -96,9 +96,11 @@ main {
 
 #carruselIndexTestimonios > button.carousel-control-prev, #carruselIndexTestimonios > button.carousel-control-next{
     width: 5%;
+    filter: invert(100%)
 }
 .carousel-indicators,.carousel-control-prev,.carousel-control-next{
      display: flex; 
+     filter: invert(100%)
 }
 #carruselIndexTestimonios > .carousel-inner > .carousel-item > .card {
     min-height: 468px;
