@@ -37,11 +37,16 @@ for (let estrella of estrellas) {
 
 ////////////////////////////////
 
+//Obtiene el usuario logeado mediante session-storage 
+const sessionData = JSON.parse(sessionStorage.getItem("user-session"));
+const email = sessionData.email;
+
+//trae y muestra las reseñas ya guardadas en el localStorage
+
 if (servicioBuscado && servicioBuscado.resenia !== undefined) {
   dibujarResenias();
 }
 
-//trae y muestra las reseñas ya guardadas en el localStorage
 function dibujarResenias() {
   const resenias = document.getElementById("resenias");
   resenias.innerHTML = ""; // Clear previous content
@@ -50,7 +55,7 @@ function dibujarResenias() {
     const listItem = document.createElement("li");
     listItem.className =
       "list-group-item mt-2 animate__animated animate__lightSpeedInLeft";
-    listItem.innerHTML = `<h5 class="text-break">${resenia.resenia}</h5> <span class="text-primary">${generarEstrellas(resenia.puntaje)} - <strong>${resenia.puntaje} ${resenia.puntaje == 1 ? 'Estrella' : 'Estrellas'}</strong></span> <br> <span class="text-secondary">${resenia.fecha}</span><hr>`;
+    listItem.innerHTML = `<h6 class="fw-bold">${email}</h6><h5 class="text-break">${resenia.resenia}</h5> <span class="text-primary">${generarEstrellas(resenia.puntaje)} - <strong>${resenia.puntaje} ${resenia.puntaje == 1 ? 'Estrella' : 'Estrellas'}</strong></span> <br> <span class="text-secondary">${resenia.fecha}</span><hr>`;
     resenias.appendChild(listItem);
   });
 }
@@ -60,11 +65,11 @@ formularioComentario.addEventListener("submit", agregarResenia);
 function agregarResenia(e) {
   e.preventDefault();
   const resenia = TextAreaComentario.value.trim();
-  if (resenia !== "" && puntajeResenia !== undefined) {
+  if (resenia !== "" && puntajeResenia !== undefined && puntajeResenia > 0) {
     const listItem = document.createElement("li");
     listItem.className =
       "list-group-item mt-2 animate__animated animate__lightSpeedInLeft";
-    listItem.innerHTML = `<h5 class="text-break"> ${resenia}</h5> <span class="text-primary">${generarEstrellas(puntajeResenia)} - <strong>${puntajeResenia} ${puntajeResenia == 1 ? 'Estrella' : 'Estrellas'}</strong></span> <br> <span class="text-secondary">${obtenerFechaHora()}</span><hr>`;
+    listItem.innerHTML = `<h6 class="fw-bold">${email}</h6><h4 class="text-break"> ${resenia}</h4> <span class="text-primary">${generarEstrellas(puntajeResenia)} - <strong>${puntajeResenia} ${puntajeResenia == 1 ? 'Estrella' : 'Estrellas'}</strong></span> <br> <span class="text-secondary">${obtenerFechaHora()}</span><hr>`;
     resenias.appendChild(listItem);
     TextAreaComentario.value = "";
     console.log(puntajeResenia);

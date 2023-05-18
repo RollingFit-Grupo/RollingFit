@@ -2,15 +2,18 @@ const parametroURL = new URLSearchParams(window.location.search);
 console.log(parametroURL);
 console.log(parametroURL.get("id"));
 
-//Obtiene json con key listaServicios y se lo parsea en objeto javascript
+//Obtiene json de localStorage con key listaServicios y se lo parsea en objeto javascript
 let listaServicio = JSON.parse(localStorage.getItem("listaServicios")) || [];
 const servicioBuscado = listaServicio.find(
   (servicio) => servicio.id === parametroURL.get("id")
 );
+//Obtiene el usuario logeado mediante session-storage 
+const sessionData = JSON.parse(sessionStorage.getItem("user-session"));
+const email = sessionData.email;
 
 // Dibujar la card con los datos
 let seccion = document.querySelector("#seccionDetalle");
-seccion.innerHTML = `<section class="my-5 row position-relative">
+seccion.innerHTML = `<section class="my-5 row position-relative fade-izquierda fade-derecha">
 <div
   class="col-lg-8 order-lg-1 d-flex flex-column align-items-center"
 >
@@ -108,7 +111,7 @@ seccion.innerHTML = `<section class="my-5 row position-relative">
                   disabled
                   minlength="5"
                   maxlength="200"
-                >mail@delusuario.com</textarea>
+                >${email}</textarea>
               </div>
             </div>
             <div class="mb-3">
