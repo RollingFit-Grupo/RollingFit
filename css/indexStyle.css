@@ -89,7 +89,26 @@ main {
 .stars {
   color: #cd9932cb;
 }
-
+.custom-paragraph {
+    --max-lines: 10;
+    --line-height: 1.4;
+    display: flex;
+  
+    max-height: calc(var(--max-lines) * 1em * var(--line-height));
+    line-height: var(--line-height);
+  
+    overflow: hidden;
+    position: relative;
+  }
+  .custom-paragraph::before{
+      content: "";
+      position:absolute;
+      height: calc(2em * var(--line-height));
+      width: 100%;
+      bottom: 0%;
+      pointer-events: none;
+      background: linear-gradient(to bottom, transparent, rgb(45, 134, 170));
+  }
 #carruselIndexTestimonios > button.carousel-control-prev, #carruselIndexTestimonios > button.carousel-control-next{
     width: 5%;
 }
