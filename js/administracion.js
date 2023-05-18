@@ -107,7 +107,7 @@ function cargarEstatico(){
     Es importante tener en cuenta que una rutina de pesas para volumen debe adaptarse a las capacidades individuales y preferencias de cada persona. Además, se recomienda contar con la supervisión de un profesional del fitness para asegurar una correcta ejecución de los ejercicios y evitar lesiones.`,
     3,
     [],
-    0,
+    5,
     `Como profesor de pesas en el gimnasio, me enfoco completamente en mi trabajo y en brindar la mejor experiencia de entrenamiento a mis alumnos. Durante la semana, mi enfoque principal es ayudar a las personas a alcanzar sus objetivos físicos y promover un estilo de vida saludable.
     Fuera del gimnasio, disfruto de mi tiempo libre sumergiéndome en el mundo de los videojuegos y el anime. Me encanta explorar nuevos mundos virtuales, participar en desafíos emocionantes y sumergirme en historias épicas a través de mis juegos favoritos. Además, disfruto de la animación japonesa y me emociono con las tramas y los personajes cautivadores que ofrece el anime.
     A diferencia de muchos, no suelo salir los fines de semana. Prefiero quedarme en casa y dedicar mi tiempo a mis aficiones digitales. Para mí, los videojuegos y el anime son una forma de desconectar del mundo real y sumergirme en un universo lleno de emociones y diversión.
@@ -137,7 +137,7 @@ function cargarEstatico(){
     Es importante recordar que una rutina de pesas para definición debe adaptarse a las capacidades individuales y preferencias de cada persona. Además, se recomienda contar con la orientación de un profesional del fitness para diseñar un programa personalizado y obtener mejores resultados.`,
     5,
     [],
-    0,
+    3,
     `Como profesor de pesas en el gimnasio, me siento realmente afortunado de poder dedicarme a lo que me apasiona. Cada día, entro al gimnasio con una sonrisa en mi rostro, listo para inspirar y motivar a mis alumnos a alcanzar sus metas físicas.Disfruto enormemente ayudando a las personas a descubrir su fuerza y superar sus límites. 
     Mi objetivo principal es asegurarme de que todos los que entrenan conmigo se sientan seguros y confiados mientras se esfuerzan por mejorar su condición física.
     Además de mi trabajo en el gimnasio, también tengo una pasión por la naturaleza y la aventura. Los fines de semana, cuando tengo tiempo libre, me alejo de las pesas y salgo a escalar montañas. La sensación de desafiar mis habilidades físicas y mentales mientras disfruto de impresionantes paisajes naturales es indescriptible.
@@ -166,7 +166,7 @@ function cargarEstatico(){
     Es importante recordar que cada persona tiene diferentes niveles de condición física, por lo que es recomendable adaptar la intensidad y la duración de la rutina según las capacidades individuales. Además, se recomienda combinar la gimnasia aeróbica con una alimentación saludable y equilibrada para obtener mejores resultados en la pérdida de peso. Siempre es aconsejable consultar con un profesional del fitness antes de comenzar cualquier programa de ejercicio.`,
     5,
     [],
-    0,
+    1,
     `Como profesora de gimnasia aeróbica, mi trabajo me llena de alegría y satisfacción. Disfruto cada clase, animando a mis alumnos a moverse, sudar y divertirse mientras trabajan en su condición física. Mi pasión por la actividad física y el bienestar se refleja en mi dedicación y en la energía que transmito a mis alumnos.
     Aunque amo mi trabajo, los fines de semana los reservo para pasar tiempo de calidad con mi familia. Valorando los lazos familiares y las relaciones cercanas, encuentro gran felicidad en compartir momentos especiales con mis seres queridos. Ya sea disfrutando de una comida en casa, organizando actividades al aire libre o simplemente relajándonos juntos, esos momentos son preciosos para mí.
     En mis tiempos libres, tengo una pasión por la lectura. Los libros de novelas son mi refugio y una forma de desconectar del mundo exterior. Me encanta sumergirme en historias cautivadoras, explorar nuevos mundos y conocer personajes fascinantes. La lectura me brinda una oportunidad de expansión mental, de relajación y de enriquecimiento personal.
