@@ -6,6 +6,12 @@ body {
   height: 100%;
   width: 100%;
 }
+#servicioImagen{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 [data-bs-theme="dark"] .body-blur {
   background: rgba(22, 27, 27, 0.7) !important; /* Keep the original background color for dark theme */
   backdrop-filter: blur(10px) !important;

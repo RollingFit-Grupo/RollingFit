@@ -25,11 +25,13 @@ seccion.innerHTML = `<section class="my-5 row position-relative fade-izquierda f
       <h1 class="display-4 mb-4 text-break" id="nombre">${
         servicioBuscado.categoria
       } - ${servicioBuscado.servicioNombre}</h1>
+      <div>
       <img
-        src="${servicioBuscado.imagen}"
-        alt="Imagen (cargada con url)"
-        class="img-fluid"
-      />
+      src="${servicioBuscado.imagen}"
+      alt="Imagen (cargada con url)"
+      class="img-fluid rounded-5"
+      id="servicioImagen"
+    /></div>
     </div>
   </div>
   <div class="row d-flex flex-column align-items-center">
@@ -37,7 +39,7 @@ seccion.innerHTML = `<section class="my-5 row position-relative fade-izquierda f
       class="col-lg-12 px-lg-3 d-flex flex-column align-items-center mt-2"
     >
       <h3 class="mb-3" id="descripcion">Descripción:</h3>
-      <p class="lead mb-4 text-wrap text-break">
+      <p class="lead mb-4 text-wrap text-break text-center">
         ${servicioBuscado.descripcion}
       </p>
     </div>
@@ -60,7 +62,7 @@ seccion.innerHTML = `<section class="my-5 row position-relative fade-izquierda f
   <div class="container mt-2 text-center divProfesor">
   <div class="d-flex flex-column">
     <div
-      class="d-flex align-items-center justify-content-center"
+      class="d-flex align-items-center justify-content-center card-integrante rounded-5"
     >
       <img
         id="imgProfesor"
