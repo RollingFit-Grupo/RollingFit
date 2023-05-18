@@ -169,15 +169,10 @@ function cambioColor(esFavorito, id) {
 function crearLista(servicio){
   let listaFav = document.getElementById(`listaFavoritos`);
   listaFav.innerHTML +=`              
-  <div class="card w-100">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="${servicio.imagen}"class="img-fluid rounded-start" alt="">
-      </div>
-      <div class="col-md-8">
-        <h5 class="card-title">${servicio.titulo}</h5>
-      </div>
-    </div>
+  <div class="">
+      <div class="p-1">
+      <a href="#" class="btn btn-primary" onclick="navegarPaginaDetalle('${servicio.id}')">${servicio.titulo}</a>
+        </div>
   </div>
 `
 }
