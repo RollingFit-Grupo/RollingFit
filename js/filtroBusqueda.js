@@ -7,6 +7,7 @@ function busquedaServicio(nombreServicio) {
     let cardsServicio = seccionServicio.querySelectorAll(".card");
     let nombreServicioBuscado = nombreServicio.toLowerCase();
     let resultadosEncontrados = false;
+
     cardsServicio.forEach(card => {
         let tituloCard = card.querySelector("h4")
         let tituloServicio = tituloCard.textContent.toLowerCase() 
@@ -20,28 +21,26 @@ function busquedaServicio(nombreServicio) {
         } else {
             card.classList.remove("d-block");
             card.classList.add("d-none");
-            resultadosEncontrados = false;
         }
     });
-    if (resultadosEncontrados) {
-        ocultarMensaje();
-    } else {
+
+    if (!resultadosEncontrados) {
         mostrarMensaje();
+    } else {
+        ocultarMensaje();
     }
 }
+
 function mostrarMensaje() {
     mensajeAdvertencia.classList.remove("d-none");
-    mensajeAdvertencia.classList.add("d-flex");
-  }
-  
-  function ocultarMensaje() {
+}
+
+function ocultarMensaje() {
     mensajeAdvertencia.classList.remove("d-flex");
     mensajeAdvertencia.classList.add("d-none");
-  }
+}
 
-
-inputBusqueda.addEventListener("input", ()=>{
+inputBusqueda.addEventListener("input", () => {
     let textoBusqueda = inputBusqueda.value;
     busquedaServicio(textoBusqueda);
-    console.log(textoBusqueda)
 })
