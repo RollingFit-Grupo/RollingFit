@@ -76,9 +76,10 @@ export function resumenValidacion(servicio,profesor,descripcion,avatarProfesor,t
 }
 
 // helpers para validar los campos del formulario Acerca de Nosotros
-function validarEmail(email) {
-  const regexEmail =
-    / ^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$ /;
+export function validarEmail(email) {
+  // console.log(email);
+  const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    console.log(regexEmail.test(email));
   if (regexEmail.test(email)) {
     console.log("el correo electrónico es válido");
     return true;
@@ -107,9 +108,10 @@ export function resumenValidacionFormAcarcaDeNosotros(nombre, email, consulta) {
 
 // Lógica para validar el formulario de Registro
 
-function validarContrasenia(contrasenia) {
-  const regexContrasenia =
-    / ^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$/;
+export function validarContrasenia(contrasenia) {
+  const regexContrasenia = /^[a-zA-Z0-9!@#$%^&*]{8,16}$/;
+    // console.log(contrasenia);
+    console.log(regexContrasenia.test(contrasenia));
   if (regexContrasenia.test(contrasenia)) {
     console.log("la contraseña es válido");
     return true;
@@ -119,12 +121,12 @@ function validarContrasenia(contrasenia) {
   }
 }
 
-export function resumenValidacionRegistro(email, contrasenia) {
+export function resumenValidacionInicioSesion(email, contrasenia) {
   let resumen = "";
-  if (!validarEmail(email, 2, 60)) {
+  if (!validarEmail(email)) {
     resumen += "El <strong>correo electrónico</strong> ingresado es INCORRECTO. Debe contener entre 2 y 60 caracteres, @ y/o .com <br>";
   }
-  if (!validarContrasenia(contrasenia, 2, 60)) {
+  if (!validarContrasenia(contrasenia)) {
     resumen += "La <strong>contraseña</strong> ingresada es INCORRECTA. Debe contener minúsculas,mayúsculas, dígitos y/o símbolos.<br>";
   }
   return resumen;
