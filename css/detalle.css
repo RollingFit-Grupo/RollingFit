@@ -1,13 +1,4 @@
-/* body {
-  background-image: url("https://content.active.com/Assets/Active.com+Content+Site+Digital+Assets/Fitness/Articles/Twice+a+Day/man+working+out-carousel.jpg");
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
-  width: 100%;
-/* main{
-  filter: blur(5px);
-} */
+
 [data-bs-theme="dark"] .body-blur {
   background: rgba(22, 27, 27, 0.7) !important; /* Keep the original background color for dark theme */
   backdrop-filter: blur(10px) !important;
@@ -23,22 +14,17 @@
   background-color: #343a40; /* Set your dark theme color here */
 }
 
-.body-blur {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  background: rgba(172, 172, 172, 0.7) !important;
-  backdrop-filter: blur(10px) !important;
-  height: 100vh;
-}
-
-.fondo-detalle-principal {
+[data-bs-theme="light"] .fondo-detalle-principal {
   position: relative;
-  background: linear-gradient(266.26deg, rgba(255, 165, 0, 0.3) 0%, rgba(0, 191, 255, 0.3) 100%);
-  text-shadow: 0 0 3rem rgba(0, 0, 0, 35%);
-  isolation: isolate;
-  overflow: hidden;
+  background: linear-gradient(266.26deg, rgba(255, 165, 0, 0.5) 0%, rgba(0, 128, 255, 0.3) 10%, rgba(255, 165, 0, 0.5) 40%, rgba(0, 128, 255, 0.3) 100%);
+  background-size: 300% 300%;
+  animation: color 12s ease-in-out infinite;
+}
+[data-bs-theme="dark"] .fondo-detalle-principal {
+  position: relative;
+  background: linear-gradient(266.26deg, rgba(255, 165, 0, 0.3) 0%, rgba(0, 128, 255, 0.5) 10%, rgba(255, 165, 0, 0.3) 40%, rgba(0, 128, 255, 0.5) 100%);
+  background-size: 300% 300%;
+  animation: color 12s ease-in-out infinite;
 }
 
 .fondo-detalle-principal::before {
@@ -57,3 +43,14 @@
   z-index: -1;
 }
 
+@keyframes color{
+  0%{
+    background-position: 0 50%;
+  }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0 50%;
+  }
+}

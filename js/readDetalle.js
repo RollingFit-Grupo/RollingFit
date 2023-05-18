@@ -20,18 +20,17 @@ seccion.innerHTML = `<section class="my-5 row position-relative fade-izquierda f
   class="col-lg-8 order-lg-1 d-flex flex-column align-items-center"
 >
   <div class="row">
-    <div class="px-lg-3">
+    <div class="px-lg-3 text-center">
       <p class="text-muted" id="codigoUnico">${servicioBuscado.id}</p>
       <h1 class="display-4 mb-4 text-break" id="nombre">${
         servicioBuscado.categoria
       } - ${servicioBuscado.servicioNombre}</h1>
       <div>
       <img
-      src="${servicioBuscado.imagen}"
-      alt="Imagen (cargada con url)"
-      class="img-fluid rounded-5"
-      id="servicioImagen"
-    /></div>
+        src="${servicioBuscado.imagen}"
+        alt="Imagen (cargada con url)"
+        class="img-fluid rounded-3"
+      />
     </div>
   </div>
   <div class="row d-flex flex-column align-items-center">
@@ -46,7 +45,7 @@ seccion.innerHTML = `<section class="my-5 row position-relative fade-izquierda f
     <!--Div Profesor-->
   </div>
 </div>
-<div class="col-lg-4 order-lg-2 position-sticky rounded-3 pb-5">
+<div class="col-lg-4 order-lg-2 position-sticky rounded-3 pb-5 text-center card rounded-5 h-100 shadow bg-secondary-subtle fade-izquierda card-valores mostrar">
   <div class="p-3 sticky-top">
   <div
   class="tab-pane fade show active"
@@ -55,14 +54,14 @@ seccion.innerHTML = `<section class="my-5 row position-relative fade-izquierda f
   aria-labelledby="nav-basic-tab"
   tabindex="0"
 >
-  <h3 class="py-1">COMPRAR ${servicioBuscado.categoria}</h3>
-  <h4><strong>Total:</strong> US$${servicioBuscado.precio}</h4>
-  <h4><strong>Tiempo de entrega:</strong> ${servicioBuscado.tiempo}</h4>
+  <h3 class="py-1"><strong>COMPRAR</strong> ${servicioBuscado.servicioNombre}</h3>
+  <h4><strong>Total:</strong> <span class="text-secondary fw-bold">$${servicioBuscado.precio}</span></h4>
+  <h4><strong>Tiempo de entrega:</strong> <span class="text-secondary fw-bold">${servicioBuscado.tiempo} Dias</span></h4>
 
   <div class="container mt-2 text-center divProfesor">
   <div class="d-flex flex-column">
     <div
-      class="d-flex align-items-center justify-content-center card-integrante rounded-5"
+      class="d-flex align-items-center justify-content-center card-integrante rounded-4"
     >
       <img
         id="imgProfesor"
@@ -72,25 +71,22 @@ seccion.innerHTML = `<section class="my-5 row position-relative fade-izquierda f
       />
     </div>
     <div
-      class=" d-flex align-items-center justify-content-center"
+      class=" d-flex align-items-center justify-content-center py-1 bg-secondary rounded-2"
     >
-      <h3 id="nombreProfesor" class="text-break">${
-        servicioBuscado.profesor
-      }</h3>
+      <h3 id="nombreProfesor" class="text-break fw-bolder">${servicioBuscado.profesor}</h3>
     </div>
     <div
-      class="d-flex align-items-center justify-content-center text-center p-4"
+      class="d-flex align-items-center justify-content-center text-center p-3 border-primary-subtle"
     >
       <p id="descripcionProfesor" class="text-break">
         ${servicioBuscado.descripcionProfesional}
       </p>
     </div>
   </div>
+  </div>
 
   <div class=" mb-4 px-lg-3">
-  <h3 class="mb-3 text-break" id="categoria">Tipo de Categoria ${
-    servicioBuscado.servicioNombre
-  }</h3>
+  <h3 class="mb-3 text-break" id="categoria">Tipo de Categoria: <br> ${servicioBuscado.categoria}</h3>
   <!--Caracteristicas-->
   <!--Caracteristicas-->
 </div>
@@ -146,11 +142,11 @@ seccion.innerHTML = `<section class="my-5 row position-relative fade-izquierda f
                 </span>
                 <div class="puntaje-wrapper"> 
                   <div class="puntaje d-flex justify-content-center py-2 input-group-text mantenerHover">
-                    <span data-puntaje="5" class="display-3">&#9733;</span>
-                    <span data-puntaje="4" class="display-3">&#9733;</span>
-                    <span data-puntaje="3" class  ="display-3">&#9733;</span>
-                    <span data-puntaje="2" class="display-3">&#9733;</span>
-                    <span data-puntaje="1" class="display-3">&#9733;</span>
+                    <span data-puntaje="5" class="h6">&#9733;</span>
+                    <span data-puntaje="4" class="h6">&#9733;</span>
+                    <span data-puntaje="3" class  ="h6">&#9733;</span>
+                    <span data-puntaje="2" class="h6">&#9733;</span>
+                    <span data-puntaje="1" class="h6">&#9733;</span>
                   </div>
                 </div>
               </div>

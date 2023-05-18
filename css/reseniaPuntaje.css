@@ -11,7 +11,7 @@
 .puntaje span{
     cursor: pointer;
     transition: color .2s, transform .2s;
-    font-size: 50px;
+    font-size: 40px;
 }
 .puntaje span:hover{
     color: orange;
