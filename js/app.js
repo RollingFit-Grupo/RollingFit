@@ -5,21 +5,15 @@ import {
   mostrarElemento,
   closeModal,
 } from "./utils.js";
-import { 
-  validarEmail,
-} from "./helpers.js";
+import { validarEmail } from "./helpers.js";
 
-// Forms
+// Formularios
 
 const accederForm = document.getElementById("form-acceder");
 const registroForm = document.getElementById("form-registro");
 
-// Inputs
-
 const accederInputEmail = document.getElementById("acceder-email");
 const accederInputPassword = document.getElementById("acceder-password");
-
-// Buttons
 
 const accederButton = document.getElementById("acceder-button");
 const registroButton = document.getElementById("registro-button");
@@ -28,37 +22,32 @@ const closeSessionButton = document.getElementById("close-session-button");
 const showAccederButton = document.getElementById("show-acceder-button");
 const showRegistroButton = document.getElementById("show-registro-button");
 
-// Others
-
-// const resumen = resumenValidacion(servicioNombre.value,profesor.value,descripcion.value,socialProf.value,tiempo.value,precio.value,imagen.value,revision.value,descripcionProfesional.value);
-//   mostrarMensaje(resumen);
 const modalTitle = document.getElementById("auth-modal-title");
 const userType = document.getElementById("user-type");
-const modalSuccess= Swal.mixin({
+const modalSuccess = Swal.mixin({
   customClass: {
-      title:"text-success-emphasis",
-      closeButton: 'text-danger',
-      confirmButton: 'btn btn-success mx-2'
+    title: "text-success-emphasis",
+    closeButton: "text-danger",
+    confirmButton: "btn btn-success mx-2",
   },
   buttonsStyling: false,
   showCloseButton: true,
-  color:"var(--bs-success-text-emphasis)",
+  color: "var(--bs-success-text-emphasis)",
   background: "var(--bs-success-bg-subtle)",
-  iconColor:"var(--bs-success-text-emphasis)",
-})
-const modalWarning= Swal.mixin({
+  iconColor: "var(--bs-success-text-emphasis)",
+});
+const modalWarning = Swal.mixin({
   customClass: {
-      title:"text-info-emphasis",
-      closeButton: 'text-danger',
-      confirmButton: 'btn btn-success mx-2'
+    title: "text-info-emphasis",
+    closeButton: "text-danger",
+    confirmButton: "btn btn-success mx-2",
   },
   buttonsStyling: false,
   showCloseButton: true,
-  color:"var(--bs-danger-text-emphasis)",
+  color: "var(--bs-danger-text-emphasis)",
   background: "var(--bs-danger-bg-subtle)",
-  iconColor:"var(--bs-info-text-emphasis)",
-})
-// Class AdminUser
+  iconColor: "var(--bs-info-text-emphasis)",
+});
 
 class Usuario {
   #nombre;
@@ -104,21 +93,19 @@ class Usuario {
   get isAdmin() {
     return this.#admin;
   }
+
   toJSON() {
     return {
       nombre: this.nombre,
       email: this.email,
       contrasenia: this.contrasenia,
-      isAdmin: this.isAdmin
-};
+      isAdmin: this.isAdmin,
+    };
   }
 }
-// Initial functions
 
 registroAdminUser();
 checkUsuarioIngresado();
-
-// Events listeners
 
 accederButton.addEventListener("click", accederUser);
 closeSessionButton.addEventListener("click", closeSession);
@@ -152,11 +139,10 @@ function showAccederForm() {
   ocultarElemento(showAccederButton);
   mostrarElemento(showRegistroButton);
 
-  changeModalTitle("Iniciar sesion");
+  changeModalTitle("Iniciar sesión");
 }
 
 function registroAdminUser() {
-  // Creamos un objeto que es un usuario administrador instanciando la clase AdminUser
   const adminUsuario = new Usuario(
     `Julieta Correa`,
     `mjulieta210@gmail.com`,
@@ -164,52 +150,44 @@ function registroAdminUser() {
     true
   );
   const usuario = new Usuario(
-    `Maximiliano`,
-    `maxivega1@gmail.com`,
+    `Admin`,
+    `admin@gmail.com`,
     `Password2!`,
     true
   );
-  // guardamos el usuario en localStorage
+
   setLocalStorage("users", [adminUsuario, usuario]);
 }
-
-//Ingreso como usario//
 
 function accederUser() {
   const email = accederInputEmail.value;
   const contrasenia = accederInputPassword.value;
 
-  // mostrarMensaje(resumen);
-  // console.log(accederInputEmail.value);
-  // console.log(accederInputPassword.value);
-
   if (!email || !contrasenia) {
     modalWarning.fire(
       "Completa todos los campos",
-      "Debes completar todos los campos para iniciar sesion",
+      "Debes completar todos los campos para iniciar sesión",
       "info"
     );
     return;
   }
 
-  if (validarEmail(email) === false ){
+  if (validarEmail(email) === false) {
     modalWarning.fire(
-    "Formato de mail incorrecto",
-    "El formato correcto es: mail@mail.com",
-    "error"
-  );
-  return
-
+      "Formato de correo incorrecto",
+      "El formato correcto es: correo@ejemplo.com",
+      "error"
+    );
+    return;
   }
 
-  // const raw = getLocalStorage("users");
   const users = JSON.parse(getLocalStorage("users"));
   const usuarioEncontrado = users.find((user) => user.email === email);
 
   if (!usuarioEncontrado) {
     modalWarning.fire(
       "Credenciales incorrectas",
-      "Usuario o contraseña incorrectas",
+      "Usuario o contraseña incorrectos",
       "error"
     );
     return;
@@ -218,33 +196,28 @@ function accederUser() {
   if (usuarioEncontrado.contrasenia !== contrasenia) {
     modalWarning.fire(
       "Credenciales incorrectas",
-      "Usuario o contraseña incorrectas",
+      "Usuario o contraseña incorrectos",
       "error"
     );
-
     return;
   }
 
   if (usuarioEncontrado.isAdmin === true) {
     mostrarElemento(userType);
-    // console.log(userType);
     userType.innerHTML = "Administrador";
     sessionStorage.setItem("user-session", JSON.stringify(usuarioEncontrado));
     closeModal("acceder-modal");
     ocultarElemento(initSessionButton);
     mostrarElemento(closeSessionButton);
     modalSuccess.fire(
-      "Inicio de sesion exitoso",
-      "Te logueaste exitosamente como administrador",
+      "Inicio de sesión exitoso",
+      "Has iniciado sesión correctamente como administrador",
       "success"
     );
   }
 }
 
-// Retorna una instancia del modal
-
 function checkUsuarioIngresado() {
-
   const usuarioIngresado = JSON.parse(sessionStorage.getItem("user-session"));
 
   if (usuarioIngresado) {
@@ -263,8 +236,8 @@ function closeSession() {
   sessionStorage.removeItem("user-session");
   checkUsuarioIngresado();
   modalSuccess.fire(
-    "Cierre de sesion exitoso",
-    "La sesión se cerró exitosamente",
+    "Cierre de sesión exitoso",
+    "La sesión se cerró correctamente",
     "success"
   );
 }
