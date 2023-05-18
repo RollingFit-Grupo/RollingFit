@@ -89,9 +89,7 @@ seccion.innerHTML = `<section class="my-5 row position-relative">
 </div>
 
 <div class="text-center">
-<button class="btn btn-primary btn-lg">
-  Añadir al carro
-</button>
+  <a href="./error404.html" class="btn btn-primary btn-lg">Añadir al carro</a>
 </div>
 </div>
 </div>
