@@ -37,7 +37,7 @@ seccion.innerHTML = `<section class="my-5 row position-relative">
     <!--Div Profesor-->
   </div>
 </div>
-<div class="col-lg-4 order-lg-2 position-sticky rounded-3 pb-5 text-center">
+<div class="col-lg-4 order-lg-2 position-sticky rounded-3 pb-5 text-center card rounded-5 h-100 shadow bg-secondary-subtle fade-izquierda card-valores mostrar">
   <div class="p-3 sticky-top">
   <div
   class="tab-pane fade show active"
@@ -47,8 +47,8 @@ seccion.innerHTML = `<section class="my-5 row position-relative">
   tabindex="0"
 >
   <h3 class="py-1"><strong>COMPRAR</strong> ${servicioBuscado.servicioNombre}</h3>
-  <h4><strong>Total:</strong> US$${servicioBuscado.precio}</h4>
-  <h4><strong>Tiempo de entrega:</strong> ${servicioBuscado.tiempo}</h4>
+  <h4><strong>Total:</strong>US <span class="text-secondary fw-bold">$${servicioBuscado.precio}</span></h4>
+  <h4><strong>Tiempo de entrega:</strong> <span class="text-secondary fw-bold">${servicioBuscado.tiempo} Dias</span></h4>
 
   <div class="container mt-2 text-center divProfesor">
   <div class="d-flex flex-column">
@@ -63,21 +63,22 @@ seccion.innerHTML = `<section class="my-5 row position-relative">
       />
     </div>
     <div
-      class=" d-flex align-items-center justify-content-center py-3"
+      class=" d-flex align-items-center justify-content-center py-1 bg-secondary rounded-2"
     >
       <h3 id="nombreProfesor" class="text-break fw-bolder">${servicioBuscado.profesor}</h3>
     </div>
     <div
-      class="d-flex align-items-center justify-content-center text-center p-3"
+      class="d-flex align-items-center justify-content-center text-center p-3 border-primary-subtle"
     >
       <p id="descripcionProfesor" class="text-break">
         ${servicioBuscado.descripcionProfesional}
       </p>
     </div>
   </div>
+  </div>
 
   <div class=" mb-4 px-lg-3">
-  <h3 class="mb-3 text-break" id="categoria">Tipo de Categoria ${servicioBuscado.servicioNombre}</h3>
+  <h3 class="mb-3 text-break" id="categoria">Tipo de Categoria: <br> ${servicioBuscado.categoria}</h3>
   <!--Caracteristicas-->
   <!--Caracteristicas-->
 </div>
