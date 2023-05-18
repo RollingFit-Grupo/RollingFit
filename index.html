@@ -11,6 +11,7 @@
   <meta name="author"
     content="Cesar Luciano Angeleri, Maximiliano leonel Vega, Andrada Joaquin Guillermo, Mauricio Soria, Rita Astorga, Julieta Correa" />
   <title>RollingFit - Pagina Principal</title>
+  <link rel="shortcut icon" href="./img/logo/favicon.ico" type="image/x-icon" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,442 +21,447 @@
   <link rel="stylesheet" href="/css/navbar-footer.css" />
   <link rel="stylesheet" href="./css/custom.css" />
   <link rel="stylesheet" href="./css/indexStyle.css" />
+  <link rel="stylesheet" href="./css/fondosSections.css" />
   <link rel="stylesheet" href="./css/animaciones.css" />
 </head>
-
-<body>
-  <header>
-    <nav class="navbar bg-body navbar-expand-lg container-fluid" data-bs-theme="dark">
-      <div class="container">
-        <a href="./index.html" class="navbar-brand"><img
-            src="./img/logo/color/logo-letras/CombinadoLogo+Letras-Color.png" class="justify-content-center img-size"
-            alt="logo de RollingFit" /></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link text-secondary active" aria-current="page" href="./index.html">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-secondary" href="./pages/acerca.html">Acerca de nosotros</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-secondary" href="./pages/admin.html" id="user-type">
-              </a>
-            </li>
-          </ul>
-          <div
-            class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-2 gap-lg-3 mb-3 mb-lg-0">
-            <div class="nav-item dropdown">
-              <div class="nav-link text-secondary dropdown-toggle" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                <i id="iconThemeShow" class="bi bi-brightness-high-fill"></i>
-              </div>
-              <ul class="dropdown-menu">
-                <li>
-                  <button id="btn_light" class="dropdown-item">
-                    <i class="bi bi-brightness-high-fill"></i> Light
-                  </button>
-                </li>
-                <li>
-                  <button id="btn_dark" class="dropdown-item">
-                    <i class="bi bi-moon-fill"></i> Dark
-                  </button>
-                </li>
-              </ul>
-            </div>
-            <!-- Lista de Favoritos -->
-            <div class="nav-item dropdown">
-              <div class="nav-link text-secondary dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <i id="corazonIcono" class="bi bi-heart-fill"></i>
-              </div>
-              <div>
-                <ul class="dropdown-menu" id="listaFavoritos">
+  <body>
+    <header>
+      <nav class="navbar bg-body navbar-expand-lg container-fluid" data-bs-theme="dark">
+        <div class="container">
+          <a href="./index.html" class="navbar-brand"><img
+              src="./img/logo/color/logo-letras/CombinadoLogo+Letras-Color.png" class="justify-content-center img-size"
+              alt="logo de RollingFit" /></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link text-secondary active" aria-current="page" href="./index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-secondary" href="./pages/acerca.html">Acerca de nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-secondary" href="./pages/admin.html" id="user-type">
+                </a>
+              </li>
+            </ul>
+            <div
+              class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-2 gap-lg-3 mb-3 mb-lg-0">
+              <div class="nav-item dropdown">
+                <div class="nav-link text-secondary dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  <i id="iconThemeShow" class="bi bi-brightness-high-fill"></i>
+                </div>
+                <ul class="dropdown-menu">
+                  <li>
+                    <button id="btn_light" class="dropdown-item">
+                      <i class="bi bi-brightness-high-fill"></i> Light
+                    </button>
+                  </li>
+                  <li>
+                    <button id="btn_dark" class="dropdown-item">
+                      <i class="bi bi-moon-fill"></i> Dark
+                    </button>
+                  </li>
                 </ul>
               </div>
-            </div>
-            <form class="d-flex py-2" role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Buscar Servicios"
-                aria-label="Buscar"
-                id="input_filtro_Servicios"
-                loguin-color
-              />
-        </form>
-        <div>
+              <!-- Lista de Favoritos -->
+              <div class="nav-item dropdown">
+                <div class="nav-link text-secondary dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i id="corazonIcono" class="bi bi-heart-fill"></i>
+                </div>
+                <div>
+                  <ul class="dropdown-menu" id="listaFavoritos">
+                  </ul>
+                </div>
+              </div>
+              <form class="d-flex py-2" role="search">
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Buscar Servicios"
+                  aria-label="Buscar"
+                  id="input_filtro_Servicios"
+                  loguin-color
+                />
+          </form>
+          <div>
+              <button
+              id="init-session-button"
+              type="button"
+              class="btn btn-primary acceder-color mr-2"
+              data-bs-toggle="modal"
+              data-bs-target="#acceder-modal"
+            >
+              Ingresar
+            </button>
             <button
-            id="init-session-button"
-            type="button"
-            class="btn btn-primary acceder-color mr-2"
-            data-bs-toggle="modal"
-            data-bs-target="#acceder-modal"
-          >
-            Ingresar
-          </button>
-          <button
-            id="close-session-button"
-            type="button"
-            class="btn btn-primary acceder-color mr-2 d-none"
-            data-bs-toggle="modal"
-          >
-            Cerrar sesión
-          </button>
-        </div>
-    </div>
-</div>
-</div>
-</nav>
-<!-- Modal Autenticacion -->
-<div
-class="modal fade"
-tabindex="-1"
-id="acceder-modal"
-aria-labelledby="acceder-modal"
-aria-hidden="true"
->
-<div class="modal-dialog">
-<div class="modal-content">
-<div class="modal-header">
-  <h5 id="auth-modal-title" class="modal-title">Ingresar</h5>
-  <button
-    type="button"
-    class="btn-close"
-    data-bs-dismiss="modal"
-    aria-label="Close"
-  ></button>
-</div>
-<div class="modal-body">
-  <!-- Formulario acceder -->
-  <form class="form-acceder" id="form-acceder">
-    <div class="mb-3">
-      <label for="email-label" class="form-label"
-        >Email</label
-      >
-      <input
-        type="email"
-        class="form-control"
-        id="acceder-email"
-        placeholder="name@example.com"
-        required
-      />
-    </div>
-    <div class="mb-3">
-      <label for="password-label" class="form-label"
-        >Contraseña</label
-      >
-      <input
-        type="password"
-        class="form-control"
-        id="acceder-password"
-        placeholder="********"
-        required
-      />
-    </div>
-    <div class="alert alert-danger mt-3 d-none" role="alert" id="alertaModal"></div>
-<div class="d-flex justify-content-center">
-  <button
-    id="acceder-button"
-    type="submit"
-    class="btn btn-primary w-100"
-  >
-    Inicia Sesión
-  </button>
-</div>
-  </form>
-  <!-- Formulario registro -->
-  <form class="form-registro d-none" id="form-registro">
-    <div class="mb-3">
-      <label for="name-label" class="form-label"
-        >Nombre</label
-      >
-      <input
-        type="text"
-        class="form-control"
-        id="registro-name"
-        placeholder="Pedro Rodriguez"
-        required
-      />
-    </div>
-    <div class="mb-3">
-      <label for="email-label" class="form-label"
-        >Email</label
-      >
-      <input
-        type="email"
-        class="form-control"
-        id="registro-email"
-        placeholder="name@example.com"
-        required
-      />
-    </div>
-    <div class="mb-3">
-      <label for="password-label" class="form-label"
-        >Contraseña</label
-      >
-      <input
-        type="password"
-        class="form-control"
-        id="registro-password"
-        placeholder="********"
-        required
-      />
-    </div>
-    <div class="alert alert-danger mt-3 d-none" role="alert" id="alertaModal"></div>
-<div class="d-flex justify-content-center">
-  <button
-    id="registro-button"
-    type="submit"
-    class="btn btn-primary w-100 d-none"
-  >
-    Registrarme
-  </button>
-</div>
-  </form>
-</div>
-<div class="modal-footer d-flex justify-content-center">
-  <button
-    id="show-registro-button"
-    type="button"
-    class="btn btn-outline-secondary w-100"
-  >
-    No tengo cuenta
-  </button>
-  <button
-    id="show-acceder-button"
-    type="button"
-    class="btn btn-outline-secondary w-100 d-none"
-  >
-    Ya tengo cuenta
-  </button>
-</div>
-</div>
-</div>
-</div>
-</header>
-  <main>
-    <section id="video" class="my-0 position-relative">
-      <video class="py-0 border-0" src="./video/videofinal.mp4" autoplay muted loop></video>
-      <div id="texto" class="position-absolute top-50 start-50 translate-middle text-center">
-        <h1 class="fs-1">¡<strong class="rollingfitLogo-primary">Rolling </strong><strong
-            class="rollingfitLogo-secondary"> Fit</strong> te espera para transformar tu cuerpo <strong
-            class="rollingfitLogo-primary">HOY!</strong></h1>
-        <h2 class="fs-3"><strong class="rollingfitLogo-primary">SUSCRIBITE </strong>al servicio que mejor se adapte a
-          tus necesidaes</h2>
-        <h3 class="fs-4"><strong class="rollingfitLogo-primary">Mirá</strong> lo que la <strong
-            class="rollingfitLogo-primary">Comunidad </strong> <strong class="rollingfitLogo-secondary">Fit</strong>
-          dice de nosotros.</h3>
-        <a href="#nuestrosTestimonios" class="btn bg-primary">Nuestros Clientes</a>
-      </div>
-    </section>
-    <div id="tituloVideo"
-      class=" d-sm-block d-md-none d-lg-none container-fluid fondo-container vh-100 d-flex flex-column align-items-center align-items-lg-start justify-content-center p-lg-5">
-      <h1 class="fs-1 text-center">¡<strong class="rollingfitLogo-primary">Rolling </strong><strong
-          class="rollingfitLogo-secondary"> Fit</strong> te espera para transformar tu cuerpo <strong
-          class="rollingfitLogo-primary">HOY!</strong></h1>
-      <h2 class="fs-2 text-center"><strong class="rollingfitLogo-primary">SUSCRIBITE </strong>al servicio que mejor se
-        adapte a tus necesidades</h2>
-      <h3 class="fs-3 text-center"><strong class="rollingfitLogo-primary">Mirá</strong> lo que la <strong
-          class="rollingfitLogo-primary">Comunidad </strong><strong class="rollingfitLogo-secondary">Fit</strong> dice
-        de nosotros.</h3>
-      <a href="#nuestrosTestimonios" class="btn bg-primary">Nuestros Clientes</a>
-    </div>
-    <section class="fondo-containerFrase">
-      <h1 id="tituloFraseGrande" class=" text-black  text-center"><strong class="rollingfitLogo-primary">
-          "Transformá</strong class="rollingfitLogo-secondary"><strong class="rollingfitLogo-secondary"> tu
-          cuerpo</strong><strong class="rollingfitLogo-primary">,cambiá </strong><strong
-          class="rollingfitLogo-secondary">tu mente </strong><strong class="rollingfitLogo-primary">y elevá</strong>
-        <strong class="rollingfitLogo-secondary">tu vida en</strong><strong
-          class="rollingfitLogo-primary">Rolling</strong><strong class="rollingfitLogo-secondary"> Fit."</strong><br>
-        <hr class="">
-        <h1 class="text-center"><strong class="letrero texto-naranja">¡El éxito </strong><strong
-            class="letrero texto-azul">comienza aquí!</strong></h1>
-        <hr>
-      </h1>
-    </section>
-    <section class="py-5 ">
-      <h1 class="text-start text-primary ms-4">Conocé todos nuestros packs de entrenamiento</h1>
-      <hr class="border border-1 opacity-75 mx-4">
-      <!-- Mensaje de advertencia -->
-      <div class="container alert alert-warning border-3 rounded-5 d-flex flex-column justify-content-center text-center d-none" id="mensajeServicioNoEncontrado">
-        <i class="bi bi-search fs-1 p-3"></i>
-        <h5 class="display-5 p-4"><strong>No se encontraron</strong> Servicios...</h5>
-      </div>
-    </section>
-    <!-- Sujeto a cambios -->
-    <section id="seccionServicios" class="container">
-
-    </section>
-    <hr class="border border-1 opacity-75 mx-4">
-    <section id="nuestrosTestimonios" class="bg bg-dark ps-2 py-3 d-lg-flex justify-content-lg-">
-      <article class="container-fluid row">
-        <div class="col-12">
-          <h5 id="testimonioTitulo" class="rollingfitLogo-secondary">Testimonios</h5>
-        </div>
-        <div class="col-12">
-          <h3 class="text-start rollingfitLogo-primary">Cómo nuestros clientes cambiaron sus habitos y mejoraron su vida
-          </h3>
-          <p class="text-start">Nos obsesionamos por el exito, por lo tanto nuestro objetivo mas grande es que te
-            sientas sano y fuerte!</p>
-        </div>
-      </article>
-      <article id="cardsPersonas" class="container d-flex justify-content-center">
-        <div id="carruselIndexTestimonios" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carruselIndexTestimonios" data-bs-slide-to="0" class="active"
-              aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carruselIndexTestimonios" data-bs-slide-to="1"
-              aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carruselIndexTestimonios" data-bs-slide-to="2"
-              aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carruselIndexTestimonios" data-bs-slide-to="3"
-              aria-label="Slide 4"></button>
-            <button type="button" data-bs-target="#carruselIndexTestimonios" data-bs-slide-to="4"
-              aria-label="Slide 5"></button>
+              id="close-session-button"
+              type="button"
+              class="btn btn-primary acceder-color mr-2 d-none"
+              data-bs-toggle="modal"
+            >
+              Cerrar sesión
+            </button>
           </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active card-group">
-              <div class="card cardstestimonios mb-3 bg-white " style="max-width: 540px;">
-                <div class="row g-0">
-                  <div class="col-md-4 d-flex align-items-center d-flex align-items-center justify-content-center">
-                    <img src="./img/cara-hombre-sonriendo.webp" height="180px" width="180px"
-                      class="object-fit-cover border-1 rounded-circle" alt="imagen de hombre sonriente">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body bg bg-white text-bg-light" style="height: 360px;">
-                      <p class="card-text ">
-                        "Desde que empecé a asistir a Rolling Fit, mi vida ha cambiado por completo. El ambiente es
-                        increíble, los entrenadores siempre están dispuestos a ayudar y motivar. No puedo imaginar mi
-                        rutina de ejercicio sin este gimnasio, ¡es simplemente lo mejor!. Definitivamente se volvio mi
-                        lugar favorito del dia"</p>
-                      <div class="textoCard d-lg-flex flex-lg-column justify-lg-content-end align-items-lg-start">
-                        <h5 class="card-title fs-4">Marcos Damian Ponce</h5>
-                        <p class="card-text"><small class="text-dark">33 años</small></p>
-                      </div>
-                    </div>
-                  </div>
+      </div>
+  </div>
+  </div>
+  </nav>
+  <!-- Modal Autenticacion -->
+  <div
+  class="modal fade"
+  tabindex="-1"
+  id="acceder-modal"
+  aria-labelledby="acceder-modal"
+  aria-hidden="true"
+  >
+  <div class="modal-dialog">
+  <div class="modal-content">
+  <div class="modal-header">
+    <h5 id="auth-modal-title" class="modal-title">Ingresar</h5>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="modal"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <!-- Formulario acceder -->
+    <form class="form-acceder" id="form-acceder">
+      <div class="mb-3">
+        <label for="email-label" class="form-label"
+          >Email</label
+        >
+        <input
+          type="email"
+          class="form-control"
+          id="acceder-email"
+          placeholder="name@example.com"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="password-label" class="form-label"
+          >Contraseña</label
+        >
+        <input
+          type="password"
+          class="form-control"
+          id="acceder-password"
+          placeholder="********"
+          required
+        />
+      </div>
+      <div class="alert alert-danger mt-3 d-none" role="alert" id="alertaModal"></div>
+  <div class="d-flex justify-content-center">
+    <button
+      id="acceder-button"
+      type="submit"
+      class="btn btn-primary w-100"
+    >
+      Inicia Sesión
+    </button>
+  </div>
+    </form>
+    <!-- Formulario registro -->
+    <form class="form-registro d-none" id="form-registro">
+      <div class="mb-3">
+        <label for="name-label" class="form-label"
+          >Nombre</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="registro-name"
+          placeholder="Pedro Rodriguez"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="email-label" class="form-label"
+          >Email</label
+        >
+        <input
+          type="email"
+          class="form-control"
+          id="registro-email"
+          placeholder="name@example.com"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="password-label" class="form-label"
+          >Contraseña</label
+        >
+        <input
+          type="password"
+          class="form-control"
+          id="registro-password"
+          placeholder="********"
+          required
+        />
+      </div>
+      <div class="alert alert-danger mt-3 d-none" role="alert" id="alertaModal"></div>
+  <div class="d-flex justify-content-center">
+    <button
+      id="registro-button"
+      type="submit"
+      class="btn btn-primary w-100 d-none"
+    >
+      Registrarme
+    </button>
+  </div>
+    </form>
+  </div>
+  <div class="modal-footer d-flex justify-content-center">
+    <button
+      id="show-registro-button"
+      type="button"
+      class="btn btn-outline-secondary w-100"
+    >
+      No tengo cuenta
+    </button>
+    <button
+      id="show-acceder-button"
+      type="button"
+      class="btn btn-outline-secondary w-100 d-none"
+    >
+      Ya tengo cuenta
+    </button>
+  </div>
+  </div>
+  </div>
+  </div>
+  </header>
+    <main>  
+      <section id="video" class="position-relative overflow-hidden"> 
+        <div id="texto" class="container py-3">
+            <div class="row flex-row-reverse align-items-center justify-content-between g-2">
+              <div class="col-12 col-md-6 text-center">
+                <img src="./img/logo/color/logo-letras/CombinadoLogo+Letras-Color.png" class="img-fluid w-75" alt="Logo de RollingFit" loading="lazy">
+              </div>
+              <div class="col-12 col-md-6">
+                <h1 class="display-5 fw-bold text-light mb-3"><strong class="rollingfitLogo-primary">Rolling</strong><strong class="rollingfitLogo-secondary">FIT</strong>te espera para transformar tu cuerpo HOY</h1>
+                <p class="lead text-light"><strong class="rollingfitLogo-primary">Suscribite </strong>al servicio que mejor se adapte a tus necesidaes</p>
+                <p class="lead text-light">Mirá lo que la <strong class="rollingfitLogo-primary">Comunidad</strong><strong class="rollingfitLogo-primary text-secondary">FIT</strong> dice de nosotros</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                  <a class="btn btn-primary rounded-pill btn-lg px-5" href="#nuestrosTestimonios" role="button">Nuestros Clientes</a>
                 </div>
               </div>
             </div>
-            <div class="carousel-item">
-              <div class="card cardstestimonios mb-3 bg-white" style="max-width: 540px;">
-                <div class="row g-0">
-                  <div class="col-md-4 d-flex align-items-center d-flex align-items-center justify-content-center">
-                    <img src="./img/mujerfit.jpg" height="180px" width="180px"
-                      class=" object-fit-cover border-1 rounded-circle" alt="imagen de chica fitness">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body bg bg-white text-bg-light" style="height: 360px;">
-                      <p class="card-text">
-                        "Desde que empecé a entrenar en Rolling Fit, he notado una gran diferencia en mi vida. Lo que
-                        más me ha gustado del gimnasio es la inclusividad que hay para las mujeres, me siento totalmente
-                        cómoda y apoyada. Sin duda, recomendaría Rolling Fit a todas las mujeres que quieren empezar a
-                        entrenar en un ambiente acogedor y motivador."</p>
-                      <div class="textoCard d-lg-flex flex-lg-column justify-lg-content-end align-items-lg-start">
-                        <h5 class="card-title fs-4">Micaela Alboran</h5>
-                        <p class="card-text"><small class="text-black">28 años.</small></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+        </div>
+        <video class="position-absolute z-n1 d-none d-md-block" src="./video/videofinal.mp4" autoplay muted loop></video>
+        <img class="position-absolute top-50 start-50 translate-middle z-n1 d-md-none h-100" src="./img/cierrese-arriba-muchas-pesas-gimnasia-metal-estante-gimnasio-deporte.jpg"></img>
+        <section class="pb-5 container-fluid">
+          <div id="tituloFraseGrande">
+            <div class="display-2 d-flex flex-column flex-md-row justify-content-center align-items-center gap-md-3 py-3" id="animacionPrincipal">
+              <div class="contenedorTextoAnimacion">
+                <span id="TextoGrupo1" class="text-primary slide-texto-fromBottom">Transformá</span>
+              </div>
+              <div class="contenedorTextoAnimacion">
+                <span id="TextoGrupo2" class="text-secondary slide-texto-fromTop">tu cuerpo</span>
               </div>
             </div>
-            <div class="carousel-item">
-              <div class="card cardstestimonios mb-3 bg-white" style="max-width: 540px;">
-                <div class="row g-0">
-                  <div class="col-md-4 d-flex align-items-center d-flex align-items-center justify-content-center">
-                    <img src="./img/depositphotos_329598166-stock-photo-close-up-of-strong-muscular.jpg" height="180px"
-                      width="180px" class=" object-fit-cover border-1 rounded-circle" alt="imagen de hombre fitness">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body bg bg-white text-bg-light" style="height: 360px;">
-                      <p class="card-text">
-                        "En Rolling Fit, cada día es una oportunidad para superar nuestros límites y alcanzar nuestros
-                        objetivos. No hay nada más gratificante que ver a nuestros miembros lograr su mejor versión, con
-                        el mejor ambiente laboral
-                        de todos, no existe nada mas gratificante que un alumno cumpla con sus meta, y aqui amamos que
-                        eso suceda."</p>
-                      <div class="textoCard d-lg-flex flex-lg-column justify-lg-content-end align-items-lg-start">
-                        <h5 class="card-title fs-4">Mariano del Prado</h5>
-                        <p class="card-text"><small class="text-black">40 años</small></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <h3 class="h1 text-center"><strong class="letrero texto-naranja">¡El éxito </strong><strong
+                class="letrero texto-azul">comienza aquí!</strong></h3>
+          </div>
+        </section>
+      </section>
+      <section class="gradiente-section-servicios">
+        <article class="container py-4">
+          <h2 class="display-3 mb-4">Conocé nuestros <strong class="rollingfitLogo-primary">Servicios</strong> <strong class="rollingfitLogo-primary text-secondary">Fitness</strong></h1>
+          <hr class="text-primary">
+          <!-- Sujeto a cambios -->
+          <div id="seccionServicios">
+            
+          </div>
+          <hr class="text-primary">
+        </article>
+      </section>
+      <section id="nuestrosTestimonios" class="bg-body py-3 mb-5 fade-in fondo-section-testimonios">
+        <article class="container">
+          <h2 id="testimonioTitulo" class="display-3"><strong class="rollingfitLogo-primary text-secondary">Testimonios</strong> de nuestros <strong class="rollingfitLogo-primary">Clientes</strong></h2>
+          <hr class="text-primary">
+          <div class="row g-0">
+            <div class="col-12 col-lg-5">
+              <h3 class="h2 py-3">Cómo nuestros clientes cambiaron sus habitos y mejoraron su vida</h3>
+              <p class="text-body fs-4">Nos obsesionamos por el exito, por lo tanto nuestro objetivo mas grande es que te
+                sientas sano y fuerte!</p>
             </div>
-            <div class="carousel-item">
-              <div class="card cardstestimonios mb-3 bg-white" style="max-width: 540px;">
-                <div class="row g-0">
-                  <div class="col-md-4 d-flex align-items-center d-flex align-items-center justify-content-center">
-                    <img src="./img/depositphotos_35836761-stock-photo-beautiful-smiling-girl.jpg" height="180px"
-                      width="180px" class=" object-fit-cover border-1 rounded-circle" alt="mujer sonriente">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body bg bg-white text-bg-light" style="height: 360px;">
-                      <p class="card-text">
-                        "Rolling Fit ha cambiado mi vida, finalmente tengo el cuerpo que siempre quise. Me encanta ir al
-                        gimnasio, es mi lugar favorito. No podría estar más agradecida con el equipo de entrenadores y
-                        el ambiente acogedor que me ha ayudado a alcanzar mis metas
-                        y superarme cada dia, amo la gente y las vibras que transmiten los empleados de Rolling Fit."
-                      </p>
-                      <div class="textoCard d-lg-flex flex-lg-column justify-lg-content-end align-items-lg-start">
-                        <h5 class="card-title fs-4">Florencia Antonella Miranda</h5>
-                        <p class="card-text"><small class="text-black">24 años.</small></p>
+            <div class="col-12 col-lg-7">
+                <div id="cardsPersonas" class="container d-flex justify-content-center">
+                  <div id="carruselIndexTestimonios" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carruselIndexTestimonios" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carruselIndexTestimonios" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carruselIndexTestimonios" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                      <button type="button" data-bs-target="#carruselIndexTestimonios" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+                      <button type="button" data-bs-target="#carruselIndexTestimonios" data-bs-slide-to="4"
+                        aria-label="Slide 5"></button>
+                    </div>
+                    <div class="carousel-inner w-100">
+                      <div class="carousel-item px-md-5 pb-5 active">
+                        <div class="card justify-content-center rounded-5 text-bg-light shadow-sm">
+                          <div class="row g-0">
+                            <div class="col-md-4 m-auto px-5 px-md-3 py-2 py-md-3">
+                              <img src="./img/cara-hombre-sonriendo.webp"
+                                class="object-fit-cover rounded-circle shadow" alt="Avatar del Usuario del testimonio" width="136px" height="136px"> 
+                            </div>
+                            <div class="col-md-8">
+                              <div class="card-body">
+                                <div class="d-flex flex-column flex-md-row justify-content-between px-3">
+                                  <h5 class="card-title">Marcos Damian Ponce</h5>
+                                  <p class="card-text"><small class="text-secondary">33 años</small></p>
+                                </div>
+                                <blockquote class="blockquote p-3 rounded-5 border-bottom border-top border-secondary my-auto">
+                                  <p class="card-text fs-6">
+                                    <i class="bi bi-quote fs-1 text-primary lh-1"></i>
+                                    Desde que empecé a asistir a Rolling Fit, mi vida ha cambiado por completo. El ambiente es
+                                    increíble, los entrenadores siempre están dispuestos a ayudar y motivar. No puedo imaginar mi
+                                    rutina de ejercicio sin este gimnasio, ¡es simplemente lo mejor!. Definitivamente se volvio mi
+                                    lugar favorito del dia</p>
+                                </blockquote>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                     <div class="carousel-item px-md-5 pb-5">
+                        <div class="card justify-content-center rounded-5 text-bg-light shadow-sm">
+                          <div class="row g-0">
+                            <div class="col-md-4 m-auto px-5 px-md-3 py-2 py-md-3">
+                              <img src="./img/mujerfit.jpg"
+                                class="object-fit-cover rounded-circle shadow" alt="Avatar del Usuario del testimonio" width="136px" height="136px"> 
+                            </div>
+                            <div class="col-md-8">
+                              <div class="card-body">
+                                <div class="d-flex flex-column flex-md-row justify-content-between px-3">
+                                  <h5 class="card-title">Micaela Alboran</h5>
+                                  <p class="card-text"><small class="text-secondary">28 años</small></p>
+                                </div>
+                                <blockquote class="blockquote p-3 rounded-5 border-bottom border-top border-secondary my-auto">
+                                  <p class="card-text fs-6">
+                                    <i class="bi bi-quote fs-1 text-primary lh-1"></i>
+                                    Desde que empecé a entrenar en Rolling Fit, he notado una gran diferencia en mi vida. Lo que
+                                    más me ha gustado del gimnasio es la inclusividad que hay para las mujeres, me siento totalmente
+                                    cómoda y apoyada. Sin duda, recomendaría Rolling Fit a todas las mujeres que quieren empezar a
+                                    entrenar en un ambiente acogedor y motivador.</p>
+                                </blockquote>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="carousel-item px-md-5 pb-5">
+                        <div class="card justify-content-center rounded-5 text-bg-light shadow-sm">
+                          <div class="row g-md-0">
+                            <div class="col-md-4 m-auto px-5 px-md-3 py-2 py-md-3">
+                              <img src="./img/depositphotos_329598166-stock-photo-close-up-of-strong-muscular.jpg"
+                                class="object-fit-cover rounded-circle shadow" alt="Avatar del Usuario del testimonio" width="136px" height="136px"> 
+                            </div>
+                            <div class="col-md-8">
+                              <div class="card-body">
+                                <div class="d-flex flex-column flex-md-row justify-content-between px-3">
+                                  <h5 class="card-title">Mariano del Prado</h5>
+                                  <p class="card-text"><small class="text-secondary">40 años</small></p>
+                                </div>
+                                <blockquote class="blockquote p-3 rounded-5 border-bottom border-top border-secondary my-auto">
+                                  <p class="card-text fs-6">
+                                    <i class="bi bi-quote fs-1 text-primary lh-1"></i>
+                                    En Rolling Fit, cada día es una oportunidad para superar nuestros límites y alcanzar nuestros objetivos. No hay nada más gratificante que ver a nuestros miembros lograr su mejor versión, con
+                                  el mejor ambiente laboral de todos, no existe nada mas gratificante que un alumno cumpla con sus meta, y aqui amamos que
+                                  eso suceda</p>
+                                </blockquote>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="carousel-item px-md-5 pb-5">
+                        <div class="card justify-content-center rounded-5 text-bg-light shadow-sm">
+                          <div class="row g-0">
+                            <div class="col-md-4 m-auto px-5 px-md-3 py-2 py-md-3">
+                              <img src="./img/depositphotos_35836761-stock-photo-beautiful-smiling-girl.jpg"
+                                class="object-fit-cover rounded-circle shadow" alt="Avatar del Usuario del testimonio" width="136px" height="136px"> 
+                            </div>
+                            <div class="col-md-8">
+                              <div class="card-body">
+                                <div class="d-flex flex-column flex-md-row justify-content-between px-3">
+                                  <h5 class="card-title">María Belén Ruíz</h5>
+                                  <p class="card-text"><small class="text-secondary">24 años</small></p>
+                                </div>
+                                <blockquote class="blockquote p-3 rounded-5 border-bottom border-top border-secondary my-auto">
+                                  <p class="card-text fs-6">
+                                    <i class="bi bi-quote fs-1 text-primary lh-1"></i>
+                                    Rolling Fit ha cambiado mi vida, finalmente tengo el cuerpo que siempre quise. Me encanta ir al
+                                  gimnasio, es mi lugar favorito. No podría estar más agradecida con el equipo de entrenadores y
+                                  el ambiente acogedor que me ha ayudado a alcanzar mis metas
+                                  y superarme cada dia, amo la gente y las vibras que transmiten los empleados de Rolling Fit</p>
+                                </blockquote>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="carousel-item px-md-5 pb-5">
+                        <div class="card justify-content-center rounded-5 text-bg-light shadow-sm">
+                          <div class="row g-0">
+                            <div class="col-md-4 m-auto px-5 px-md-3 py-2 py-md-3">
+                              <img src="img/hombre-silla-de-ruedas.jpg"
+                                class="object-fit-cover rounded-circle shadow" alt="Avatar del Usuario del testimonio" width="136px" height="136px"> 
+                            </div>
+                            <div class="col-md-8">
+                              <div class="card-body">
+                                <div class="d-flex flex-column flex-md-row justify-content-between px-3">
+                                  <h5 class="card-title">Fernando Casanova</h5>
+                                  <p class="card-text"><small class="text-secondary">50 años</small></p>
+                                </div>
+                                <blockquote class="blockquote p-3 rounded-5 border-bottom border-top border-secondary my-auto">
+                                  <p class="card-text fs-6">
+                                    <i class="bi bi-quote fs-1 text-primary lh-1"></i>
+                                    Rolling Fit ha sido una experiencia increíble para mí. A pesar de estar en silla de ruedas, me
+                                  han brindado todas las herramientas necesarias para tener un entrenamiento efectivo y seguro. Me
+                                  siento incluido y apoyado por todo el equipo del gimnasio, aqui no existen las diferencias y en
+                                  Rolling Fit puedo ser quien soy de verdad.</p>
+                                </blockquote>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carruselIndexTestimonios"
+                      data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carruselIndexTestimonios"
+                      data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Siguiente</span>
+                    </button>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="card cardstestimonios mb-3 bg-white" style="max-width: 540px;">
-                <div class="row g-0">
-                  <div class="col-md-4 d-flex align-items-center d-flex align-items-center justify-content-center">
-                    <img src="./img/hombre-silla-de-ruedas.jpg" height="180px" width="180px"
-                      class=" object-fit-cover border-1 rounded-circle" alt="chico fitness con discapacidad">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body bg bg-white text-bg-light" style="height: 360px;">
-                      <p class="card-text">
-                        "Rolling Fit ha sido una experiencia increíble para mí. A pesar de estar en silla de ruedas, me
-                        han brindado todas las herramientas necesarias para tener un entrenamiento efectivo y seguro. Me
-                        siento incluido y apoyado por todo el equipo del gimnasio, aqui no existen las diferencias y en
-                        Rolling Fit puedo ser quien soy de verdad."</p>
-                      <div class="textoCard d-lg-flex flex-lg-column justify-lg-content-end align-items-lg-start">
-                        <h5 class="card-title fs-4">Fernando Casanova</h5>
-                        <p class="card-text"><small class="text-black">50 años</small></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carruselIndexTestimonios"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carruselIndexTestimonios"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </article>
-    </section>
-  </main>
+        </article>
+      </section>
+    </main>
   <footer class="container-fluid">
     <div class="row p-4 bg-dark text-white">
       <div class="col-xs-12 col-md-6 col-lg-3 text-center">
         <figure>
-          <a href="#">
-            <img class="w-50" src="./asset/CombinadoLogo+Letras-Color.png" alt="logo de rolling fit" />
+          <a href="./index.html">
+            <img class="w-50" src="./asset/CombinadoLogo+Letras-Color.png" alt="Logo de rolling fit" />
           </a>
         </figure>
         <div class="redesSociales">
@@ -497,12 +503,12 @@ aria-hidden="true"
       <div class="col-xs-12 col-md-6 col-lg-3 mt-4">
         <figure>
           <a href="./pages/error404.html">
-            <img src="./asset/google-play-badge-bb.svg" alt="logo de descarga de google play" />
+            <img src="./asset/google-play-badge-bb.svg" alt="Logo de descarga de google play" />
           </a>
         </figure>
         <figure>
           <a href="./pages/error404.html">
-            <img src="./asset/badge-apple-store.svg" alt="logo de descarga de apple store" /></a>
+            <img src="./asset/badge-apple-store.svg" alt="Logo de descarga de apple store" /></a>
         </figure>
       </div>
       <div class="col-xs-12">
