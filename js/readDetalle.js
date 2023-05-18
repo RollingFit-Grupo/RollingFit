@@ -1,15 +1,12 @@
 const parametroURL = new URLSearchParams(window.location.search);
 console.log(parametroURL);
-console.log(parametroURL.get('id'));
+console.log(parametroURL.get("id"));
 
-//hace el read de la peli buscada
-
+//Obtiene json con key listaServicios y se lo parsea en objeto javascript
 let listaServicio = JSON.parse(localStorage.getItem("listaServicios")) || [];
-
 const servicioBuscado = listaServicio.find(
   (servicio) => servicio.id === parametroURL.get("id")
 );
-console.log(servicioBuscado);
 
 // Dibujar la card con los datos
 let seccion = document.querySelector("#seccionDetalle");
@@ -20,7 +17,7 @@ seccion.innerHTML = `<section class="my-5 row position-relative">
   <div class="row">
     <div class="px-lg-3">
       <p class="text-muted" id="codigoUnico">${servicioBuscado.id}</p>
-      <h1 class="display-4 mb-4" id="nombre">${servicioBuscado.categoria} - ${servicioBuscado.servicioNombre}</h1>
+      <h1 class="display-4 mb-4 text-break" id="nombre">${servicioBuscado.categoria} - ${servicioBuscado.servicioNombre}</h1>
       <img
         src="${servicioBuscado.imagen}"
         alt="Imagen (cargada con url)"
@@ -68,19 +65,19 @@ seccion.innerHTML = `<section class="my-5 row position-relative">
     <div
       class=" d-flex align-items-center justify-content-center"
     >
-      <h3 id="nombreProfesor">${servicioBuscado.profesor}</h3>
+      <h3 id="nombreProfesor" class="text-break">${servicioBuscado.profesor}</h3>
     </div>
     <div
       class="d-flex align-items-center justify-content-center text-center p-4"
     >
-      <p id="descripcionProfesor">
+      <p id="descripcionProfesor" class="text-break">
         ${servicioBuscado.descripcionProfesional}
       </p>
     </div>
   </div>
 
   <div class=" mb-4 px-lg-3">
-  <h3 class="mb-3" id="categoria">Tipo de Categoria ${servicioBuscado.servicioNombre}</h3>
+  <h3 class="mb-3 text-break" id="categoria">Tipo de Categoria ${servicioBuscado.servicioNombre}</h3>
   <!--Caracteristicas-->
   <!--Caracteristicas-->
 </div>
@@ -93,7 +90,68 @@ seccion.innerHTML = `<section class="my-5 row position-relative">
 </div>
 </div>
 </div>
-</section>`;
+</section>
+<article>
+        <section class="container">
+          <h3>Deje su reseña!</h3>
+          <form action="" class="row m-3" id="formComentario">
+            <div class="mb-3">
+              <div class="d-flex flex-column flex-sm-row">
+                <span class="input-group-text  flex-column">
+                  <i class="bi bi-person h2 m-0 mb-0"></i>
+                </span>
+                <textarea
+                  class="form-control flex-grow-1"
+                  aria-label="With textarea"
+                  id="TextAreaUsuario"
+                  placeholder="nombre de usuario"
+                  disabled
+                  minlength="5"
+                  maxlength="200"
+                >mail@delusuario.com</textarea>
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="d-flex flex-column flex-sm-row">
+                <span class="input-group-text flex-column">
+                  <i class="bi bi-chat-right-text h2 m-0 mb-0"></i>
+                </span>
+                <textarea
+                  class="form-control flex-grow-1"
+                  aria-label="With textarea"
+                  id="TextAreaComentario"
+                  placeholder="(Maximo 200 caracteres)"
+                  minlength="5"
+                  maxlength="200"
+                ></textarea>
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="d-flex flex-column flex-sm-row">
+                <span class="input-group-text flex-column">
+                  <i class="bi bi-stars h2 m-0 mb-0"></i>
+                </span>
+                <div class="puntaje-wrapper"> 
+                  <div class="puntaje d-flex justify-content-center py-2 input-group-text mantenerHover">
+                    <span data-puntaje="5" class="display-3">&#9733;</span>
+                    <span data-puntaje="4" class="display-3">&#9733;</span>
+                    <span data-puntaje="3" class  ="display-3">&#9733;</span>
+                    <span data-puntaje="2" class="display-3">&#9733;</span>
+                    <span data-puntaje="1" class="display-3">&#9733;</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <button type="submit" class="btn btn-primary mb-3">Publicar</button>
+            </div>
+          </form>
+        </section>
+        <section class="container">
+          <h3>Reseñas</h3>
+          <ul id="resenias"></ul>
+        </section>
+      </article>`;
 
 /*<div id="caracteristicas" class="">
     <h5>Caracteristicas</h5>
