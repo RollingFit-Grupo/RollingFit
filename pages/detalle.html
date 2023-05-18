@@ -26,20 +26,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/detalle.css" />
-    <link rel="stylesheet" href="../css/navbar-footer.css">
+    <link rel="stylesheet" href="../css/navbar-footer.css" />
     <link rel="stylesheet" href="../css/custom.css" />
+    <!-- <link rel="stylesheet" href="../css/fondosSections.css"> -->
   </head>
 
-  <div class="body-blur">
-    <body>
-      <header class="">
-        <nav class="navbar navbar-expand-lg">
-          <div class="container-fluid">
-            <img
-              src="/img/logo/color/logo-letras/CombinadoLogo+Letras-Color.png"
+  <body>  
+      <header>
+        <nav class="navbar bg-body navbar-expand-lg container-fluid" data-bs-theme="dark">
+          <div class="container">
+            <a href="../index.html" class="navbar-brand"><img
+              src="../img/logo/color/logo-letras/CombinadoLogo+Letras-Color.png"
               class="justify-content-center img-size"
-              alt="..."
-            />
+              alt="logo de RollingFit"
+            /></a>
             <button
               class="navbar-toggler"
               type="button"
@@ -52,88 +52,241 @@
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a
-                    class="nav-link active"
-                    aria-current="page"
-                    href="/index.html"
+                  <a class="nav-link text-secondary active" aria-current="page" href="../index.html"
                     >Inicio</a
                   >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="./acerca.html"
+                  <a class="nav-link text-secondary" href="../pages/acerca.html"
                     >Acerca de nosotros</a
                   >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/pages/admin.html"
-                    >Administrador
+                  <a class="nav-link text-secondary" href="../pages/admin.html" id="user-type">
                   </a>
                 </li>
-                <li class="nav-item dropdown">
-                  <div
-                    class="nav-link dropdown-toggle"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <i
-                      id="iconThemeShow"
-                      class="bi bi-brightness-high-fill"
-                    ></i>
-                  </div>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <button id="btn_light" class="dropdown-item">
-                        <i class="bi bi-brightness-high-fill"></i> Light
+                </ul>
+                <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-2 gap-lg-3 mb-3 mb-lg-0">
+                  <div class="nav-item dropdown">
+                    <div
+                      class="nav-link text-secondary dropdown-toggle"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <i id="iconThemeShow" class="bi bi-brightness-high-fill"></i>
+                    </div>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <button id="btn_light" class="dropdown-item">
+                          <i class="bi bi-brightness-high-fill"></i> Light
+                        </button>
+                      </li>
+                      <li>
+                        <button id="btn_dark" class="dropdown-item">
+                          <i class="bi bi-moon-fill"></i> Dark
+                        </button>
+                      </li>
+                    </ul>
+                    </div>
+                    <form class="d-flex py-2" role="search">
+                          <input
+                            class="form-control me-2"
+                            type="search"
+                            placeholder="Buscar Servicios"
+                            aria-label="Buscar"
+                            id="input_filtro_Servicios"
+                            loguin-color
+                          />
+                    </form>
+                    <div>
+                        <button
+                        id="init-session-button"
+                        type="button"
+                        class="btn btn-primary acceder-color mr-2"
+                        data-bs-toggle="modal"
+                        data-bs-target="#acceder-modal"
+                      >
+                        Ingresar
                       </button>
-                    </li>
-                    <li>
-                      <button id="btn_dark" class="dropdown-item">
-                        <i class="bi bi-moon-fill"></i> Dark
+                      <button
+                        id="close-session-button"
+                        type="button"
+                        class="btn btn-primary acceder-color mr-2 d-none"
+                        data-bs-toggle="modal"
+                      >
+                        Cerrar sesión
                       </button>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-              <form class="d-flex" role="search">
-                <input
-                  class="form-control me-2"
-                  type="search"
-                  placeholder="Buscar Servicios"
-                  aria-label="Buscar"
-                  id="input_filtro_Servicios"loguin-color
-                />
-              </form>
-              <button type="button" class="btn btn-primary loguin-color mr-2">Iniciar Sesión</button>
-              <button type="button" class="btn btn-primary reg-color mr-2">Registrarse</button>
-
+                    </div>
+                </div>
             </div>
           </div>
         </nav>
-      </header>
-      <div class="container" id="seccionDetalle">
-        <!-- Detalle Sección -->
-        <p class="text-wrap"></p>
-        
+      <!-- Modal Autenticacion -->
+      <div
+      class="modal fade"
+      tabindex="-1"
+      id="acceder-modal"
+      aria-labelledby="acceder-modal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 id="auth-modal-title" class="modal-title">Ingresar</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- Formulario acceder -->
+            <form class="form-acceder" id="form-acceder">
+              <div class="mb-3">
+                <label for="email-label" class="form-label"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="acceder-email"
+                  placeholder="name@example.com"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="password-label" class="form-label"
+                  >Contraseña</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="acceder-password"
+                  placeholder="********"
+                  required
+                />
+              </div>
+              <div class="alert alert-danger mt-3 d-none" role="alert" id="alertaModal"></div>
+          <div class="d-flex justify-content-center">
+            <button
+              id="acceder-button"
+              type="submit"
+              class="btn btn-primary w-100"
+            >
+              Inicia Sesión
+            </button>
+          </div>
+            </form>
+            <!-- Formulario registro -->
+            <form class="form-registro d-none" id="form-registro">
+              <div class="mb-3">
+                <label for="name-label" class="form-label"
+                  >Nombre</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="registro-name"
+                  placeholder="Pedro Rodriguez"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email-label" class="form-label"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="registro-email"
+                  placeholder="name@example.com"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="password-label" class="form-label"
+                  >Contraseña</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="registro-password"
+                  placeholder="********"
+                  required
+                />
+              </div>
+              <div class="alert alert-danger mt-3 d-none" role="alert" id="alertaModal"></div>
+          <div class="d-flex justify-content-center">
+            <button
+              id="registro-button"
+              type="submit"
+              class="btn btn-primary w-100 d-none"
+            >
+              Registrarme
+            </button>
+          </div>
+            </form>
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
+            <button
+              id="show-registro-button"
+              type="button"
+              class="btn btn-outline-secondary w-100"
+            >
+              No tengo cuenta
+            </button>
+            <button
+              id="show-acceder-button"
+              type="button"
+              class="btn btn-outline-secondary w-100 d-none"
+            >
+              Ya tengo cuenta
+            </button>
+          </div>
+        </div>
       </div>
+    </div>
+    </header>
+      <main class="fondo-detalle-principal">
+        <div class="body-blur"></div>
+        <div class="container" id="seccionDetalle">
+          <!-- Detalle Sección -->
+          <p class="text-wrap"></p>
+        </div>
+      </main>
       <footer class="container-fluid">
         <div class="row p-4 bg-dark text-white">
           <div class="col-xs-12 col-md-6 col-lg-3 text-center">
             <figure>
-              <a href="#">
-                <img class="w-50" src="../asset/CombinadoLogo+Letras-Color.png" alt="logo de rolling fit" />
+              <a href="../index.html">
+                <img
+                  class="w-50"
+                  src="../asset/CombinadoLogo+Letras-Color.png"
+                  alt="logo de rolling fit"
+                />
               </a>
             </figure>
             <div class="redesSociales">
-              <a href="./pages/error404.html" class="link-light text-decoration-none m-3">
+              <a
+                href="./pages/error404.html"
+                class="link-light text-decoration-none m-3"
+              >
                 <i class="bi bi-facebook"></i>
               </a>
-              <a href="./pages/error404.html" class="link-light text-decoration-none m-3">
+              <a
+                href="./pages/error404.html"
+                class="link-light text-decoration-none m-3"
+              >
                 <i class="bi bi-instagram"></i>
               </a>
-              <a href="./pages/error404.html" class="link-light text-decoration-none m-3">
+              <a
+                href="./pages/error404.html"
+                class="link-light text-decoration-none m-3"
+              >
                 <i class="bi bi-twitter"></i>
               </a>
             </div>
@@ -141,36 +294,66 @@
           <div class="col-xs-12 col-md-6 col-lg-3">
             <p class="h5 m-3">Socios</p>
             <div class="m-2">
-              <a class="text-secondary text-decoration-none" href="./pages/error404.html">Atención al Socio</a>
+              <a
+                class="text-secondary text-decoration-none"
+                href="./pages/error404.html"
+                >Atención al Socio</a
+              >
             </div>
             <div class="m-2">
-              <a class="text-secondary text-decoration-none" href="./pages/error404.html">Solicitud de Baja</a>
+              <a
+                class="text-secondary text-decoration-none"
+                href="./pages/error404.html"
+                >Solicitud de Baja</a
+              >
             </div>
             <div class="m-2">
-              <a class="text-secondary text-decoration-none" href="./pages/error404.html">Trámite de Arrepentimiento</a>
+              <a
+                class="text-secondary text-decoration-none"
+                href="./pages/error404.html"
+                >Trámite de Arrepentimiento</a
+              >
             </div>
           </div>
           <div class="col-xs-12 col-md-6 col-lg-3">
             <p class="h5 m-3">Legal</p>
             <div class="m-2">
-              <a class="text-secondary text-decoration-none" href="./pages/error404.html">Términos y Condiciones</a>
+              <a
+                class="text-secondary text-decoration-none"
+                href="./pages/error404.html"
+                >Términos y Condiciones</a
+              >
             </div>
             <div class="m-2">
-              <a class="text-secondary text-decoration-none" href="./pages/error404.html">Política de Privacidad</a>
+              <a
+                class="text-secondary text-decoration-none"
+                href="./pages/error404.html"
+                >Política de Privacidad</a
+              >
             </div>
             <div class="m-2">
-              <a class="text-secondary text-decoration-none" href="./pages/error404.html">Defensa del Consumidor</a>
+              <a
+                class="text-secondary text-decoration-none"
+                href="./pages/error404.html"
+                >Defensa del Consumidor</a
+              >
             </div>
           </div>
           <div class="col-xs-12 col-md-6 col-lg-3 mt-4">
             <figure>
               <a href="./pages/error404.html">
-                <img src="../asset/google-play-badge-bb.svg" alt="logo de descarga de google play" />
+                <img
+                  src="../asset/google-play-badge-bb.svg"
+                  alt="logo de descarga de google play"
+                />
               </a>
             </figure>
             <figure>
               <a href="./pages/error404.html">
-                <img src="../asset/badge-apple-store.svg" alt="logo de descarga de apple store" /></a>
+                <img
+                  src="../asset/badge-apple-store.svg"
+                  alt="logo de descarga de apple store"
+              /></a>
             </figure>
           </div>
           <div class="col-xs-12">
@@ -181,15 +364,20 @@
           </div>
         </div>
       </footer>
-      
-    <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-    crossorigin="anonymous"></script>
-  <script src="https://kit.fontawesome.com/e3cf9bd751.js" crossorigin="anonymous"></script>
-  <script src="../js/tooltip.js"></script>
-  <script src="../js/Navbar.js"></script>
-  <script src="../js/readDetalle.js"></script>
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://kit.fontawesome.com/e3cf9bd751.js"
+        crossorigin="anonymous"
+      ></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+      <script src="../js/tooltip.js"></script>
+      <script src="../js/Navbar.js"></script>
+      <script src="../js/readDetalle.js"></script>
+      <script src="../js/app.js" type="module"></script>
+      <script src="../js/utils.js" type="module"></script>
     </body>
-  </div>
 </html>

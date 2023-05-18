@@ -1,173 +1,244 @@
 import {
   getLocalStorage,
   setLocalStorage,
-  hideElement,
-  showElement,
+  ocultarElemento,
+  mostrarElemento,
   closeModal,
 } from "./utils.js";
+import { validarEmail } from "./helpers.js";
 
-// Forms
+// Formularios
 
-const loginForm = document.getElementById("form-login");
-const registerForm = document.getElementById("form-register");
+const accederForm = document.getElementById("form-acceder");
+const registroForm = document.getElementById("form-registro");
 
-// Inputs
+const accederInputEmail = document.getElementById("acceder-email");
+const accederInputPassword = document.getElementById("acceder-password");
 
-const loginInputEmail = document.getElementById("login-email");
-const loginInputPassword = document.getElementById("login-password");
-
-// Buttons
-
-const loginButton = document.getElementById("login-button");
-const registerButton = document.getElementById("register-button");
+const accederButton = document.getElementById("acceder-button");
+const registroButton = document.getElementById("registro-button");
 const initSessionButton = document.getElementById("init-session-button");
 const closeSessionButton = document.getElementById("close-session-button");
-const showLoginButton = document.getElementById("show-login-button");
-const showRegisterButton = document.getElementById("show-register-button");
-
-// Others
+const showAccederButton = document.getElementById("show-acceder-button");
+const showRegistroButton = document.getElementById("show-registro-button");
 
 const modalTitle = document.getElementById("auth-modal-title");
 const userType = document.getElementById("user-type");
+const modalSuccess = Swal.mixin({
+  customClass: {
+    title: "text-success-emphasis",
+    closeButton: "text-danger",
+    confirmButton: "btn btn-success mx-2",
+  },
+  buttonsStyling: false,
+  showCloseButton: true,
+  color: "var(--bs-success-text-emphasis)",
+  background: "var(--bs-success-bg-subtle)",
+  iconColor: "var(--bs-success-text-emphasis)",
+});
+const modalWarning = Swal.mixin({
+  customClass: {
+    title: "text-info-emphasis",
+    closeButton: "text-danger",
+    confirmButton: "btn btn-success mx-2",
+  },
+  buttonsStyling: false,
+  showCloseButton: true,
+  color: "var(--bs-danger-text-emphasis)",
+  background: "var(--bs-danger-bg-subtle)",
+  iconColor: "var(--bs-info-text-emphasis)",
+});
 
-// Class AdminUser
+class Usuario {
+  #nombre;
+  #email;
+  #contrasenia;
+  #admin;
 
-class AdminUser {
-  constructor(name, email, password) {
-    this.name = name;
-    this.email = email;
-    this.password = password;
-    this.isAdmin = true;
+  constructor(nombre, email, contrasenia, admin) {
+    this.#nombre = nombre;
+    this.#email = email;
+    this.#contrasenia = contrasenia;
+    this.#admin = admin;
+  }
+
+  set nombre(nuevonombre) {
+    this.#nombre = nuevonombre;
+  }
+
+  get nombre() {
+    return this.#nombre;
+  }
+
+  set email(nuevoEmail) {
+    this.#email = nuevoEmail;
+  }
+
+  get email() {
+    return this.#email;
+  }
+
+  set contrasenia(nuevocontrasenia) {
+    this.#contrasenia = nuevocontrasenia;
+  }
+
+  get contrasenia() {
+    return this.#contrasenia;
+  }
+
+  set isAdmin(nuevoAdmin) {
+    this.#admin = nuevoAdmin;
+  }
+
+  get isAdmin() {
+    return this.#admin;
+  }
+
+  toJSON() {
+    return {
+      nombre: this.nombre,
+      email: this.email,
+      contrasenia: this.contrasenia,
+      isAdmin: this.isAdmin,
+    };
   }
 }
 
-// Initial functions
+registroAdminUser();
+checkUsuarioIngresado();
 
-registerAdminUser();
-checkUserLogged();
-
-// Events listeners
-
-loginButton.addEventListener("click", loginUser);
+accederButton.addEventListener("click", accederUser);
 closeSessionButton.addEventListener("click", closeSession);
-showRegisterButton.addEventListener("click", showRegisterForm);
-showLoginButton.addEventListener("click", showLoginForm);
+showRegistroButton.addEventListener("click", showRegistroForm);
+showAccederButton.addEventListener("click", showAccederForm);
 
 function changeModalTitle(title) {
   modalTitle.innerHTML = title;
 }
 
-function showRegisterForm() {
-  hideElement(loginForm);
-  hideElement(loginButton);
+function showRegistroForm() {
+  ocultarElemento(accederForm);
+  ocultarElemento(accederButton);
 
-  showElement(registerForm);
-  showElement(registerButton);
+  mostrarElemento(registroForm);
+  mostrarElemento(registroButton);
 
-  showElement(showLoginButton);
-  hideElement(showRegisterButton);
+  mostrarElemento(showAccederButton);
+  ocultarElemento(showRegistroButton);
 
   changeModalTitle("Registrarme");
 }
 
-function showLoginForm() {
-  showElement(loginForm);
-  showElement(loginButton);
+function showAccederForm() {
+  mostrarElemento(accederForm);
+  mostrarElemento(accederButton);
 
-  hideElement(registerForm);
-  hideElement(registerButton);
+  ocultarElemento(registroForm);
+  ocultarElemento(registroButton);
 
-  hideElement(showLoginButton);
-  showElement(showRegisterButton);
+  ocultarElemento(showAccederButton);
+  mostrarElemento(showRegistroButton);
 
-  changeModalTitle("Iniciar sesion");
+  changeModalTitle("Iniciar sesión");
 }
 
-function registerAdminUser() {
-  // Creamos un objeto que es un usuario administrador instanciando la clase AdminUser
-  const adminUser = new AdminUser(
-    "Julieta Correa",
-    "mjulieta210@gmail.com",
-    "12345"
+function registroAdminUser() {
+  const adminUsuario = new Usuario(
+    `Julieta Correa`,
+    `mjulieta210@gmail.com`,
+    `Password1!`,
+    true
   );
-  // guardamos el usuario en localStorage
-  setLocalStorage("users", [adminUser]);
+  const usuario = new Usuario(
+    `Admin`,
+    `admin@gmail.com`,
+    `Password2!`,
+    true
+  );
+
+  setLocalStorage("users", [adminUsuario, usuario]);
 }
 
-//Ingreso como usario//
+function accederUser(e) {
+    e.preventDefault();
+  const email = accederInputEmail.value;
+  const contrasenia = accederInputPassword.value;
 
-function loginUser() {
-  const email = loginInputEmail.value;
-  const password = loginInputPassword.value;
-
-  if (!email || !password) {
-    Swal.fire(
+  if (!email || !contrasenia) {
+    modalWarning.fire(
       "Completa todos los campos",
-      "Debes completar todos los campos para iniciar sesion",
+      "Debes completar todos los campos para iniciar sesión",
       "info"
     );
     return;
   }
 
-  const raw = getLocalStorage("users");
-  const users = JSON.parse(raw);
-  const userFound = users.find((user) => user.email === email);
-
-  if (!userFound) {
-    Swal.fire(
-      "Credenciales incorrectas",
-      "Usuario o contraseña incorrectas",
+  if (validarEmail(email) === false) {
+    modalWarning.fire(
+      "Formato de correo incorrecto",
+      "El formato correcto es: correo@ejemplo.com",
       "error"
     );
-
     return;
   }
 
-  if (userFound.password !== password) {
-    Swal.fire(
+  const users = JSON.parse(getLocalStorage("users"));
+  const usuarioEncontrado = users.find((user) => user.email === email);
+
+  if (!usuarioEncontrado) {
+    modalWarning.fire(
       "Credenciales incorrectas",
-      "Usuario o contraseña incorrectas",
+      "Usuario o contraseña incorrectos",
       "error"
     );
-
     return;
   }
 
-  if (userFound.isAdmin === true) {
-    showElement(userType);
+  if (usuarioEncontrado.contrasenia !== contrasenia) {
+    modalWarning.fire(
+      "Credenciales incorrectas",
+      "Usuario o contraseña incorrectos",
+      "error"
+    );
+    return;
+  }
+
+  if (usuarioEncontrado.isAdmin === true) {
+    mostrarElemento(userType);
     userType.innerHTML = "Administrador";
-    sessionStorage.setItem("user-session", JSON.stringify(userFound));
-    closeModal("login-modal");
-    hideElement(initSessionButton);
-    showElement(closeSessionButton);
-
-    Swal.fire(
-      "Inicio de sesion exitoso",
-      "Te logueaste exitosamente como administrador",
+    sessionStorage.setItem("user-session", JSON.stringify(usuarioEncontrado));
+    closeModal("acceder-modal");
+    ocultarElemento(initSessionButton);
+    mostrarElemento(closeSessionButton);
+    modalSuccess.fire(
+      "Inicio de sesión exitoso",
+      "Has iniciado sesión correctamente como administrador",
       "success"
     );
   }
 }
 
-// Retorna una instancia del modal
+function checkUsuarioIngresado() {
+  const usuarioIngresado = JSON.parse(sessionStorage.getItem("user-session"));
 
-function checkUserLogged() {
-  const raw = sessionStorage.getItem("user-session");
-  const userLogged = JSON.parse(raw);
-
-  if (userLogged) {
-    showElement(userType);
+  if (usuarioIngresado) {
+    mostrarElemento(userType);
     userType.innerHTML = "Administrador";
-    hideElement(initSessionButton);
-    showElement(closeSessionButton);
+    ocultarElemento(initSessionButton);
+    mostrarElemento(closeSessionButton);
   } else {
-    hideElement(userType);
-    hideElement(closeSessionButton);
-    showElement(initSessionButton);
+    ocultarElemento(userType);
+    ocultarElemento(closeSessionButton);
+    mostrarElemento(initSessionButton);
   }
 }
 
 function closeSession() {
   sessionStorage.removeItem("user-session");
-  checkUserLogged();
+  checkUsuarioIngresado();
+  modalSuccess.fire(
+    "Cierre de sesión exitoso",
+    "La sesión se cerró correctamente",
+    "success"
+  );
 }
