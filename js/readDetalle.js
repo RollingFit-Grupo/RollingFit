@@ -15,13 +15,13 @@ seccion.innerHTML = `<section class="my-5 row position-relative">
   class="col-lg-8 order-lg-1 d-flex flex-column align-items-center"
 >
   <div class="row">
-    <div class="px-lg-3">
+    <div class="px-lg-3 text-center">
       <p class="text-muted" id="codigoUnico">${servicioBuscado.id}</p>
       <h1 class="display-4 mb-4 text-break" id="nombre">${servicioBuscado.categoria} - ${servicioBuscado.servicioNombre}</h1>
       <img
         src="${servicioBuscado.imagen}"
         alt="Imagen (cargada con url)"
-        class="img-fluid"
+        class="img-fluid rounded-3"
       />
     </div>
   </div>
@@ -37,7 +37,7 @@ seccion.innerHTML = `<section class="my-5 row position-relative">
     <!--Div Profesor-->
   </div>
 </div>
-<div class="col-lg-4 order-lg-2 position-sticky rounded-3 pb-5">
+<div class="col-lg-4 order-lg-2 position-sticky rounded-3 pb-5 text-center">
   <div class="p-3 sticky-top">
   <div
   class="tab-pane fade show active"
@@ -46,14 +46,14 @@ seccion.innerHTML = `<section class="my-5 row position-relative">
   aria-labelledby="nav-basic-tab"
   tabindex="0"
 >
-  <h3 class="py-1">COMPRAR ${servicioBuscado.categoria}</h3>
+  <h3 class="py-1"><strong>COMPRAR</strong> ${servicioBuscado.servicioNombre}</h3>
   <h4><strong>Total:</strong> US$${servicioBuscado.precio}</h4>
   <h4><strong>Tiempo de entrega:</strong> ${servicioBuscado.tiempo}</h4>
 
   <div class="container mt-2 text-center divProfesor">
   <div class="d-flex flex-column">
     <div
-      class="d-flex align-items-center justify-content-center"
+      class="d-flex align-items-center justify-content-center card-integrante rounded-4"
     >
       <img
         id="imgProfesor"
@@ -63,12 +63,12 @@ seccion.innerHTML = `<section class="my-5 row position-relative">
       />
     </div>
     <div
-      class=" d-flex align-items-center justify-content-center"
+      class=" d-flex align-items-center justify-content-center py-3"
     >
-      <h3 id="nombreProfesor" class="text-break">${servicioBuscado.profesor}</h3>
+      <h3 id="nombreProfesor" class="text-break fw-bolder">${servicioBuscado.profesor}</h3>
     </div>
     <div
-      class="d-flex align-items-center justify-content-center text-center p-4"
+      class="d-flex align-items-center justify-content-center text-center p-3"
     >
       <p id="descripcionProfesor" class="text-break">
         ${servicioBuscado.descripcionProfesional}
