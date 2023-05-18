@@ -5,6 +5,7 @@ let formServicio = document.getElementById(`formServicio`);
 let modalServicio = new bootstrap.Modal(document.getElementById("modalEditar"));
 const btnCrearServicio = document.getElementById(`btnCrear`);
 const alertaModal = document.getElementById(`alertaModal`);
+const alertaaModal = document.getElementById(`alertaAModal`);
 
 let id = document.getElementById(`id`),
   servicioNombre = document.getElementById(`servicio`),
@@ -256,11 +257,11 @@ function crearServicio() {
   }
 }
 function mostrarMensaje(resumen){
-  if(resumen.length>1){
-    alertaModal.className="alert alert-danger mt-3";
-    alertaModal.innerHTML= (resumen);
+  if(resumen.length>0){
+    alertaaModal.className="d-block alert alert-danger mt-3";
+    alertaaModal.innerHTML=resumen;
   } else{
-    alertaModal.className='alert alert-danger mt-3 d-none';
+    alertaaModal.className='alert alert-danger mt-3 d-none';
   } 
 }
 function guardarEnLocalstorage() {
