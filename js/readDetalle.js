@@ -1,19 +1,14 @@
 const parametroURL = new URLSearchParams(window.location.search);
-console.log(parametroURL);
-console.log(parametroURL.get("id"));
 
-//Obtiene json de localStorage con key listaServicios y se lo parsea en objeto javascript
 let listaServicio = JSON.parse(localStorage.getItem("listaServicios")) || [];
 const servicioBuscado = listaServicio.find(
   (servicio) => servicio.id === parametroURL.get("id")
 );
-//Obtiene el usuario logeado mediante session-storage
 let email;
 if (sessionStorage.getItem("user-session")) {
   const sessionData = JSON.parse(sessionStorage.getItem("user-session"));
   email = sessionData.email;
 }
-// Dibujar la card con los datos
 let seccion = document.querySelector("#seccionDetalle");
 seccion.innerHTML = `<section class="my-5 row position-relative">
 <div
@@ -22,7 +17,9 @@ seccion.innerHTML = `<section class="my-5 row position-relative">
   <div class="row">
     <div class="px-lg-3 text-center">
       <p class="text-muted" id="codigoUnico">${servicioBuscado.id}</p>
-      <h1 class="display-4 mb-4 text-break" id="nombre">${servicioBuscado.categoria} - ${servicioBuscado.servicioNombre}</h1>
+      <h1 class="display-4 mb-4 text-break" id="nombre">${
+        servicioBuscado.categoria
+      } - ${servicioBuscado.servicioNombre}</h1>
       <img
         src="${servicioBuscado.imagen}"
         alt="Imagen (cargada con url)"
@@ -51,9 +48,15 @@ seccion.innerHTML = `<section class="my-5 row position-relative">
   aria-labelledby="nav-basic-tab"
   tabindex="0"
 >
-  <h3 class="py-1"><strong>COMPRAR</strong> ${servicioBuscado.servicioNombre}</h3>
-  <h4><strong>Total:</strong> <span class="text-secondary fw-bold">$${servicioBuscado.precio}</span></h4>
-  <h4><strong>Tiempo de entrega:</strong> <span class="text-secondary fw-bold">${servicioBuscado.tiempo} Dias</span></h4>
+  <h3 class="py-1"><strong>COMPRAR</strong> ${
+    servicioBuscado.servicioNombre
+  }</h3>
+  <h4><strong>Total:</strong> <span class="text-secondary fw-bold">$${
+    servicioBuscado.precio
+  }</span></h4>
+  <h4><strong>Tiempo de entrega:</strong> <span class="text-secondary fw-bold">${
+    servicioBuscado.tiempo
+  } Dias</span></h4>
 
   <div class="container mt-2 text-center divProfesor">
   <div class="d-flex flex-column">
@@ -70,7 +73,9 @@ seccion.innerHTML = `<section class="my-5 row position-relative">
     <div
       class=" d-flex align-items-center justify-content-center py-1 bg-secondary rounded-2"
     >
-      <h3 id="nombreProfesor" class="text-break fw-bolder">${servicioBuscado.profesor}</h3>
+      <h3 id="nombreProfesor" class="text-break fw-bolder">${
+        servicioBuscado.profesor
+      }</h3>
     </div>
     <div
       class="d-flex align-items-center justify-content-center text-center p-3 border-primary-subtle"
@@ -83,7 +88,9 @@ seccion.innerHTML = `<section class="my-5 row position-relative">
   </div>
 
   <div class=" mb-4 px-lg-3">
-  <h3 class="mb-3 text-break" id="categoria">Tipo de Categoria: <br> ${servicioBuscado.categoria}</h3>
+  <h3 class="mb-3 text-break" id="categoria">Tipo de Categoria: <br> ${
+    servicioBuscado.categoria
+  }</h3>
   <!--Caracteristicas-->
   <!--Caracteristicas-->
 </div>
@@ -156,32 +163,3 @@ seccion.innerHTML = `<section class="my-5 row position-relative">
           <ul id="resenias"></ul>
         </section>
       </article>`;
-
-/*<div id="caracteristicas" class="">
-    <h5>Caracteristicas</h5>
-    <div id="cardiovascular" class="progress mb-1" role="progressbar" aria-label="Animated striped example"
-      aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-      <div id="cardioVascularBarra"
-        class="progress-bar progress-bar-striped progress-bar-animated text-start ps-2 bg-success"
-        style="width: 100%">Cardiovascular</div>
-    </div>
-    <div id="fuerza" class="progress mb-1" role="progressbar" aria-label="Animated striped example "
-      aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-      <div id="fuerzaBarra"
-        class="progress-bar progress-bar-striped progress-bar-animated text-start ps-2 bg-danger"
-        style="width: 40%">Fuerza</div>
-    </div>
-    <div id="aerobico" class="progress mb-1" role="progressbar" aria-label="Animated striped example"
-      aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-      <div id="aerobicoBarra"
-        class="progress-bar progress-bar-striped progress-bar-animated text-start ps-2 bg-primary"
-        style="width: 80%">Aerobico</div>
-    </div>
-    <div id="" class="progress mb-1" role="progressbar" aria-label="Animated striped example"
-      aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-      <div id=""
-        class="progress-bar progress-bar-striped progress-bar-animated text-start ps-2 bg-secondary"
-        style="width: 60%">Flexibilidad
-      </div>
-    </div>
-  </div>*/
