@@ -134,11 +134,11 @@ seccion.innerHTML = `<section class="my-5 row position-relative">
                 </span>
                 <div class="puntaje-wrapper"> 
                   <div class="puntaje d-flex justify-content-center py-2 input-group-text mantenerHover">
-                    <span data-puntaje="5" class="display-3">&#9733;</span>
-                    <span data-puntaje="4" class="display-3">&#9733;</span>
-                    <span data-puntaje="3" class  ="display-3">&#9733;</span>
-                    <span data-puntaje="2" class="display-3">&#9733;</span>
-                    <span data-puntaje="1" class="display-3">&#9733;</span>
+                    <span data-puntaje="5" class="h6">&#9733;</span>
+                    <span data-puntaje="4" class="h6">&#9733;</span>
+                    <span data-puntaje="3" class  ="h6">&#9733;</span>
+                    <span data-puntaje="2" class="h6">&#9733;</span>
+                    <span data-puntaje="1" class="h6">&#9733;</span>
                   </div>
                 </div>
               </div>
