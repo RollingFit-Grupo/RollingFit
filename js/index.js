@@ -1,15 +1,17 @@
 let listaServicios = JSON.parse(localStorage.getItem("listaServicios")) || [];
-
+cargarServicios();
+cargarFavoritos();
+function cargarServicios(){
 listaServicios.map((servicio) => {
-  crearColumna(servicio);
+crearColumna(servicio);
 });
-
+}
+function cargarFavoritos(){
 let listaDeFavoritos = JSON.parse(localStorage.getItem("listaFavoritos")) || [];
-
-listaDeFavoritos.map((favorito) => {
-  crearLista(favorito);
+listaDeFavoritos.map((servicio) => {
+crearLista(servicio);
 });
-
+}
 function RatingComponent(calificacion) {
   // console.log(calificacion);
   switch (calificacion) {
@@ -164,21 +166,20 @@ function cambioColor(esFavorito, id) {
     corazonElement.className = "bi bi-heart";
   }
 }
-function crearLista(){
+function crearLista(servicio){
   let listaFav = document.getElementById(`listaFavoritos`);
   listaFav.innerHTML +=`              
-  <ul class="dropdown-menu">
   <div class="card w-100">
     <div class="row g-0">
       <div class="col-md-4">
-        <img src="${favorito.imagen}"class="img-fluid rounded-start" alt="...">
+        <img src="${servicio.imagen}"class="img-fluid rounded-start" alt="">
       </div>
       <div class="col-md-8">
-        <h5 class="card-title">${favorito.titulo}</h5>
+        <h5 class="card-title">${servicio.titulo}</h5>
       </div>
     </div>
   </div>
-</ul>`
+`
 }
 function navegarPaginaDetalle(id) {
   console.log('##########');
