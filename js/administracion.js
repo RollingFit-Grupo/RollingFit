@@ -43,7 +43,6 @@ if (listaServicios.length > 0) {
       )
   );
 }
-console.log(listaServicios);
 
 cargainicial();
 cargarEstatico();
@@ -108,7 +107,7 @@ function cargarEstatico(){
     Es importante tener en cuenta que una rutina de pesas para volumen debe adaptarse a las capacidades individuales y preferencias de cada persona. Además, se recomienda contar con la supervisión de un profesional del fitness para asegurar una correcta ejecución de los ejercicios y evitar lesiones.`,
     3,
     [],
-    0,
+    5,
     `Como profesor de pesas en el gimnasio, me enfoco completamente en mi trabajo y en brindar la mejor experiencia de entrenamiento a mis alumnos. Durante la semana, mi enfoque principal es ayudar a las personas a alcanzar sus objetivos físicos y promover un estilo de vida saludable.
     Fuera del gimnasio, disfruto de mi tiempo libre sumergiéndome en el mundo de los videojuegos y el anime. Me encanta explorar nuevos mundos virtuales, participar en desafíos emocionantes y sumergirme en historias épicas a través de mis juegos favoritos. Además, disfruto de la animación japonesa y me emociono con las tramas y los personajes cautivadores que ofrece el anime.
     A diferencia de muchos, no suelo salir los fines de semana. Prefiero quedarme en casa y dedicar mi tiempo a mis aficiones digitales. Para mí, los videojuegos y el anime son una forma de desconectar del mundo real y sumergirme en un universo lleno de emociones y diversión.
@@ -138,7 +137,7 @@ function cargarEstatico(){
     Es importante recordar que una rutina de pesas para definición debe adaptarse a las capacidades individuales y preferencias de cada persona. Además, se recomienda contar con la orientación de un profesional del fitness para diseñar un programa personalizado y obtener mejores resultados.`,
     5,
     [],
-    0,
+    3,
     `Como profesor de pesas en el gimnasio, me siento realmente afortunado de poder dedicarme a lo que me apasiona. Cada día, entro al gimnasio con una sonrisa en mi rostro, listo para inspirar y motivar a mis alumnos a alcanzar sus metas físicas.Disfruto enormemente ayudando a las personas a descubrir su fuerza y superar sus límites. 
     Mi objetivo principal es asegurarme de que todos los que entrenan conmigo se sientan seguros y confiados mientras se esfuerzan por mejorar su condición física.
     Además de mi trabajo en el gimnasio, también tengo una pasión por la naturaleza y la aventura. Los fines de semana, cuando tengo tiempo libre, me alejo de las pesas y salgo a escalar montañas. La sensación de desafiar mis habilidades físicas y mentales mientras disfruto de impresionantes paisajes naturales es indescriptible.
@@ -167,7 +166,7 @@ function cargarEstatico(){
     Es importante recordar que cada persona tiene diferentes niveles de condición física, por lo que es recomendable adaptar la intensidad y la duración de la rutina según las capacidades individuales. Además, se recomienda combinar la gimnasia aeróbica con una alimentación saludable y equilibrada para obtener mejores resultados en la pérdida de peso. Siempre es aconsejable consultar con un profesional del fitness antes de comenzar cualquier programa de ejercicio.`,
     5,
     [],
-    0,
+    1,
     `Como profesora de gimnasia aeróbica, mi trabajo me llena de alegría y satisfacción. Disfruto cada clase, animando a mis alumnos a moverse, sudar y divertirse mientras trabajan en su condición física. Mi pasión por la actividad física y el bienestar se refleja en mi dedicación y en la energía que transmito a mis alumnos.
     Aunque amo mi trabajo, los fines de semana los reservo para pasar tiempo de calidad con mi familia. Valorando los lazos familiares y las relaciones cercanas, encuentro gran felicidad en compartir momentos especiales con mis seres queridos. Ya sea disfrutando de una comida en casa, organizando actividades al aire libre o simplemente relajándonos juntos, esos momentos son preciosos para mí.
     En mis tiempos libres, tengo una pasión por la lectura. Los libros de novelas son mi refugio y una forma de desconectar del mundo exterior. Me encanta sumergirme en historias cautivadoras, explorar nuevos mundos y conocer personajes fascinantes. La lectura me brinda una oportunidad de expansión mental, de relajación y de enriquecimiento personal.
@@ -180,8 +179,6 @@ function cargarEstatico(){
 }
 }
 function crearFila(servicio, fila) {
-  console.log(servicio);
-  console.log(servicio.titulo);
   let tablaServicio = document.getElementById("tablaServicio");
   tablaServicio.innerHTML += `<tr>
     <th scope="row" class="text-center">${servicio.servicioNombre}</th>
@@ -198,11 +195,9 @@ function crearFila(servicio, fila) {
     </td>
 </tr>`;
 }
-// Manejadores de eventos
 formServicio.addEventListener("submit", prepararFormularioServicio);
 btnCrearServicio.addEventListener("click", desplegarmodalServicio);
 
-// Funciones
 function desplegarmodalServicio() {
   limpiarFormulario();
   altaServicio = true;
@@ -211,7 +206,6 @@ function desplegarmodalServicio() {
 
 function prepararFormularioServicio(e) {
   e.preventDefault();
-  console.log("en el evento submit");
   if (altaServicio) {
     crearServicio();
   } else {
@@ -231,13 +225,9 @@ function crearServicio() {
     background: "var(--bs-success-bg-subtle)",
     iconColor:"var(--bs-success-text-emphasis)",
   })
-  //AQUI VAN LAS VALIDACIONES
   const resumen = resumenValidacion(servicioNombre.value,profesor.value,descripcion.value,socialProf.value,tiempo.value,precio.value,imagen.value,revision.value,descripcionProfesional.value);
   mostrarMensaje(resumen);
-  console.log(resumen);
   if(resumen.length === 0){
-  // Crear servicio
-  console.log(`hola`);
   const servicioNuevo = new Servicio(
     undefined,
     servicioNombre.value,
@@ -253,15 +243,9 @@ function crearServicio() {
     0,
     descripcionProfesional.value
   );
-  console.log(servicioNuevo);
-  // Agregar el servicio en el arreglo de servicios
   listaServicios.push(servicioNuevo);
-  // Guardar el array en el local storage
   guardarEnLocalstorage();
-  console.log(servicioNuevo);
-  // Dibujar la fila en la tabla
   crearFila(servicioNuevo, listaServicios.length);
-  // Mostrar un mensaje
   modalSuccess.fire(
     "Servicio creado",
     "El Servicio nuevo fue creado exitosamente",
@@ -285,10 +269,7 @@ function guardarEnLocalstorage() {
 function limpiarFormulario() {
   formServicio.reset();
 }
-//Borrar Servicio
 window.borrarServicio = (idServicio,nombreServicio) => { 
-    console.log(idServicio);
-    console.log(nombreServicio);
     const modalBorrar = Swal.mixin({
         customClass: {
             title:"text-warning-emphasis",
@@ -325,18 +306,13 @@ window.borrarServicio = (idServicio,nombreServicio) => {
       reverseButtons: true
     }).then((result) => { 
       if (result.isConfirmed) {
-        //1 - buscar del array a donde esta el elemento que tiene este id
         let posicionServicio = listaServicios.findIndex(
           (servicio) => servicio.id === idServicio
         );
-        //2 - Borrar el servicio del array (splice)
         listaServicios.splice(posicionServicio, 1);
-        //3 - Actualizar el localstorage
         guardarEnLocalstorage();
-        //4- Borrar la fila de la tabla
         let tablaServicio = document.getElementById("tablaServicio");
         tablaServicio.removeChild(tablaServicio.children[posicionServicio]);
-        //5 - Mostrar un mensaje de borrado de que se realizó la acción
         modalSuccess.fire(
           "Servicio eliminado.",
           "El servicio fué eliminado correctamente.",
@@ -346,11 +322,9 @@ window.borrarServicio = (idServicio,nombreServicio) => {
     }) ;
   };
 window.prepararFormularioServicio = (idServicio) => {
-  //tener los datos de la servicio y cargar en el formulario
   const servicioEncontrado = listaServicios.find(
     (servicio) => servicio.id === idServicio
   );
-  //mostrar la ventana modal
   id.value = servicioEncontrado.id;
   servicioNombre.value = servicioEncontrado.servicioNombre;
   profesor.value = servicioEncontrado.profesor;
@@ -363,12 +337,10 @@ window.prepararFormularioServicio = (idServicio) => {
   revision.value = servicioEncontrado.revision;
   descripcionProfesional.value=servicioEncontrado.descripcionProfesional;
   modalServicio.show();
-  //cambiamos el valor de la variable altaServicio
   altaServicio = false;
 };
 
 function editarServicio() {
-  console.log("aqui tengo que editar");
   const modalSuccess= Swal.mixin({
     customClass: {
         title:"text-success-emphasis",
@@ -381,16 +353,12 @@ function editarServicio() {
     background: "var(--bs-success-bg-subtle)",
     iconColor:"var(--bs-success-text-emphasis)",
   })
-  //1- buscaria la posicion de la servicio en el array
   let posicionServicio = listaServicios.findIndex(
     (servicio) => servicio.id === id.value
   );
-  console.log(posicionServicio);
-  //todo: validar los datos
   const resumen = resumenValidacion(servicioNombre.value,profesor.value,descripcion.value,socialProf.value,tiempo.value,precio.value,imagen.value,revision.value,descripcionProfesional.value);
   mostrarMensaje(resumen);
   if(resumen.length===0){
-  //2- editar los valores de la servicio dentroe del array
   listaServicios[posicionServicio].servicioNombre = servicioNombre.value;
   listaServicios[posicionServicio].imagen = imagen.value;
   listaServicios[posicionServicio].descripcion = descripcion.value;
@@ -401,12 +369,8 @@ function editarServicio() {
   listaServicios[posicionServicio].precio = precio.value;
   listaServicios[posicionServicio].revision = revision.value;
   listaServicios[posicionServicio].descripcionProfesional=descripcionProfesional.value;
-  //3- actualizar el localstorage
   guardarEnLocalstorage();
-  //4-actualizar la fila
   let tablaServicio = document.getElementById("tablaServicio");
-  console.log(tablaServicio.children[posicionServicio].children[1]);
-  //  let celdaTitulo =tablaServicio.children[posicionServicio].children[1]
   tablaServicio.children[posicionServicio].children[0].innerHTML =
     servicioNombre.value;
   tablaServicio.children[posicionServicio].children[1].children[0].setAttribute(
@@ -421,13 +385,11 @@ function editarServicio() {
     precio.value;
   tablaServicio.children[posicionServicio].children[5].children[0].innerHTML =
     tiempo.value+' dia(s)';
-  //5-mostrar un cartel al usuario
   modalSuccess.fire(
     "Servicio modificado",
     "El Servicio fue modificado exitosamente",
     "success"
   );
-  //6- limpiar el formulario y cerrar el modal
   limpiarFormulario();
   modalServicio.hide();
   }

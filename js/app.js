@@ -7,7 +7,6 @@ import {
 } from "./utils.js";
 import { validarEmail } from "./helpers.js";
 
-// Formularios
 
 const accederForm = document.getElementById("form-acceder");
 const registroForm = document.getElementById("form-registro");

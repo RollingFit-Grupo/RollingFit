@@ -1,5 +1,4 @@
 let inputBusqueda = document.getElementById("input_filtro_Servicios");
-console.log(inputBusqueda.value)
 let mensajeAdvertencia = document.getElementById("mensajeServicioNoEncontrado")
 
 function busquedaServicio(nombreServicio) {

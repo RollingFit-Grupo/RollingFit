@@ -2,12 +2,17 @@ const parametroURL = new URLSearchParams(window.location.search);
 console.log(parametroURL);
 console.log(parametroURL.get("id"));
 
-//Obtiene json con key listaServicios y se lo parsea en objeto javascript
+//Obtiene json de localStorage con key listaServicios y se lo parsea en objeto javascript
 let listaServicio = JSON.parse(localStorage.getItem("listaServicios")) || [];
 const servicioBuscado = listaServicio.find(
   (servicio) => servicio.id === parametroURL.get("id")
 );
-
+//Obtiene el usuario logeado mediante session-storage
+let email;
+if (sessionStorage.getItem("user-session")) {
+  const sessionData = JSON.parse(sessionStorage.getItem("user-session"));
+  email = sessionData.email;
+}
 // Dibujar la card con los datos
 let seccion = document.querySelector("#seccionDetalle");
 seccion.innerHTML = `<section class="my-5 row position-relative">
@@ -84,9 +89,7 @@ seccion.innerHTML = `<section class="my-5 row position-relative">
 </div>
 
 <div class="text-center">
-<button class="btn btn-primary btn-lg">
-  Añadir al carro
-</button>
+  <a href="./error404.html" class="btn btn-primary btn-lg">Añadir al carro</a>
 </div>
 </div>
 </div>
@@ -109,7 +112,7 @@ seccion.innerHTML = `<section class="my-5 row position-relative">
                   disabled
                   minlength="5"
                   maxlength="200"
-                >mail@delusuario.com</textarea>
+                >${email !== undefined ? email : "usuario@mail.com"}</textarea>
               </div>
             </div>
             <div class="mb-3">
