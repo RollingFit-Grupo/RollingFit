@@ -124,128 +124,133 @@
             </div>
           </div>
         </nav>
-        <!-- Modal Autenticacion -->
-        <div
-        class="modal fade"
-        tabindex="-1"
-        id="acceder-modal"
-        aria-labelledby="acceder-modal"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 id="auth-modal-title" class="modal-title">Ingresar</h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <!-- Formulario acceder -->
-              <form class="form-acceder" id="form-acceder">
-                <div class="mb-3">
-                  <label for="email-label" class="form-label"
-                    >Email</label
-                  >
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="acceder-email"
-                    placeholder="name@example.com"
-                    required
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="password-label" class="form-label"
-                    >Contraseña</label
-                  >
-                  <input
-                    type="password"
-                    class="form-control"
-                    id="acceder-password"
-                    placeholder="********"
-                    required
-                  />
-                </div>
-              </form>
-              <!-- Formulario registro -->
-              <form class="form-registro d-none" id="form-registro">
-                <div class="mb-3">
-                  <label for="name-label" class="form-label"
-                    >Nombre</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="registro-name"
-                    placeholder="Pedro Rodriguez"
-                    required
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="email-label" class="form-label"
-                    >Email</label
-                  >
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="registro-email"
-                    placeholder="name@example.com"
-                    required
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="password-label" class="form-label"
-                    >Contraseña</label
-                  >
-                  <input
-                    type="password"
-                    class="form-control"
-                    id="registro-password"
-                    placeholder="********"
-                    required
-                  />
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer d-flex justify-content-center">
-              <button
-                id="acceder-button"
-                type="submit"
-                class="btn btn-primary w-100"
-              >
-                Inicia Sesión
-              </button>
-              <button
-                id="registro-button"
-                type="submit"
-                class="btn btn-primary w-100 d-none"
-              >
-                Registrarme
-              </button>
-    
-              <button
-                id="show-registro-button"
-                type="button"
-                class="btn btn-outline-secondary w-100"
-              >
-                No tengo cuenta
-              </button>
-              <button
-                id="show-acceder-button"
-                type="button"
-                class="btn btn-outline-secondary w-100 d-none"
-              >
-                Ya tengo cuenta
-              </button>
-            </div>
+      <!-- Modal Autenticacion -->
+      <div
+      class="modal fade"
+      tabindex="-1"
+      id="acceder-modal"
+      aria-labelledby="acceder-modal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 id="auth-modal-title" class="modal-title">Ingresar</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- Formulario acceder -->
+            <form class="form-acceder" id="form-acceder">
+              <div class="mb-3">
+                <label for="email-label" class="form-label"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="acceder-email"
+                  placeholder="name@example.com"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="password-label" class="form-label"
+                  >Contraseña</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="acceder-password"
+                  placeholder="********"
+                  required
+                />
+              </div>
+              <div class="alert alert-danger mt-3 d-none" role="alert" id="alertaModal"></div>
+          <div class="d-flex justify-content-center">
+            <button
+              id="acceder-button"
+              type="submit"
+              class="btn btn-primary w-100"
+            >
+              Inicia Sesión
+            </button>
+          </div>
+            </form>
+            <!-- Formulario registro -->
+            <form class="form-registro d-none" id="form-registro">
+              <div class="mb-3">
+                <label for="name-label" class="form-label"
+                  >Nombre</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="registro-name"
+                  placeholder="Pedro Rodriguez"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email-label" class="form-label"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="registro-email"
+                  placeholder="name@example.com"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="password-label" class="form-label"
+                  >Contraseña</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="registro-password"
+                  placeholder="********"
+                  required
+                />
+              </div>
+              <div class="alert alert-danger mt-3 d-none" role="alert" id="alertaModal"></div>
+          <div class="d-flex justify-content-center">
+            <button
+              id="registro-button"
+              type="submit"
+              class="btn btn-primary w-100 d-none"
+            >
+              Registrarme
+            </button>
+          </div>
+            </form>
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
+            <button
+              id="show-registro-button"
+              type="button"
+              class="btn btn-outline-secondary w-100"
+            >
+              No tengo cuenta
+            </button>
+            <button
+              id="show-acceder-button"
+              type="button"
+              class="btn btn-outline-secondary w-100 d-none"
+            >
+              Ya tengo cuenta
+            </button>
           </div>
         </div>
       </div>
-      </header>
+    </div>
+    </header>
       <main class="fondo-detalle-principal">
         <div class="body-blur"></div>
         <div class="container" id="seccionDetalle">

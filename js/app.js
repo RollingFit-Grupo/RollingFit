@@ -159,7 +159,8 @@ function registroAdminUser() {
   setLocalStorage("users", [adminUsuario, usuario]);
 }
 
-function accederUser() {
+function accederUser(e) {
+    e.preventDefault();
   const email = accederInputEmail.value;
   const contrasenia = accederInputPassword.value;
 

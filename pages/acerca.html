@@ -167,6 +167,16 @@
                   required
                 />
               </div>
+              <div class="alert alert-danger mt-3 d-none" role="alert" id="alertaModal"></div>
+          <div class="d-flex justify-content-center">
+            <button
+              id="acceder-button"
+              type="submit"
+              class="btn btn-primary w-100"
+            >
+              Inicia Sesión
+            </button>
+          </div>
             </form>
             <!-- Formulario registro -->
             <form class="form-registro d-none" id="form-registro">
@@ -206,16 +216,8 @@
                   required
                 />
               </div>
-            </form>
-          </div>
-          <div class="modal-footer d-flex justify-content-center">
-            <button
-              id="acceder-button"
-              type="submit"
-              class="btn btn-primary w-100"
-            >
-              Inicia Sesión
-            </button>
+              <div class="alert alert-danger mt-3 d-none" role="alert" id="alertaModal"></div>
+          <div class="d-flex justify-content-center">
             <button
               id="registro-button"
               type="submit"
@@ -223,7 +225,10 @@
             >
               Registrarme
             </button>
-
+          </div>
+            </form>
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
             <button
               id="show-registro-button"
               type="button"
